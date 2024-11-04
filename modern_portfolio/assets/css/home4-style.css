@@ -56,6 +56,8 @@
   margin-left: 30px;
 }
 
+
+
 .navbar .topnav .menu-icon {
   width: 40px;
   height: 40px;
@@ -68,7 +70,7 @@
 .navbar .topnav .nav-content {
   /* width: 40px; */
   height: 40px;
-  margin-right: 10px;
+  /* margin-right: 10px; */
   line-height: 40px;
   text-align: center;
   /* background: #1d1d1d; */
@@ -1068,7 +1070,6 @@ p {
   .ml-none {
     margin-left: 0 !important;
   }
-
   .sec-head .ml-auto {
     margin: 30px 0 0 0 !important;
   }
@@ -1126,7 +1127,6 @@ p {
   .navbar .container {
     padding: 5px 10px;
   }
-
   .header-mp .caption h1,
   .footer-mp .footer-logo h1 {
     font-size: 100px;
@@ -1200,5 +1200,11 @@ p {
 
   .footer-mp .footer-logo .union {
     display: none;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 1024px){
+  #collapse-content{
+    display: none !important;
   }
 }
