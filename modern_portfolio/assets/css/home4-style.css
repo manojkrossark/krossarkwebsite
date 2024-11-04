@@ -82,6 +82,12 @@
   /* border-radius: 5%; */
   color: var(--main-color);
 }
+.navbar .topnav .nav-content.active {  
+  border-bottom: 2px solid var(--main-color);
+  /* border-radius: 5%; */
+  color: var(--main-color);
+  font-weight: 600;
+}
 
 .navbar .topnav .butn {
   padding: 8px 20px;
@@ -559,6 +565,7 @@
 
 .testimonials-mp .colorful {
   background: var(--main-color);
+  color: #fff;
   -webkit-transform: rotate(2deg) translateY(80px);
   -ms-transform: rotate(2deg) translateY(80px);
   transform: rotate(2deg) translateY(80px);
