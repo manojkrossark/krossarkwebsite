@@ -1491,6 +1491,12 @@
   letter-spacing: normal;
 }
 
+.work-hed2 .caption h1 span.play-font{
+  font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-weight: 400;
+}
+
 .work-hed2 .fit-img {
   height: 620px;
 }
