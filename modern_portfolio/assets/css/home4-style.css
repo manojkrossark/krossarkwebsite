@@ -110,7 +110,15 @@
   background-image: -o-linear-gradient(280deg, #98b8e3, #fff 80%);
   background-image: linear-gradient(170deg, #98b8e3, #fff 80%);
   position: relative;
+  height: 750px;
 }
+/* .header-mp {
+  padding: 180px 0 100px;
+  background-image: -webkit-linear-gradient(280deg, #98b8e3, #fff 80%);
+  background-image: -o-linear-gradient(280deg, #98b8e3, #fff 80%);
+  background-image: linear-gradient(170deg, #98b8e3, #fff 80%);
+  position: relative;
+} */
 
 .header-mp .brush {
   position: absolute;
@@ -369,6 +377,11 @@
   padding-top: 30px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   margin-bottom: 30px;
+}
+.works-mp .item1 {
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
 }
 
 .works-mp .item:hover .cont a {
@@ -1069,6 +1082,11 @@ p {
   color: #d1d1d1;
 }
 
+.col-md-4.sm-mb30 .containClient{
+  margin-top: 2rem;
+  color: #7f7f7f;
+}
+
 /* ====================== [ Start Responsive ] ====================== */
 @media screen and (max-width: 992px) {
   .ml-none {
@@ -1134,6 +1152,11 @@ p {
   .header-mp .caption h1,
   .footer-mp .footer-logo h1 {
     font-size: 100px;
+  }
+  .header-mp{
+    height: unset;
+    padding: 110px 0 170px;
+    background-position: bottom !important;
   }
 
   .sec-head h2 {
@@ -1211,4 +1234,5 @@ p {
   #collapse-content{
     display: none !important;
   }
+ 
 }
