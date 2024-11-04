@@ -80,6 +80,12 @@ img {
   width: 100%;
   height: auto; }
 
+
+  .logo img{
+    filter: brightness(0) invert(1);
+    width: 150px;
+  }
+
 figure {
   margin: 0; }
 
