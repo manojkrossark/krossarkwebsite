@@ -54,6 +54,11 @@
   margin-left: 15px;
 }
 
+
+.nav-link.dropdown-toggle::after{
+  display: none !important;
+}
+
 .navbar .navbar-nav .nav-link {
   padding: 5px 20px;
   border-radius: 30px;
@@ -65,6 +70,20 @@
   background: rgba(255, 255, 255, 0.1);
 }
 
+.dropdown-menu.show{
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin: 0;
+  color: #ffffff;
+  background-color: #0e0f11;
+}
+.dropdown-item{
+  color: white;
+  padding: .5rem 1rem
+}
+
+.dropdown-item.active, .dropdown-item:active{
+  background-color: #272729;
+}
 .navbar .topnav .butn {
   padding: 7px 20px;
   background: #fff;
