@@ -1138,8 +1138,8 @@ p {
   color: #d1d1d1;
 }
 
-.col-md-4.sm-mb30 .containClient {
-  margin-top: 2rem;
+.containClient {
+  margin-top: 1rem;
   color: #7f7f7f;
   font-size: 17px;
 }
