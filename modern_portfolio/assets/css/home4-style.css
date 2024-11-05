@@ -52,7 +52,6 @@
 }
 
 
-
 .navbar .dropdown-content,
 .navbar .dropdown-content-service {
   background-color: #ffffff;
@@ -104,6 +103,9 @@
 }
 
 
+.menu-icon{
+  display: none;
+}
 
 .navbar .topnav .menu-icon {
   width: 40px;
@@ -1290,6 +1292,9 @@ p {
 @media screen and (min-width: 320px) and (max-width: 1024px) {
   #collapse-content {
     display: none !important;
+  }
+  .menu-icon {
+    display: inline-block !important;
   }
 
 }
