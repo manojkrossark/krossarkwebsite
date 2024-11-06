@@ -926,6 +926,7 @@
 .footer-mp .social-icon a:hover {
   background: var(--main-color);
   border-color: var(--main-color);
+  color: white;
   -webkit-transition: all .4s;
   -o-transition: all .4s;
   transition: all .4s;
