@@ -1213,7 +1213,7 @@ p {
 
 @media screen and (max-width: 768px) {
   .navbar .container {
-    padding: 5px 10px;
+    padding: 5px 5px;
   }
   .technology-center{
     font-size: 45px;
