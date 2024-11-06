@@ -1145,6 +1145,13 @@ p {
   font-size: 17px;
 }
 
+.technology-center{
+  font-size: 125px;
+}
+.md-mb80{
+  margin-bottom: 80px;
+}
+
 /* ====================== [ Start Responsive ] ====================== */
 @media screen and (max-width: 992px) {
   .ml-none {
@@ -1208,14 +1215,19 @@ p {
   .navbar .container {
     padding: 5px 10px;
   }
-
+  .technology-center{
+    font-size: 45px;
+  }
+  .md-mb80{
+    margin-bottom: 10px;
+  }
   .header-mp .caption h1,
   .footer-mp .footer-logo h1 {
     font-size: 90px;
   }
 
   .header-mp {
-    height: unset;
+    /* height: unset; */
     padding: 110px 0 120px;
     background-position: bottom !important;
   }
