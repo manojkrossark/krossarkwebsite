@@ -58,17 +58,17 @@
   background-color: #ffffff;
   padding: 10px 0px;
   border-radius: 5px;
-  width: 140px !important;
+  width: 110px !important;
   color: #7F7F7F;
-  font-size: 16px;
+  font-size: 14px;
   text-align: left;
   position: absolute;
   left: -6px;
-  top: 40px;
+  top: 35px;
 }
 
 .navbar .dropdown-content-service {
-  width: 180px !important;
+  width: 195px !important;
 }
 
 .navbar .product-content:hover .dropdown-content,
@@ -120,14 +120,15 @@
 
 .navbar .topnav .nav-content {
   /* width: 40px; */
-  height: 40px;
+  height: 37px;
   /* margin-right: 10px; */
-  line-height: 40px;
+  line-height: 37px;
   text-align: center;
   /* background: #1d1d1d; */
   /* border-radius: 50%; */
-  font-size: 16px;
-  padding: 0px 15px;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 0px 10px;
   color: #7F7F7F;
   position: relative;
 }
