@@ -72,9 +72,10 @@
 
 .dropdown-menu.show{
   border: 1px solid rgba(255, 255, 255, 0.3);
-  margin: 0;
   color: #ffffff;
-  background-color: #0e0f11;
+  backdrop-filter: blur(10px);
+  background: transparent;
+  margin-top: 2px;
 }
 .dropdown-item{
   color: white;
@@ -82,8 +83,14 @@
 }
 
 .dropdown-item.active, .dropdown-item:active{
-  background-color: #272729;
+  color: #1e2125;
+    background-color: #e9ecef;
+  /* background: rgba(255, 255, 255, 0.1); */
 }
+/* .dropdown-item:focus, .dropdown-item:hover{
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+} */
 .navbar .topnav .butn {
   padding: 7px 20px;
   background: #fff;
