@@ -38,6 +38,7 @@
   -webkit-transform: translateY(80px);
   -ms-transform: translateY(80px);
   transform: translateY(80px);
+  width: 90%;
 }
 
 .navbar .logo {
