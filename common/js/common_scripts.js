@@ -404,7 +404,8 @@ $(window).on("load", function () {
 
     $('#contact-form').on('submit', function (e) {
         if (!e.isDefaultPrevented()) {
-            var url = "contact.php";
+            // var url = "contact.php";
+            var url = "sendEmail.php";
 
             $.ajax({
                 type: "POST",
