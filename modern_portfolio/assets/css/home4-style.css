@@ -104,7 +104,7 @@
 }
 
 
-.menu-icon{
+.menu-icon {
   display: none;
 }
 
@@ -481,6 +481,7 @@
   -o-object-position: center;
   object-position: center;
 }
+
 
 /* --------------- Clients --------------- */
 .brands-mp .item {
@@ -1147,10 +1148,11 @@ p {
   font-size: 17px;
 }
 
-.technology-center{
+.technology-center {
   font-size: 125px;
 }
-.md-mb80{
+
+.md-mb80 {
   margin-bottom: 80px;
 }
 
@@ -1217,12 +1219,15 @@ p {
   .navbar .container {
     padding: 5px 5px;
   }
-  .technology-center{
+
+  .technology-center {
     font-size: 45px;
   }
-  .md-mb80{
+
+  .md-mb80 {
     margin-bottom: 10px;
   }
+
   .header-mp .caption h1,
   .footer-mp .footer-logo h1 {
     font-size: 90px;
@@ -1309,6 +1314,7 @@ p {
   #collapse-content {
     display: none !important;
   }
+
   .menu-icon {
     display: inline-block !important;
   }
