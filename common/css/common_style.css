@@ -1030,6 +1030,9 @@ a:hover {
 
 .main-marq .box .item {
   padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .main-marq .box .item h4 {
