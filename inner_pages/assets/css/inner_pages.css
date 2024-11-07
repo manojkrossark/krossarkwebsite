@@ -544,6 +544,45 @@
   background: var(--main-color);
 }
 
+
+
+/* --------------- Clients --------------- */
+.clients-dm {
+  position: relative;
+}
+
+.clients-dm:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -15px;
+  width: 200px;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  z-index: 3;
+}
+
+.clients-dm:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -15px;
+  width: 200px;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+
+.clients-dm .item {
+  margin: 0 40px;
+}
+
+.clients-dm .item img {
+  width: 140px;
+}
+
+/* end client dms */
 .clients-ds .item {
   position: relative;
   border: 1px solid rgba(255, 255, 255, 0.1);
