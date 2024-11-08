@@ -4,7 +4,7 @@
     Theme URI: http://
     Description: Creative Agency & Portfolio
     Author: Uithemez
-    Author URI: http://themeforest.net/user/Uithemez
+    Author URI: http://.net/user/Uithemez
     Version: 1.0
 
 -----------------------------------------------------------------------------------*/
