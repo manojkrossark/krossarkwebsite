@@ -42,7 +42,7 @@
   border-radius: 30px;
 }
 
-.logo img{
+.logo img {
   filter: brightness(0) invert(1);
   width: 100px;
 }
@@ -55,7 +55,7 @@
 }
 
 
-.nav-link.dropdown-toggle::after{
+.nav-link.dropdown-toggle::after {
   display: none !important;
 }
 
@@ -70,23 +70,26 @@
   background: rgba(255, 255, 255, 0.1);
 }
 
-.dropdown-menu.show{
+.dropdown-menu.show {
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: #ffffff;
   backdrop-filter: blur(10px);
   background: transparent;
   margin-top: 2px;
 }
-.dropdown-item{
+
+.dropdown-item {
   color: white;
   padding: .5rem 1rem
 }
 
-.dropdown-item.active, .dropdown-item:active{
+.dropdown-item.active,
+.dropdown-item:active {
   color: #1e2125;
-    background-color: #e9ecef;
+  background-color: #e9ecef;
   /* background: rgba(255, 255, 255, 0.1); */
 }
+
 /* .dropdown-item:focus, .dropdown-item:hover{
   background: rgba(255, 255, 255, 0.1);
   color: white;
@@ -99,8 +102,71 @@
 }
 
 
-.menu-icon{
+.menu-icon {
   display: none;
+}
+
+
+/* --------------- Awards --------------- */
+.awards-sa .item-title {
+  padding: 0 15px 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.awards-sa .item-title>div {
+  padding: 0;
+}
+
+.awards-sa .item-title h6 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: .7;
+}
+
+.awards-sa .item-line {
+  padding: 25px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  -webkit-transition: all .4s;
+  -o-transition: all .4s;
+  transition: all .4s;
+  z-index: 3;
+}
+
+.awards-sa .item-line>div {
+  padding: 0;
+}
+
+.awards-sa .item-line>div:last-of-type {
+  text-align: right;
+}
+
+.awards-sa .item-line:hover:after {
+  height: 100%;
+}
+
+.awards-sa .item-line:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-transition: all .4s;
+  -o-transition: all .4s;
+  transition: all .4s;
+  z-index: -1;
+}
+
+.awards-sa .item-line .honors h6 {
+  font-size: 14px;
+}
+
+.awards-sa .item-line .project-date span {
+  font-size: 14px;
+  opacity: .7;
 }
 
 /* --------------- about pg --------------- */
@@ -1562,10 +1628,10 @@
   letter-spacing: normal;
 }
 
-.work-hed2 .caption h1 span.play-font{
+.work-hed2 .caption h1 span.play-font {
   font-family: "Playfair Display", serif;
-    font-style: italic;
-    font-weight: 400;
+  font-style: italic;
+  font-weight: 400;
 }
 
 .work-hed2 .fit-img {
@@ -2775,7 +2841,7 @@ p {
     font-size: 60px;
     letter-spacing: -2px;
     margin-bottom: 10px;
-    
+
   }
 
   .services-dm .item .icon {
@@ -3008,7 +3074,7 @@ p {
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 1024px) {  
+@media screen and (min-width: 320px) and (max-width: 1024px) {
   .menu-icon {
     display: inline-block !important;
   }
