@@ -102,7 +102,7 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Product</a>
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="waro.html">Waro</a>
                             <a class="dropdown-item" href="alto.html">Alto</a>
@@ -167,7 +167,7 @@
                     <li>
                         <div class="o-hidden">
                             <div class="link cursor-pointer dmenu"><span class="fill-text"
-                                    data-text="Product">Product</span>
+                                    data-text="Product">Products</span>
                                 <i></i>
                             </div>
                         </div>
@@ -204,7 +204,7 @@
                     <div class="logo">
                         <img src="../common/imgs/Krossark_logo.png" alt="">
                     </div>
-                    <div class="social-icon mt-40">
+                    <!-- <div class="social-icon mt-40">
                         <a href="https://www.linkedin.com/company/fetchh-llp/">
                             <i class="fa-brands fa-linkedin-in"></i>
                         </a>
@@ -217,7 +217,7 @@
                         <a href="#0">
                             <i class="fa-brands fa-twitter"></i>
                         </a>
-                    </div>
+                    </div> -->
                     <div class="item mt-30">
                         <h5>7094, Peachtree industrial Blvd., Suite 270 <br> Norcross, GA 30071, USA </h5>
                     </div>
@@ -297,7 +297,7 @@
                                             <a href="#0">+1 202-361-2345</a>
                                         </div>
                                     </div>
-                                    <ul class="rest social-text d-flex mt-60 fz-16">
+                                    <!-- <ul class="rest social-text d-flex mt-60 fz-16">
                                         <li class="mr-30">
                                             <a href="https://www.facebook.com/Krossarkconsultingservices/" class="hover-this"><span class="hover-anim">Facebook</span></a>
                                         </li>
@@ -311,7 +311,7 @@
                                             <a href="#0" class="hover-this"><span
                                                     class="hover-anim">Twitter</span></a>
                                         </li>
-                                    </ul>
+                                    </ul> -->
                                 </div>
                             </div>
                             <div class="col-lg-6 offset-lg-1 valign">
@@ -319,7 +319,7 @@
                                     <div class="sec-head mb-50">
                                         <h6 class="sub-head">Send a <span class="fw-200">message</span></h6>
                                     </div>
-                                    <form id="contact-form" method="post" action="assets/js/sendEmail.php">
+                                    <form id="contact-form">
 
                                         <div class="messages"></div>
 
@@ -327,15 +327,13 @@
 
                                             <div class="col-lg-6">
                                                 <div class="form-group mb-30">
-                                                    <input id="form_name" type="text" name="name" placeholder="Name"
-                                                        required="required">
+                                                    <input id="form_name" type="text" name="name" placeholder="Name">
                                                 </div>
                                             </div>
 
                                             <div class="col-lg-6">
                                                 <div class="form-group mb-30">
-                                                    <input id="form_email" type="email" name="email" placeholder="Email"
-                                                        required="required">
+                                                    <input id="form_email" type="email" name="email" placeholder="Email">
                                                 </div>
                                             </div>
 
@@ -349,12 +347,12 @@
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <textarea id="form_message" name="message" placeholder="Message"
-                                                        rows="4" required="required"></textarea>
+                                                        rows="4" ></textarea>
                                                 </div>
                                                 <div class="mt-30">
                                                     <button type="submit" class="butn butn-md butn-bord butn-rounded">
                                                         <div class="d-flex align-items-center">
-                                                            <span>Let's Talking</span>
+                                                            <span>Let's Talk</span>
                                                             <span class="icon ml-10">
                                                                 <img src="../common/imgs/icons/arrow-top-right.svg"
                                                                     alt="">
@@ -484,6 +482,41 @@
     <!-- custom scripts -->
     <script src="assets/js/inner_pages.js"></script>
 
+    <!-- gmail script -->
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault();  // Prevent the default form submission
+    
+            var name = document.getElementById("form_name").value.trim();
+            var email = document.getElementById("form_email").value.trim();
+            var subject = document.getElementById("form_subject").value.trim();
+            var message = document.getElementById("form_message").value.trim();
+    
+            // Construct the Gmail compose URL
+            if(name != '' && email != '' && message != '' && subject != ''){
+            var gmailComposeUrl = "https://mail.google.com/mail/?view=cm&fs=1&to=abisheik.s@krossark.com" +
+                                  "&su=" + encodeURIComponent(subject) +
+                                  "&body=" + encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\n" + message);
+    
+            // Open the Gmail compose window
+            window.open(gmailComposeUrl, "_blank");
+
+            // Clear the form fields after sending the email
+            document.getElementById("contact-form").reset();
+            }
+            else{
+                const fieldsArr = [name,email,subject,message];
+                const fieldNames = ["Name","Email","Subject","Message"];
+                const alertArr = [];
+                for(let i = 0; i < fieldsArr.length; i++) {
+                    if(fieldsArr[i] === '') {
+                       alertArr.push(fieldNames[i]);
+                    }
+                }
+                alert("Please enter the following fields: " + alertArr.join(", "));
+            }
+        });
+    </script>
 </body>
 
 </html>
