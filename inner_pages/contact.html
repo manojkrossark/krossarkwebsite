@@ -79,7 +79,7 @@
         <div class="container">
 
             <!-- Logo -->
-            <a href="../modern_portfolio/index.html" class="logo">
+            <a class="logo" href="#">
                 <img src="assets/imgs/Krossark_logo.png" alt="logo">
             </a>
 
@@ -253,7 +253,7 @@
                     <div class="container-fluid">
                         <div class="google-map">
                             <iframe id="gmap_canvas"
-                                src="https://maps.google.com/maps?q=Krossark%20Consulting%20Pvt%20Ltd&z=15&output=embed">
+                                src="https://maps.google.com/maps?q=7094%20Peachtree%20Industrial%20Blvd%20%23270&z=15&output=embed">
                             </iframe>
                         </div>
                     </div>
@@ -333,7 +333,8 @@
 
                                             <div class="col-lg-6">
                                                 <div class="form-group mb-30">
-                                                    <input id="form_email" type="email" name="email" placeholder="Email">
+                                                    <input id="form_email" type="email" name="email"
+                                                        placeholder="Email">
                                                 </div>
                                             </div>
 
@@ -347,7 +348,7 @@
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <textarea id="form_message" name="message" placeholder="Message"
-                                                        rows="4" ></textarea>
+                                                        rows="4"></textarea>
                                                 </div>
                                                 <div class="mt-30">
                                                     <button type="submit" class="butn butn-md butn-bord butn-rounded">
@@ -383,7 +384,7 @@
                     <div class="contact-info">
                         <div class="row">
                             <div class="col-lg-5">
-                                <a href="../modern_portfolio/index.html" class="logo md-mb50">
+                                <a href="#" class="logo md-mb50">
                                     <img src="assets/imgs/Krossark_logo.png" alt="">
                                 </a>
                             </div>
@@ -484,33 +485,33 @@
 
     <!-- gmail script -->
     <script>
-        document.getElementById("contact-form").addEventListener("submit", function(event) {
+        document.getElementById("contact-form").addEventListener("submit", function (event) {
             event.preventDefault();  // Prevent the default form submission
-    
+
             var name = document.getElementById("form_name").value.trim();
             var email = document.getElementById("form_email").value.trim();
             var subject = document.getElementById("form_subject").value.trim();
             var message = document.getElementById("form_message").value.trim();
-    
-            // Construct the Gmail compose URL
-            if(name != '' && email != '' && message != '' && subject != ''){
-            var gmailComposeUrl = "https://mail.google.com/mail/?view=cm&fs=1&to=abisheik.s@krossark.com" +
-                                  "&su=" + encodeURIComponent(subject) +
-                                  "&body=" + encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\n" + message);
-    
-            // Open the Gmail compose window
-            window.open(gmailComposeUrl, "_blank");
 
-            // Clear the form fields after sending the email
-            document.getElementById("contact-form").reset();
+            // Construct the Gmail compose URL
+            if (name != '' && email != '' && message != '' && subject != '') {
+                var gmailComposeUrl = "https://mail.google.com/mail/?view=cm&fs=1&to=abisheik.s@krossark.com" +
+                    "&su=" + encodeURIComponent(subject) +
+                    "&body=" + encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\n" + message);
+
+                // Open the Gmail compose window
+                window.open(gmailComposeUrl, "_blank");
+
+                // Clear the form fields after sending the email
+                document.getElementById("contact-form").reset();
             }
-            else{
-                const fieldsArr = [name,email,subject,message];
-                const fieldNames = ["Name","Email","Subject","Message"];
+            else {
+                const fieldsArr = [name, email, subject, message];
+                const fieldNames = ["Name", "Email", "Subject", "Message"];
                 const alertArr = [];
-                for(let i = 0; i < fieldsArr.length; i++) {
-                    if(fieldsArr[i] === '') {
-                       alertArr.push(fieldNames[i]);
+                for (let i = 0; i < fieldsArr.length; i++) {
+                    if (fieldsArr[i] === '') {
+                        alertArr.push(fieldNames[i]);
                     }
                 }
                 alert("Please enter the following fields: " + alertArr.join(", "));
