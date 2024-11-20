@@ -513,7 +513,7 @@
                                     <div class="mb-60">
                                         <h3>Leave a comment</h3>
                                     </div>
-                                    <form id="contact-form" method="post" action="contact.php">
+                                    <form id="contact-form">
 
                                         <div class="messages"></div>
 
@@ -899,6 +899,40 @@
 
     <!-- custom scripts -->
     <script src="modern_portfolio/assets/js/inner_pages.js"></script>
+
+    <!-- gmail script -->
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", function (event) {
+            event.preventDefault();  // Prevent the default form submission
+
+            var name = document.getElementById("form_name").value.trim();
+            var email = document.getElementById("form_email").value.trim();
+            var message = document.getElementById("form_message").value.trim();
+
+            // Construct the Gmail compose URL
+            if (name != '' && email != '' && message != '') {
+                var gmailComposeUrl = "https://mail.google.com/mail/?view=cm&fs=1&to=info@krossark.com" +
+                    "&body=" + encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\n" + message);
+
+                // Open the Gmail compose window
+                window.open(gmailComposeUrl, "_blank");
+
+                // Clear the form fields after sending the email
+                document.getElementById("contact-form").reset();
+            }
+            else {
+                const fieldsArr = [name, email, message];
+                const fieldNames = ["Name", "Email", "Message"];
+                const alertArr = [];
+                for (let i = 0; i < fieldsArr.length; i++) {
+                    if (fieldsArr[i] === '') {
+                        alertArr.push(fieldNames[i]);
+                    }
+                }
+                alert("Please enter the following fields: " + alertArr.join(", "));
+            }
+        });
+    </script>
 
 </body>
 
