@@ -903,8 +903,9 @@ p {
 
 @media screen and (max-width: 768px) {
   .header-dm .caption h1 {
-    font-size: 40px;
+    font-size: 35px;
     letter-spacing: -1px;
+    padding-top: 20px;
   }
 
   .services-dm .item {

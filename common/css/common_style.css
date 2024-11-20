@@ -435,6 +435,9 @@ figure {
   .hamenu.open .cont-info {
     display: none;
   }
+  header{
+    padding-top: 140px !important;
+  }
 }
 
 /* ========= [ preloader ]  =========*/
@@ -2959,6 +2962,9 @@ img.left {
 /* ========= [ responsive ]  =========*/
 /* ====================== [ Start Responsive ] ====================== */
 @media screen and (max-width: 992px) {
+  .section-padding{
+    padding-bottom: 70px !important; 
+  }
   .md-mb10 {
     margin-bottom: 10px;
   }
@@ -2984,7 +2990,7 @@ img.left {
   }
 
   .md-mb80 {
-    margin-bottom: 80px;
+    margin-bottom: 40px;
   }
 
   .md-no-mrg {
@@ -3136,6 +3142,12 @@ img.left {
 }
 
 @media screen and (max-width: 768px) {
+  .pb-80{
+    padding-bottom: 50px !important;
+  }
+  .fz-60{
+    font-size: 45px !important;
+  }
   .sm-mb10 {
     margin-bottom: 10px;
   }
