@@ -748,6 +748,9 @@
 .footer-sa .sub-footer .links a {
   font-size: 14px;
 }
+.footer-sa .sub-footer .links a:hover {
+  color: var(--theme-color);
+}
 
 .footer-sa .sub-footer .links .active {
   color: var(--theme-color);
@@ -1101,12 +1104,6 @@
 
 
 
-
-
-.footer-sa .sub-footer .links a {
-  font-size: 14px;
-}
-
 .footer-sa .sub-footer .links .active {
   color: var(--theme-color);
 }
@@ -1196,11 +1193,6 @@
 }
 
 
-
-
-.footer-sa .sub-footer .links a {
-  font-size: 14px;
-}
 
 .footer-sa .sub-footer .links .active {
   color: var(--theme-color);
@@ -1372,10 +1364,6 @@
 }
 
 
-.footer-sa .sub-footer .links a {
-  font-size: 14px;
-}
-
 .footer-sa .sub-footer .links .active {
   color: var(--theme-color);
 }
@@ -1462,11 +1450,6 @@
   margin-bottom: 50px;
 }
 
-
-
-.footer-sa .sub-footer .links a {
-  font-size: 14px;
-}
 
 .footer-sa .sub-footer .links .active {
   color: var(--theme-color);
@@ -1738,10 +1721,6 @@
 }
 
 
-
-.footer-sa .sub-footer .links a {
-  font-size: 14px;
-}
 
 .footer-sa .sub-footer .links .active {
   color: var(--theme-color);
@@ -2255,11 +2234,6 @@
 
 
 
-
-.footer-sa .sub-footer .links a {
-  font-size: 14px;
-}
-
 .footer-sa .sub-footer .links .active {
   color: var(--theme-color);
 }
@@ -2342,9 +2316,6 @@
 }
 
 
-.footer-sa .sub-footer .links a {
-  font-size: 14px;
-}
 
 .footer-sa .sub-footer .links .active {
   color: var(--theme-color);
