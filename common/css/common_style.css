@@ -435,7 +435,8 @@ figure {
   .hamenu.open .cont-info {
     display: none;
   }
-  header{
+
+  header {
     padding-top: 140px !important;
   }
 }
@@ -477,10 +478,10 @@ body.loaded {
   fill: #fff;
 }
 
-.loader-wrap-heading
-{
+.loader-wrap-heading {
   width: 100%;
 }
+
 .loader-wrap .loader-wrap-heading .load-text {
   color: #fff;
   font-size: 20px;
@@ -1513,6 +1514,16 @@ img.left {
 .bg-auto {
   background-size: auto;
   background-repeat: no-repeat;
+}
+
+.section-padding {
+  padding-top: 140px;
+  padding-bottom: 80px;
+}
+
+.section-even-padding {
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 .section-padding {
@@ -2962,9 +2973,10 @@ img.left {
 /* ========= [ responsive ]  =========*/
 /* ====================== [ Start Responsive ] ====================== */
 @media screen and (max-width: 992px) {
-  .section-padding{
-    padding-bottom: 70px !important; 
+  .section-padding {
+    padding-bottom: 70px !important;
   }
+
   .md-mb10 {
     margin-bottom: 10px;
   }
@@ -3142,12 +3154,14 @@ img.left {
 }
 
 @media screen and (max-width: 768px) {
-  .pb-80{
+  .pb-80 {
     padding-bottom: 50px !important;
   }
-  .fz-60{
+
+  .fz-60 {
     font-size: 45px !important;
   }
+
   .sm-mb10 {
     margin-bottom: 10px;
   }
