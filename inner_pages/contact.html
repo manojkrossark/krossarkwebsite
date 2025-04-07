@@ -27,7 +27,7 @@
     <!-- Core Style Css -->
     <link rel="stylesheet" href="../common/css/common_style.css">
     <link rel="stylesheet" href="assets/css/inner_pages.css">
-    <link rel="stylesheet" href="assets/css/contact.css">
+    <link rel="stylesheet" href="assets/css/header.css">
 
 </head>
 
@@ -116,12 +116,12 @@
                     </li>
                 </ul>
             </div>
-            
+
             <div class="topnav d-flex align-items-center">
                 <a href="tech_service.html" class="butn butn-rounded">
                     <div class="d-flex align-items-center">
                         <span>Contact US</span>
-                        <span class="icon ml-10">
+                        <span class="icon ml-10 right-icon">
                             <img src="../common/imgs/icons/arrow-top-right.svg" alt="">
                         </span>
                     </div>
@@ -249,138 +249,93 @@
 
             <main>
 
-
-
-                <!-- ==================== Start Header ==================== -->
-
-                <header class="contact-hed section-padding pb-0">
-                    <div class="container">
-                        <div class="caption mb-80 text-center">
-                            <h1>Get In Touch</h1>
-                        </div>
+                <section class="contact-hed contact-pg section-padding">
+                    <div class="container mb-50">
+                        <h3 class="CONTACTUS mb-50">Contact Us</h3>
+                        <p> Thank you for your interest. Please fillout the form below to inquire about our work in
+                            Consumer
+                            Packaged Goods. Please note: while we appreciate your questions, we are unable to respond to
+                            all
+                            inquiries. To learn more, visit how we help clients. Required fields are marked with an
+                            asterisk
+                            (*).
+                        </p>
                     </div>
-                    <div class="container-fluid">
-                        <div class="google-map">
-                            <iframe id="gmap_canvas"
-                                src="https://maps.google.com/maps?q=7094%20Peachtree%20Industrial%20Blvd%20%23270&z=15&output=embed">
-                            </iframe>
-                        </div>
-                    </div>
-                </header>
+                    <div class="row">
+                        <div class="col-lg-3 valign">
+                            <div class="full-width md-mb80">
+                                <div class="sec-head md-mb80">
 
-                <!-- ==================== End Header ==================== -->
-
-
-
-                <!-- ==================== Start Contact ==================== -->
-
-                <section class="contact-pg section-padding">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-5 valign">
-                                <div class="full-width md-mb80">
-                                    <div class="sec-head md-mb80">
-                                        <h2 class="text-u">
-                                            Let's make your <br> brand <span class="fw-200">
-                                                brilliant!</span>
-                                        </h2>
-                                        <p class="mt-20 mb-20">If you would like to work with us or just want to get in
-                                            touch, we’d love to hear from you!</p>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="morinfo mt-30">
-                                                    <h6 class="mb-15">Address</h6>
-                                                    <p>7094, Peachtree industrial Blvd., Suite 270<br> Norcross, GA
-                                                        30071, USA</p>
-
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="morinfo mt-30">
-                                                    <h6 class="mb-15">Email</h6>
-                                                    <p>info@krossark.com</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="phone fz-30 fw-600 mt-30 underline main-color">
-                                            <!-- <a href="#0">+1 202-361-2345</a> -->
-                                        </div>
-                                    </div>
-                                    <!-- <ul class="rest social-text d-flex mt-60 fz-16">
-                                        <li class="mr-30">
-                                            <a href="https://www.facebook.com/Krossarkconsultingservices/" class="hover-this"><span class="hover-anim">Facebook</span></a>
-                                        </li>
-                                        <li class="mr-30">
-                                            <a href="https://www.linkedin.com/company/fetchh-llp/" class="hover-this"><span class="hover-anim">LinkedIn</span></a>
-                                        </li>
-                                        <li class="mr-30">
-                                            <a href="https://youtu.be/37XuQxaPnDs" class="hover-this"><span class="hover-anim">Youtube</span></a>
-                                        </li>
-                                        <li>
-                                            <a href="#0" class="hover-this"><span
-                                                    class="hover-anim">Twitter</span></a>
-                                        </li>
-                                    </ul> -->
                                 </div>
+
                             </div>
-                            <div class="col-lg-6 offset-lg-1 valign">
-                                <div class="full-width">
-                                    <div class="sec-head mb-50">
-                                        <h6 class="sub-head">Send a <span class="fw-200">message</span></h6>
-                                    </div>
-                                    <form id="contact-form">
+                        </div>
+                        <div class="col-lg-7 offset-lg-1 valign">
+                            <div class="full-width">
 
-                                        <div class="messages"></div>
+                                <form id="contact-form">
+                                    <div class="controls row">
 
-                                        <div class="controls row">
-
-                                            <div class="col-lg-6">
-                                                <div class="form-group mb-30">
-                                                    <input id="form_name" type="text" name="name" placeholder="Name">
-                                                </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group mb-30">
+                                                <input id="form_name" type="text" name="name" placeholder="Name*"
+                                                    required>
                                             </div>
-
-                                            <div class="col-lg-6">
-                                                <div class="form-group mb-30">
-                                                    <input id="form_email" type="email" name="email"
-                                                        placeholder="Email">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-12">
-                                                <div class="form-group mb-30">
-                                                    <input id="form_subject" type="text" name="subject"
-                                                        placeholder="Subject">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-12">
-                                                <div class="form-group">
-                                                    <textarea id="form_message" name="message" placeholder="Message"
-                                                        rows="4"></textarea>
-                                                </div>
-                                                <div class="mt-30">
-                                                    <button type="submit" class="butn butn-md butn-bord butn-rounded">
-                                                        <div class="d-flex align-items-center">
-                                                            <span>Let's Talk</span>
-                                                            <span class="icon ml-10">
-                                                                <img src="../common/imgs/icons/arrow-top-right.svg"
-                                                                    alt="">
-                                                            </span>
-                                                        </div>
-                                                    </button>
-                                                </div>
-                                            </div>
-
                                         </div>
-                                    </form>
-                                </div>
+
+                                        <div class="col-lg-12">
+                                            <div class="form-group mb-30">
+                                                <input id="form_email" type="email" name="email" placeholder="Email*"
+                                                    required>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="form-group mb-30">
+                                                <input id="form_Organizations" type="text" name="Organizations"
+                                                    placeholder="Organizations">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="form-group mb-30">
+                                                <input id="form_subject" type="text" name="subject"
+                                                    placeholder="Subject*" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <textarea id="form_message" name="message" placeholder="Message*"
+                                                    rows="1" required></textarea>
+                                            </div>
+                                            <p class="mt-30">Krossark Consulting Services is committed to protecting
+                                                your information. Your information will be used in accordance with the
+                                                applicable data privacy law, our internal policies and our privacy
+                                                policy. As Krossark is a global oraganisation, your information may be
+                                                stored and processed by krossark and its affilates in countries outside
+                                                your country of residence, but wherever your information is processed,
+                                                we will handle it with the same care and respect for your privacy.
+                                            </p>
+                                            <div class="mt-30">
+                                                <button type="submit" class="butn butn-md butn-bord butn-rounded">
+                                                    <div class="d-flex align-items-center">
+                                                        <span>SUBMIT</span>
+                                                        <span class="icon ml-10">
+                                                            <img src="../common/imgs/icons/arrow-top-right.svg" alt="">
+                                                        </span>
+                                                    </div>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </form>
+
                             </div>
                         </div>
                     </div>
                 </section>
-
-                <!-- ==================== End Contact ==================== -->
 
 
             </main>
@@ -390,7 +345,7 @@
 
             <footer class="footer-sa pb-80">
                 <div class="container section-padding bord-thin-top-light">
-                    <div class="call-action text-center mb-80">
+                    <div class="call-action text-center mb-120">
                         <h2 class="">
                             <a href="#0">Let's Make <br> Something Great!</a>
                             <div class="buton d-flex align-items-center justify-content-center">
@@ -405,7 +360,7 @@
                         <div class="row">
                             <div class="col-lg-3">
                                 <a href="#" class="logo md-mb50">
-                                    <img src="assets/imgs/Krossark_logo.png" alt="">
+                                    <img src="assets/imgs/Krossark_logo.svg" alt="">
                                 </a>
                             </div>
 
@@ -451,15 +406,16 @@
                             <div class="col-lg-8">
                                 <div class="copy sub-color md-mb30">
                                     <p>© 2025 All Right Reserved <a href="#0">Krossark inc</a>. <span
-                                            class="ml-30">Power by AI</span> </p>
+                                            class="ml-30">Powered by AI</span> </p>
                                 </div>
                             </div>
 
                             <div class="col-lg-4 d-flex justify-content-end">
                                 <div class="links sub-color d-flex justify-content-between">
-                                    <a href="../index.html">Home</a>
+                                    <a href="../index.html">Industries</a>
                                     <a href="tech_service.html">Services</a>
-                                    <a href="waro.html">Product</a>
+                                    <a href="waro.html">Products</a>
+                                    <a href="waro.html">Our Work</a>
                                     <a href="about.html">About us</a>
                                 </div>
                             </div>

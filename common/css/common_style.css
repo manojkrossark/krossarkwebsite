@@ -1427,19 +1427,19 @@ img.left {
 }
 
 .bord-thin-top-light {
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 1px solid #7F7F7F;
 }
 
 .bord-thin-bottom-light {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid #7F7F7F;
 }
 
 .bord-thin-right-light {
-  border-right: 1px solid rgba(255, 255, 255, 0.15);
+  border-right: 1px solid #7F7F7F;
 }
 
 .bord-thin-left-light {
-  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  border-left: 1px solid #7F7F7F;
 }
 
 .radius-5 {

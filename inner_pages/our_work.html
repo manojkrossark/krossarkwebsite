@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="../common/css/common_style.css">
     <link rel="stylesheet" href="assets/css/inner_pages.css">
     <link rel="stylesheet" href="assets/css/home7-style.css">
+    <link rel="stylesheet" href="assets/css/header.css">
 
 </head>
 
@@ -76,22 +77,20 @@
     <!-- ==================== Start Navbar ==================== -->
 
     <nav class="navbar navbar-expand-lg">
-        <div class="container">
+        <div class="container-fluid">
 
             <!-- Logo -->
-            <a href="../index.html" class="logo">
-                <img src="assets/imgs/Krossark_logo.png" alt="logo">
+            <a class="logo" href="#">
+                <img src="assets/imgs/Krossark_logo.svg" alt="logo">
             </a>
 
             <!-- navbar links -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.html">Home</a>
+                        <a class="nav-link" href="../index.html">Industries</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="about.html">About us</a>
-                    </li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownServices" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
@@ -110,22 +109,31 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="our_work.html">Our Work</a>
+                        <a class="nav-link" href="our_work.html">Our Work</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                        <a class="nav-link" href="about.html">about us</a>
                     </li>
                 </ul>
             </div>
+
             <div class="topnav d-flex align-items-center">
                 <a href="tech_service.html" class="butn butn-rounded">
                     <div class="d-flex align-items-center">
-                        <span>Start Project</span>
-                        <span class="icon ml-10">
+                        <span>Contact US</span>
+                        <span class="icon ml-10 right-icon">
                             <img src="../common/imgs/icons/arrow-top-right.svg" alt="">
                         </span>
                     </div>
                 </a>
+
+                <div class="position-relative mr-15 search-division">
+                    <input id="search" type="search" name="search" placeholder="Search" class="search">
+                    <i class="fa fa-search"></i>
+                </div>
+                <span class="star-icon">
+                    <img src="assets/imgs/star.png" alt="">
+                </span>
                 <div class="menu-icon cursor-pointer">
                     <span class="icon ti-align-right"></span>
                 </div>
@@ -215,7 +223,7 @@
                     </div>
                     <div class="item mt-10">
                         <h5><a href="#0">info@krossark.com</a></h5>
-                       <!-- <h5 class="underline"><a href="#0">+1 202-361-2345</a></h5>
+                        <!-- <h5 class="underline"><a href="#0">+1 202-361-2345</a></h5>
                         <h5 class="underline"><a href="#0">+91 95000 60444</a></h5> -->
                     </div>
                 </div>
@@ -319,8 +327,17 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="text">
-                                        <p>We are a dynamic digital marketing agency driven by innovation and expertise, committed to empowering businesses to thrive in a competitive landscape. Our mission is to help you take the next step in your business journey by crafting tailored strategies that amplify your brand presence, engage your audience, and drive measurable results.  <span class="showHide" style="display: none;" id="learnMoreContent">Whether it's through SEO, social media marketing, content creation, or paid advertising, we bring a results-oriented approach to ensure your business not only grows but also sustains success in the ever-evolving digital world. Partner with us to unlock your business's true potential.</span></p>
-                                        <a  class="crv-butn mt-40">
+                                        <p>We are a dynamic digital marketing agency driven by innovation and expertise,
+                                            committed to empowering businesses to thrive in a competitive landscape. Our
+                                            mission is to help you take the next step in your business journey by
+                                            crafting tailored strategies that amplify your brand presence, engage your
+                                            audience, and drive measurable results. <span class="showHide"
+                                                style="display: none;" id="learnMoreContent">Whether it's through SEO,
+                                                social media marketing, content creation, or paid advertising, we bring
+                                                a results-oriented approach to ensure your business not only grows but
+                                                also sustains success in the ever-evolving digital world. Partner with
+                                                us to unlock your business's true potential.</span></p>
+                                        <a class="crv-butn mt-40">
                                             <div class="d-flex">
                                                 <span class="text">Learn More</span>
                                                 <span class="icon">
@@ -559,13 +576,13 @@
 
                 <!-- ==================== Start Footer ==================== -->
 
-                <footer class="footer-sa pb-60">
+                <footer class="footer-sa pb-80">
                     <div class="container section-padding bord-thin-top-light">
                         <div class="call-action text-center mb-80">
                             <h2 class="">
                                 <a href="#0">Let's Make <br> Something Great!</a>
                                 <div class="buton d-flex align-items-center justify-content-center">
-                                    <a href="contact.html">
+                                    <a href="#0">
                                         <span class="mb-10">Contact</span> <br> <span>Us <img
                                                 src="../common/imgs/icons/arrow-top-right.svg" alt=""></span>
                                     </a>
@@ -574,62 +591,64 @@
                         </div>
                         <div class="contact-info">
                             <div class="row">
-                                <div class="col-lg-5">
-                                    <a href="../index.html" class="logo md-mb50">
-                                        <img src="assets/imgs/Krossark_logo.png" alt="">
+                                <div class="col-lg-3">
+                                    <a href="#" class="logo md-mb50">
+                                        <img src="assets/imgs/Krossark_logo.svg" alt="">
                                     </a>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="item">
-                                                <span class="sub-color">location</span>
-                                                <p>7094, Peachtree industrial Blvd., Suite 270 Norcross, GA 30071, USA
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 d-flex justify-content-end justify-end">
-                                            <div class="item">
-                                                <span class="sub-color">Contact</span>
-                                                <p>info@krossark.com</p>
-                                                <!-- <p>+1 202-361-2345</p>
-                                                <p>+91 95000 60444</p> -->
-                                            </div>
-                                        </div>
+
+                                <div class="col-lg-3">
+                                    <div class="item">
+                                        <span class="sub-color">location</span>
+                                        <p>7094, Peachtree industrial Blvd., Suite 270 Norcross, GA 30071, USA</p>
                                     </div>
                                 </div>
-                                <!-- <div class="col-lg-6 offset-lg-5">
+                                <div class="col-lg-3">
+                                    <div class="item">
+                                        <span class="sub-color">Contact</span>
+                                        <p>info@krossark.com</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
                                     <div class="social-icon">
-                                        <a href="https://www.linkedin.com/company/fetchh-llp/">
-                                            <i class="fa-brands fa-linkedin-in"></i>
+                                        <a href="#0">
+                                            <i class="fa-brands fa-x-twitter"></i>
                                         </a>
-                                        <a href="https://www.facebook.com/Krossarkconsultingservices/">
+                                        <a href="#0">
+                                            <i class="fa-brands fa-instagram"></i>
+                                        </a>
+                                        <a href="#0">
                                             <i class="fa-brands fa-facebook"></i>
                                         </a>
-                                        <a href="https://youtu.be/37XuQxaPnDs">
+                                        <a href="#0">
                                             <i class="fa-brands fa-youtube"></i>
                                         </a>
                                         <a href="#0">
-                                            <i class="fa-brands fa-twitter"></i>
+                                            <i class="fa-brands fa-linkedin-in"></i>
                                         </a>
                                     </div>
-                                </div> -->
+                                </div>
+
                             </div>
                         </div>
                     </div>
+
                     <div class="sub-footer">
                         <div class="container bord-thin-top-light pt-50">
                             <div class="row">
                                 <div class="col-lg-8">
                                     <div class="copy sub-color md-mb30">
-                                        <p>© 2025 All Right Reserved <a href="#0">Krossark inc</a>. </p>
+                                        <p>© 2025 All Right Reserved <a href="#0">Krossark inc</a>. <span
+                                                class="ml-30">Power by AI</span> </p>
                                     </div>
                                 </div>
+
                                 <div class="col-lg-4 d-flex justify-content-end">
                                     <div class="links sub-color d-flex justify-content-between">
-                                        <a href="../index.html">Home</a>
+                                        <a href="../index.html">Industries</a>
                                         <a href="tech_service.html">Services</a>
-                                        <a href="waro.html">Product</a>
+                                        <a href="waro.html">Products</a>
+                                        <a href="waro.html">Our Work</a>
                                         <a href="about.html">About us</a>
                                     </div>
                                 </div>
