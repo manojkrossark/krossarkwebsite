@@ -1,602 +1,710 @@
 <!DOCTYPE html>
 <html lang="zxx">
-
-<head>
-
+  <head>
     <!-- Metas -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
     <!-- <meta name="keywords" content="HTML5 Template Krossark Multi-Purpose ">
     <meta name="description" content="Krossark - Multi-Purpose HTML5 Template"> -->
-    <meta name="author" content="">
+    <meta name="author" content="" />
 
     <!-- Title  -->
     <title>Krossark Consulting Services</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/imgs/favicon.png">
+    <link rel="shortcut icon" href="assets/imgs/favicon.png" />
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Plugins -->
-    <link rel="stylesheet" href="../common/css/plugins.css">
+    <link rel="stylesheet" href="../common/css/plugins.css" />
 
     <!-- Core Style Css -->
-    <link rel="stylesheet" href="../common/css/common_style.css">
-    <link rel="stylesheet" href="assets/css/inner_pages.css">
-    <link rel="stylesheet" href="assets/css/home7-style.css">
+    <link rel="stylesheet" href="../common/css/common_style.css" />
+    <link rel="stylesheet" href="assets/css/inner_pages.css" />
+    <link rel="stylesheet" href="assets/css/home7-style.css" />
+    <link rel="stylesheet" href="assets/css/header.css" />
+  </head>
 
-</head>
-
-<body>
-
-
-
+  <body>
     <!-- ==================== Start Loading ==================== -->
 
     <div class="loader-wrap">
-        <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
-            <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
-        </svg>
+      <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+        <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+      </svg>
 
-        <div class="loader-wrap-heading">
-            <div class="load-text">
-                <span>K</span>
-                <span>R</span>
-                <span>O</span>
-                <span>S</span>
-                <span>S</span>
-                <span>A</span>
-                <span>R</span>
-                <span>K</span>
-            </div>
+      <div class="loader-wrap-heading">
+        <div class="load-text">
+          <span>K</span>
+          <span>R</span>
+          <span>O</span>
+          <span>S</span>
+          <span>S</span>
+          <span>A</span>
+          <span>R</span>
+          <span>K</span>
         </div>
+      </div>
     </div>
 
     <!-- ==================== End Loading ==================== -->
 
-
     <div class="cursor"></div>
-
 
     <!-- ==================== Start progress-scroll-button ==================== -->
 
     <div class="progress-wrap cursor-pointer">
-        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-        </svg>
+      <svg
+        class="progress-circle svg-content"
+        width="100%"
+        height="100%"
+        viewBox="-1 -1 102 102"
+      >
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
     </div>
 
     <!-- ==================== End progress-scroll-button ==================== -->
 
-
-
     <!-- ==================== Start Navbar ==================== -->
 
     <nav class="navbar navbar-expand-lg">
-        <div class="container">
+      <div class="container-fluid">
+        <!-- Logo -->
+        <a class="logo" href="../index.html">
+          <img src="assets/imgs/Krossark_logo.svg" alt="logo" />
+        </a>
 
-            <!-- Logo -->
-            <a href="../index.html" class="logo">
-                <img src="assets/imgs/Krossark_logo.png" alt="logo">
-            </a>
+        <!-- navbar links -->
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Industries</a>
+            </li>
 
-            <!-- navbar links -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="about.html">About us</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdownServices" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownServices">
-                            <a class="dropdown-item active" href="tech_service.html">Tech Service</a>
-                            <a class="dropdown-item" href="marketing.html">Marketing Service</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="waro.html">Waro</a>
-                            <a class="dropdown-item" href="alto.html">Alto</a>
-                            <a class="dropdown-item" href="fetchh.html">Fetchh</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="our_work.html">Our Work</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="topnav d-flex align-items-center">
-                <a href="tech_service.html" class="butn butn-rounded">
-                    <div class="d-flex align-items-center">
-                        <span>Start Project</span>
-                        <span class="icon ml-10">
-                            <img src="../common/imgs/icons/arrow-top-right.svg" alt="">
-                        </span>
-                    </div>
-                </a>
-                <div class="menu-icon cursor-pointer">
-                    <span class="icon ti-align-right"></span>
-                </div>
-            </div>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownServices"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >Services</a
+              >
+              <div
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdownServices"
+              >
+                <a class="dropdown-item" href="tech_service.html"
+                  >Tech Service</a
+                >
+                <a class="dropdown-item" href="marketing.html"
+                  >Marketing Service</a
+                >
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >Products</a
+              >
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="waro.html">Waro</a>
+                <a class="dropdown-item" href="alto.html">Alto</a>
+                <a class="dropdown-item" href="fetchh.html">Fetchh</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="our_work.html">Our Work</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">about us</a>
+            </li>
+          </ul>
         </div>
+
+        <div class="topnav d-flex align-items-center">
+          <a href="tech_service.html" class="butn butn-rounded">
+            <div class="d-flex align-items-center">
+              <span>Contact US</span>
+              <span class="icon ml-10 right-icon">
+                <img src="../common/imgs/icons/arrow-top-right.svg" alt="" />
+              </span>
+            </div>
+          </a>
+
+          <div class="position-relative mr-15 search-division">
+            <input
+              id="search"
+              type="search"
+              name="search"
+              placeholder="SEARCH"
+              class="search"
+            />
+            <i class="fa fa-search"></i>
+          </div>
+          <span class="star-icon">
+            <img src="assets/imgs/star.png" alt="" />
+          </span>
+          <div class="menu-icon cursor-pointer">
+            <span class="icon ti-align-right"></span>
+          </div>
+        </div>
+      </div>
     </nav>
 
     <div class="hamenu">
-        <div class="close-menu cursor-pointer ti-close"></div>
-        <div class="container-fluid rest d-flex">
-            <div class="menu-links">
-                <ul class="main-menu rest">
-                    <li>
-                        <div class="o-hidden">
-                            <a href="../index.html" class="link"><span class="fill-text"
-                                    data-text="Home">Home</span></a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="o-hidden">
-                            <a href="about.html" class="link"><span class="fill-text" data-text="About Us">About
-                                    Us</span></a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="o-hidden">
-                            <div class="link cursor-pointer dmenu"><span class="fill-text"
-                                    data-text="Services">Services</span>
-                                <i></i>
-                            </div>
-                        </div>
-                        <div class="sub-menu">
-                            <ul>
-                                <li><a href="tech_service.html">Tech Service</a></li>
-                                <li><a href="marketing.html">Marketing Service</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="o-hidden">
-                            <div class="link cursor-pointer dmenu"><span class="fill-text"
-                                    data-text="Product">Products</span>
-                                <i></i>
-                            </div>
-                        </div>
-                        <div class="sub-menu">
-                            <ul>
-                                <li>
-                                    <a href="waro.html" class="sub-link">Waro</a>
-                                </li>
-                                <li>
-                                    <a href="alto.html" class="sub-link">Alto</a>
-                                </li>
-                                <li>
-                                    <a href="fetchh.html" class="sub-link">Fetchh</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="o-hidden">
-                            <a href="our_work.html" class="link"><span class="fill-text" data-text="Our Work">Our
-                                    Work</span></a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="o-hidden">
-                            <a href="contact.html" class="link"><span class="fill-text" data-text="Contact Us">Contact
-                                    Us</span></a>
-                        </div>
-                    </li>
+      <div class="close-menu cursor-pointer ti-close"></div>
+      <div class="container-fluid rest d-flex">
+        <div class="menu-links">
+          <ul class="main-menu rest">
+            <li>
+              <div class="o-hidden">
+                <a href="../index.html" class="link"
+                  ><span class="fill-text" data-text="Home">Home</span></a
+                >
+              </div>
+            </li>
+            <li>
+              <div class="o-hidden">
+                <a href="about.html" class="link"
+                  ><span class="fill-text" data-text="About Us"
+                    >About Us</span
+                  ></a
+                >
+              </div>
+            </li>
+            <li>
+              <div class="o-hidden">
+                <div class="link cursor-pointer dmenu">
+                  <span class="fill-text" data-text="Services">Services</span>
+                  <i></i>
+                </div>
+              </div>
+              <div class="sub-menu">
+                <ul>
+                  <li><a href="tech_service.html">Tech Service</a></li>
+                  <li><a href="marketing.html">Marketing Service</a></li>
                 </ul>
+              </div>
+            </li>
+            <li>
+              <div class="o-hidden">
+                <div class="link cursor-pointer dmenu">
+                  <span class="fill-text" data-text="Product">Products</span>
+                  <i></i>
+                </div>
+              </div>
+              <div class="sub-menu">
+                <ul>
+                  <li>
+                    <a href="waro.html" class="sub-link">Waro</a>
+                  </li>
+                  <li>
+                    <a href="alto.html" class="sub-link">Alto</a>
+                  </li>
+                  <li>
+                    <a href="fetchh.html" class="sub-link">Fetchh</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="o-hidden">
+                <a href="our_work.html" class="link"
+                  ><span class="fill-text" data-text="Our Work"
+                    >Our Work</span
+                  ></a
+                >
+              </div>
+            </li>
+            <li>
+              <div class="o-hidden">
+                <a href="contact.html" class="link"
+                  ><span class="fill-text" data-text="Contact Us"
+                    >Contact Us</span
+                  ></a
+                >
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="cont-info valign">
+          <div class="text-center full-width">
+            <div class="logo">
+              <img src="../common/imgs/Krossark_logo.png" alt="" />
             </div>
-            <div class="cont-info valign">
-                <div class="text-center full-width">
-                    <div class="logo">
-                        <img src="../common/imgs/Krossark_logo.png" alt="">
-                    </div>
-                    <!-- <div class="social-icon mt-40">
+            <!-- <div class="social-icon mt-40">
                         <a href="#"> <i class="fab fa-facebook-f"></i> </a>
                         <a href="#"> <i class="fab fa-x-twitter"></i> </a>
                         <a href="#"> <i class="fab fa-linkedin-in"></i> </a>
                         <a href="#"> <i class="fab fa-instagram"></i> </a>
                     </div> -->
-                    <div class="item mt-30">
-                        <h5>7094, Peachtree industrial Blvd., Suite 270 <br> Norcross, GA 30071, USA </h5>
-                    </div>
-                    <div class="item mt-10">
-                        <h5><a href="#0">info@krossark.com</a></h5>
-                       <!-- <h5 class="underline"><a href="#0">+1 202-361-2345</a></h5>
-                        <h5 class="underline"><a href="#0">+91 95000 60444</a></h5> -->
-                    </div>
-                </div>
+            <div class="item mt-30">
+              <h5>
+                7094, Peachtree industrial Blvd., Suite 270 <br />
+                Norcross, GA 30071, USA
+              </h5>
             </div>
+            <div class="item mt-10">
+              <h5><a href="#0">info@krossark.com</a></h5>
+              <!-- <h5 class="underline"><a href="#0">+1 202-361-2345</a></h5>
+                        <h5 class="underline"><a href="#0">+91 95000 60444</a></h5> -->
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- ==================== End Navbar ==================== -->
 
     <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <main>
+          <!-- ==================== Start Header ==================== -->
 
-
-        <div id="smooth-content">
-
-            <main>
-
-                <!-- ==================== Start Header ==================== -->
-
-                <header class="header-dm section-padding">
-                    <div class="container-xl position-re">
-                        <div class="row">
-                            <div class="col-lg-9">
-                                <div class="caption">
-                                    <h1>Audit Services<br> for fast growth</h1>
-                                </div>
-                                <div class="row md-hide">
-                                    <div class="col-lg-6 imgs-cube">
-                                        <div class="imgs">
-                                            <div class="circle">
-                                                <!-- <img src="assets/imgs/header/circle-badge.svg" alt=""> -->
-                                            </div>
-                                        </div>
-                                        <div class="img fit-img radius-30 mt-50">
-                                            <img src="assets/imgs/header/1.jpg" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+          <header class="header-dm section-padding">
+            <div class="container-xl position-re">
+              <div class="row">
+                <div class="col-lg-9">
+                  <div class="caption">
+                    <h1>
+                      Audit Services<br />
+                      for fast growth
+                    </h1>
+                  </div>
+                  <div class="row md-hide">
+                    <div class="col-lg-6 imgs-cube">
+                      <div class="imgs">
+                        <div class="circle">
+                          <!-- <img src="assets/imgs/header/circle-badge.svg" alt=""> -->
                         </div>
-                        <div class="mimg fit-img">
-                            <div class="shaps top">
-                                <div class="shap-right-top">
-                                    <svg viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                        class="w-11 h-11">
-                                        <path
-                                            d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
-                                            fill="#0e0f11"></path>
-                                    </svg>
-                                </div>
-                                <div class="shap-left-bottom">
-                                    <svg viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                        class="w-11 h-11">
-                                        <path
-                                            d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
-                                            fill="#0e0f11"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                            <img src="assets/imgs/header/app.jpg" alt="">
-                            <div class="text">
-                                <span class="fz-12 text-u mb-10">Since <br> 2011</span>
-                                <p>Expert guidance and solutions to drive <br />business growth and efficiency.<br>
-                                </p>
-                                <div class="shaps bottom">
-                                    <div class="shap-left-top">
-                                        <svg viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                            class="w-11 h-11">
-                                            <path
-                                                d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
-                                                fill="#0e0f11"></path>
-                                        </svg>
-                                    </div>
-                                    <div class="shap-right-bottom">
-                                        <svg viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                            class="w-11 h-11">
-                                            <path
-                                                d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
-                                                fill="#0e0f11"></path>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                      </div>
+                      <div class="img fit-img radius-30 mt-50">
+                        <img src="assets/imgs/header/1.jpg" alt="" />
+                      </div>
                     </div>
-                </header>
-
-                <section class="intro-ma section-padding">
-                    <div class="container">
-                        <div class="sec-head mb-100">
-                            <div class="row">
-                                <div class="col-lg-5 sub-head md-mb15">
-                                    <h6 class="text-u fz-14 ls1">the blend of simplicity and innovation</h6>
-                                </div>
-                                <div class="col-lg-7">
-                                    <h3><span class="sub-color">Welcome to Krossark</span> — IT departments face complex
-                                        pressures, with reliable assessments depending on skilled IT auditors for
-                                        control and integrity.</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row justify-content-between ">
-                            <div class="col-lg-12">
-                                <div class="main-post">
-                                    <div class="item pb-60">
-                                        <article>
-                                            <div class="mb-50 mt-50">
-                                                <div class="row">
-                                                    <div class="col-sm-6">
-                                                        <div class="iner-img sm-mb30">
-                                                            <img src="assets/imgs/blogs/8.jpg" alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <div class="iner-img">
-                                                            <img src="assets/imgs/blogs/9.jpg" alt="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="text">
-                                                <p><span class="spec-letter">A</span> The expert audit team evolved at
-                                                    Krossark deftly identifies the risks that currently exist in an
-                                                    organization’s computerized environment, and offer appropriate
-                                                    solutions and recommendations to meticulously manage such risks
-                                                    effectively and efficiently.</p>
-                                            </div>
-                                            <div class="text">
-                                                <p>Auditors at Krossark analyze and advise organizations on how to
-                                                    accomplish their objectives by assessing the operations,
-                                                    performance, and internal controls; by assessing whether procedures
-                                                    and methods that are adopted are in total compliance to the
-                                                    envisioned polices; and by also assessing if the practices chosen to
-                                                    be implemented are in tandem to the organization’s goals and
-                                                    objectives.
-                                                </p>
-                                            </div>
-                                            <div class="title mt-30">
-                                                <h4>Application Audit</h4>
-                                            </div>
-                                            <div class="text mt-20">
-                                                <p>An application audit, as the name suggests, is the specific audit of
-                                                    one particular application. It comprises the evaluation of
-                                                    performance, scalability, or security of an application. This
-                                                    service involves auditing applications against a series of
-                                                    time-tested benchmarks and criteria, eventually providing a detailed
-                                                    written report of audit findings with viable solutions for issues
-                                                    identified.
-                                                </p>
-                                            </div>
-                                        </article>
-
-                                        <div class="post-qoute mt-50">
-                                            <h6 class="fz-20">
-                                                <span class="l-block">As the name purports, a security audit is an
-                                                    overall technical assessment indicating how the security features
-                                                    have been incorporated and adherence to security procedures within
-                                                    an organization. This service tests and determines the efficiency of
-                                                    existing security parameters; acts as a watchdog for system misuse
-                                                    and abuse by users; ascertains compliance with current security
-                                                    norms; and validates set procedures and intrusions detection.</span>
-                                                <span class="author mt-20 mb-0"> - Audit Services</span>
-                                            </h6>
-                                        </div>
-
-                                      
-
-                                        <div class="title mb-10 mt-50">
-                                            <h4>Project Management
-                                            </h4>
-                                        </div>
-
-                                        <div class="text mb-20">
-                                            <p>Efficient and effective project management is the key to any successful
-                                                project delivery confined to the scope, time, and budget constraints. In
-                                                the absence of constant and consistent supervision and coordination of
-                                                every detail within each phase of process implementation, a project is
-                                                very likely to be unsuccessful. In the face of such intense competition,
-                                                Krossark presents its client with a systematic and methodical approach,
-                                                irrespective of size, duration, and complexity, to identify, manage, and
-                                                tackle the risks inherent in an organization and propel toward
-                                                successful completion and delivery of a project.</p>
-                                        </div>
-                                        <div class="author-area mt-50 mb-50 bord-thin-bottom">
-                                            <div class="flex">
-
-                                                <div class="cont valign">
-                                                    <div class="full-width">
-                                                        <h6 class="fw-600 mb-10">Security Audit</h6>
-                                                        <p>Krossark recommends a variety of services that are applicable
-                                                            to the security domain. They are enumerated as follows:</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="awards-sa mt-50">
-                                            
-                                            <div class="item-line row">
-                                                <div class="col-md-9">
-                                                    
-                                                    <div class="project-title">
-                                                        <h6>Penetration Testing</h6>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="project-date">
-                                                        <span>Nov 2021</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item-line row">
-                                                <div class="col-md-9">
-                                                    
-                                                    <div class="project-title">
-                                                        <h6>ISO 27001</h6>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="project-date">
-                                                        <span>Nov 2022</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item-line row">
-                                                <div class="col-md-9">
-                                                    
-                                                    <div class="project-title">
-                                                        <h6>ISO 27001 Readiness Assessments</h6>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="project-date">
-                                                        <span>Nov 2023</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item-line row">
-                                                <div class="col-md-9">
-                                                    
-                                                    <div class="project-title">
-                                                        <h6>Network Vulnerability Assessment</h6>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="project-date">
-                                                        <span>Aug 2024</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="title mb-10 mt-50">
-                                            <h4>Strategic Technology Planning
-                                            </h4>
-                                        </div>
-                                        <div class="order-list mb-30">
-
-                                            <ul class="rest">
-                                                <li><span>01 -</span> Organizations need to define their sole purpose
-                                                    and direction of their existence. Strategic planning plays a vital
-                                                    role in this area where organizations make decisions on allocating
-                                                    resources to pursue the objectives of the undertaking.
-                                                </li>
-                                                <li><span>02 -</span> It also involves how information technology at its
-                                                    best would support IT-enabled investment programs, IT services, and
-                                                    IT assets. A comprehensive strategic IT plan would take into
-                                                    consideration investment/operational budget, funding sources,
-                                                    sourcing and acquisition strategy, and legal and regulatory
-                                                    propositions.
-                                                </li>
-                                            </ul>
-                                        </div>
-
-
-                                        <div class="text">
-                                            <p>However, Apple might not include it in the Air series when it
-                                                launches
-                                                it. As for
-                                                the notebook’s release date, the 15-inch MacBook isn’t
-                                                coming
-                                                soon.
-                                                It’ll get a
-                                                late 2023 release at best, according to the new claims.</p>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                            </div>
-                        </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mimg fit-img">
+                <div class="shaps top">
+                  <div class="shap-right-top">
+                    <svg
+                      viewBox="0 0 11 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-11 h-11"
+                    >
+                      <path
+                        d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
+                        fill="#0e0f11"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="shap-left-bottom">
+                    <svg
+                      viewBox="0 0 11 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-11 h-11"
+                    >
+                      <path
+                        d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
+                        fill="#0e0f11"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+                <img src="assets/imgs/header/app.jpg" alt="" />
+                <div class="text">
+                  <span class="fz-12 text-u mb-10"
+                    >Since <br />
+                    2011</span
+                  >
+                  <p>
+                    Expert guidance and solutions to drive <br />business growth
+                    and efficiency.<br />
+                  </p>
+                  <div class="shaps bottom">
+                    <div class="shap-left-top">
+                      <svg
+                        viewBox="0 0 11 11"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-11 h-11"
+                      >
+                        <path
+                          d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
+                          fill="#0e0f11"
+                        ></path>
+                      </svg>
                     </div>
-                </section>
-
-                <!-- ==================== End Header ==================== -->
-
-
-                <!-- ==================== Start Footer ==================== -->
-
-                <footer class="footer-sa pb-60">
-                    <div class="container section-padding bord-thin-top-light">
-                        <div class="call-action text-center mb-80">
-                            <h2 class="">
-                                <a href="#0">Let's Make <br> Something Great!</a>
-                                <div class="buton d-flex align-items-center justify-content-center">
-                                    <a href="contact.html">
-                                        <span class="mb-10">Contact</span> <br> <span>Us <img
-                                                src="../common/imgs/icons/arrow-top-right.svg" alt=""></span>
-                                    </a>
-                                </div>
-                            </h2>
-                        </div>
-                        <div class="contact-info">
-                            <div class="row">
-                                <div class="col-lg-5">
-                                    <a href="../index.html" class="logo md-mb50">
-                                        <img src="assets/imgs/Krossark_logo.png" alt="">
-                                    </a>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="item">
-                                                <span class="sub-color">location</span>
-                                                <p>7094, Peachtree industrial Blvd., Suite 270 Norcross, GA 30071, USA
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 d-flex justify-content-end justify-end">
-                                            <div class="item">
-                                                <span class="sub-color">Contact</span>
-                                                <p>info@krossark.com</p>
-                                                <!-- <p>+1 202-361-2345</p>
-                                                <p>+91 95000 60444</p> -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- <div class="col-lg-6 offset-lg-5">
-                                    <div class="social-icon">
-                                        <a href="https://www.linkedin.com/company/fetchh-llp/">
-                                            <i class="fa-brands fa-linkedin-in"></i>
-                                        </a>
-                                        <a href="https://www.facebook.com/Krossarkconsultingservices/">
-                                            <i class="fa-brands fa-facebook"></i>
-                                        </a>
-                                        <a href="https://youtu.be/37XuQxaPnDs">
-                                            <i class="fa-brands fa-youtube"></i>
-                                        </a>
-                                        <a href="#0">
-                                            <i class="fa-brands fa-twitter"></i>
-                                        </a>
-                                    </div>
-                                </div> -->
-                            </div>
-                        </div>
+                    <div class="shap-right-bottom">
+                      <svg
+                        viewBox="0 0 11 11"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-11 h-11"
+                      >
+                        <path
+                          d="M11 1.54972e-06L0 0L2.38419e-07 11C1.65973e-07 4.92487 4.92487 1.62217e-06 11 1.54972e-06Z"
+                          fill="#0e0f11"
+                        ></path>
+                      </svg>
                     </div>
-                    <div class="sub-footer">
-                        <div class="container bord-thin-top-light pt-50">
-                            <div class="row">
-                                <div class="col-lg-8">
-                                    <div class="copy sub-color md-mb30">
-                                        <p>© 2025 All Right Reserved <a href="#0">Krossark inc</a>. </p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 d-flex justify-content-end">
-                                    <div class="links sub-color d-flex justify-content-between">
-                                        <a href="../index.html">Home</a>
-                                        <a href="tech_service.html">Services</a>
-                                        <a href="waro.html">Product</a>
-                                        <a href="about.html">About us</a>
-                                    </div>
-                                </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </header>
+
+          <section class="intro-ma section-padding">
+            <div class="container">
+              <div class="sec-head mb-100">
+                <div class="row">
+                  <div class="col-lg-5 sub-head md-mb15">
+                    <h6 class="text-u fz-14 ls1">
+                      the blend of simplicity and innovation
+                    </h6>
+                  </div>
+                  <div class="col-lg-7">
+                    <h3>
+                      <span class="sub-color">Welcome to Krossark</span> — IT
+                      departments face complex pressures, with reliable
+                      assessments depending on skilled IT auditors for control
+                      and integrity.
+                    </h3>
+                  </div>
+                </div>
+              </div>
+              <div class="row justify-content-between">
+                <div class="col-lg-12">
+                  <div class="main-post">
+                    <div class="item pb-60">
+                      <article>
+                        <div class="mb-50 mt-50">
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="iner-img sm-mb30">
+                                <img src="assets/imgs/blogs/8.jpg" alt="" />
+                              </div>
                             </div>
+                            <div class="col-sm-6">
+                              <div class="iner-img">
+                                <img src="assets/imgs/blogs/9.jpg" alt="" />
+                              </div>
+                            </div>
+                          </div>
                         </div>
+                        <div class="text">
+                          <p>
+                            <span class="spec-letter">A</span> The expert audit
+                            team evolved at Krossark deftly identifies the risks
+                            that currently exist in an organization’s
+                            computerized environment, and offer appropriate
+                            solutions and recommendations to meticulously manage
+                            such risks effectively and efficiently.
+                          </p>
+                        </div>
+                        <div class="text">
+                          <p>
+                            Auditors at Krossark analyze and advise
+                            organizations on how to accomplish their objectives
+                            by assessing the operations, performance, and
+                            internal controls; by assessing whether procedures
+                            and methods that are adopted are in total compliance
+                            to the envisioned polices; and by also assessing if
+                            the practices chosen to be implemented are in tandem
+                            to the organization’s goals and objectives.
+                          </p>
+                        </div>
+                        <div class="title mt-30">
+                          <h4>Application Audit</h4>
+                        </div>
+                        <div class="text mt-20">
+                          <p>
+                            An application audit, as the name suggests, is the
+                            specific audit of one particular application. It
+                            comprises the evaluation of performance,
+                            scalability, or security of an application. This
+                            service involves auditing applications against a
+                            series of time-tested benchmarks and criteria,
+                            eventually providing a detailed written report of
+                            audit findings with viable solutions for issues
+                            identified.
+                          </p>
+                        </div>
+                      </article>
+
+                      <div class="post-qoute mt-50">
+                        <h6 class="fz-20">
+                          <span class="l-block"
+                            >As the name purports, a security audit is an
+                            overall technical assessment indicating how the
+                            security features have been incorporated and
+                            adherence to security procedures within an
+                            organization. This service tests and determines the
+                            efficiency of existing security parameters; acts as
+                            a watchdog for system misuse and abuse by users;
+                            ascertains compliance with current security norms;
+                            and validates set procedures and intrusions
+                            detection.</span
+                          >
+                          <span class="author mt-20 mb-0">
+                            - Audit Services</span
+                          >
+                        </h6>
+                      </div>
+
+                      <div class="title mb-10 mt-50">
+                        <h4>Project Management</h4>
+                      </div>
+
+                      <div class="text mb-20">
+                        <p>
+                          Efficient and effective project management is the key
+                          to any successful project delivery confined to the
+                          scope, time, and budget constraints. In the absence of
+                          constant and consistent supervision and coordination
+                          of every detail within each phase of process
+                          implementation, a project is very likely to be
+                          unsuccessful. In the face of such intense competition,
+                          Krossark presents its client with a systematic and
+                          methodical approach, irrespective of size, duration,
+                          and complexity, to identify, manage, and tackle the
+                          risks inherent in an organization and propel toward
+                          successful completion and delivery of a project.
+                        </p>
+                      </div>
+                      <div class="author-area mt-50 mb-50 bord-thin-bottom">
+                        <div class="flex">
+                          <div class="cont valign">
+                            <div class="full-width">
+                              <h6 class="fw-600 mb-10">Security Audit</h6>
+                              <p>
+                                Krossark recommends a variety of services that
+                                are applicable to the security domain. They are
+                                enumerated as follows:
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="awards-sa mt-50">
+                        <div class="item-line row">
+                          <div class="col-md-9">
+                            <div class="project-title">
+                              <h6>Penetration Testing</h6>
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="project-date">
+                              <span>Nov 2021</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="item-line row">
+                          <div class="col-md-9">
+                            <div class="project-title">
+                              <h6>ISO 27001</h6>
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="project-date">
+                              <span>Nov 2022</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="item-line row">
+                          <div class="col-md-9">
+                            <div class="project-title">
+                              <h6>ISO 27001 Readiness Assessments</h6>
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="project-date">
+                              <span>Nov 2023</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="item-line row">
+                          <div class="col-md-9">
+                            <div class="project-title">
+                              <h6>Network Vulnerability Assessment</h6>
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="project-date">
+                              <span>Aug 2024</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="title mb-10 mt-50">
+                        <h4>Strategic Technology Planning</h4>
+                      </div>
+                      <div class="order-list mb-30">
+                        <ul class="rest">
+                          <li>
+                            <span>01 -</span> Organizations need to define their
+                            sole purpose and direction of their existence.
+                            Strategic planning plays a vital role in this area
+                            where organizations make decisions on allocating
+                            resources to pursue the objectives of the
+                            undertaking.
+                          </li>
+                          <li>
+                            <span>02 -</span> It also involves how information
+                            technology at its best would support IT-enabled
+                            investment programs, IT services, and IT assets. A
+                            comprehensive strategic IT plan would take into
+                            consideration investment/operational budget, funding
+                            sources, sourcing and acquisition strategy, and
+                            legal and regulatory propositions.
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div class="text">
+                        <p>
+                          However, Apple might not include it in the Air series
+                          when it launches it. As for the notebook’s release
+                          date, the 15-inch MacBook isn’t coming soon. It’ll get
+                          a late 2023 release at best, according to the new
+                          claims.
+                        </p>
+                      </div>
                     </div>
-                </footer>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
 
-                <!-- ==================== End Footer ==================== -->
-            </main>
+          <!-- ==================== End Header ==================== -->
 
-        </div>
+          <!-- ==================== Start Footer ==================== -->
 
+          <footer class="footer-sa pb-80">
+            <div class="container section-padding bord-thin-top-light">
+              <div class="call-action text-center mb-120">
+                <h2 class="">
+                  <a href="#0"
+                    >Let's Make <br />
+                    Something Great!</a
+                  >
+                  <div
+                    class="buton d-flex align-items-center justify-content-center"
+                  >
+                    <a href="#0">
+                      <span class="mb-10">Contact</span> <br />
+                      <span
+                        >Us
+                        <img
+                          src="../common/imgs/icons/arrow-top-right.svg"
+                          alt=""
+                      /></span>
+                    </a>
+                  </div>
+                </h2>
+              </div>
+              <div class="contact-info">
+                <div class="row">
+                  <div class="col-lg-3">
+                    <a href="#" class="logo md-mb50">
+                      <img src="assets/imgs/Krossark_logo.svg" alt="" />
+                    </a>
+                  </div>
+
+                  <div class="col-lg-3">
+                    <div class="item">
+                      <span class="sub-color">location</span>
+                      <p>
+                        7094, Peachtree industrial Blvd., Suite 270 Norcross, GA
+                        30071, USA
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-lg-3">
+                    <div class="item">
+                      <span class="sub-color">Contact</span>
+                      <p>info@krossark.com</p>
+                    </div>
+                  </div>
+                  <div class="col-lg-3">
+                    <div class="social-icon">
+                      <a href="#0">
+                        <i class="fa-brands fa-x-twitter"></i>
+                      </a>
+                      <a href="#0">
+                        <i class="fa-brands fa-instagram"></i>
+                      </a>
+                      <a href="#0">
+                        <i class="fa-brands fa-facebook"></i>
+                      </a>
+                      <a href="#0">
+                        <i class="fa-brands fa-youtube"></i>
+                      </a>
+                      <a href="#0">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sub-footer">
+              <div class="container bord-thin-top-light pt-50">
+                <div class="row">
+                  <div class="col-lg-8">
+                    <div class="copy sub-color md-mb30">
+                      <p>
+                        © 2025 All Right Reserved <a href="#0">Krossark inc</a>.
+                        <span class="ml-30">Powered by AI</span>
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-4 d-flex justify-content-end">
+                    <div class="links sub-color d-flex justify-content-between">
+                      <a href="../index.html">Industries</a>
+                      <a href="tech_service.html">Services</a>
+                      <a href="waro.html">Products</a>
+                      <a href="waro.html">Our Work</a>
+                      <a href="about.html">About us</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
+
+          <!-- ==================== End Footer ==================== -->
+        </main>
+      </div>
     </div>
 
     <!-- jQuery -->
@@ -617,7 +725,5 @@
 
     <!-- custom scripts -->
     <script src="assets/js/inner_pages.js"></script>
-
-</body>
-
+  </body>
 </html>

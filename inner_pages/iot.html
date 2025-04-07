@@ -1,72 +1,79 @@
 <!DOCTYPE html>
 <html lang="zxx">
-
-<head>
-
+  <head>
     <!-- Metas -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
     <!-- <meta name="keywords" content="HTML5 Template Krossark Multi-Purpose ">
     <meta name="description" content="Krossark - Multi-Purpose HTML5 Template"> -->
-    <meta name="author" content="">
+    <meta name="author" content="" />
 
     <!-- Title  -->
     <title>Krossark Consulting Services</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/imgs/favicon.png">
+    <link rel="shortcut icon" href="assets/imgs/favicon.png" />
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Six+Caps&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Six+Caps&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Plugins -->
-    <link rel="stylesheet" href="../common/css/plugins.css">
+    <link rel="stylesheet" href="../common/css/plugins.css" />
 
     <!-- Core Style Css -->
-    <link rel="stylesheet" href="../common/css/common_style.css">
-    <link rel="stylesheet" href="assets/css/inner_pages.css">
+    <link rel="stylesheet" href="../common/css/common_style.css" />
+    <link rel="stylesheet" href="assets/css/inner_pages.css" />
+    <link rel="stylesheet" href="assets/css/header.css" />
+  </head>
 
-</head>
-
-<body>
-
-
-
+  <body>
     <!-- ==================== Start Loading ==================== -->
 
     <div class="loader-wrap">
-        <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
-            <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
-        </svg>
+      <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+        <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+      </svg>
 
-        <div class="loader-wrap-heading">
-            <div class="load-text">
-                <span>K</span>
-                <span>R</span>
-                <span>O</span>
-                <span>S</span>
-                <span>S</span>
-                <span>A</span>
-                <span>R</span>
-                <span>K</span>
-            </div>
+      <div class="loader-wrap-heading">
+        <div class="load-text">
+          <span>K</span>
+          <span>R</span>
+          <span>O</span>
+          <span>S</span>
+          <span>S</span>
+          <span>A</span>
+          <span>R</span>
+          <span>K</span>
         </div>
+      </div>
     </div>
 
     <!-- ==================== End Loading ==================== -->
 
-
     <div class="cursor"></div>
-
 
     <!-- ==================== Start progress-scroll-button ==================== -->
 
     <div class="progress-wrap cursor-pointer">
-        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-        </svg>
+      <svg
+        class="progress-circle svg-content"
+        width="100%"
+        height="100%"
+        viewBox="-1 -1 102 102"
+      >
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
     </div>
 
     <!-- ==================== End progress-scroll-button ==================== -->
@@ -74,173 +81,225 @@
     <!-- ==================== Start Navbar ==================== -->
 
     <nav class="navbar navbar-expand-lg">
-        <div class="container">
+      <div class="container-fluid">
+        <!-- Logo -->
+        <a class="logo" href="../index.html">
+          <img src="assets/imgs/Krossark_logo.svg" alt="logo" />
+        </a>
 
-            <!-- Logo -->
-            <a href="../index.html" class="logo">
-                <img src="assets/imgs/Krossark_logo.png" alt="logo">
-            </a>
+        <!-- navbar links -->
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Industries</a>
+            </li>
 
-            <!-- navbar links -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="about.html">About us</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownServices" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownServices">
-                            <a class="dropdown-item" href="tech_service.html">Tech Service</a>
-                            <a class="dropdown-item" href="marketing.html">Marketing Service</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="waro.html">Waro</a>
-                            <a class="dropdown-item" href="alto.html">Alto</a>
-                            <a class="dropdown-item" href="fetchh.html">Fetchh</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="our_work.html">Our Work</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="topnav d-flex align-items-center">
-                <a href="tech_service.html" class="butn butn-rounded">
-                    <div class="d-flex align-items-center">
-                        <span>Start Project</span>
-                        <span class="icon ml-10">
-                            <img src="../common/imgs/icons/arrow-top-right.svg" alt="">
-                        </span>
-                    </div>
-                </a>
-                <div class="menu-icon cursor-pointer">
-                    <span class="icon ti-align-right"></span>
-                </div>
-            </div>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownServices"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >Services</a
+              >
+              <div
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdownServices"
+              >
+                <a class="dropdown-item" href="tech_service.html"
+                  >Tech Service</a
+                >
+                <a class="dropdown-item" href="marketing.html"
+                  >Marketing Service</a
+                >
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >Products</a
+              >
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="waro.html">Waro</a>
+                <a class="dropdown-item" href="alto.html">Alto</a>
+                <a class="dropdown-item" href="fetchh.html">Fetchh</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="our_work.html">Our Work</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">about us</a>
+            </li>
+          </ul>
         </div>
+
+        <div class="topnav d-flex align-items-center">
+          <a href="tech_service.html" class="butn butn-rounded">
+            <div class="d-flex align-items-center">
+              <span>Contact US</span>
+              <span class="icon ml-10 right-icon">
+                <img src="../common/imgs/icons/arrow-top-right.svg" alt="" />
+              </span>
+            </div>
+          </a>
+
+          <div class="position-relative mr-15 search-division">
+            <input
+              id="search"
+              type="search"
+              name="search"
+              placeholder="SEARCH"
+              class="search"
+            />
+            <i class="fa fa-search"></i>
+          </div>
+          <span class="star-icon">
+            <img src="assets/imgs/star.png" alt="" />
+          </span>
+          <div class="menu-icon cursor-pointer">
+            <span class="icon ti-align-right"></span>
+          </div>
+        </div>
+      </div>
     </nav>
 
     <div class="hamenu">
-        <div class="close-menu cursor-pointer ti-close"></div>
-        <div class="container-fluid rest d-flex">
-            <div class="menu-links">
-                <ul class="main-menu rest">
-                    <li>
-                        <div class="o-hidden">
-                            <a href="../index.html" class="link"><span class="fill-text"
-                                    data-text="Home">Home</span></a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="o-hidden">
-                            <a href="about.html" class="link"><span class="fill-text" data-text="About Us">About
-                                    Us</span></a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="o-hidden">
-                            <div class="link cursor-pointer dmenu"><span class="fill-text"
-                                    data-text="Services">Services</span>
-                                <i></i>
-                            </div>
-                        </div>
-                        <div class="sub-menu">
-                            <ul>
-                                <li><a href="tech_service.html">Tech Service</a></li>
-                                <li><a href="marketing.html">Marketing Service</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="o-hidden">
-                            <div class="link cursor-pointer dmenu"><span class="fill-text"
-                                    data-text="Product">Products</span>
-                                <i></i>
-                            </div>
-                        </div>
-                        <div class="sub-menu">
-                            <ul>
-                                <li>
-                                    <a href="waro.html" class="sub-link">Waro</a>
-                                </li>
-                                <li>
-                                    <a href="alto.html" class="sub-link">Alto</a>
-                                </li>
-                                <li>
-                                    <a href="fetchh.html" class="sub-link">Fetchh</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="o-hidden">
-                            <a href="our_work.html" class="link"><span class="fill-text" data-text="Our Work">Our
-                                    Work</span></a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="o-hidden">
-                            <a href="contact.html" class="link"><span class="fill-text" data-text="Contact Us">Contact
-                                    Us</span></a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="cont-info valign">
-                <div class="text-center full-width">
-                    <div class="logo">
-                        <img src="../common/imgs/Krossark_logo.png" alt="">
-                    </div>
-                    <div class="item mt-30">
-                        <h5>7094, Peachtree industrial Blvd., Suite 270 <br> Norcross, GA 30071, USA </h5>
-                    </div>
-                    <div class="item mt-10">
-                        <h5><a href="#0">info@krossark.com</a></h5>
-                       <!-- <h5 class="underline"><a href="#0">+1 202-361-2345</a></h5>
-                        <h5 class="underline"><a href="#0">+91 95000 60444</a></h5> -->
-                    </div>
+      <div class="close-menu cursor-pointer ti-close"></div>
+      <div class="container-fluid rest d-flex">
+        <div class="menu-links">
+          <ul class="main-menu rest">
+            <li>
+              <div class="o-hidden">
+                <a href="../index.html" class="link"
+                  ><span class="fill-text" data-text="Home">Home</span></a
+                >
+              </div>
+            </li>
+            <li>
+              <div class="o-hidden">
+                <a href="about.html" class="link"
+                  ><span class="fill-text" data-text="About Us"
+                    >About Us</span
+                  ></a
+                >
+              </div>
+            </li>
+            <li>
+              <div class="o-hidden">
+                <div class="link cursor-pointer dmenu">
+                  <span class="fill-text" data-text="Services">Services</span>
+                  <i></i>
                 </div>
-            </div>
+              </div>
+              <div class="sub-menu">
+                <ul>
+                  <li><a href="tech_service.html">Tech Service</a></li>
+                  <li><a href="marketing.html">Marketing Service</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="o-hidden">
+                <div class="link cursor-pointer dmenu">
+                  <span class="fill-text" data-text="Product">Products</span>
+                  <i></i>
+                </div>
+              </div>
+              <div class="sub-menu">
+                <ul>
+                  <li>
+                    <a href="waro.html" class="sub-link">Waro</a>
+                  </li>
+                  <li>
+                    <a href="alto.html" class="sub-link">Alto</a>
+                  </li>
+                  <li>
+                    <a href="fetchh.html" class="sub-link">Fetchh</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="o-hidden">
+                <a href="our_work.html" class="link"
+                  ><span class="fill-text" data-text="Our Work"
+                    >Our Work</span
+                  ></a
+                >
+              </div>
+            </li>
+            <li>
+              <div class="o-hidden">
+                <a href="contact.html" class="link"
+                  ><span class="fill-text" data-text="Contact Us"
+                    >Contact Us</span
+                  ></a
+                >
+              </div>
+            </li>
+          </ul>
         </div>
+        <div class="cont-info valign">
+          <div class="text-center full-width">
+            <div class="logo">
+              <img src="../common/imgs/Krossark_logo.png" alt="" />
+            </div>
+            <div class="item mt-30">
+              <h5>
+                7094, Peachtree industrial Blvd., Suite 270 <br />
+                Norcross, GA 30071, USA
+              </h5>
+            </div>
+            <div class="item mt-10">
+              <h5><a href="#0">info@krossark.com</a></h5>
+              <!-- <h5 class="underline"><a href="#0">+1 202-361-2345</a></h5>
+                        <h5 class="underline"><a href="#0">+91 95000 60444</a></h5> -->
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- ==================== End Navbar ==================== -->
 
     <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <main class="main-bg">
+          <!-- ==================== Start Slider ==================== -->
 
-
-        <div id="smooth-content">
-
-            <main class="main-bg">
-
-                <!-- ==================== Start Slider ==================== -->
-
-                <header class="post-header pt-20">
-                    <div class="container-xl bg-img mt-80" data-background="assets/imgs/blogs/iot.jpg"
-                        data-overlay-dark="4" style="background-image: url(&quot;assets/imgs/blogs/iot.jpg&quot;);">
-                        <div class="row">
-                            <div class="col-lg-10">
-                                <div class="caption">
-                                    <!-- <div class="tags fz-14">
+          <header class="post-header pt-20">
+            <div
+              class="container-xl bg-img mt-80"
+              data-background="assets/imgs/blogs/iot.jpg"
+              data-overlay-dark="4"
+              style="background-image: url('assets/imgs/blogs/iot.jpg')"
+            >
+              <div class="row">
+                <div class="col-lg-10">
+                  <div class="caption">
+                    <!-- <div class="tags fz-14">
                                         <a href="#0">Design</a>
                                         <a href="#0">Development</a>
                                     </div> -->
-                                    <h1 class="fz-55 mt-30">Our Future is Connected with Internet Invent. Sense.
-                                        Control.
-                                    </h1>
-                                </div>
-                                <!-- <div class="info d-flex mt-40 align-items-center">
+                    <h1 class="fz-55 mt-30">
+                      Our Future is Connected with Internet Invent. Sense.
+                      Control.
+                    </h1>
+                  </div>
+                  <!-- <div class="info d-flex mt-40 align-items-center">
                                     <div class="left-info sm-mb30">
                                         <div class="d-flex align-items-center">
                                             <div class="author-info">
@@ -270,346 +329,452 @@
                                         </div>
                                     </div>
                                 </div> -->
-                            </div>
-                        </div>
-                    </div>
-                </header>
-
-                <!-- ==================== End Slider ==================== -->
-
-
-
-                <!-- ==================== Start Blog ==================== -->
-
-                <section class="blog section-padding" style="padding-inline: 120px;">
-                    <div class="container">
-                        <div class="row xlg-marg">
-                            <div class="col-lg-12">
-                                <div class="main-post">
-                                    <div class="item pb-20">
-                                        <article>
-                                            <div class="text">
-                                                <p><span class="spec-letter">I</span> IOT refers to the interconnected
-                                                    network of physical devices embedded with sensors, software, and
-                                                    other technologies, enabling them to collect and exchange data over
-                                                    the internet. IOT is revolutionizing industries by enhancing
-                                                    efficiency, reducing costs, and improving the quality of life.</p>
-
-                                            </div>
-
-                                        </article>
-
-                                        <div class="row justify-content-center mt-60 mb-60">
-                                            <div class="col-lg-12">
-                                                <div class="accordion" id="accordionExample">
-                                                    <div class="accordion-item">
-                                                        <h4 class="accordion-header" id="heading2">
-                                                            <button class="accordion-button collapsed" type="button"
-                                                                data-bs-toggle="collapse" data-bs-target="#collapse2"
-                                                                aria-expanded="false" aria-controls="collapse2">
-                                                                Smart Home
-                                                            </button>
-                                                        </h4>
-                                                        <div id="collapse2" class="accordion-collapse collapse"
-                                                            aria-labelledby="heading2"
-                                                            data-bs-parent="#accordionExample">
-                                                            <div class="accordion-body">
-                                                                <p>We focus in providing you
-                                                                    security at your home, water intelligence,
-                                                                    robotics assistance, air intelligence, stock
-                                                                    management and organize your entertainment
-                                                                    better.</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="accordion-item">
-                                                        <h4 class="accordion-header" id="heading3">
-                                                            <button class="accordion-button collapsed" type="button"
-                                                                data-bs-toggle="collapse" data-bs-target="#collapse3"
-                                                                aria-expanded="false" aria-controls="collapse3">
-                                                                Smart Media
-                                                            </button>
-                                                        </h4>
-                                                        <div id="collapse3" class="accordion-collapse collapse"
-                                                            aria-labelledby="heading3"
-                                                            data-bs-parent="#accordionExample">
-                                                            <div class="accordion-body">
-                                                                <p>We scan your environment, control lighting
-                                                                    and enable remote robots. We aim to provide
-                                                                    you relevant content, digital walls and
-                                                                    constantly push our capabilities.</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="accordion-item">
-                                                        <h4 class="accordion-header" id="heading4">
-                                                            <button class="accordion-button collapsed" type="button"
-                                                                data-bs-toggle="collapse" data-bs-target="#collapse4"
-                                                                aria-expanded="false" aria-controls="collapse4">
-                                                                Smart Retail
-                                                            </button>
-                                                        </h4>
-                                                        <div id="collapse4" class="accordion-collapse collapse"
-                                                            aria-labelledby="heading4"
-                                                            data-bs-parent="#accordionExample">
-                                                            <div class="accordion-body">
-                                                                <p>We provide personalized experience of
-                                                                    tracking your product requirement and
-                                                                    availability, along with quick
-                                                                    notifications, monitoring, mobile payment
-                                                                    and relevant content.
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="accordion-item">
-                                                        <h4 class="accordion-header" id="heading5">
-                                                            <button class="accordion-button collapsed" type="button"
-                                                                data-bs-toggle="collapse" data-bs-target="#collapse5"
-                                                                aria-expanded="false" aria-controls="collapse5">
-                                                                Smart Health
-                                                            </button>
-                                                        </h4>
-                                                        <div id="collapse5" class="accordion-collapse collapse"
-                                                            aria-labelledby="heading5"
-                                                            data-bs-parent="#accordionExample">
-                                                            <div class="accordion-body">
-                                                                <p>We help you be on track with every step you
-                                                                    take. We compare your reports, collect raw
-                                                                    data and analyze the data to provide you the
-                                                                    best solution.</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="accordion-item">
-                                                        <h4 class="accordion-header" id="heading6">
-                                                            <button class="accordion-button collapsed" type="button"
-                                                                data-bs-toggle="collapse" data-bs-target="#collapse6"
-                                                                aria-expanded="false" aria-controls="collapse5">
-                                                                Smart Drone
-                                                            </button>
-                                                        </h4>
-                                                        <div id="collapse6" class="accordion-collapse collapse"
-                                                            aria-labelledby="heading6"
-                                                            data-bs-parent="#accordionExample">
-                                                            <div class="accordion-body">
-                                                                <p>We specialize in thermal imaging technology fitted on
-                                                                    drones to provide you accurate detection and dynamic
-                                                                    image output with high-quality sensors and
-                                                                    recording.</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="accordion-item">
-                                                        <h4 class="accordion-header" id="heading7">
-                                                            <button class="accordion-button collapsed" type="button"
-                                                                data-bs-toggle="collapse" data-bs-target="#collapse7"
-                                                                aria-expanded="false" aria-controls="collapse5">
-                                                                Smart Play
-                                                            </button>
-                                                        </h4>
-                                                        <div id="collapse7" class="accordion-collapse collapse"
-                                                            aria-labelledby="heading7"
-                                                            data-bs-parent="#accordionExample">
-                                                            <div class="accordion-body">
-                                                                <p>For all the sport enthusiast, we capture your motion
-                                                                    data, analyze it, keep you posted on your ongoing
-                                                                    statistics and give you the option of your own
-                                                                    personalized display.</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row xlg-marg  mt-30">
-                                            <div class="col-lg-6">
-                                                <div class="unorder-list mb-30">
-                                                    <h6 class="mb-15">Key Features</h6>
-                                                    <ul class="rest">
-                                                        <li><b>Connectivity:</b> Seamless communication between devices.</li>
-                                                        <li><b>Data Collection:</b> Real-time data monitoring and gathering.
-                                                        </li>
-                                                        <li><b>Automation:</b> Enables smart decisions and actions without
-                                                            manual intervention.</li>
-                                                        <li>Connects with cloud platforms for advanced analytics and
-                                                            control.</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="unorder-list mb-30">
-                                                    <h6 class="mb-15">Applications</h6>
-                                                    <ul class="rest">
-                                                        <li><b>Smart Homes:</b> Automated lighting, security, and
-                                                            appliances.
-                                                        </li>
-                                                        <li><b>Healthcare:</b> Remote patient monitoring and wearable
-                                                            devices.
-                                                        </li>
-                                                        <li><b>Agriculture:</b> Precision farming with sensors and drones.
-                                                        </li>
-                                                        <li><b>Manufacturing:</b> Industrial IOT (IIOT) for predictive
-                                                            maintenance and efficiency.</li>
-                                                        <li><b>Transportation:</b> Smart traffic systems and fleet
-                                                            management.
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="mb-50 mt-50">
-                                            <div class="row">
-                                                <div class="col-sm-6">
-                                                    <div class="iner-img sm-mb30">
-                                                        <img src="assets/imgs/blogs/io1.jpg" alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="iner-img">
-                                                        <img src="assets/imgs/blogs/io2.jpg" alt="">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="title mb-10">
-                                            <h4>Business Growth</h4>
-                                        </div>
-
-                                        <div class="text mb-20">
-                                            <p>Need something changed or is there something not quite working the
-                                                way
-                                                you envisaged? Is your van a little old and tired and need
-                                                refreshing?
-                                                Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                industry. Lorem Ipsum has been the industry's standard dummy text
-                                                ever
-                                                since the 1500s, when an unknown printer took a galley of type and
-                                                scrambled it to make a type specimen book. It has survived not only
-                                                five
-                                                centuries, but also the leap into electronic typesetting, remaining
-                                                essentially unchanged.</p>
-                                        </div>
-
-                                        <div class="unorder-list mb-30">
-                                            <h6 class="mb-15">Planning & Strategy</h6>
-                                            <ul class="rest">
-                                                <li>Research beyond the business plan</li>
-                                                <li>Marketing options and rates</li>
-                                                <li>The ability to turnaround consulting</li>
-                                                <li>Customer engagement matters</li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="text mb-20">
-                                            <p>Need something changed or is there something not quite working the
-                                                way
-                                                you envisaged? Is your van a little old and tired and need
-                                                refreshing?
-                                                Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                industry. Lorem Ipsum has been the industry's standard dummy text
-                                                ever
-                                                since the 1500s, when an unknown printer took a galley of type and
-                                                scrambled it to make a type specimen book. It has survived not only
-                                                five
-                                                centuries, but also the leap into electronic typesetting, remaining
-                                                essentially unchanged.</p>
-                                        </div>
-
-                                        <div class="order-list mb-30">
-                                            <ul class="rest">
-                                                <li><span>01 -</span> Attract and retain quality high paying
-                                                    customers
-                                                </li>
-                                                <li><span>02 -</span> Strong business plan requires experience
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- ==================== End Blog ==================== -->
-
-            </main>
-
-
-            <!-- ==================== Start Footer ==================== -->
-
-            <footer class="footer-sa pb-80">
-                <div class="container section-padding bord-thin-top-light">
-                    <div class="call-action text-center mb-80">
-                        <h2 class="">
-                            <a href="#0">Let's Make <br> Something Great!</a>
-                            <div class="buton d-flex align-items-center justify-content-center">
-                                <a href="contact.html">
-                                    <span class="mb-10">Contact</span> <br> <span>Us <img
-                                            src="../common/imgs/icons/arrow-top-right.svg" alt=""></span>
-                                </a>
-                            </div>
-                        </h2>
-                    </div>
-                    <div class="contact-info">
-                        <div class="row">
-                            <div class="col-lg-5">
-                                <a href="../index.html" class="logo md-mb50">
-                                    <img src="assets/imgs/Krossark_logo.png" alt="">
-                                </a>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="item">
-                                            <span class="sub-color">location</span>
-                                            <p>7094, Peachtree industrial Blvd., Suite 270 Norcross, GA 30071, USA</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 d-flex justify-content-end justify-end">
-                                        <div class="item">
-                                            <span class="sub-color">Contact</span>
-                                            <p>info@krossark.com</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-                <div class="sub-footer">
-                    <div class="container bord-thin-top-light pt-50">
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <div class="copy sub-color md-mb30">
-                                    <p>© 2025 All Right Reserved <a href="#0">Krossark inc</a>. </p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 d-flex justify-content-end">
-                                <div class="links sub-color d-flex justify-content-between">
-                                    <a href="../index.html">Home</a>
-                                    <a href="tech_service.html">Services</a>
-                                    <a href="waro.html">Product</a>
-                                    <a href="about.html">About us</a>
-                                </div>
-                            </div>
+              </div>
+            </div>
+          </header>
+
+          <!-- ==================== End Slider ==================== -->
+
+          <!-- ==================== Start Blog ==================== -->
+
+          <section class="blog section-padding" style="padding-inline: 120px">
+            <div class="container">
+              <div class="row xlg-marg">
+                <div class="col-lg-12">
+                  <div class="main-post">
+                    <div class="item pb-20">
+                      <article>
+                        <div class="text">
+                          <p>
+                            <span class="spec-letter">I</span> IOT refers to the
+                            interconnected network of physical devices embedded
+                            with sensors, software, and other technologies,
+                            enabling them to collect and exchange data over the
+                            internet. IOT is revolutionizing industries by
+                            enhancing efficiency, reducing costs, and improving
+                            the quality of life.
+                          </p>
                         </div>
+                      </article>
+
+                      <div class="row justify-content-center mt-60 mb-60">
+                        <div class="col-lg-12">
+                          <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                              <h4 class="accordion-header" id="heading2">
+                                <button
+                                  class="accordion-button collapsed"
+                                  type="button"
+                                  data-bs-toggle="collapse"
+                                  data-bs-target="#collapse2"
+                                  aria-expanded="false"
+                                  aria-controls="collapse2"
+                                >
+                                  Smart Home
+                                </button>
+                              </h4>
+                              <div
+                                id="collapse2"
+                                class="accordion-collapse collapse"
+                                aria-labelledby="heading2"
+                                data-bs-parent="#accordionExample"
+                              >
+                                <div class="accordion-body">
+                                  <p>
+                                    We focus in providing you security at your
+                                    home, water intelligence, robotics
+                                    assistance, air intelligence, stock
+                                    management and organize your entertainment
+                                    better.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h4 class="accordion-header" id="heading3">
+                                <button
+                                  class="accordion-button collapsed"
+                                  type="button"
+                                  data-bs-toggle="collapse"
+                                  data-bs-target="#collapse3"
+                                  aria-expanded="false"
+                                  aria-controls="collapse3"
+                                >
+                                  Smart Media
+                                </button>
+                              </h4>
+                              <div
+                                id="collapse3"
+                                class="accordion-collapse collapse"
+                                aria-labelledby="heading3"
+                                data-bs-parent="#accordionExample"
+                              >
+                                <div class="accordion-body">
+                                  <p>
+                                    We scan your environment, control lighting
+                                    and enable remote robots. We aim to provide
+                                    you relevant content, digital walls and
+                                    constantly push our capabilities.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h4 class="accordion-header" id="heading4">
+                                <button
+                                  class="accordion-button collapsed"
+                                  type="button"
+                                  data-bs-toggle="collapse"
+                                  data-bs-target="#collapse4"
+                                  aria-expanded="false"
+                                  aria-controls="collapse4"
+                                >
+                                  Smart Retail
+                                </button>
+                              </h4>
+                              <div
+                                id="collapse4"
+                                class="accordion-collapse collapse"
+                                aria-labelledby="heading4"
+                                data-bs-parent="#accordionExample"
+                              >
+                                <div class="accordion-body">
+                                  <p>
+                                    We provide personalized experience of
+                                    tracking your product requirement and
+                                    availability, along with quick
+                                    notifications, monitoring, mobile payment
+                                    and relevant content.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h4 class="accordion-header" id="heading5">
+                                <button
+                                  class="accordion-button collapsed"
+                                  type="button"
+                                  data-bs-toggle="collapse"
+                                  data-bs-target="#collapse5"
+                                  aria-expanded="false"
+                                  aria-controls="collapse5"
+                                >
+                                  Smart Health
+                                </button>
+                              </h4>
+                              <div
+                                id="collapse5"
+                                class="accordion-collapse collapse"
+                                aria-labelledby="heading5"
+                                data-bs-parent="#accordionExample"
+                              >
+                                <div class="accordion-body">
+                                  <p>
+                                    We help you be on track with every step you
+                                    take. We compare your reports, collect raw
+                                    data and analyze the data to provide you the
+                                    best solution.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h4 class="accordion-header" id="heading6">
+                                <button
+                                  class="accordion-button collapsed"
+                                  type="button"
+                                  data-bs-toggle="collapse"
+                                  data-bs-target="#collapse6"
+                                  aria-expanded="false"
+                                  aria-controls="collapse5"
+                                >
+                                  Smart Drone
+                                </button>
+                              </h4>
+                              <div
+                                id="collapse6"
+                                class="accordion-collapse collapse"
+                                aria-labelledby="heading6"
+                                data-bs-parent="#accordionExample"
+                              >
+                                <div class="accordion-body">
+                                  <p>
+                                    We specialize in thermal imaging technology
+                                    fitted on drones to provide you accurate
+                                    detection and dynamic image output with
+                                    high-quality sensors and recording.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h4 class="accordion-header" id="heading7">
+                                <button
+                                  class="accordion-button collapsed"
+                                  type="button"
+                                  data-bs-toggle="collapse"
+                                  data-bs-target="#collapse7"
+                                  aria-expanded="false"
+                                  aria-controls="collapse5"
+                                >
+                                  Smart Play
+                                </button>
+                              </h4>
+                              <div
+                                id="collapse7"
+                                class="accordion-collapse collapse"
+                                aria-labelledby="heading7"
+                                data-bs-parent="#accordionExample"
+                              >
+                                <div class="accordion-body">
+                                  <p>
+                                    For all the sport enthusiast, we capture
+                                    your motion data, analyze it, keep you
+                                    posted on your ongoing statistics and give
+                                    you the option of your own personalized
+                                    display.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row xlg-marg mt-30">
+                        <div class="col-lg-6">
+                          <div class="unorder-list mb-30">
+                            <h6 class="mb-15">Key Features</h6>
+                            <ul class="rest">
+                              <li>
+                                <b>Connectivity:</b> Seamless communication
+                                between devices.
+                              </li>
+                              <li>
+                                <b>Data Collection:</b> Real-time data
+                                monitoring and gathering.
+                              </li>
+                              <li>
+                                <b>Automation:</b> Enables smart decisions and
+                                actions without manual intervention.
+                              </li>
+                              <li>
+                                Connects with cloud platforms for advanced
+                                analytics and control.
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-lg-6">
+                          <div class="unorder-list mb-30">
+                            <h6 class="mb-15">Applications</h6>
+                            <ul class="rest">
+                              <li>
+                                <b>Smart Homes:</b> Automated lighting,
+                                security, and appliances.
+                              </li>
+                              <li>
+                                <b>Healthcare:</b> Remote patient monitoring and
+                                wearable devices.
+                              </li>
+                              <li>
+                                <b>Agriculture:</b> Precision farming with
+                                sensors and drones.
+                              </li>
+                              <li>
+                                <b>Manufacturing:</b> Industrial IOT (IIOT) for
+                                predictive maintenance and efficiency.
+                              </li>
+                              <li>
+                                <b>Transportation:</b> Smart traffic systems and
+                                fleet management.
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="mb-50 mt-50">
+                        <div class="row">
+                          <div class="col-sm-6">
+                            <div class="iner-img sm-mb30">
+                              <img src="assets/imgs/blogs/io1.jpg" alt="" />
+                            </div>
+                          </div>
+                          <div class="col-sm-6">
+                            <div class="iner-img">
+                              <img src="assets/imgs/blogs/io2.jpg" alt="" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="title mb-10">
+                        <h4>Business Growth</h4>
+                      </div>
+
+                      <div class="text mb-20">
+                        <p>
+                          Need something changed or is there something not quite
+                          working the way you envisaged? Is your van a little
+                          old and tired and need refreshing? Lorem Ipsum is
+                          simply dummy text of the printing and typesetting
+                          industry. Lorem Ipsum has been the industry's standard
+                          dummy text ever since the 1500s, when an unknown
+                          printer took a galley of type and scrambled it to make
+                          a type specimen book. It has survived not only five
+                          centuries, but also the leap into electronic
+                          typesetting, remaining essentially unchanged.
+                        </p>
+                      </div>
+
+                      <div class="unorder-list mb-30">
+                        <h6 class="mb-15">Planning & Strategy</h6>
+                        <ul class="rest">
+                          <li>Research beyond the business plan</li>
+                          <li>Marketing options and rates</li>
+                          <li>The ability to turnaround consulting</li>
+                          <li>Customer engagement matters</li>
+                        </ul>
+                      </div>
+
+                      <div class="text mb-20">
+                        <p>
+                          Need something changed or is there something not quite
+                          working the way you envisaged? Is your van a little
+                          old and tired and need refreshing? Lorem Ipsum is
+                          simply dummy text of the printing and typesetting
+                          industry. Lorem Ipsum has been the industry's standard
+                          dummy text ever since the 1500s, when an unknown
+                          printer took a galley of type and scrambled it to make
+                          a type specimen book. It has survived not only five
+                          centuries, but also the leap into electronic
+                          typesetting, remaining essentially unchanged.
+                        </p>
+                      </div>
+
+                      <div class="order-list mb-30">
+                        <ul class="rest">
+                          <li>
+                            <span>01 -</span> Attract and retain quality high
+                            paying customers
+                          </li>
+                          <li>
+                            <span>02 -</span> Strong business plan requires
+                            experience
+                          </li>
+                        </ul>
+                      </div>
                     </div>
+                  </div>
                 </div>
-            </footer>
+              </div>
+            </div>
+          </section>
 
-            <!-- ==================== End Footer ==================== -->
+          <!-- ==================== End Blog ==================== -->
+        </main>
 
+        <!-- ==================== Start Footer ==================== -->
 
-        </div>
+        <footer class="footer-sa pb-80">
+          <div class="container section-padding bord-thin-top-light">
+            <div class="call-action text-center mb-120">
+              <h2 class="">
+                <a href="#0"
+                  >Let's Make <br />
+                  Something Great!</a
+                >
+                <div
+                  class="buton d-flex align-items-center justify-content-center"
+                >
+                  <a href="#0">
+                    <span class="mb-10">Contact</span> <br />
+                    <span
+                      >Us
+                      <img
+                        src="../common/imgs/icons/arrow-top-right.svg"
+                        alt=""
+                    /></span>
+                  </a>
+                </div>
+              </h2>
+            </div>
+            <div class="contact-info">
+              <div class="row">
+                <div class="col-lg-3">
+                  <a href="#" class="logo md-mb50">
+                    <img src="assets/imgs/Krossark_logo.svg" alt="" />
+                  </a>
+                </div>
 
+                <div class="col-lg-3">
+                  <div class="item">
+                    <span class="sub-color">location</span>
+                    <p>
+                      7094, Peachtree industrial Blvd., Suite 270 Norcross, GA
+                      30071, USA
+                    </p>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="item">
+                    <span class="sub-color">Contact</span>
+                    <p>info@krossark.com</p>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="social-icon">
+                    <a href="#0">
+                      <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="#0">
+                      <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#0">
+                      <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="#0">
+                      <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <a href="#0">
+                      <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sub-footer">
+            <div class="container bord-thin-top-light pt-50">
+              <div class="row">
+                <div class="col-lg-8">
+                  <div class="copy sub-color md-mb30">
+                    <p>
+                      © 2025 All Right Reserved <a href="#0">Krossark inc</a>.
+                      <span class="ml-30">Powered by AI</span>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 d-flex justify-content-end">
+                  <div class="links sub-color d-flex justify-content-between">
+                    <a href="../index.html">Industries</a>
+                    <a href="tech_service.html">Services</a>
+                    <a href="waro.html">Products</a>
+                    <a href="waro.html">Our Work</a>
+                    <a href="about.html">About us</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+
+        <!-- ==================== End Footer ==================== -->
+      </div>
     </div>
-
 
     <!-- jQuery -->
     <script src="../common/js/lib/jquery-3.6.0.min.js"></script>
@@ -631,7 +796,5 @@
 
     <!-- custom scripts -->
     <script src="assets/js/inner_pages.js"></script>
-
-</body>
-
+  </body>
 </html>
