@@ -2,90 +2,108 @@
 
 /* ========= [ * inner pages ]  =========*/
 :root {
-  --bg-color: #18191b;
-  --theme-color: #0e0f11;
-  --main-color: #0A65C0;
-  --primary-color: #ffffff;
+    --bg-color: #18191b;
+    --theme-color: #0e0f11;
+    --main-color: #0A65C0;
+    --primary-color: #ffffff;
+    --text-color: #7F7F7F;
 }
 
 /* --------------- Menu --------------- */
 .navbar {
-  position: absolute;
-  left: 0;
-  top: 0;
-  padding: 15px 0;
-  margin: 0;
-  width: 100%;
-  background: var(--primary-color);
-  z-index: 9999999;
-  text-transform: uppercase;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 15px 0;
+    margin: 0;
+    width: 100%;
+    background: var(--primary-color);
+    z-index: 9999999;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--text-color);
 }
 
 .navbar.nav-scroll {
-  padding: 0;
-  position: fixed;
-  top: -80px;
-  padding: 15px 0;
-  -webkit-transition: -webkit-transform .8s;
-  transition: -webkit-transform .8s;
-  -o-transition: transform .8s;
-  transition: transform .8s;
-  transition: transform .8s, -webkit-transform .8s;
-  -webkit-transform: translateY(80px);
-  -ms-transform: translateY(80px);
-  transform: translateY(80px);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+    padding: 0;
+    position: fixed;
+    top: -80px;
+    padding: 15px 0;
+    -webkit-transition: -webkit-transform .8s;
+    transition: -webkit-transform .8s;
+    -o-transition: transform .8s;
+    transition: transform .8s;
+    transition: transform .8s, -webkit-transform .8s;
+    -webkit-transform: translateY(80px);
+    -ms-transform: translateY(80px);
+    transform: translateY(80px);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
 }
 
 .navbar .logo {
-  padding: 4px 15px;
+    padding: 4px 15px;
 }
 
 .logo img {
-  filter: none;
-  width: 150px;
+    filter: none;
+    width: 180px;
+}
+
+.icon img {
+    filter: invert(1);
+    width: 20px;
 }
 
 .navbar .navbar-nav {
-  padding: 2px 5px;
-  margin-left: 15px;
+    padding: 2px 5px;
+    margin-left: 15px;
 }
 
 
 .nav-link.dropdown-toggle::after {
-  display: none !important;
+    display: none !important;
+}
+
+li.nav-item {
+    line-height: 37px;
+    text-align: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 0px 0px;
+    color: var(--text-color);
 }
 
 .navbar .navbar-nav .nav-link {
-  padding: 5px 20px;
-  border-radius: 30px;
-  font-size: 14px;
-  color: var(--bg-color);
+    padding: 5px 15px;
+    border-radius: 30px;
+    font-size: 14px;
+    color: var(--text-color);
+    font-weight: 500;
+    font-family: "Inter", sans-serif;
 }
 
 .navbar .navbar-nav .nav-link.active {
-  background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .dropdown-menu.show {
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #ffffff;
-  backdrop-filter: blur(10px);
-  background: transparent;
-  margin-top: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--primary-color);
+    backdrop-filter: blur(10px);
+    background: transparent;
+    margin-top: 2px;
 }
 
 .dropdown-item {
-  color: white;
-  padding: .5rem 1rem
+    color: var(--primary-color);
+    padding: .5rem 1rem
 }
 
 .dropdown-item.active,
 .dropdown-item:active {
-  color: #1e2125;
-  background-color: #e9ecef;
-  /* background: rgba(255, 255, 255, 0.1); */
+    color: #1e2125;
+    background-color: #e9ecef;
+    /* background: rgba(255, 255, 255, 0.1); */
 }
 
 /* .dropdown-item:focus, .dropdown-item:hover{
@@ -93,13 +111,43 @@
   color: white;
 } */
 .navbar .topnav .butn {
-  padding: 7px 20px;
-  background: #fff;
-  color: #1d1d1d;
-  margin-right: 15px;
+    padding: 7px 20px;
+    background: var(--main-color);
+    color: var(--primary-color);
+    margin-right: 15px;
 }
 
+.star-icon img {
+    width: 33px;
+}
+
+.search {
+    width: 150px;
+    border-radius: 30px;
+    padding: 4px 20px;
+    border: 1px solid;
+}
+
+.fa-search {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+}
 
 .menu-icon {
-  display: none;
+    display: none;
+    margin-left: 15px;
+}
+
+@media screen and (max-width: 767px) {
+    .butn-rounded, .search-division{
+        display: none;
+    }
+    
+}
+@media screen and (max-width: 992px) {
+    
+    .menu-icon {
+        display: block;
+    }
 }
