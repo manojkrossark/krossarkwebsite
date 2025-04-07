@@ -98,10 +98,11 @@ li.nav-item {
     color: var(--main-color);    
 }
 
-.navbar .navbar-nav .nav-link.active {
+.navbar .navbar-nav .nav-link.active {   
     color: var(--main-color);
-    border-bottom: 2px solid var(--main-color);
-    border-radius: 0;
+}
+.navbar .navbar-nav .nav-link.active::after {
+    width: 100%;
 }
 
 .dropdown-menu.show {
