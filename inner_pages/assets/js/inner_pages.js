@@ -11,11 +11,24 @@ $(function () {
                 start: "top",
                 endTrigger: ".about-ma",
                 end: "bottom bottom",
-                pin: true, 
+                pin: true,
                 pinSpacing: false
             }
         });
     }
+
+    $('.services-mp .serv-title .tab-title').on('mouseenter', function () {
+        var tab_id = $(this).attr('data-tab');
+        $('.services-mp .serv-title .tab-title').removeClass('current');
+        $(this).addClass('current');
+
+        $('.services-mp .content .item').removeClass('current');
+        $("#" + tab_id).addClass('current');
+
+        if ($(this).hasClass('current')) {
+            return false;
+        }
+    });
 
     var testim = new Swiper(".testimonials-ds .testim-swiper", {
         slidesPerView: 1,
@@ -63,12 +76,12 @@ $(function () {
         });
     });
 
-    $('.accordion .accordion-item').on('click', function() {
+    $('.accordion .accordion-item').on('click', function () {
         $(this).addClass("active").siblings().removeClass("active");
     });
 
-    $(".crv-butn").click(function(){
+    $(".crv-butn").click(function () {
         $(".showHide").slideToggle(500);
-      });
+    });
 
 });

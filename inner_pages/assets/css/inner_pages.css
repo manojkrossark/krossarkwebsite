@@ -1428,6 +1428,160 @@
   color: var(--theme-color);
 }
 
+/* Home Page  */
+
+.m-height-115 {
+  min-height: 115px;
+}
+
+
+/* --------------- Services --------------- */
+
+.box-light {
+  background-color: #fff;
+  color: #000;
+  position: relative;
+  border-radius: 0 0 30px 30px;
+  z-index: 4;
+}
+
+.box-light .layers {
+  position: absolute;
+  top: 5px;
+  left: 30px;
+  right: 30px;
+  bottom: -10px;
+  background: #fff;
+  border-radius: 15px;
+  opacity: .7;
+  z-index: -1;
+}
+
+.box-light .layers:after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 20px;
+  right: 20px;
+  bottom: -10px;
+  background: #fff;
+  border-radius: 15px;
+  opacity: .7;
+  z-index: -1;
+}
+
+.marq-mp .main-marq {
+  overflow: hidden;
+  padding: 25px 0;
+}
+
+.marq-mp .color-bg {
+  background: var(--main-color);
+  -webkit-transform: rotate(2deg);
+  -ms-transform: rotate(2deg);
+  transform: rotate(2deg);
+  position: relative;
+  z-index: 4;
+  color: #fff;
+}
+
+.marq-mp .gray-bg {
+  background: var(--secondary-color);
+  -webkit-transform: rotate(-4deg);
+  -ms-transform: rotate(-4deg);
+  transform: rotate(-4deg);
+  margin-top: -30px;
+  color: #fff;
+}
+
+.marq-mp .item {
+  padding: 0 60px !important;
+  position: relative;
+}
+
+.marq-mp .item::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  /* Center vertically */
+  right: -20px;
+  /* Adjust spacing from the text as needed */
+  width: 40px;
+  /* Set width of the star image */
+  height: 40px;
+  /* Set height of the star image */
+  background-image: url('../imgs/star.png');
+  background-size: cover;
+  /* Make sure the image fits */
+}
+
+.marq-mp .item h5 {
+  font-weight: 600;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.services-mp .serv-title .tab-title {
+  opacity: .5;
+  -webkit-transition: all .4s;
+  -o-transition: all .4s;
+  transition: all .4s;
+}
+
+.services-mp .serv-title .tab-title h2 {
+  font-size: 120px;
+  line-height: 120px;
+  margin: 10px 0;
+}
+
+.services-mp .serv-title .tab-title.current {
+  opacity: 1;
+}
+
+.services-mp .content {
+  position: relative;
+}
+
+.services-mp .content .item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-transform: translateY(50px);
+  -ms-transform: translateY(50px);
+  transform: translateY(50px);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all .4s;
+  -o-transition: all .4s;
+  transition: all .4s;
+}
+
+.services-mp .content .item:first-of-type {
+  position: static;
+}
+
+.services-mp .content .item.current {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.services-mp .content .item .cont {
+  margin-top: 30px;
+}
+
+.services-mp .content .item .cont span {
+  display: block;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-top: 15px;
+}
+
 /* --------------- Portfolio pg --------------- */
 .work-hed .caption h1 {
   font-size: 90px;
@@ -1457,8 +1611,15 @@
   height: 620px;
 }
 
+/* 
 .works-mp {
   padding-bottom: 100px;
+} */
+
+.works-mp .item1 {
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
 }
 
 .works-mp .item {
@@ -2838,6 +2999,8 @@ p {
 
 .sector-serve {
   background-color: var(--bg-gray-color);
+  margin: 0 20px;
+  border-radius: 20px;
 }
 
 .countries-served {
@@ -2860,6 +3023,55 @@ p {
 
 .text-blue {
   color: var(--main-color);
+}
+
+.testimonials-mp .card {
+  padding: 1.5rem;
+  min-height: 200px;
+  margin: 1rem 0 0.5rem;
+  border: none;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.testimonials-mp .card .lighten {
+  display: inline-flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-direction: column;
+}
+
+.testimonials-mp .item .fa-quote-right {
+  font-size: 60px;
+}
+
+.testimonials-mp .item .info .img-author {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.testimonials-mp .item .info {
+  display: flex;
+  align-items: center;
+}
+
+.testimonials-mp .item .info p {
+  font-size: 14px;
+}
+
+.testimonials-mp .item .info span {
+  font-size: 16px;
+}
+
+.logo-image {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cards-practice {
@@ -2887,7 +3099,7 @@ p {
   margin-bottom: 40px;
 }
 
-.image-zoom-container{
+.image-zoom-container {
   overflow: hidden;
   display: inline-block;
   border-radius: 15px;
@@ -2899,5 +3111,6 @@ p {
 }
 
 .image-zoom-container:hover img {
-  transform: scale(1.1); /* Zoom by 10% */
+  transform: scale(1.1);
+  /* Zoom by 10% */
 }
