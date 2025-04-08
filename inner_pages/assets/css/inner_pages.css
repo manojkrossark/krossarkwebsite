@@ -2016,6 +2016,7 @@
 .blog-mp .item .info .author-info span:first-child {
   font-size: 18px;
   color: var(--main-color);
+  font-weight: 500;
 }
 
 .blog-mp .item .info .author-info span,
@@ -2672,7 +2673,7 @@ p {
   font-size: 18px;
   font-weight: 300;
 }
-
+/* 
 .sec-head .sub-head:after {
   content: "";
   width: 7px;
@@ -2682,7 +2683,7 @@ p {
   position: absolute;
   top: 10px;
   left: 0;
-}
+} */
 
 .text-indent {
   text-indent: 20%;
@@ -3136,7 +3137,7 @@ p {
 
 .testimonials-mp .card {
   padding: 1.5rem;
-  min-height: 200px;
+  min-height: 250px;
   margin: 1rem 0 0.5rem;
   border: none;
   border-radius: 10px;
@@ -3153,7 +3154,12 @@ p {
 }
 
 .testimonials-mp .item .fa-quote-right {
-  font-size: 60px;
+  font-size: 40px;
+}
+.testimonials-mp .item h6 {
+  font-size: 16px;
+  color: var(--text-color);
+  line-height: 26px;
 }
 
 .testimonials-mp .item .info .img-author {
@@ -3174,6 +3180,7 @@ p {
 
 .testimonials-mp .item .info span {
   font-size: 16px;
+  font-weight: 600;
 }
 
 .logo-image {
