@@ -1463,7 +1463,7 @@
 
 .works-mp .item {
   padding-top: 30px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
   margin-bottom: 40px;
 }
 
@@ -2253,10 +2253,10 @@
   border-color: #2b2b2b;
 }
 
-
+/* 
 .contact-pg .butn:hover {
   background: var(--main-color) !important;
-}
+} */
 
 .footer-sa .call-action h2 {
   font-size: 100px;
