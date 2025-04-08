@@ -81,37 +81,6 @@
 
     <div id="nav-placeholder"></div>
 
-    <script>
-      fetch("nav.html")
-        .then((res) => res.text())
-        .then((html) => {
-          document.getElementById("nav-placeholder").innerHTML = html;
-
-          const currentPage = window.location.pathname.split("/").pop();
-
-          // Highlight exact matching nav link
-          document
-            .querySelectorAll("a.nav-link, a.dropdown-item")
-            .forEach((link) => {
-              if (link.getAttribute("href") === currentPage) {
-                link.classList.add("active");
-
-                // Also add 'active' class to parent dropdown toggle if it's a submenu
-                const parentDropdown = link.closest(".dropdown-menu");
-                if (parentDropdown) {
-                  const dropdownToggle = parentDropdown
-                    .closest(".nav-item.dropdown")
-                    .querySelector(".nav-link.dropdown-toggle");
-
-                  if (dropdownToggle) {
-                    dropdownToggle.classList.add("active");
-                  }
-                }
-              }
-            });
-        });
-    </script>
-
     <div class="hamenu">
       <div class="close-menu cursor-pointer ti-close"></div>
       <div class="container-fluid rest d-flex">
@@ -879,89 +848,50 @@
 
         <!-- ==================== Start Footer ==================== -->
 
-        <footer class="footer-sa pb-80">
-          <div class="container section-padding">
-            <div class="call-action text-center mb-80">
-              <h2 class="title-font">
-                <a href="contact.html">Contact Us</a>
-              </h2>
-            </div>
-            <div class="contact-info">
-              <div class="row">
-                <div class="col-lg-5">
-                  <a href="../index.html" class="logo md-mb50">
-                    <img src="assets/imgs/Krossark_logo.png" alt="" />
-                  </a>
-                </div>
-                <div class="col-lg-6">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="item">
-                        <span class="sub-color">location</span>
-                        <p>
-                          7094, Peachtree industrial Blvd., Suite 270 Norcross,
-                          GA 30071, USA
-                        </p>
-                      </div>
-                    </div>
-                    <div
-                      class="col-md-6 d-flex justify-content-end justify-end"
-                    >
-                      <div class="item">
-                        <span class="sub-color">inquiry</span>
-                        <p>info@krossark.com</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 offset-lg-5">
-                  <!-- <div class="social-icon">
-                                    <a href="#0">
-                                        <i class="fa-brands fa-x-twitter"></i>
-                                    </a>
-                                    <a href="#0">
-                                        <i class="fa-brands fa-instagram"></i>
-                                    </a>
-                                    <a href="#0">
-                                        <i class="fa-brands fa-dribbble"></i>
-                                    </a>
-                                    <a href="#0">
-                                        <i class="fa-brands fa-behance"></i>
-                                    </a>
-                                    <a href="#0">
-                                        <i class="fa-brands fa-github"></i>
-                                    </a>
-                                </div> -->
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="sub-footer">
-            <div class="container bord-thin-top-light pt-50">
-              <div class="row">
-                <div class="col-lg-8">
-                  <div class="copy sub-color md-mb50">
-                    <p>
-                      © 2025 All Right Reserved <a href="#0">Krossark inc</a>.
-                    </p>
-                  </div>
-                </div>
-                <div class="col-lg-4 d-flex justify-content-end">
-                  <div class="links sub-color d-flex justify-content-between">
-                    <a href="../index.html">Home</a>
-                    <a href="tech_service.html">Services</a>
-                    <a href="waro.html">Product</a>
-                    <a href="about.html">About us</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </footer>
+        <div id="footer-placeholder"></div>
 
         <!-- ==================== End Footer ==================== -->
       </div>
     </div>
+
+    <script>
+      // Load nav
+      fetch("nav.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("nav-placeholder").innerHTML = html;
+
+          const currentPage = window.location.pathname.split("/").pop();
+
+          // Highlight current link
+          document
+            .querySelectorAll("a.nav-link, a.dropdown-item")
+            .forEach((link) => {
+              if (link.getAttribute("href") === currentPage) {
+                link.classList.add("active");
+
+                // If inside a dropdown, highlight the parent toggle
+                const parentDropdown = link.closest(".dropdown-menu");
+                if (parentDropdown) {
+                  const dropdownToggle = parentDropdown
+                    .closest(".nav-item.dropdown")
+                    .querySelector(".nav-link.dropdown-toggle");
+
+                  if (dropdownToggle) {
+                    dropdownToggle.classList.add("active");
+                  }
+                }
+              }
+            });
+        });
+
+      // Load footer
+      fetch("footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footer-placeholder").innerHTML = html;
+        });
+    </script>
 
     <!-- jQuery -->
     <script src="../common/js/lib/jquery-3.6.0.min.js"></script>
