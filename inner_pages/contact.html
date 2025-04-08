@@ -419,6 +419,11 @@
         .getElementById("contact-form")
         .addEventListener("submit", function (event) {
           event.preventDefault(); // Prevent the default form submission
+          const response = grecaptcha.getResponse();
+          if (response.length === 0) {
+            alert("Please complete the reCAPTCHA.");
+            return;
+          }
 
           var name = document.getElementById("form_name").value.trim();
           var email = document.getElementById("form_email").value.trim();
@@ -452,6 +457,7 @@
 
             // Clear the form fields after sending the email
             document.getElementById("contact-form").reset();
+            grecaptcha.reset();
           } else {
             const fieldsArr = [name, email, subject, message];
             const fieldNames = ["Name", "Email", "Subject", "Message"];
