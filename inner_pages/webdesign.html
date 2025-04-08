@@ -1,215 +1,199 @@
 <!DOCTYPE html>
 <html lang="zxx">
-
-
-<head>
-
+  <head>
     <!-- Metas -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
     <!-- <meta name="keywords" content="HTML5 Template Krossark Multi-Purpose ">
     <meta name="description" content="Krossark - Multi-Purpose HTML5 Template"> -->
-    <meta name="author" content="">
+    <meta name="author" content="" />
 
     <!-- Title  -->
     <title>Krossark Consulting Services</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/imgs/favicon.png">
+    <link rel="shortcut icon" href="assets/imgs/favicon.png" />
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Six+Caps&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Six+Caps&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Plugins -->
-    <link rel="stylesheet" href="../common/css/plugins.css">
+    <link rel="stylesheet" href="../common/css/plugins.css" />
 
     <!-- Core Style Css -->
-    <link rel="stylesheet" href="../common/css/common_style.css">
-    <link rel="stylesheet" href="assets/css/home8-style.css">
+    <link rel="stylesheet" href="../common/css/common_style.css" />
+    <link rel="stylesheet" href="assets/css/home8-style.css" />
+  </head>
 
-</head>
-
-<body>
-
-
-
+  <body>
     <!-- ==================== Start Loading ==================== -->
 
     <div class="loader-wrap">
-        <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
-            <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
-        </svg>
+      <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+        <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+      </svg>
 
-        <div class="loader-wrap-heading">
-            <div class="load-text">
-                <span>K</span>
-                <span>R</span>
-                <span>O</span>
-                <span>S</span>
-                <span>S</span>
-                <span>A</span>
-                <span>R</span>
-                <span>K</span>
-            </div>
+      <div class="loader-wrap-heading">
+        <div class="load-text">
+          <span>K</span>
+          <span>R</span>
+          <span>O</span>
+          <span>S</span>
+          <span>S</span>
+          <span>A</span>
+          <span>R</span>
+          <span>K</span>
         </div>
+      </div>
     </div>
 
     <!-- ==================== End Loading ==================== -->
 
-
     <div class="cursor"></div>
-
 
     <!-- ==================== Start progress-scroll-button ==================== -->
 
     <div class="progress-wrap cursor-pointer">
-        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-        </svg>
+      <svg
+        class="progress-circle svg-content"
+        width="100%"
+        height="100%"
+        viewBox="-1 -1 102 102"
+      >
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
     </div>
 
     <!-- ==================== End progress-scroll-button ==================== -->
 
+    <!-- ==================== Start Navbar ==================== -->
 
+    <div id="nav-placeholder"></div>
 
-     <!-- ==================== Start Navbar ==================== -->
+    <script>
+      fetch("nav.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("nav-placeholder").innerHTML = html;
 
-     <nav class="navbar navbar-expand-lg">
-        <div class="container">
+          const currentPage = window.location.pathname.split("/").pop();
 
-            <!-- Logo -->
-            <a href="../index.html" class="logo">
-                <img src="assets/imgs/Krossark_logo.png" alt="logo">
-            </a>
+          // Highlight exact matching nav link
+          document
+            .querySelectorAll("a.nav-link, a.dropdown-item")
+            .forEach((link) => {
+              if (link.getAttribute("href") === currentPage) {
+                link.classList.add("active");
 
-            <!-- navbar links -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About us</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdownServices" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownServices">
-                            <div class="dropdown-container">
-                            <a class="dropdown-item active" href="tech_service.html">Tech Service</a>
-                            <a class="dropdown-item" href="marketing.html">Marketing Service</a>
-</div>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <div class="dropdown-container">
-                            <a class="dropdown-item" href="waro.html">Waro</a>
-                            <a class="dropdown-item" href="alto.html">Alto</a>
-                            <a class="dropdown-item" href="fetchh.html">Fetchh</a>
-</div>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="our_work.html">Our Work</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="topnav d-flex align-items-center">
-                <a href="contact.html" class="butn butn-rounded">
-                    <div class="d-flex align-items-center">
-                        <span>Start Project</span>
-                        <span class="icon ml-10">
-                            <img src="../common/imgs/icons/arrow-top-right.svg" alt="">
-                        </span>
-                    </div>
-                </a>
-                <div class="menu-icon cursor-pointer">
-                    <span class="icon ti-align-right"></span>
-                </div>
-            </div>
-        </div>
-    </nav>
+                // Also add 'active' class to parent dropdown toggle if it's a submenu
+                const parentDropdown = link.closest(".dropdown-menu");
+                if (parentDropdown) {
+                  const dropdownToggle = parentDropdown
+                    .closest(".nav-item.dropdown")
+                    .querySelector(".nav-link.dropdown-toggle");
+
+                  if (dropdownToggle) {
+                    dropdownToggle.classList.add("active");
+                  }
+                }
+              }
+            });
+        });
+    </script>
 
     <div class="hamenu">
-        <div class="close-menu cursor-pointer ti-close"></div>
-        <div class="container-fluid rest d-flex">
-            <div class="menu-links">
-                <ul class="main-menu rest">
-                    <li>
-                        <div class="o-hidden">
-                            <a href="../index.html" class="link"><span class="fill-text"
-                                    data-text="Home">Home</span></a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="o-hidden">
-                            <a href="about.html" class="link"><span class="fill-text" data-text="About Us">About
-                                    Us</span></a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="o-hidden">
-                            <div class="link cursor-pointer dmenu"><span class="fill-text"
-                                    data-text="Services">Services</span>
-                                <i></i>
-                            </div>
-                        </div>
-                        <div class="sub-menu">
-                            <ul>
-                                <li><a href="tech_service.html">Tech Service</a></li>
-                                <li><a href="marketing.html">Marketing Service</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="o-hidden">
-                            <div class="link cursor-pointer dmenu"><span class="fill-text"
-                                    data-text="Products">Products</span>
-                                <i></i>
-                            </div>
-                        </div>
-                        <div class="sub-menu">
-                            <ul>
-                                <li>
-                                    <a href="waro.html" class="sub-link">Waro</a>
-                                </li>
-                                <li>
-                                    <a href="alto.html" class="sub-link">Alto</a>
-                                </li>
-                                <li>
-                                    <a href="fetchh.html" class="sub-link">Fetchh</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="o-hidden">
-                            <a href="our_work.html" class="link"><span class="fill-text" data-text="Our Work">Our
-                                    Work</span></a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="o-hidden">
-                            <a href="contact.html" class="link"><span class="fill-text" data-text="Contact Us">Contact
-                                    Us</span></a>
-                        </div>
-                    </li>
+      <div class="close-menu cursor-pointer ti-close"></div>
+      <div class="container-fluid rest d-flex">
+        <div class="menu-links">
+          <ul class="main-menu rest">
+            <li>
+              <div class="o-hidden">
+                <a href="../index.html" class="link"
+                  ><span class="fill-text" data-text="Home">Home</span></a
+                >
+              </div>
+            </li>
+            <li>
+              <div class="o-hidden">
+                <a href="about.html" class="link"
+                  ><span class="fill-text" data-text="About Us"
+                    >About Us</span
+                  ></a
+                >
+              </div>
+            </li>
+            <li>
+              <div class="o-hidden">
+                <div class="link cursor-pointer dmenu">
+                  <span class="fill-text" data-text="Services">Services</span>
+                  <i></i>
+                </div>
+              </div>
+              <div class="sub-menu">
+                <ul>
+                  <li><a href="tech_service.html">Tech Service</a></li>
+                  <li><a href="marketing.html">Marketing Service</a></li>
                 </ul>
+              </div>
+            </li>
+            <li>
+              <div class="o-hidden">
+                <div class="link cursor-pointer dmenu">
+                  <span class="fill-text" data-text="Products">Products</span>
+                  <i></i>
+                </div>
+              </div>
+              <div class="sub-menu">
+                <ul>
+                  <li>
+                    <a href="waro.html" class="sub-link">Waro</a>
+                  </li>
+                  <li>
+                    <a href="alto.html" class="sub-link">Alto</a>
+                  </li>
+                  <li>
+                    <a href="fetchh.html" class="sub-link">Fetchh</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="o-hidden">
+                <a href="our_work.html" class="link"
+                  ><span class="fill-text" data-text="Our Work"
+                    >Our Work</span
+                  ></a
+                >
+              </div>
+            </li>
+            <li>
+              <div class="o-hidden">
+                <a href="contact.html" class="link"
+                  ><span class="fill-text" data-text="Contact Us"
+                    >Contact Us</span
+                  ></a
+                >
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="cont-info valign">
+          <div class="text-center full-width">
+            <div class="logo">
+              <img src="../common/imgs/Krossark_logo.png" alt="" />
             </div>
-            <div class="cont-info valign">
-                <div class="text-center full-width">
-                    <div class="logo">
-                        <img src="../common/imgs/Krossark_logo.png" alt="">
-                    </div>
-                    <!-- <div class="social-icon mt-40">
+            <!-- <div class="social-icon mt-40">
                         <a href="https://www.linkedin.com/company/fetchh-llp/">
                             <i class="fa-brands fa-linkedin-in"></i>
                         </a>
@@ -223,336 +207,387 @@
                             <i class="fa-brands fa-twitter"></i>
                         </a>
                     </div> -->
-                    <div class="item mt-30">
-                        <h5>7094, Peachtree industrial Blvd., Suite 270 <br> Norcross, GA 30071, USA </h5>
-                    </div>
-                    <div class="item mt-10">
-                        <h5><a href="#0">info@krossark.com</a></h5>
-                        <!--<h5 class="underline"><a href="#0">+1 202-361-2345</a></h5>
-                        <h5 class="underline"><a href="#0">+91 95000 60444</a></h5> -->
-                    </div>
-                </div>
+            <div class="item mt-30">
+              <h5>
+                7094, Peachtree industrial Blvd., Suite 270 <br />
+                Norcross, GA 30071, USA
+              </h5>
             </div>
+            <div class="item mt-10">
+              <h5><a href="#0">info@krossark.com</a></h5>
+              <!--<h5 class="underline"><a href="#0">+1 202-361-2345</a></h5>
+                        <h5 class="underline"><a href="#0">+91 95000 60444</a></h5> -->
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- ==================== End Navbar ==================== -->
 
     <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <main>
+          <!-- ==================== Start Header ==================== -->
 
+          <header class="header-cst">
+            <div class="container-fluid">
+              <div class="row sm-marg">
+                <div class="col-lg-6">
+                  <div class="fit-img img">
+                    <img src="assets/imgs/header/1.jpg" alt="" />
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="fit-img img md-hide">
+                    <img src="assets/imgs/header/2.jpg" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div class="caption text-center">
+                <h1 class="title-font">Web Design</h1>
+                <h4 class="mt-30 fw-300">
+                  Reliable Design Studio <br />
+                  where can make your ideas come true
+                </h4>
+              </div>
+            </div>
+          </header>
 
-        <div id="smooth-content">
+          <!-- ==================== End Header ==================== -->
 
-            <main>
+          <!-- ==================== Start Portfolio ==================== -->
 
-
-
-                <!-- ==================== Start Header ==================== -->
-
-                <header class="header-cst">
-                    <div class="container-fluid">
-                        <div class="row sm-marg">
-                            <div class="col-lg-6">
-                                <div class="fit-img img">
-                                    <img src="assets/imgs/header/1.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="fit-img img md-hide">
-                                    <img src="assets/imgs/header/2.jpg" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="caption text-center">
-                            <h1 class="title-font">Web Design</h1>
-                            <h4 class="mt-30 fw-300">Reliable Design Studio <br> where can make your ideas come true
-                            </h4>
-                        </div>
+          <section class="work-card section-padding">
+            <div class="container-xxl">
+              <div class="cards">
+                <div class="card-item">
+                  <div class="img fit-img">
+                    <img src="assets/imgs/team/back_1.jpg" alt="" />
+                    <div class="tags">
+                      <a href="#0">Development</a>
+                      <a href="#0">UI/UX</a>
+                      <a href="#0">illustration</a>
                     </div>
-                </header>
-
-                <!-- ==================== End Header ==================== -->
-
-
-
-                <!-- ==================== Start Portfolio ==================== -->
-
-                <section class="work-card section-padding">
-                    <div class="container-xxl">
-                        <div class="cards">
-                            <div class="card-item">
-                                <div class="img fit-img">
-                                    <img src="assets/imgs/team/back_1.jpg" alt="">
-                                    <div class="tags">
-                                        <a href="#0">Development</a>
-                                        <a href="#0">UI/UX</a>
-                                        <a href="#0">illustration</a>
-                                    </div>
-                                    <h5 class="bottom">
-                                        <a href="backhaul.html">Backhaul</a>
-                                    </h5>
-                                </div>
-                            </div>
-                            <div class="card-item">
-                                <div class="img fit-img">
-                                    <img src="assets/imgs/team/VA_Office_Common_Area.jpg" alt="">
-                                    <div class="tags">
-                                        <a href="#0">Mobile Responsive</a>
-                                        <a href="#0">UX Design</a>
-                                    </div>
-                                    <h5>
-                                        <a href="rosendin.html">Rosendin Electric</a>
-                                    </h5>
-                                </div>
-                            </div>
-                            <div class="card-item">
-                                <div class="img fit-img">
-                                    <img src="assets/imgs/team/furniture.webp" alt="">
-                                    <div class="tags">
-                                        <a href="#0">UI/UX</a>
-                                        <a href="#0">Webflow</a>
-                                    </div>
-                                    <h5>
-                                        <a href="furiture-bazzar.html">Furiture Bazzar</a>
-                                    </h5>
-                                </div>
-                            </div>
-                            <div class="card-item">
-                                <div class="img fit-img">
-                                    <img src="assets/imgs/team/hyatt_1.jpg" alt="">
-                                    <div class="tags">
-                                        <a href="#0">Development</a>
-                                        <a href="#0">UI/UX</a>
-                                        <a href="#0">illustration</a>
-                                    </div>
-                                    <h5 class="bottom left">
-                                        <a href="hyatt.html">Hyatt</a>
-                                    </h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="text-center mt-80">
-                            <a href="tech_service.html" class="butn butn-md butn-bord butn-rounded">
-                                <div class="d-flex align-items-center">
-                                    <span>Check Our Services</span>
-                                    <span class="icon invert ml-10">
-                                        <img src="../common/imgs/icons/arrow-top-right.svg" alt="">
-                                    </span>
-                                </div>
-                            </a>
-                        </div>
+                    <h5 class="bottom">
+                      <a href="backhaul.html">Backhaul</a>
+                    </h5>
+                  </div>
+                </div>
+                <div class="card-item">
+                  <div class="img fit-img">
+                    <img
+                      src="assets/imgs/team/VA_Office_Common_Area.jpg"
+                      alt=""
+                    />
+                    <div class="tags">
+                      <a href="#0">Mobile Responsive</a>
+                      <a href="#0">UX Design</a>
                     </div>
-                </section>
-
-                <!-- ==================== End Portfolio ==================== -->
-
-
-
-                <!-- ==================== Start Intro ==================== -->
-
-                <section class="intro-cst section-padding pt-0">
-                    <div class="container">
-                        <div class="sec-head mb-80 pb-30 bord-thin-bottom-light">
-                            <div class="d-flex align-items-center">
-                                <h6 class="fz-40 text-u ls2 title-font">↳ About Us</h6>
-                                <div class="ml-auto">
-                                    <a href="about.html" class="butn butn-md butn-bord butn-rounded">
-                                        <div class="d-flex align-items-center">
-                                            <span>View More</span>
-                                            <span class="icon invert ml-10">
-                                                <img src="../common/imgs/icons/arrow-top-right.svg" alt="">
-                                            </span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row justify-content-end">
-                            <div class="col-lg-9">
-                                <div class="text mb-80 wow fadeInUp slow" data-wow-delay="0.2s">
-                                    <h5>We are a team of passionate and crazy individuals dedicated to bringing your
-                                        ideas to life. With a keen eye for aesthetics, attention to detail, and a deep
-                                        understanding of design principles, we strive to deliver exceptional results
-                                        that exceed your expectations</h5>
-                                </div>
-                                <div class="states">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="item sm-mb30 wow fadeInUp slow" data-wow-delay="0.2s">
-                                                <span>Established for</span>
-                                                <div class="d-flex align-items-end">
-                                                    <h2 class="title-font">11</h2>
-                                                    <span class="spn-botm">Years</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="item sm-mb30 wow fadeInUp slow" data-wow-delay="0.4s">
-                                                <span>Work Across</span>
-                                                <div class="d-flex align-items-end">
-                                                    <h2 class="title-font">18</h2>
-                                                    <span class="spn-botm">Countries</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="item wow fadeInUp slow" data-wow-delay="0.6s">
-                                                <span>Over</span>
-                                                <div class="d-flex align-items-end">
-                                                    <h2 class="title-font">80+</h2>
-                                                    <span class="spn-botm">Project</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <h5>
+                      <a href="rosendin.html">Rosendin Electric</a>
+                    </h5>
+                  </div>
+                </div>
+                <div class="card-item">
+                  <div class="img fit-img">
+                    <img src="assets/imgs/team/furniture.webp" alt="" />
+                    <div class="tags">
+                      <a href="#0">UI/UX</a>
+                      <a href="#0">Webflow</a>
                     </div>
-                </section>
-
-                <!-- ==================== End Intro ==================== -->
-
-
-
-                <!-- ==================== Start services ==================== -->
-
-                <section class="services-cst">
-                    <div class="container-fluid">
-                        <div class="light-bg radius-30" style="padding-top: 40px;">
-                            <div class="container">
-                                <div class="sec-head pb-30 bord-thin-bottom">
-                                    <div class="d-flex align-items-center">
-                                        <h6 class="fz-40 text-u ls2 title-font">↳ Our Services</h6>
-                                        <div class="ml-auto">
-                                            <a href="tech_service.html" class="butn butn-md butn-bord butn-rounded">
-                                                <div class="d-flex align-items-center">
-                                                    <span>View More</span>
-                                                    <span class="icon ml-10">
-                                                        <img src="../common/imgs/icons/arrow-top-right.svg" alt="">
-                                                    </span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item d-flex align-items-end justify-content-between">
-                                    <div class="numb">
-                                        <h6>01.</h6>
-                                    </div>
-                                    <div class="title">
-                                        <h2>Branding</h2>
-                                        <div class="list">
-                                            <span>Brand Identity</span>
-                                            <span>Logo Design</span>
-                                            <span>Brand Strategy</span>
-                                            <span>Art Direction</span>
-                                        </div>
-                                    </div>
-                                    <div class="ml-auto">
-                                        <div class="text-right">
-                                            <div class="icon">
-                                                <img src="../common/imgs/icons/crown-solid.svg" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item d-flex align-items-end justify-content-between">
-                                    <div class="numb">
-                                        <h6>02.</h6>
-                                    </div>
-                                    <div class="title">
-                                        <h2>Web Design</h2>
-                                        <div class="list">
-                                            <span>Brand Identity</span>
-                                            <span>Logo Design</span>
-                                            <span>Brand Strategy</span>
-                                            <span>Art Direction</span>
-                                        </div>
-                                    </div>
-                                    <div class="ml-auto">
-                                        <div class="text-right">
-                                            <div class="icon">
-                                                <img src="../common/imgs/icons/bezier-curve-solid.svg" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item d-flex align-items-end justify-content-between">
-                                    <div class="numb">
-                                        <h6>03.</h6>
-                                    </div>
-                                    <div class="title">
-                                        <h2>Development</h2>
-                                        <div class="list">
-                                            <span>Brand Identity</span>
-                                            <span>Logo Design</span>
-                                            <span>Brand Strategy</span>
-                                            <span>Art Direction</span>
-                                        </div>
-                                    </div>
-                                    <div class="ml-auto">
-                                        <div class="text-right">
-                                            <div class="icon">
-                                                <img src="../common/imgs/icons/code-solid.svg" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item d-flex align-items-end justify-content-between">
-                                    <div class="numb">
-                                        <h6>04.</h6>
-                                    </div>
-                                    <div class="title">
-                                        <h2>Growth</h2>
-                                        <div class="list">
-                                            <span>Brand Identity</span>
-                                            <span>Logo Design</span>
-                                            <span>Brand Strategy</span>
-                                            <span>Art Direction</span>
-                                        </div>
-                                    </div>
-                                    <div class="ml-auto">
-                                        <div class="text-right">
-                                            <div class="icon">
-                                                <img src="../common/imgs/icons/chart-line-solid.svg" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <h5>
+                      <a href="furiture-bazzar.html">Furiture Bazzar</a>
+                    </h5>
+                  </div>
+                </div>
+                <div class="card-item">
+                  <div class="img fit-img">
+                    <img src="assets/imgs/team/hyatt_1.jpg" alt="" />
+                    <div class="tags">
+                      <a href="#0">Development</a>
+                      <a href="#0">UI/UX</a>
+                      <a href="#0">illustration</a>
                     </div>
-                </section>
+                    <h5 class="bottom left">
+                      <a href="hyatt.html">Hyatt</a>
+                    </h5>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center mt-80">
+                <a
+                  href="tech_service.html"
+                  class="butn butn-md butn-bord butn-rounded"
+                >
+                  <div class="d-flex align-items-center">
+                    <span>Check Our Services</span>
+                    <span class="icon invert ml-10">
+                      <img
+                        src="../common/imgs/icons/arrow-top-right.svg"
+                        alt=""
+                      />
+                    </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </section>
 
-                <!-- ==================== End services ==================== -->
+          <!-- ==================== End Portfolio ==================== -->
 
+          <!-- ==================== Start Intro ==================== -->
 
-
-                <!-- ==================== Start Team ==================== -->
-
-                <section class="team-cst" style="padding-top: 40px;">
-                    <div class="container">
-                        <div class="sec-head pb-30 bord-thin-bottom-light">
-                            <div class="d-flex align-items-center">
-                                <h6 class="fz-40 text-u ls2 title-font">↳ Our Team</h6>
-                                <div class="ml-auto">
-                                    <a href="#" class="butn butn-md butn-bord butn-rounded">
-                                        <div class="d-flex align-items-center">
-                                            <span>See All</span>
-                                            <span class="icon invert ml-10">
-                                                <img src="../common/imgs/icons/arrow-top-right.svg" alt="">
-                                            </span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
+          <section class="intro-cst section-padding pt-0">
+            <div class="container">
+              <div class="sec-head mb-80 pb-30 bord-thin-bottom-light">
+                <div class="d-flex align-items-center">
+                  <h6 class="fz-40 text-u ls2 title-font">↳ About Us</h6>
+                  <div class="ml-auto">
+                    <a
+                      href="about.html"
+                      class="butn butn-md butn-bord butn-rounded"
+                    >
+                      <div class="d-flex align-items-center">
+                        <span>View More</span>
+                        <span class="icon invert ml-10">
+                          <img
+                            src="../common/imgs/icons/arrow-top-right.svg"
+                            alt=""
+                          />
+                        </span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="row justify-content-end">
+                <div class="col-lg-9">
+                  <div
+                    class="text mb-80 wow fadeInUp slow"
+                    data-wow-delay="0.2s"
+                  >
+                    <h5>
+                      We are a team of passionate and crazy individuals
+                      dedicated to bringing your ideas to life. With a keen eye
+                      for aesthetics, attention to detail, and a deep
+                      understanding of design principles, we strive to deliver
+                      exceptional results that exceed your expectations
+                    </h5>
+                  </div>
+                  <div class="states">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div
+                          class="item sm-mb30 wow fadeInUp slow"
+                          data-wow-delay="0.2s"
+                        >
+                          <span>Established for</span>
+                          <div class="d-flex align-items-end">
+                            <h2 class="title-font">11</h2>
+                            <span class="spn-botm">Years</span>
+                          </div>
                         </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div
+                          class="item sm-mb30 wow fadeInUp slow"
+                          data-wow-delay="0.4s"
+                        >
+                          <span>Work Across</span>
+                          <div class="d-flex align-items-end">
+                            <h2 class="title-font">18</h2>
+                            <span class="spn-botm">Countries</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div
+                          class="item wow fadeInUp slow"
+                          data-wow-delay="0.6s"
+                        >
+                          <span>Over</span>
+                          <div class="d-flex align-items-end">
+                            <h2 class="title-font">80+</h2>
+                            <span class="spn-botm">Project</span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
 
-                     <div class="thecontainer"> 
+          <!-- ==================== End Intro ==================== -->
 
-                        <!-- <div class="panel">
+          <!-- ==================== Start services ==================== -->
+
+          <section class="services-cst">
+            <div class="container-fluid">
+              <div class="light-bg radius-30" style="padding-top: 40px">
+                <div class="container">
+                  <div class="sec-head pb-30 bord-thin-bottom">
+                    <div class="d-flex align-items-center">
+                      <h6 class="fz-40 text-u ls2 title-font">
+                        ↳ Our Services
+                      </h6>
+                      <div class="ml-auto">
+                        <a
+                          href="tech_service.html"
+                          class="butn butn-md butn-bord butn-rounded"
+                        >
+                          <div class="d-flex align-items-center">
+                            <span>View More</span>
+                            <span class="icon ml-10">
+                              <img
+                                src="../common/imgs/icons/arrow-top-right.svg"
+                                alt=""
+                              />
+                            </span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="item d-flex align-items-end justify-content-between"
+                  >
+                    <div class="numb">
+                      <h6>01.</h6>
+                    </div>
+                    <div class="title">
+                      <h2>Branding</h2>
+                      <div class="list">
+                        <span>Brand Identity</span>
+                        <span>Logo Design</span>
+                        <span>Brand Strategy</span>
+                        <span>Art Direction</span>
+                      </div>
+                    </div>
+                    <div class="ml-auto">
+                      <div class="text-right">
+                        <div class="icon">
+                          <img
+                            src="../common/imgs/icons/crown-solid.svg"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="item d-flex align-items-end justify-content-between"
+                  >
+                    <div class="numb">
+                      <h6>02.</h6>
+                    </div>
+                    <div class="title">
+                      <h2>Web Design</h2>
+                      <div class="list">
+                        <span>Brand Identity</span>
+                        <span>Logo Design</span>
+                        <span>Brand Strategy</span>
+                        <span>Art Direction</span>
+                      </div>
+                    </div>
+                    <div class="ml-auto">
+                      <div class="text-right">
+                        <div class="icon">
+                          <img
+                            src="../common/imgs/icons/bezier-curve-solid.svg"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="item d-flex align-items-end justify-content-between"
+                  >
+                    <div class="numb">
+                      <h6>03.</h6>
+                    </div>
+                    <div class="title">
+                      <h2>Development</h2>
+                      <div class="list">
+                        <span>Brand Identity</span>
+                        <span>Logo Design</span>
+                        <span>Brand Strategy</span>
+                        <span>Art Direction</span>
+                      </div>
+                    </div>
+                    <div class="ml-auto">
+                      <div class="text-right">
+                        <div class="icon">
+                          <img
+                            src="../common/imgs/icons/code-solid.svg"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="item d-flex align-items-end justify-content-between"
+                  >
+                    <div class="numb">
+                      <h6>04.</h6>
+                    </div>
+                    <div class="title">
+                      <h2>Growth</h2>
+                      <div class="list">
+                        <span>Brand Identity</span>
+                        <span>Logo Design</span>
+                        <span>Brand Strategy</span>
+                        <span>Art Direction</span>
+                      </div>
+                    </div>
+                    <div class="ml-auto">
+                      <div class="text-right">
+                        <div class="icon">
+                          <img
+                            src="../common/imgs/icons/chart-line-solid.svg"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ==================== End services ==================== -->
+
+          <!-- ==================== Start Team ==================== -->
+
+          <section class="team-cst" style="padding-top: 40px">
+            <div class="container">
+              <div class="sec-head pb-30 bord-thin-bottom-light">
+                <div class="d-flex align-items-center">
+                  <h6 class="fz-40 text-u ls2 title-font">↳ Our Team</h6>
+                  <div class="ml-auto">
+                    <a href="#" class="butn butn-md butn-bord butn-rounded">
+                      <div class="d-flex align-items-center">
+                        <span>See All</span>
+                        <span class="icon invert ml-10">
+                          <img
+                            src="../common/imgs/icons/arrow-top-right.svg"
+                            alt=""
+                          />
+                        </span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="thecontainer">
+              <!-- <div class="panel">
                             <div class="item">
                                 <div class="img">
                                     <img src="assets/imgs/team/avatar1.jpg" alt="">
@@ -631,210 +666,256 @@
                                 </div>
                             </div>
                         </div> -->
+            </div>
+          </section>
 
-                    </div> 
+          <!-- ==================== End Team ==================== -->
 
-                </section>
+          <!-- ==================== Start dark box ==================== -->
 
-                <!-- ==================== End Team ==================== -->
+          <section class="container-fluid">
+            <div class="section-padding sub-bg radius-30">
+              <!-- ==================== Start Testimonials ==================== -->
 
-
-
-                <!-- ==================== Start dark box ==================== -->
-
-                <section class="container-fluid">
-
-                    <div class="section-padding sub-bg radius-30">
-
-
-                        <!-- ==================== Start Testimonials ==================== -->
-
-                        <div class="testimonials-ds">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-5">
-                                        <div class="qoute-icon md-mb50">
-                                            <div class="text">
-                                                <img src="assets/imgs/testim/Vector_Cricle_Text.svg" alt="">
-                                            </div>
-                                            <div class="icon">
-                                                <img src="assets/imgs/testim/vector_quote.svg" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-7">
-                                        <div class="swiper testim-swiper swiper-container">
-                                            <div class="swiper-wrapper">
-                                                <div class="swiper-slide">
-                                                    <div class="item">
-                                                        <div class="text">
-                                                            <h4>Krossark ability to create a high quality UI is
-                                                                stands out. It’s something we placed a premium on. A studio
-                                                                with passionate, professional, fun and full creativity.
-                                                                Recommend!.”</h4>
-                                                        </div>
-                                                        <div
-                                                            class="info d-flex align-items-center mt-40 pt-30 bord-thin-top-light">
-                                                            <div>
-                                                                <div class="img-author">
-                                                                    <img src="assets/imgs/testim/avatar1.jpg" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="info-text">
-                                                                <span>Greg Harris</span>
-                                                                <p>CEO & Founder, Backhaul Direct</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="swiper-slide">
-                                                    <div class="item">
-                                                        <div class="text">
-                                                            <h4>Krossark ability to create a high quality UI is
-                                                                stands out. It’s something we placed a premium on. A studio
-                                                                with passionate, professional, fun and full creativity.
-                                                                Recommend!.”</h4>
-                                                        </div>
-                                                        <div
-                                                            class="info d-flex align-items-center mt-40 pt-30 bord-thin-top-light">
-                                                            <div>
-                                                                <div class="img-author">
-                                                                    <img src="assets/imgs/testim/avatar2.jpg" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="info-text">
-                                                                <span>Nick Lain</span>
-                                                                <p>Director of Enterprise Operations</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="swiper-slide">
-                                                    <div class="item">
-                                                        <div class="text">
-                                                            <h4>Krossark ability to create a high quality UI is
-                                                                stands out. It’s something we placed a premium on. A studio
-                                                                with passionate, professional, fun and full creativity.
-                                                                Recommend!.”</h4>
-                                                        </div>
-                                                        <div
-                                                            class="info d-flex align-items-center mt-40 pt-30 bord-thin-top-light">
-                                                            <div>
-                                                                <div class="img-author">
-                                                                    <img src="assets/imgs/testim/avatar3.jpg" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="info-text">
-                                                                <span>Keith Douglas</span>
-                                                                <p>Rosendin Electric</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="swiper-pagination"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+              <div class="testimonials-ds">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-5">
+                      <div class="qoute-icon md-mb50">
+                        <div class="text">
+                          <img
+                            src="assets/imgs/testim/Vector_Cricle_Text.svg"
+                            alt=""
+                          />
                         </div>
-
-                        <!-- ==================== End Testimonials ==================== -->
-
-
-                        <!-- ==================== Start clients ==================== -->
-
-                        <div class="clients-ds mt-100">
-                            <div class="container">
-                                <div class="sec-head mb-80">
-                                    <h6 class="fz-40 text-u ls2 title-font">↳ Partner with +150 brands</h6>
-                                </div>
-                                <div class="row sm-marg">
-                                    <div class="col-lg col-md-4 col-6 md-mb30">
-                                        <div class="item d-flex align-items-center justify-content-center">
-                                            <div class="img">
-                                                <img src="assets/imgs/about/clients/backhaul.png" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg col-md-4 col-6 md-mb30">
-                                        <div class="item d-flex align-items-center justify-content-center">
-                                            <div class="img">
-                                                <img src="assets/imgs/about/clients/white/cisco_logo.png" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg col-md-4 col-6 md-mb30">
-                                        <div class="item d-flex align-items-center justify-content-center">
-                                            <div class="img">
-                                                <img src="assets/imgs/about/clients/white/heru.png" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg col-md-4 col-6 sm-mb30">
-                                        <div class="item d-flex align-items-center justify-content-center">
-                                            <div class="img">
-                                                <img src="assets/imgs/about/clients/white/verif-logo.png" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg col-md-4 col-6">
-                                        <div class="item d-flex align-items-center justify-content-center">
-                                            <div class="img">
-                                                <img src="assets/imgs/about/clients/white/fb-logo.png" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="icon">
+                          <img
+                            src="assets/imgs/testim/vector_quote.svg"
+                            alt=""
+                          />
                         </div>
-
-                        <!-- ==================== End clients ==================== -->
-
+                      </div>
                     </div>
-
-                </section>
-
-                <!-- ==================== End dark box ==================== -->
-
-
-            </main>
-
-
-            <!-- ==================== Start Footer ==================== -->
-
-            <footer class="footer-sa pb-80">
-                <div class="container section-padding">
-                    <div class="call-action text-center mb-80">
-                        <h2 class="title-font">
-                            <a href="contact.html">Contact Us</a>
-                        </h2>
-                    </div>
-                    <div class="contact-info">
-                        <div class="row">
-                            <div class="col-lg-5">
-                                <a href="../index.html" class="logo md-mb50">
-                                    <img src="assets/imgs/Krossark_logo.png" alt="">
-                                </a>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="item">
-                                            <span class="sub-color">location</span>
-                                            <p>7094, Peachtree industrial Blvd., Suite 270 Norcross, GA 30071, USA</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 d-flex justify-content-end justify-end">
-                                        <div class="item">
-                                            <span class="sub-color">inquiry</span>
-                                            <p>info@krossark.com</p>
-                                        </div>
-                                    </div>
+                    <div class="col-lg-7">
+                      <div class="swiper testim-swiper swiper-container">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide">
+                            <div class="item">
+                              <div class="text">
+                                <h4>
+                                  Krossark ability to create a high quality UI
+                                  is stands out. It’s something we placed a
+                                  premium on. A studio with passionate,
+                                  professional, fun and full creativity.
+                                  Recommend!.”
+                                </h4>
+                              </div>
+                              <div
+                                class="info d-flex align-items-center mt-40 pt-30 bord-thin-top-light"
+                              >
+                                <div>
+                                  <div class="img-author">
+                                    <img
+                                      src="assets/imgs/testim/avatar1.jpg"
+                                      alt=""
+                                    />
+                                  </div>
                                 </div>
+                                <div class="info-text">
+                                  <span>Greg Harris</span>
+                                  <p>CEO & Founder, Backhaul Direct</p>
+                                </div>
+                              </div>
                             </div>
-                            <div class="col-lg-6 offset-lg-5">
-                                <!-- <div class="social-icon">
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="item">
+                              <div class="text">
+                                <h4>
+                                  Krossark ability to create a high quality UI
+                                  is stands out. It’s something we placed a
+                                  premium on. A studio with passionate,
+                                  professional, fun and full creativity.
+                                  Recommend!.”
+                                </h4>
+                              </div>
+                              <div
+                                class="info d-flex align-items-center mt-40 pt-30 bord-thin-top-light"
+                              >
+                                <div>
+                                  <div class="img-author">
+                                    <img
+                                      src="assets/imgs/testim/avatar2.jpg"
+                                      alt=""
+                                    />
+                                  </div>
+                                </div>
+                                <div class="info-text">
+                                  <span>Nick Lain</span>
+                                  <p>Director of Enterprise Operations</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="item">
+                              <div class="text">
+                                <h4>
+                                  Krossark ability to create a high quality UI
+                                  is stands out. It’s something we placed a
+                                  premium on. A studio with passionate,
+                                  professional, fun and full creativity.
+                                  Recommend!.”
+                                </h4>
+                              </div>
+                              <div
+                                class="info d-flex align-items-center mt-40 pt-30 bord-thin-top-light"
+                              >
+                                <div>
+                                  <div class="img-author">
+                                    <img
+                                      src="assets/imgs/testim/avatar3.jpg"
+                                      alt=""
+                                    />
+                                  </div>
+                                </div>
+                                <div class="info-text">
+                                  <span>Keith Douglas</span>
+                                  <p>Rosendin Electric</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ==================== End Testimonials ==================== -->
+
+              <!-- ==================== Start clients ==================== -->
+
+              <div class="clients-ds mt-100">
+                <div class="container">
+                  <div class="sec-head mb-80">
+                    <h6 class="fz-40 text-u ls2 title-font">
+                      ↳ Partner with +150 brands
+                    </h6>
+                  </div>
+                  <div class="row sm-marg">
+                    <div class="col-lg col-md-4 col-6 md-mb30">
+                      <div
+                        class="item d-flex align-items-center justify-content-center"
+                      >
+                        <div class="img">
+                          <img
+                            src="assets/imgs/about/clients/backhaul.png"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg col-md-4 col-6 md-mb30">
+                      <div
+                        class="item d-flex align-items-center justify-content-center"
+                      >
+                        <div class="img">
+                          <img
+                            src="assets/imgs/about/clients/white/cisco_logo.png"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg col-md-4 col-6 md-mb30">
+                      <div
+                        class="item d-flex align-items-center justify-content-center"
+                      >
+                        <div class="img">
+                          <img
+                            src="assets/imgs/about/clients/white/heru.png"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg col-md-4 col-6 sm-mb30">
+                      <div
+                        class="item d-flex align-items-center justify-content-center"
+                      >
+                        <div class="img">
+                          <img
+                            src="assets/imgs/about/clients/white/verif-logo.png"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg col-md-4 col-6">
+                      <div
+                        class="item d-flex align-items-center justify-content-center"
+                      >
+                        <div class="img">
+                          <img
+                            src="assets/imgs/about/clients/white/fb-logo.png"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ==================== End clients ==================== -->
+            </div>
+          </section>
+
+          <!-- ==================== End dark box ==================== -->
+        </main>
+
+        <!-- ==================== Start Footer ==================== -->
+
+        <footer class="footer-sa pb-80">
+          <div class="container section-padding">
+            <div class="call-action text-center mb-80">
+              <h2 class="title-font">
+                <a href="contact.html">Contact Us</a>
+              </h2>
+            </div>
+            <div class="contact-info">
+              <div class="row">
+                <div class="col-lg-5">
+                  <a href="../index.html" class="logo md-mb50">
+                    <img src="assets/imgs/Krossark_logo.png" alt="" />
+                  </a>
+                </div>
+                <div class="col-lg-6">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="item">
+                        <span class="sub-color">location</span>
+                        <p>
+                          7094, Peachtree industrial Blvd., Suite 270 Norcross,
+                          GA 30071, USA
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      class="col-md-6 d-flex justify-content-end justify-end"
+                    >
+                      <div class="item">
+                        <span class="sub-color">inquiry</span>
+                        <p>info@krossark.com</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 offset-lg-5">
+                  <!-- <div class="social-icon">
                                     <a href="#0">
                                         <i class="fa-brands fa-x-twitter"></i>
                                     </a>
@@ -851,46 +932,36 @@
                                         <i class="fa-brands fa-github"></i>
                                     </a>
                                 </div> -->
-                            </div>
-                        </div>
-                    </div>
                 </div>
-                <div class="sub-footer">
-                    <div class="container bord-thin-top-light pt-50">
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <div class="copy sub-color md-mb50">
-                                    <p>© 2025 All Right Reserved <a href="#0">Krossark inc</a>. </p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 d-flex justify-content-end">
-                                <div class="links sub-color d-flex justify-content-between">
-                                    <a href="../index.html">Home</a>
-                                    <a href="tech_service.html">Services</a>
-                                    <a href="waro.html">Product</a>
-                                    <a href="about.html">About us</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+            </div>
+          </div>
+          <div class="sub-footer">
+            <div class="container bord-thin-top-light pt-50">
+              <div class="row">
+                <div class="col-lg-8">
+                  <div class="copy sub-color md-mb50">
+                    <p>
+                      © 2025 All Right Reserved <a href="#0">Krossark inc</a>.
+                    </p>
+                  </div>
                 </div>
-            </footer>
+                <div class="col-lg-4 d-flex justify-content-end">
+                  <div class="links sub-color d-flex justify-content-between">
+                    <a href="../index.html">Home</a>
+                    <a href="tech_service.html">Services</a>
+                    <a href="waro.html">Product</a>
+                    <a href="about.html">About us</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
 
-            <!-- ==================== End Footer ==================== -->
-
-
-        </div>
-
+        <!-- ==================== End Footer ==================== -->
+      </div>
     </div>
-
-
-
-
-
-
-
-
-
 
     <!-- jQuery -->
     <script src="../common/js/lib/jquery-3.6.0.min.js"></script>
@@ -911,7 +982,5 @@
     <!-- custom scripts -->
     <script src="assets/js/hscroll.js"></script>
     <script src="assets/js/scripts-1.js"></script>
-
-</body>
-
+  </body>
 </html>
