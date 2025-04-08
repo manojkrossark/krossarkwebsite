@@ -74,21 +74,21 @@
       .then((res) => res.text())
       .then((html) => {
         document.getElementById("nav-placeholder").innerHTML = html;
-  
+
         const currentPage = window.location.pathname.split("/").pop();
-  
+
         // Highlight exact matching nav link
         document.querySelectorAll("a.nav-link, a.dropdown-item").forEach((link) => {
           if (link.getAttribute("href") === currentPage) {
             link.classList.add("active");
-  
+
             // Also add 'active' class to parent dropdown toggle if it's a submenu
             const parentDropdown = link.closest(".dropdown-menu");
             if (parentDropdown) {
               const dropdownToggle = parentDropdown
                 .closest(".nav-item.dropdown")
                 .querySelector(".nav-link.dropdown-toggle");
-  
+
               if (dropdownToggle) {
                 dropdownToggle.classList.add("active");
               }
@@ -97,7 +97,7 @@
         });
       });
   </script>
-  
+
 
   <div class="hamenu">
     <div class="close-menu cursor-pointer ti-close"></div>
@@ -200,7 +200,7 @@
 
   <div id="smooth-wrapper">
     <div id="smooth-content">
-      <main>
+      <main class="industries">
         <header class="work-hed2 section-padding pb-0">
           <div class="container">
             <div class="caption sec-head text-center">
@@ -218,7 +218,7 @@
         </header>
 
         <section class="">
-          <div class="container bord-thin-bottom-light section-even-padding ">
+          <div class="container bord-thin-bottom-light section-even-padding slideInUp">
             <p>
               The aerospace and defense (A&D) industry is facing numerous
               challenges linked to an unforeseen pandemic, rapidly evolving
@@ -228,9 +228,7 @@
             </p>
             <div class="row">
               <div class="col-lg-3 valign">
-                <div class="full-width md-mb80">
-                  <div class="sec-head md-mb80"></div>
-                </div>
+
               </div>
               <div class="col-lg-7 offset-lg-1 valign">
                 <div class="full-width mt-30">
@@ -259,8 +257,10 @@
               </div>
               <div class="row">
                 <div class="col-lg-6">
-                  <div class=" d-flex flex-column gap-5">
-                    <img src="assets/imgs/industries/Banner_1.jpg" class="rounded-15" alt="" />
+                  <div class="featured-card">
+                    <div class="image-zoom-container">
+                      <img src="assets/imgs/industries/airshow.jpg" alt="" />
+                    </div>
                     <h6>Farnborough International Airshow</h6>
                     <p>Krossark is proud to partner with Farnborough International at the 2024 Farnborough International
                       Airshow to bring industry experts together addressing topics related to aviation, space and
@@ -270,8 +270,10 @@
                   </div>
                 </div>
                 <div class="col-lg-6">
-                  <div class=" d-flex flex-column gap-5">
-                    <img src="assets/imgs/industries/Banner_2.jpg" class="rounded-15" alt="" />
+                  <div class="featured-card">
+                    <div class="image-zoom-container">
+                      <img src="assets/imgs/industries/Conference.jpg" alt="" />
+                    </div>
                     <h6>Krossark at the Munich Security Conference</h6>
                     <p>Krossark serves as an institutional partner and one of several contributors to the Munich
                       Security Conference, and provides data and production support to the annual Munich Security
@@ -295,7 +297,7 @@
               </div>
               <div class="row md-marg">
                 <div class="col-lg-4 items">
-                  <div class="item d-flex flex-column gap-5">
+                  <div class="item featured-card">
                     <h6>Aftermarket and Services</h6>
                     <p>Helping clients capture the aftermarket potential-the largest source of untapped value in
                       aerospace and defense -by assessing the installed base opportunity, imporving pricing, and
@@ -305,7 +307,7 @@
                   </div>
                 </div>
                 <div class="col-lg-4  items">
-                  <div class="item d-flex flex-column gap-5">
+                  <div class="item featured-card">
                     <h6>Digital and Analytics</h6>
                     <p>Helping clients tackle digital challennges and build sustainable, scalable soultions tailored to
                       the A&D industry.
@@ -314,7 +316,7 @@
                   </div>
                 </div>
                 <div class="col-lg-4  items">
-                  <div class="item d-flex flex-column gap-5">
+                  <div class="item featured-card">
                     <h6>Marketing and Sales </h6>
                     <p>Helping A7D companies develop effective strategies for winning contracts with critical customers,
                       contributing to stronger growth.
@@ -325,7 +327,7 @@
               </div>
               <div class="row md-marg">
                 <div class="col-lg-4  items">
-                  <div class="item d-flex flex-column gap-5">
+                  <div class="item featured-card">
                     <h6>Next-generation Productivity</h6>
                     <p>Helping clients build the tech-enables capabilities required to idenify and capture a step
                       change in profitabilty.
@@ -334,7 +336,7 @@
                   </div>
                 </div>
                 <div class="col-lg-4  items">
-                  <div class="item d-flex flex-column gap-5">
+                  <div class="item featured-card">
                     <h6>Strategy and Corporate Finace</h6>
                     <p>Helping aerospace and defense companies achieve their strategic goals in a complex,
                       competitive, and evolving landscape.
@@ -343,7 +345,7 @@
                   </div>
                 </div>
                 <div class="col-lg-4  items">
-                  <div class="item d-flex flex-column gap-5">
+                  <div class="item featured-card">
                     <h6>Talent and Capability Building</h6>
                     <p>Helpin A&D organizations create the right culture for their people, design the right struture,
                       and attract and retain the right talent.
@@ -362,12 +364,12 @@
             <div class="sec-head">
               <div class="row mb-80">
                 <div class="col-lg-12">
-                  <h2>Sectors we <span> serve</span></h2>
+                  <h2>Sectors we <span> Serve</span></h2>
                 </div>
               </div>
-              <div class="row mb-40">
-                <div class="col-lg-4 bord-thin-bottom-light pb-40">
-                  <div class=" d-flex flex-column gap-5">
+              <div class="row md-marg">
+                <div class="col-lg-4 pb-40">
+                  <div class="featured-card">
                     <h6>Commercial Aerospace</h6>
                     <p>Helping clients capture the aftermarket potential-the largest source of untapped value in
                       aerospace and defense -by assessing the installed base opportunity, imporving pricing, and
@@ -376,8 +378,8 @@
                     <a href="">Know More <i class="fa fa-arrow-right"></i></a>
                   </div>
                 </div>
-                <div class="col-lg-4 bord-thin-bottom-light pb-40">
-                  <div class=" d-flex flex-column gap-5">
+                <div class="col-lg-4 pb-40">
+                  <div class="featured-card">
                     <h6>Digital and Analytics</h6>
                     <p>Helping clients tackle digital challennges and build sustainable, scalable soultions tailored to
                       the A&D industry.
@@ -385,19 +387,19 @@
                     <a href="">Know More <i class="fa fa-arrow-right"></i></a>
                   </div>
                 </div>
-                <div class="col-lg-4 bord-thin-bottom-light pb-40">
-                  <div class=" d-flex flex-column gap-5">
+                <div class="col-lg-4 pb-40">
+                  <div class="featured-card">
                     <h6>Marketing and Sales </h6>
-                    <p>Helping A7D companies develop effective strategies for winning contracts with critical customers,
+                    <p>Helping A&D companies develop effective strategies for winning contracts with critical customers,
                       contributing to stronger growth.
                     </p>
                     <a href="">Know More <i class="fa fa-arrow-right"></i></a>
                   </div>
                 </div>
               </div>
-              <div class="row">
+              <div class="row md-marg">
                 <div class="col-lg-4">
-                  <div class=" d-flex flex-column gap-5">
+                  <div class="featured-card">
                     <h6>Next-generation Productivity</h6>
                     <p>Helping clients build the tech-enables capabilities required to idenify and capture a step
                       change in profitabilty.
@@ -406,7 +408,7 @@
                   </div>
                 </div>
                 <div class="col-lg-4">
-                  <div class=" d-flex flex-column gap-5">
+                  <div class="featured-card">
                     <h6>Strategy and Corporate Finace</h6>
                     <p>Helping aerospace and defense companies achieve their strategic goals in a complex,
                       competitive, and evolving landscape.
@@ -415,7 +417,7 @@
                   </div>
                 </div>
                 <div class="col-lg-4">
-                  <div class=" d-flex flex-column gap-5">
+                  <div class="featured-card">
                     <h6>Talent and Capability Building</h6>
                     <p>Helpin A&D organizations create the right culture for their people, design the right struture,
                       and attract and retain the right talent.
@@ -487,34 +489,34 @@
                 <div class="col-lg-12 ">
                   <h2>Related <span>Practices</span></h2>
                   <div class="mt-60">
-                    <div class="row">
+                    <div class="row cards-related">
                       <div class="col-lg-3 py-3">
-                        <div class="">
+                        <div class="cards-practice">
                           <h6>Automotive and Assembly</h6>
                         </div>
                       </div>
                       <div class="col-lg-3 py-3">
-                        <div class="">
+                        <div class="cards-practice">
                           <h6>Industrial Distribution</h6>
                         </div>
                       </div>
                       <div class="col-lg-3 py-3">
-                        <div class="">
+                        <div class="cards-practice">
                           <h6>Krossark Center for Future Mobility</h6>
                         </div>
                       </div>
                       <div class="col-lg-3 py-3">
-                        <div class="">
+                        <div class="cards-practice">
                           <h6>Defence and Security</h6>
                         </div>
                       </div>
                       <div class="col-lg-3 py-3">
-                        <div class="">
+                        <div class="cards-practice">
                           <h6>Industrial and Electronics</h6>
                         </div>
                       </div>
                       <div class="col-lg-3 py-3">
-                        <div class="">
+                        <div class="cards-practice">
                           <h6>Maintenance Repair and Overhaul</h6>
                         </div>
                       </div>
@@ -537,20 +539,27 @@
               </div>
               <div class="row">
                 <div class="col-lg-6">
-                  <div class=" d-flex flex-column gap-5">
-                    <img src="assets/imgs/industries/Banner_3.jpg" class="rounded-15" alt="" />
+                  <div class="featured-card">
+                    <div class="image-zoom-container">
+                      <img src="assets/imgs/industries/grey-to-green.jpg" alt="" />
+                    </div>
                     <h6 class="text-blue">ARTICLE</h6>
                     <h4>Navigating the grey-to-green transition in aerospace and defense</h4>
-                    <p>The aerospace and defence industry is transitioning from an older to younger workforce, but it faces intense competition for talent. It needs a radical response.
+                    <p>The aerospace and defence industry is transitioning from an older to younger workforce, but it
+                      faces intense competition for talent. It needs a radical response.
                     </p>
                   </div>
                 </div>
                 <div class="col-lg-6">
-                  <div class=" d-flex flex-column gap-5">
-                    <img src="assets/imgs/industries/Banner_4.jpg" class="rounded-15" alt="" />
+                  <div class="featured-card">
+                    <div class="image-zoom-container">
+                      <img src="assets/imgs/industries/Commercial_aerospace.jpg" alt="" />
+                    </div>
                     <h6 class="text-blue">ARTICLE</h6>
                     <h4>Planning for uncertianity in Commercial aerospace</h4>
-                    <p>Commercial aviation faces its most uncertain future in decades. COVID-depressed demand is now resurging, but there are many uncertianities and challenges for operators and manufactures to manage.
+                    <p>Commercial aviation faces its most uncertain future in decades. COVID-depressed demand is now
+                      resurging, but there are many uncertianities and challenges for operators and manufactures to
+                      manage.
                     </p>
                   </div>
                 </div>
