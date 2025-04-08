@@ -82,37 +82,6 @@
 
     <div id="nav-placeholder"></div>
 
-    <script>
-      fetch("nav.html")
-        .then((res) => res.text())
-        .then((html) => {
-          document.getElementById("nav-placeholder").innerHTML = html;
-
-          const currentPage = window.location.pathname.split("/").pop();
-
-          // Highlight exact matching nav link
-          document
-            .querySelectorAll("a.nav-link, a.dropdown-item")
-            .forEach((link) => {
-              if (link.getAttribute("href") === currentPage) {
-                link.classList.add("active");
-
-                // Also add 'active' class to parent dropdown toggle if it's a submenu
-                const parentDropdown = link.closest(".dropdown-menu");
-                if (parentDropdown) {
-                  const dropdownToggle = parentDropdown
-                    .closest(".nav-item.dropdown")
-                    .querySelector(".nav-link.dropdown-toggle");
-
-                  if (dropdownToggle) {
-                    dropdownToggle.classList.add("active");
-                  }
-                }
-              }
-            });
-        });
-    </script>
-
     <div class="hamenu">
       <div class="close-menu cursor-pointer ti-close"></div>
       <div class="container-fluid rest d-flex">
@@ -557,104 +526,50 @@
 
         <!-- ==================== Start Footer ==================== -->
 
-        <footer class="footer-sa pb-80">
-          <div class="container section-padding bord-thin-top-light">
-            <div class="call-action text-center mb-120">
-              <h2 class="">
-                <a href="#0"
-                  >Let's Make <br />
-                  Something Great!</a
-                >
-                <div
-                  class="buton d-flex align-items-center justify-content-center"
-                >
-                  <a href="#0">
-                    <span class="mb-10">Contact</span> <br />
-                    <span
-                      >Us
-                      <img
-                        src="../common/imgs/icons/arrow-top-right.svg"
-                        alt=""
-                    /></span>
-                  </a>
-                </div>
-              </h2>
-            </div>
-            <div class="contact-info">
-              <div class="row">
-                <div class="col-lg-3">
-                  <a href="#" class="logo md-mb50">
-                    <img src="assets/imgs/Krossark_logo.svg" alt="" />
-                  </a>
-                </div>
-
-                <div class="col-lg-3">
-                  <div class="item">
-                    <span class="sub-color">location</span>
-                    <p>
-                      7094, Peachtree industrial Blvd., Suite 270 Norcross, GA
-                      30071, USA
-                    </p>
-                  </div>
-                </div>
-                <div class="col-lg-3">
-                  <div class="item">
-                    <span class="sub-color">Contact</span>
-                    <p>info@krossark.com</p>
-                  </div>
-                </div>
-                <div class="col-lg-3">
-                  <div class="social-icon">
-                    <a href="#0">
-                      <i class="fa-brands fa-x-twitter"></i>
-                    </a>
-                    <a href="#0">
-                      <i class="fa-brands fa-instagram"></i>
-                    </a>
-                    <a href="#0">
-                      <i class="fa-brands fa-facebook"></i>
-                    </a>
-                    <a href="#0">
-                      <i class="fa-brands fa-youtube"></i>
-                    </a>
-                    <a href="#0">
-                      <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="sub-footer">
-            <div class="container bord-thin-top-light pt-50">
-              <div class="row">
-                <div class="col-lg-8">
-                  <div class="copy sub-color md-mb30">
-                    <p>
-                      © 2025 All Right Reserved <a href="#0">Krossark inc</a>.
-                      <span class="ml-30">Powered by AI</span>
-                    </p>
-                  </div>
-                </div>
-
-                <div class="col-lg-4 d-flex justify-content-end">
-                  <div class="links sub-color d-flex justify-content-between">
-                    <a href="../index.html">Industries</a>
-                    <a href="tech_service.html">Services</a>
-                    <a href="waro.html">Products</a>
-                    <a href="waro.html">Our Work</a>
-                    <a href="about.html">About us</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </footer>
+        <div id="footer-placeholder"></div>
 
         <!-- ==================== End Footer ==================== -->
       </div>
     </div>
+
+    <script>
+      // Load nav
+      fetch("nav.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("nav-placeholder").innerHTML = html;
+
+          const currentPage = window.location.pathname.split("/").pop();
+
+          // Highlight current link
+          document
+            .querySelectorAll("a.nav-link, a.dropdown-item")
+            .forEach((link) => {
+              if (link.getAttribute("href") === currentPage) {
+                link.classList.add("active");
+
+                // If inside a dropdown, highlight the parent toggle
+                const parentDropdown = link.closest(".dropdown-menu");
+                if (parentDropdown) {
+                  const dropdownToggle = parentDropdown
+                    .closest(".nav-item.dropdown")
+                    .querySelector(".nav-link.dropdown-toggle");
+
+                  if (dropdownToggle) {
+                    dropdownToggle.classList.add("active");
+                  }
+                }
+              }
+            });
+        });
+
+      // Load footer
+      fetch("footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footer-placeholder").innerHTML = html;
+        });
+    </script>
 
     <!-- jQuery -->
     <script src="../common/js/lib/jquery-3.6.0.min.js"></script>
