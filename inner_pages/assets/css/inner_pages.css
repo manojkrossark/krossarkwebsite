@@ -40,134 +40,6 @@
 }
 
 
-/* --------------- Menu --------------- */
-.navbar {
-  position: absolute;
-  left: 0;
-  top: 30px;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  background: transparent;
-  z-index: 9999999;
-}
-
-.navbar.nav-scroll {
-  padding: 0;
-  position: fixed;
-  top: -80px;
-  padding: 15px 0;
-  -webkit-transition: -webkit-transform .3s;
-  transition: -webkit-transform .3s;
-  -o-transition: transform .3s;
-  transition: transform .3s;
-  transition: transform .3s, -webkit-transform .3s;
-  -webkit-transform: translateY(80px);
-  -ms-transform: translateY(80px);
-  transform: translateY(80px);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-}
-
-.navbar .logo {
-  padding: 4px 15px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 30px;
-}
-
-.logo img {
-  filter: brightness(0) invert(1);
-  width: 95px;
-}
-
-.navbar .navbar-nav {
-  padding: 2px 5px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 30px;
-  margin-left: 15px;
-}
-
-.nav-link.dropdown-toggle::after {
-  display: none !important;
-}
-
-.navbar .navbar-nav .nav-link {
-  padding: 5px 20px;
-  border-radius: 30px;
-  font-size: 14px;
-  color: var(--theme-color);
-}
-
-.navbar .navbar-nav .nav-link.active {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.menu-icon {
-  display: none;
-}
-
-/* --------------- Awards --------------- */
-.awards-sa .item-title {
-  padding: 0 15px 25px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
-}
-
-.awards-sa .item-title>div {
-  padding: 0;
-}
-
-.awards-sa .item-title h6 {
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  opacity: 0.7;
-}
-
-.awards-sa .item-line {
-  padding: 25px 15px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  position: relative;
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  transition: all 0.4s;
-  z-index: 3;
-}
-
-.awards-sa .item-line>div {
-  padding: 0;
-}
-
-.awards-sa .item-line>div:last-of-type {
-  text-align: right;
-}
-
-.awards-sa .item-line:hover:after {
-  height: 100%;
-}
-
-.awards-sa .item-line:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 0;
-  background: rgba(255, 255, 255, 0.05);
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  transition: all 0.4s;
-  z-index: -1;
-}
-
-.awards-sa .item-line .honors h6 {
-  font-size: 14px;
-}
-
-.awards-sa .item-line .project-date span {
-  font-size: 14px;
-  opacity: 0.7;
-}
-
 /* --------------- about pg --------------- */
 .about-hed .caption {
   position: relative;
@@ -1071,37 +943,15 @@
   font-size: 14px;
 }
 
-.footer-sa .call-action h2 {
-  font-size: 100px;
-  font-weight: 600;
-  text-transform: uppercase;
-  line-height: 1;
-  position: relative;
-}
 
-.footer-sa .call-action h2 .buton {
-  width: 210px;
-  height: 210px;
-  border-radius: 50%;
-  background: var(--main-color);
-  position: absolute;
-  top: -80px;
-  right: 8%;
-  font-size: 32px;
-  color: var(--primary-color);
-}
 
-.footer-sa .logo {
-  width: 160px;
-}
 
-.footer-sa .contact-info .item {
-  margin-bottom: 50px;
-}
 
-.footer-sa .sub-footer .links .active {
-  color: var(--theme-color);
-}
+
+
+
+
+
 
 /* --------------- Team pg --------------- */
 .team-hed .caption h1 {
@@ -1159,37 +1009,15 @@
   margin-bottom: 5px;
 }
 
-.footer-sa .call-action h2 {
-  font-size: 100px;
-  font-weight: 600;
-  text-transform: uppercase;
-  line-height: 1;
-  position: relative;
-}
 
-.footer-sa .call-action h2 .buton {
-  width: 210px;
-  height: 210px;
-  border-radius: 50%;
-  background: var(--main-color);
-  position: absolute;
-  top: -80px;
-  right: 8%;
-  font-size: 32px;
-  color: var(--primary-color);
-}
 
-.footer-sa .logo {
-  width: 160px;
-}
 
-.footer-sa .contact-info .item {
-  margin-bottom: 50px;
-}
 
-.footer-sa .sub-footer .links .active {
-  color: var(--theme-color);
-}
+
+
+
+
+
 
 /* --------------- Careers pg --------------- */
 .pricing-hed .caption h1 {
@@ -1327,37 +1155,15 @@
   margin-top: 30px;
 }
 
-.footer-sa .call-action h2 {
-  font-size: 100px;
-  font-weight: 600;
-  text-transform: uppercase;
-  line-height: 1;
-  position: relative;
-}
 
-.footer-sa .call-action h2 .buton {
-  width: 210px;
-  height: 210px;
-  border-radius: 50%;
-  background: var(--main-color);
-  position: absolute;
-  top: -80px;
-  right: 8%;
-  font-size: 32px;
-  color: var(--primary-color);
-}
 
-.footer-sa .logo {
-  width: 160px;
-}
 
-.footer-sa .contact-info .item {
-  margin-bottom: 50px;
-}
 
-.footer-sa .sub-footer .links .active {
-  color: var(--theme-color);
-}
+
+
+
+
+
 
 /* --------------- Careers pg --------------- */
 .pricing-hed .caption h1 {
@@ -1413,37 +1219,15 @@
   font-size: 14px;
 }
 
-.footer-sa .call-action h2 {
-  font-size: 100px;
-  font-weight: 600;
-  text-transform: uppercase;
-  line-height: 1;
-  position: relative;
-}
 
-.footer-sa .call-action h2 .buton {
-  width: 210px;
-  height: 210px;
-  border-radius: 50%;
-  background: var(--main-color);
-  position: absolute;
-  top: -80px;
-  right: 8%;
-  font-size: 32px;
-  color: var(--primary-color);
-}
 
-.footer-sa .logo {
-  width: 160px;
-}
 
-.footer-sa .contact-info .item {
-  margin-bottom: 50px;
-}
 
-.footer-sa .sub-footer .links .active {
-  color: var(--theme-color);
-}
+
+
+
+
+
 
 /* Home Page  */
 
@@ -1852,37 +1636,15 @@
   font-size: 14px;
 }
 
-.footer-sa .call-action h2 {
-  font-size: 100px;
-  font-weight: 600;
-  text-transform: uppercase;
-  line-height: 1;
-  position: relative;
-}
 
-.footer-sa .call-action h2 .buton {
-  width: 210px;
-  height: 210px;
-  border-radius: 50%;
-  background: var(--main-color);
-  position: absolute;
-  top: -80px;
-  right: 8%;
-  font-size: 32px;
-  color: var(--primary-color);
-}
 
-.footer-sa .logo {
-  width: 160px;
-}
 
-.footer-sa .contact-info .item {
-  margin-bottom: 50px;
-}
 
-.footer-sa .sub-footer .links .active {
-  color: var(--theme-color);
-}
+
+
+
+
+
 
 /* --------------- header --------------- */
 .header-mp {
@@ -2477,37 +2239,15 @@
   background: var(--main-color);
 }
 
-.footer-sa .call-action h2 {
-  font-size: 100px;
-  font-weight: 600;
-  text-transform: uppercase;
-  line-height: 1;
-  position: relative;
-}
 
-.footer-sa .call-action h2 .buton {
-  width: 210px;
-  height: 210px;
-  border-radius: 50%;
-  background: var(--main-color);
-  position: absolute;
-  top: -80px;
-  right: 8%;
-  font-size: 32px;
-  color: var(--primary-color);
-}
 
-.footer-sa .logo {
-  width: 160px;
-}
 
-.footer-sa .contact-info .item {
-  margin-bottom: 50px;
-}
 
-.footer-sa .sub-footer .links .active {
-  color: var(--theme-color);
-}
+
+
+
+
+
 
 /* --------------- Careers pg --------------- */
 .contact-hed .caption h1 {
@@ -2556,37 +2296,15 @@
   background: var(--main-color) !important;
 } */
 
-.footer-sa .call-action h2 {
-  font-size: 100px;
-  font-weight: 600;
-  text-transform: uppercase;
-  line-height: 1;
-  position: relative;
-}
 
-.footer-sa .call-action h2 .buton {
-  width: 210px;
-  height: 210px;
-  border-radius: 50%;
-  background: var(--main-color);
-  position: absolute;
-  top: -80px;
-  right: 8%;
-  font-size: 32px;
-  color: var(--primary-color);
-}
 
-.footer-sa .logo {
-  width: 160px;
-}
 
-.footer-sa .contact-info .item {
-  margin-bottom: 50px;
-}
 
-.footer-sa .sub-footer .links .active {
-  color: var(--theme-color);
-}
+
+
+
+
+
 
 body {
   font-family: "Inter", sans-serif;
