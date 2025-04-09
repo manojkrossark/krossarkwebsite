@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="zxx">
-
-<head>
+  <head>
     <!-- Metas -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
     <!-- <meta name="keywords" content="HTML5 Template Krossark Multi-Purpose ">
     <meta name="description" content="Krossark - Multi-Purpose HTML5 Template"> -->
     <meta name="author" content="" />
@@ -17,8 +19,14 @@
     <link rel="shortcut icon" href="assets/imgs/favicon.png" />
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Six+Caps&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Six+Caps&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Plugins -->
     <link rel="stylesheet" href="../common/css/plugins.css" />
@@ -27,28 +35,28 @@
     <link rel="stylesheet" href="../common/css/common_style.css" />
     <link rel="stylesheet" href="assets/css/inner_pages.css" />
     <link rel="stylesheet" href="assets/css/header.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- ==================== Start Loading ==================== -->
 
     <div class="loader-wrap">
-        <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
-            <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
-        </svg>
+      <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+        <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+      </svg>
 
-        <div class="loader-wrap-heading">
-            <div class="load-text">
-                <span>K</span>
-                <span>R</span>
-                <span>O</span>
-                <span>S</span>
-                <span>S</span>
-                <span>A</span>
-                <span>R</span>
-                <span>K</span>
-            </div>
+      <div class="loader-wrap-heading">
+        <div class="load-text">
+          <span>K</span>
+          <span>R</span>
+          <span>O</span>
+          <span>S</span>
+          <span>S</span>
+          <span>A</span>
+          <span>R</span>
+          <span>K</span>
         </div>
+      </div>
     </div>
 
     <!-- ==================== End Loading ==================== -->
@@ -58,9 +66,14 @@
     <!-- ==================== Start progress-scroll-button ==================== -->
 
     <div class="progress-wrap cursor-pointer">
-        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-        </svg>
+      <svg
+        class="progress-circle svg-content"
+        width="100%"
+        height="100%"
+        viewBox="-1 -1 102 102"
+      >
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
     </div>
 
     <!-- ==================== End progress-scroll-button ==================== -->
@@ -69,108 +82,88 @@
 
     <div id="nav-placeholder"></div>
 
-    <script>
-        fetch("nav.html")
-            .then((res) => res.text())
-            .then((html) => {
-                document.getElementById("nav-placeholder").innerHTML = html;
-
-                const currentPage = window.location.pathname.split("/").pop();
-
-                // Highlight exact matching nav link
-                document.querySelectorAll("a.nav-link, a.dropdown-item").forEach((link) => {
-                    if (link.getAttribute("href") === currentPage) {
-                        link.classList.add("active");
-
-                        // Also add 'active' class to parent dropdown toggle if it's a submenu
-                        const parentDropdown = link.closest(".dropdown-menu");
-                        if (parentDropdown) {
-                            const dropdownToggle = parentDropdown
-                                .closest(".nav-item.dropdown")
-                                .querySelector(".nav-link.dropdown-toggle");
-
-                            if (dropdownToggle) {
-                                dropdownToggle.classList.add("active");
-                            }
-                        }
-                    }
-                });
-            });
-    </script>
-
-
     <div class="hamenu">
-        <div class="close-menu cursor-pointer ti-close"></div>
-        <div class="container-fluid rest d-flex">
-            <div class="menu-links">
-                <ul class="main-menu rest">
-                    <li>
-                        <div class="o-hidden">
-                            <a href="./homepage.html" class="link"><span class="fill-text"
-                                    data-text="Home">Home</span></a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="o-hidden">
-                            <a href="about.html" class="link"><span class="fill-text" data-text="About Us">About
-                                    Us</span></a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="o-hidden">
-                            <div class="link cursor-pointer dmenu">
-                                <span class="fill-text" data-text="Services">Services</span>
-                                <i></i>
-                            </div>
-                        </div>
-                        <div class="sub-menu">
-                            <ul>
-                                <li><a href="tech_service.html">Tech Service</a></li>
-                                <li><a href="marketing.html">Marketing Service</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="o-hidden">
-                            <div class="link cursor-pointer dmenu">
-                                <span class="fill-text" data-text="Product">Products</span>
-                                <i></i>
-                            </div>
-                        </div>
-                        <div class="sub-menu">
-                            <ul>
-                                <li>
-                                    <a href="waro.html" class="sub-link">Waro</a>
-                                </li>
-                                <li>
-                                    <a href="alto.html" class="sub-link">Alto</a>
-                                </li>
-                                <li>
-                                    <a href="fetchh.html" class="sub-link">Fetchh</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="o-hidden">
-                            <a href="our_work.html" class="link"><span class="fill-text" data-text="Our Work">Our
-                                    Work</span></a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="o-hidden">
-                            <a href="contact.html" class="link"><span class="fill-text" data-text="Contact Us">Contact
-                                    Us</span></a>
-                        </div>
-                    </li>
+      <div class="close-menu cursor-pointer ti-close"></div>
+      <div class="container-fluid rest d-flex">
+        <div class="menu-links">
+          <ul class="main-menu rest">
+            <li>
+              <div class="o-hidden">
+                <a href="./homepage.html" class="link"
+                  ><span class="fill-text" data-text="Home">Home</span></a
+                >
+              </div>
+            </li>
+            <li>
+              <div class="o-hidden">
+                <a href="about.html" class="link"
+                  ><span class="fill-text" data-text="About Us"
+                    >About Us</span
+                  ></a
+                >
+              </div>
+            </li>
+            <li>
+              <div class="o-hidden">
+                <div class="link cursor-pointer dmenu">
+                  <span class="fill-text" data-text="Services">Services</span>
+                  <i></i>
+                </div>
+              </div>
+              <div class="sub-menu">
+                <ul>
+                  <li><a href="tech_service.html">Tech Service</a></li>
+                  <li><a href="marketing.html">Marketing Service</a></li>
                 </ul>
+              </div>
+            </li>
+            <li>
+              <div class="o-hidden">
+                <div class="link cursor-pointer dmenu">
+                  <span class="fill-text" data-text="Product">Products</span>
+                  <i></i>
+                </div>
+              </div>
+              <div class="sub-menu">
+                <ul>
+                  <li>
+                    <a href="waro.html" class="sub-link">Waro</a>
+                  </li>
+                  <li>
+                    <a href="alto.html" class="sub-link">Alto</a>
+                  </li>
+                  <li>
+                    <a href="fetchh.html" class="sub-link">Fetchh</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="o-hidden">
+                <a href="our_work.html" class="link"
+                  ><span class="fill-text" data-text="Our Work"
+                    >Our Work</span
+                  ></a
+                >
+              </div>
+            </li>
+            <li>
+              <div class="o-hidden">
+                <a href="contact.html" class="link"
+                  ><span class="fill-text" data-text="Contact Us"
+                    >Contact Us</span
+                  ></a
+                >
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="cont-info valign">
+          <div class="text-center full-width">
+            <div class="logo">
+              <img src="../common/imgs/Krossark_logo.png" alt="" />
             </div>
-            <div class="cont-info valign">
-                <div class="text-center full-width">
-                    <div class="logo">
-                        <img src="../common/imgs/Krossark_logo.png" alt="" />
-                    </div>
-                    <!-- <div class="social-icon mt-40">
+            <!-- <div class="social-icon mt-40">
                         <a href="https://www.linkedin.com/company/fetchh-llp/">
                             <i class="fa-brands fa-linkedin-in"></i>
                         </a>
@@ -184,662 +177,757 @@
                             <i class="fa-brands fa-twitter"></i>
                         </a>
                     </div> -->
-                    <div class="item mt-30">
-                        <h5>
-                            7094, Peachtree industrial Blvd., Suite 270 <br />
-                            Norcross, GA 30071, USA
-                        </h5>
-                    </div>
-                    <div class="item mt-10">
-                        <h5><a href="#0">info@krossark.com</a></h5>
-                        <!-- <h5 class="underline"><a href="#0">+1 202-361-2345</a></h5>
-                        <h5 class="underline"><a href="#0">+91 95000 60444</a></h5> -->
-                    </div>
-                </div>
+            <div class="item mt-30">
+              <h5>
+                7094, Peachtree industrial Blvd., Suite 270 <br />
+                Norcross, GA 30071, USA
+              </h5>
             </div>
+            <div class="item mt-10">
+              <h5><a href="#0">info@krossark.com</a></h5>
+              <!-- <h5 class="underline"><a href="#0">+1 202-361-2345</a></h5>
+                        <h5 class="underline"><a href="#0">+91 95000 60444</a></h5> -->
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- ==================== End Navbar ==================== -->
 
     <div id="smooth-wrapper">
-        <div id="smooth-content">
-            <main class="industries">
-                <header class="header-mp"
-                    style="background-image: url(assets/imgs/homepage/Banner.jpg);background-position: top;background-repeat: no-repeat;background-size: cover;">
-                    <div class="container ontop">
-                        <div class="row justify-content-between">
-                            <div class="col-lg-4">
-                                <div class="text md-mb50">
-                                    <div class="text md-mb50">
-                                        <h4 class="mt-40"><span class="sustainable-text">Sustainable Style</span>
-                                            <br />How fashion can reduce Tier 2 emissions
-                                        </h4>
-                                        <h6 class="sub-heads mt-40">When Strategic resilience is embedded in risk
-                                            management, disruption can become a means for growth.</h6>
+      <div id="smooth-content">
+        <main class="industries">
+          <header
+            class="header-mp"
+            style="
+              background-image: url(assets/imgs/homepage/Banner.jpg);
+              background-position: top;
+              background-repeat: no-repeat;
+              background-size: cover;
+            "
+          >
+            <div class="container ontop">
+              <div class="row justify-content-between">
+                <div class="col-lg-4">
+                  <div class="text md-mb50">
+                    <div class="text md-mb50">
+                      <h4 class="mt-40">
+                        <span class="sustainable-text">Sustainable Style</span>
+                        <br />How fashion can reduce Tier 2 emissions
+                      </h4>
+                      <h6 class="sub-heads mt-40">
+                        When Strategic resilience is embedded in risk
+                        management, disruption can become a means for growth.
+                      </h6>
 
-                                        <a href="" class="mt-40">Read More <i class="fa fa-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                      <a href="" class="mt-40"
+                        >Read More <i class="fa fa-arrow-right"></i
+                      ></a>
                     </div>
-                </header>
-
-                <div class="works-mp project section-padding pt-40 pb-30">
-                    <div class="container">
-                        <div class="row justify-content-between">
-                            <div class="col-lg-4 col-sm-4 items">
-                                <div class="item1">
-                                    <div class="cont d-flex align-items-center">
-                                        <div class="m-height-115">
-                                            <h4 class="mb-20">11+ Industries</h4>
-                                            <span class="containClient">Delivering high-quality products to
-                                                customers.</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-sm-4 items">
-                                <div class="item1">
-                                    <div class="cont d-flex align-items-center">
-                                        <div class="m-height-115">
-                                            <h4 class="mb-20">15+ Countries</h4>
-                                            <span class="containClient">Our service is available to customers
-                                                worldwide.</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-sm-4 items">
-                                <div class="item1">
-                                    <div class="cont d-flex align-items-center">
-                                        <div class="m-height-115">
-                                            <h4 class="mb-20">130+ Clients</h4>
-                                            <span class="containClient">Customer satisfaction leads to repeat
-                                                business.</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                  </div>
                 </div>
+              </div>
+            </div>
+          </header>
 
-                <!-- Featured Case Study -->
-                <section class="works-mp case-studies">
-                    <div class="container section-even-padding">
-                        <div class="sec-head">
-                            <div class="row mb-40">
-                                <div class="col-lg-12">
-                                    <h2><span>Featured </span> Case Studies</h2>
-                                </div>
-                            </div>
-                            <div class="row md-marg">
-                                <div class="col-lg-4 col-sm-6">
-                                    <div class="item1 featured-card">
-                                        <div class="image-zoom-container">
-                                            <img src="assets/imgs/homepage/digital-transformation.jpg" alt="" />
-                                        </div>
-                                        <h6>Powering the Future of Connectivity</h6>
-                                        <p>Global leader in networking
-                                            and IT, providing solutions for
-                                            connectivity, cybersecurity
-                                            and digital
-                                            transformation.
-                                        </p>
-                                        <a href="">Read More <i class="fa fa-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-sm-6">
-                                    <div class="item1 featured-card">
-                                        <div class="image-zoom-container">
-                                            <img src="assets/imgs/homepage/innovation.jpg" alt="" />
-                                        </div>
-                                        <h6>Redefining Innovation in Entertainment & Technology</h6>
-                                        <p>Sony is a global leader in
-                                            electronics, entertainment and
-                                            gaming, offering innovative
-                                            products across audio, visual and
-                                            interactive entertainment.
-                                        </p>
-                                        <a href="">Read More <i class="fa fa-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-sm-6">
-                                    <div class="item1 featured-card">
-                                        <div class="image-zoom-container">
-                                            <img src="assets/imgs/homepage/hospitality.jpg" alt="" />
-                                        </div>
-                                        <h6>Crafting Exceptional Hospitality Experiences</h6>
-                                        <p>Global hospitality
-                                            company known for its
-                                            premium hotels, resorts and
-                                            personalized guest
-                                            experiences.
-                                        </p>
-                                        <a href="">Read More <i class="fa fa-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-sm-6">
-                                    <div class="item1 featured-card">
-                                        <div class="image-zoom-container">
-                                            <img src="assets/imgs/homepage/sustainable.jpg" alt="" />
-                                        </div>
-                                        <h6>Leading the Charge in Sustainable Energy</h6>
-                                        <p>Delivering cutting-edge
-                                            solutions for highly complex
-                                            construction, electrical and
-                                            engineering projects.
-                                        </p>
-                                        <a href="">Read More <i class="fa fa-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-sm-6">
-                                    <div class="item1 featured-card">
-                                        <div class="image-zoom-container">
-                                            <img src="assets/imgs/homepage/petcare.jpg" alt="" />
-                                        </div>
-                                        <h6>Revolutionizing Pet Care for Modern Owners</h6>
-                                        <p>Delivers customized,
-                                            high-quality solutions to the
-                                            e-commerce industry to streamline
-                                            business needs / requirements.
-                                        </p>
-                                        <a href="">Read More <i class="fa fa-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-sm-6">
-                                    <div class="item1 featured-card">
-                                        <div class="image-zoom-container">
-                                            <img src="assets/imgs/homepage/credentialing.jpg" alt="" />
-                                        </div>
-                                        <h6>Building Trust Through Seamless Credentialing</h6>
-                                        <p>Building optimal provider
-                                            networks to streamline credentialing,
-                                            enhance compliance, reduce costs
-                                            and boost efficiency in healthcare.
-                                        </p>
-                                        <a href="">Read More <i class="fa fa-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+          <div class="works-mp project section-padding pt-40 pb-30">
+            <div class="container">
+              <div class="row justify-content-between">
+                <div class="col-lg-4 col-sm-4 items">
+                  <div class="item1">
+                    <div class="cont d-flex align-items-center">
+                      <div class="m-height-115">
+                        <h4 class="mb-20">11+ Industries</h4>
+                        <span class="containClient"
+                          >Delivering high-quality products to customers.</span
+                        >
+                      </div>
                     </div>
-                </section>
-
-
-
-
-                <!-- ==================== Start Services ==================== -->
-                <section class="services-mp">
-                    <div class="container section-even-padding bord-thin-top-light">
-                        <div class="sec-head mb-80">
-                            <div class="row">
-                                <div class="col-lg-7">
-                                    <h2 class="mb-30">Services</h2>
-                                    <span class="sub-heads">At KROSSARK, we're a passionate team crafting
-                                        impactful digital experiences that blend creativity, strategy, and
-                                        technical expertise to engage users deeply.</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-4 valign"></div>
-                            <div class="col-lg-3">
-                                <div class="serv-title md-mb50">
-                                    <div class="tab-title current" data-tab="tab-1">
-                                        <h4>Consulting</h4>
-                                    </div>
-                                    <div class="tab-title" data-tab="tab-2">
-                                        <h4>Development</h4>
-                                    </div>
-                                    <div class="tab-title" data-tab="tab-3">
-                                        <h4>Marketing</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-5 content">
-                                <div id="tab-1" class="item current">
-                                    <div class="img">
-                                        <img src="assets/imgs/serv/1.png" alt="">
-                                    </div>
-                                    <div class="cont">
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <span>Branding identity</span>
-                                                <span>Strategy and planning</span>
-                                                <span>rebrand</span>
-                                                <span>pitchdesk</span>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <span>UI/UX Design</span>
-                                                <span>Wireframe & prototype</span>
-                                                <span>motion</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="tab-2" class="item">
-                                    <div class="img">
-                                        <img src="assets/imgs/serv/2.jpg" alt="">
-                                    </div>
-                                    <div class="cont">
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <span>website development</span>
-                                                <span>mobile app</span>
-                                                <span>ecommerce website</span>
-                                                <span>no-code website</span>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <span>landing page</span>
-                                                <span>plugins</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="tab-3" class="item">
-                                    <div class="img">
-                                        <img src="assets/imgs/serv/3.png" alt="">
-                                    </div>
-                                    <div class="cont">
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <span>Marketing Consult</span>
-                                                <span>SEO / PPC</span>
-                                                <span>Social Media</span>
-                                                <span>GG/ FB Ads</span>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <span>Affiliate</span>
-                                                <span>Email Marketing</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- ==================== End Services ==================== -->
-
-                <!-- Sectors we serve -->
-                <section class="testimonials-mp section-even-padding sector-serve">
-                    <div class="container">
-                        <div class="sec-head">
-                            <div class="row mb-80 align-items-center">
-                                <div class="col-lg-4 col-sm-6">
-                                    <h2>Reviews </h2>
-                                </div>
-                                <div class="col-lg-8  col-sm-6">
-                                    <span>Authentic experiences, trusted feedback <br />see what our client say</span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-4 col-sm-6">
-                                    <div class="card">
-                                        <div class="item lighten">
-                                            <i class="fa fa-quote-right text-blue" aria-hidden="true"></i>
-
-                                            <h6>The Krossark team truly amplified our messaging through their
-                                                expert use of visuals.</h6>
-                                            <div class="info">
-                                                <div class="mr-auto">
-                                                    <div class="img-author fit-img">
-                                                        <img src="assets/imgs/testim/avatar4.jpg" alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="info-text ml-20">
-                                                    <span>Anita Mehra</span>
-                                                    <p>Founder, Luxe Decor Studios</p>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-sm-6">
-                                    <div class="card" style="background: #a3a3a3;">
-                                        <div class="item lighten">
-                                            <i class="fa fa-quote-right" aria-hidden="true"></i>
-
-                                            <h6 class="text-white">The Krossark team transformed our vision into
-                                                stunning visuals that
-                                                speak volumes.</h6>
-                                            <div class="info">
-                                                <div class="mr-auto">
-                                                    <div class="img-author fit-img">
-                                                        <img src="assets/imgs/testim/avatar2.jpg" alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="info-text ml-20">
-                                                    <span>Rahul Verma</span>
-                                                    <p>CEO, NexGen Tech Solutions</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-sm-6">
-                                    <div class="card">
-                                        <div class="item lighten">
-                                            <i class="fa fa-quote-right text-blue" aria-hidden="true"></i>
-
-                                            <h6>Seamless collaboration and
-                                                exceptional design-Krossark brought
-                                                our message to life.</h6>
-                                            <div class="info">
-                                                <div class="mr-auto">
-                                                    <div class="img-author fit-img">
-                                                        <img src="assets/imgs/testim/avatar4.jpg" alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="info-text ml-20">
-                                                    <span>Samantha Lee</span>
-                                                    <p>Marketing Head, Urban Eats</p>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-sm-6">
-                                    <div class="card" style="background: #000000;">
-                                        <div class="item lighten">
-                                            <i class="fa fa-quote-right" aria-hidden="true"></i>
-
-                                            <h6 class="text-white">Their expertise in visuals made
-                                                our messaging more impactful and
-                                                engaging.</h6>
-                                            <div class="info">
-                                                <div class="mr-auto">
-                                                    <div class="img-author fit-img">
-                                                        <img src="assets/imgs/testim/avatar4.jpg" alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="info-text ml-20">
-                                                    <span>Vikram Sood</span>
-                                                    <p>Director, Zenith Constructions</p>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-sm-6">
-                                    <div class="card">
-                                        <div class="item lighten">
-                                            <i class="fa fa-quote-right text-blue" aria-hidden="true"></i>
-
-                                            <h6>Brilliant execution! Krossark
-                                                turned our ideas into visually compelling
-                                                narratives.</h6>
-                                            <div class="info">
-                                                <div class="mr-auto">
-                                                    <div class="img-author fit-img">
-                                                        <img src="assets/imgs/testim/avatar3.jpg" alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="info-text ml-20">
-                                                    <span>Arjun Malhotra</span>
-                                                    <p>COO, Stellar Logistic</p>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-sm-6">
-                                    <div class="card" style="background: #e5e5e5;">
-                                        <div class="item lighten">
-                                            <i class="fa fa-quote-right" aria-hidden="true"></i>
-
-                                            <h6>Krossark didn't just design-they
-                                                amplified our brand's voice with precision.</h6>
-
-                                            <div class="info">
-                                                <div class="mr-auto">
-                                                    <div class="img-author fit-img">
-                                                        <img src="assets/imgs/testim/avatar1.jpg" alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="info-text ml-20">
-                                                    <span>Rohit Khanna</span>
-                                                    <p>Founder, Elevate Fitness Studios</p>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <div class="brands-mp">
-                    <div class="container section-padding bord-thin-bottom">
-                        <div class="text-center sec-head mb-20">
-                            <h6 class="sub-head text-u fw-600">Partnered with 150+ Brands</h6>
-                        </div>
-                        <div class="row justify-content-center align-items-center">
-                            <div class="col-6 col-lg-2 col-sm-3">
-                                <div class="logo-image">
-                                    <img src="assets/imgs/brands/cisco_logo.png" alt="" style="width: 100px;">
-                                </div>
-                            </div>
-                            <div class="col-6 col-lg-2 col-sm-3">
-                                <div class="logo-image">
-                                    <img src="assets/imgs/brands/Hyatt-Logo.png" alt="" style="width: 120px;">
-                                </div>
-                            </div>
-                            <div class="col-6 col-lg-3 col-sm-3">
-                                <div class="logo-image">
-                                    <img src="assets/imgs/brands/PG-Logo.png" alt="" style="width: 100px;">
-                                </div>
-                            </div>
-                            <div class="col-6 col-lg-2 col-sm-3">
-                                <div class="logo-image">
-                                    <img src="assets/imgs/brands/Sony-logo.png" alt="" style="width: 100px;">
-                                </div>
-                            </div>
-                            <div class="col-6 col-lg-2 col-sm-3">
-                                <div class="logo-image">
-                                    <img src="assets/imgs/brands/Protrans_Logo.png" alt="" style="width: 150px;">
-                                </div>
-                            </div>
-                            <div class="col-6 col-lg-2 col-sm-3">
-                                <div class="logo-image">
-                                    <img src="assets/imgs/brands/backhaul_logo.png" alt="" style="width: 150px;">
-                                </div>
-                            </div>
-                            <div class="col-6 col-lg-2 col-sm-3">
-                                <div class="logo-image">
-                                    <img src="assets/imgs/brands/verfiable_logo.png" alt="" style="width: 150px;">
-                                </div>
-                            </div>
-                            <div class="col-6 col-lg-3 col-sm-3">
-                                <div class="logo-image">
-                                    <img src="assets/imgs/brands/ge_logo.png" alt="" style="width: 140px;">
-                                </div>
-                            </div>
-                            <div class="col-6 col-lg-2 col-sm-3">
-                                <div class="logo-image">
-                                    <img src="assets/imgs/brands/petsy_logo.png" alt="" style="width: 100px;">
-                                </div>
-                            </div>
-                            <div class="col-6 col-lg-2 col-sm-3">
-                                <div class="logo-image">
-                                    <img src="assets/imgs/brands/fb-logo.png" alt="" style="width: 150px;">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                  </div>
                 </div>
-
-                <!-- ==================== Start Blog ==================== -->
-
-                <div class="blog-mp section-even-padding bg-gray">
-                    <div class="container">
-                        <div class="sec-head mb-80">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <h2>News</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row xlg-marg">
-                            <div class="col-lg-4 col-sm-6 bord">
-                                <div class="item md-mb50">
-
-                                    <div class="img fit-img mb-30">
-                                        <img src="assets/imgs/works/trump.jpg" alt="">
-                                    </div>
-                                    <div class="info d-flex align-items-center">
-                                        <div class="d-flex align-items-center">
-                                            <div>
-                                                <div class="author-img fit-img">
-                                                    <img src="assets/imgs/blogs/a2.jpg" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="author-info ml-10">
-                                                <span>United States</span>
-                                                <span class="sub-color">https://reuters.com</span>
-                                            </div>
-                                        </div>
-                                        <div class="date ml-auto flex align-items-center">
-                                            <span class="sub-color">12 hours ago
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="cont mt-30">
-                                        <h6>
-                                            <a href="https://www.youtube.com/watch?v=Tz7uiEPrPWQ">Biden congratulates
-                                                Trump,
-                                                invites him to White House</a>
-                                        </h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-sm-6 bord">
-                                <div class="item md-mb50">
-
-                                    <div class="img fit-img mb-30">
-                                        <img src="assets/imgs/works/bitcoin.jpg" alt="">
-                                    </div>
-                                    <div class="info d-flex align-items-center">
-                                        <div class="d-flex align-items-center">
-                                            <div>
-                                                <div class="author-img fit-img">
-                                                    <img src="assets/imgs/blogs/a1.jpg" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="author-info ml-10">
-                                                <span>Economic Times</span>
-                                                <span class="sub-color">https://indiatimes.com</span>
-                                            </div>
-                                        </div>
-                                        <div class="date ml-auto flex align-items-center">
-                                            <span class="sub-color time-label">38 minutes ago
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="cont mt-30">
-                                        <h6>
-                                            <a href="https://www.youtube.com/watch?v=pV1SjWrZK00">
-                                                Record-breaking Bitcoin rally set to gain momentum</a>
-                                        </h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <div class="item">
-
-                                    <div class="img fit-img mb-30">
-                                        <img src="assets/imgs/works/corono.jpg" alt="">
-                                    </div>
-                                    <div class="info d-flex align-items-center">
-                                        <div class="d-flex align-items-center">
-                                            <div>
-                                                <div class="author-img fit-img">
-                                                    <img src="assets/imgs/blogs/a3.jpg" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="author-info ml-10">
-                                                <span>Coronavirus</span>
-                                                <span class="sub-color">https://www.nbcnews.com</span>
-                                            </div>
-                                        </div>
-                                        <div class="date ml-auto flex align-items-center">
-                                            <span class="sub-color">48 hours ago
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="cont mt-30">
-                                        <h6>
-                                            <a href="https://www.youtube.com/watch?v=o9wJunSuIks">The signature symptoms
-                                                of long Covid in kids</a>
-                                        </h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="col-lg-4 col-sm-4 items">
+                  <div class="item1">
+                    <div class="cont d-flex align-items-center">
+                      <div class="m-height-115">
+                        <h4 class="mb-20">15+ Countries</h4>
+                        <span class="containClient"
+                          >Our service is available to customers
+                          worldwide.</span
+                        >
+                      </div>
                     </div>
+                  </div>
                 </div>
+                <div class="col-lg-4 col-sm-4 items">
+                  <div class="item1">
+                    <div class="cont d-flex align-items-center">
+                      <div class="m-height-115">
+                        <h4 class="mb-20">130+ Clients</h4>
+                        <span class="containClient"
+                          >Customer satisfaction leads to repeat business.</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-                <!-- ==================== End Blog ==================== -->
+          <!-- Featured Case Study -->
+          <section class="works-mp case-studies">
+            <div class="container section-even-padding">
+              <div class="sec-head">
+                <div class="row mb-40">
+                  <div class="col-lg-12">
+                    <h2><span>Featured </span> Case Studies</h2>
+                  </div>
+                </div>
+                <div class="row md-marg">
+                  <div class="col-lg-4 col-sm-6">
+                    <div class="item1 featured-card">
+                      <div class="image-zoom-container">
+                        <img
+                          src="assets/imgs/homepage/digital-transformation.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <h6>Powering the Future of Connectivity</h6>
+                      <p>
+                        Global leader in networking and IT, providing solutions
+                        for connectivity, cybersecurity and digital
+                        transformation.
+                      </p>
+                      <a href="">Read More <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-6">
+                    <div class="item1 featured-card">
+                      <div class="image-zoom-container">
+                        <img src="assets/imgs/homepage/innovation.jpg" alt="" />
+                      </div>
+                      <h6>
+                        Redefining Innovation in Entertainment & Technology
+                      </h6>
+                      <p>
+                        Sony is a global leader in electronics, entertainment
+                        and gaming, offering innovative products across audio,
+                        visual and interactive entertainment.
+                      </p>
+                      <a href="">Read More <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-6">
+                    <div class="item1 featured-card">
+                      <div class="image-zoom-container">
+                        <img
+                          src="assets/imgs/homepage/hospitality.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <h6>Crafting Exceptional Hospitality Experiences</h6>
+                      <p>
+                        Global hospitality company known for its premium hotels,
+                        resorts and personalized guest experiences.
+                      </p>
+                      <a href="">Read More <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-6">
+                    <div class="item1 featured-card">
+                      <div class="image-zoom-container">
+                        <img
+                          src="assets/imgs/homepage/sustainable.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <h6>Leading the Charge in Sustainable Energy</h6>
+                      <p>
+                        Delivering cutting-edge solutions for highly complex
+                        construction, electrical and engineering projects.
+                      </p>
+                      <a href="">Read More <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-6">
+                    <div class="item1 featured-card">
+                      <div class="image-zoom-container">
+                        <img src="assets/imgs/homepage/petcare.jpg" alt="" />
+                      </div>
+                      <h6>Revolutionizing Pet Care for Modern Owners</h6>
+                      <p>
+                        Delivers customized, high-quality solutions to the
+                        e-commerce industry to streamline business needs /
+                        requirements.
+                      </p>
+                      <a href="">Read More <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-6">
+                    <div class="item1 featured-card">
+                      <div class="image-zoom-container">
+                        <img
+                          src="assets/imgs/homepage/credentialing.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <h6>Building Trust Through Seamless Credentialing</h6>
+                      <p>
+                        Building optimal provider networks to streamline
+                        credentialing, enhance compliance, reduce costs and
+                        boost efficiency in healthcare.
+                      </p>
+                      <a href="">Read More <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
 
+          <!-- ==================== Start Services ==================== -->
+          <section class="services-mp">
+            <div class="container section-even-padding bord-thin-top-light">
+              <div class="sec-head mb-80">
+                <div class="row">
+                  <div class="col-lg-7">
+                    <h2 class="mb-30">Services</h2>
+                    <span class="sub-heads"
+                      >At KROSSARK, we're a passionate team crafting impactful
+                      digital experiences that blend creativity, strategy, and
+                      technical expertise to engage users deeply.</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4 valign"></div>
+                <div class="col-lg-3">
+                  <div class="serv-title md-mb50">
+                    <div class="tab-title current" data-tab="tab-1">
+                      <h4>Consulting</h4>
+                    </div>
+                    <div class="tab-title" data-tab="tab-2">
+                      <h4>Development</h4>
+                    </div>
+                    <div class="tab-title" data-tab="tab-3">
+                      <h4>Marketing</h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-5 content">
+                  <div id="tab-1" class="item current">
+                    <div class="img">
+                      <img src="assets/imgs/serv/1.png" alt="" />
+                    </div>
+                    <div class="cont">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <span>Branding identity</span>
+                          <span>Strategy and planning</span>
+                          <span>rebrand</span>
+                          <span>pitchdesk</span>
+                        </div>
+                        <div class="col-sm-6">
+                          <span>UI/UX Design</span>
+                          <span>Wireframe & prototype</span>
+                          <span>motion</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="tab-2" class="item">
+                    <div class="img">
+                      <img src="assets/imgs/serv/2.jpg" alt="" />
+                    </div>
+                    <div class="cont">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <span>website development</span>
+                          <span>mobile app</span>
+                          <span>ecommerce website</span>
+                          <span>no-code website</span>
+                        </div>
+                        <div class="col-sm-6">
+                          <span>landing page</span>
+                          <span>plugins</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="tab-3" class="item">
+                    <div class="img">
+                      <img src="assets/imgs/serv/3.png" alt="" />
+                    </div>
+                    <div class="cont">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <span>Marketing Consult</span>
+                          <span>SEO / PPC</span>
+                          <span>Social Media</span>
+                          <span>GG/ FB Ads</span>
+                        </div>
+                        <div class="col-sm-6">
+                          <span>Affiliate</span>
+                          <span>Email Marketing</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
 
-            </main>
+          <!-- ==================== End Services ==================== -->
 
-            <!-- ==================== Start Footer ==================== -->
+          <!-- Sectors we serve -->
+          <section class="testimonials-mp section-even-padding sector-serve">
+            <div class="container">
+              <div class="sec-head">
+                <div class="row mb-80 align-items-center">
+                  <div class="col-lg-4 col-sm-6">
+                    <h2>Reviews</h2>
+                  </div>
+                  <div class="col-lg-8 col-sm-6">
+                    <span
+                      >Authentic experiences, trusted feedback <br />see what
+                      our client say</span
+                    >
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-4 col-sm-6">
+                    <div class="card">
+                      <div class="item lighten">
+                        <i
+                          class="fa fa-quote-right text-blue"
+                          aria-hidden="true"
+                        ></i>
 
-            <div id="footer-placeholder"></div>
+                        <h6>
+                          The Krossark team truly amplified our messaging
+                          through their expert use of visuals.
+                        </h6>
+                        <div class="info">
+                          <div class="mr-auto">
+                            <div class="img-author fit-img">
+                              <img
+                                src="assets/imgs/testim/avatar4.jpg"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+                          <div class="info-text ml-20">
+                            <span>Anita Mehra</span>
+                            <p>Founder, Luxe Decor Studios</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-6">
+                    <div class="card" style="background: #a3a3a3">
+                      <div class="item lighten">
+                        <i class="fa fa-quote-right" aria-hidden="true"></i>
 
-            <!-- ==================== End Footer ==================== -->
-        </div>
+                        <h6 class="text-white">
+                          The Krossark team transformed our vision into stunning
+                          visuals that speak volumes.
+                        </h6>
+                        <div class="info">
+                          <div class="mr-auto">
+                            <div class="img-author fit-img">
+                              <img
+                                src="assets/imgs/testim/avatar2.jpg"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+                          <div class="info-text ml-20">
+                            <span>Rahul Verma</span>
+                            <p>CEO, NexGen Tech Solutions</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-6">
+                    <div class="card">
+                      <div class="item lighten">
+                        <i
+                          class="fa fa-quote-right text-blue"
+                          aria-hidden="true"
+                        ></i>
+
+                        <h6>
+                          Seamless collaboration and exceptional design-Krossark
+                          brought our message to life.
+                        </h6>
+                        <div class="info">
+                          <div class="mr-auto">
+                            <div class="img-author fit-img">
+                              <img
+                                src="assets/imgs/testim/avatar4.jpg"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+                          <div class="info-text ml-20">
+                            <span>Samantha Lee</span>
+                            <p>Marketing Head, Urban Eats</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-6">
+                    <div class="card" style="background: #000000">
+                      <div class="item lighten">
+                        <i class="fa fa-quote-right" aria-hidden="true"></i>
+
+                        <h6 class="text-white">
+                          Their expertise in visuals made our messaging more
+                          impactful and engaging.
+                        </h6>
+                        <div class="info">
+                          <div class="mr-auto">
+                            <div class="img-author fit-img">
+                              <img
+                                src="assets/imgs/testim/avatar4.jpg"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+                          <div class="info-text ml-20">
+                            <span>Vikram Sood</span>
+                            <p>Director, Zenith Constructions</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-6">
+                    <div class="card">
+                      <div class="item lighten">
+                        <i
+                          class="fa fa-quote-right text-blue"
+                          aria-hidden="true"
+                        ></i>
+
+                        <h6>
+                          Brilliant execution! Krossark turned our ideas into
+                          visually compelling narratives.
+                        </h6>
+                        <div class="info">
+                          <div class="mr-auto">
+                            <div class="img-author fit-img">
+                              <img
+                                src="assets/imgs/testim/avatar3.jpg"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+                          <div class="info-text ml-20">
+                            <span>Arjun Malhotra</span>
+                            <p>COO, Stellar Logistic</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-6">
+                    <div class="card" style="background: #e5e5e5">
+                      <div class="item lighten">
+                        <i class="fa fa-quote-right" aria-hidden="true"></i>
+
+                        <h6>
+                          Krossark didn't just design-they amplified our brand's
+                          voice with precision.
+                        </h6>
+
+                        <div class="info">
+                          <div class="mr-auto">
+                            <div class="img-author fit-img">
+                              <img
+                                src="assets/imgs/testim/avatar1.jpg"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+                          <div class="info-text ml-20">
+                            <span>Rohit Khanna</span>
+                            <p>Founder, Elevate Fitness Studios</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="brands-mp">
+            <div class="container section-padding bord-thin-bottom">
+              <div class="text-center sec-head mb-20">
+                <h6 class="sub-head text-u fw-600">
+                  Partnered with 150+ Brands
+                </h6>
+              </div>
+              <div class="row justify-content-center align-items-center">
+                <div class="col-6 col-lg-2 col-sm-3">
+                  <div class="logo-image">
+                    <img
+                      src="assets/imgs/brands/cisco_logo.png"
+                      alt=""
+                      style="width: 100px"
+                    />
+                  </div>
+                </div>
+                <div class="col-6 col-lg-2 col-sm-3">
+                  <div class="logo-image">
+                    <img
+                      src="assets/imgs/brands/Hyatt-Logo.png"
+                      alt=""
+                      style="width: 120px"
+                    />
+                  </div>
+                </div>
+                <div class="col-6 col-lg-3 col-sm-3">
+                  <div class="logo-image">
+                    <img
+                      src="assets/imgs/brands/PG-Logo.png"
+                      alt=""
+                      style="width: 100px"
+                    />
+                  </div>
+                </div>
+                <div class="col-6 col-lg-2 col-sm-3">
+                  <div class="logo-image">
+                    <img
+                      src="assets/imgs/brands/Sony-logo.png"
+                      alt=""
+                      style="width: 100px"
+                    />
+                  </div>
+                </div>
+                <div class="col-6 col-lg-2 col-sm-3">
+                  <div class="logo-image">
+                    <img
+                      src="assets/imgs/brands/Protrans_Logo.png"
+                      alt=""
+                      style="width: 150px"
+                    />
+                  </div>
+                </div>
+                <div class="col-6 col-lg-2 col-sm-3">
+                  <div class="logo-image">
+                    <img
+                      src="assets/imgs/brands/backhaul_logo.png"
+                      alt=""
+                      style="width: 150px"
+                    />
+                  </div>
+                </div>
+                <div class="col-6 col-lg-2 col-sm-3">
+                  <div class="logo-image">
+                    <img
+                      src="assets/imgs/brands/verfiable_logo.png"
+                      alt=""
+                      style="width: 150px"
+                    />
+                  </div>
+                </div>
+                <div class="col-6 col-lg-3 col-sm-3">
+                  <div class="logo-image">
+                    <img
+                      src="assets/imgs/brands/ge_logo.png"
+                      alt=""
+                      style="width: 140px"
+                    />
+                  </div>
+                </div>
+                <div class="col-6 col-lg-2 col-sm-3">
+                  <div class="logo-image">
+                    <img
+                      src="assets/imgs/brands/petsy_logo.png"
+                      alt=""
+                      style="width: 100px"
+                    />
+                  </div>
+                </div>
+                <div class="col-6 col-lg-2 col-sm-3">
+                  <div class="logo-image">
+                    <img
+                      src="assets/imgs/brands/fb-logo.png"
+                      alt=""
+                      style="width: 150px"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==================== Start Blog ==================== -->
+
+          <div class="blog-mp section-even-padding bg-gray">
+            <div class="container">
+              <div class="sec-head mb-80">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <h2>News</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="row xlg-marg">
+                <div class="col-lg-4 col-sm-6 bord">
+                  <div class="item md-mb50">
+                    <div class="img fit-img mb-30">
+                      <img src="assets/imgs/works/trump.jpg" alt="" />
+                    </div>
+                    <div class="info d-flex align-items-center">
+                      <div class="d-flex align-items-center">
+                        <div>
+                          <div class="author-img fit-img">
+                            <img src="assets/imgs/blogs/a2.jpg" alt="" />
+                          </div>
+                        </div>
+                        <div class="author-info ml-10">
+                          <span>United States</span>
+                          <span class="sub-color">https://reuters.com</span>
+                        </div>
+                      </div>
+                      <div class="date ml-auto flex align-items-center">
+                        <span class="sub-color">12 hours ago </span>
+                      </div>
+                    </div>
+                    <div class="cont mt-30">
+                      <h6>
+                        <a href="https://www.youtube.com/watch?v=Tz7uiEPrPWQ"
+                          >Biden congratulates Trump, invites him to White
+                          House</a
+                        >
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 bord">
+                  <div class="item md-mb50">
+                    <div class="img fit-img mb-30">
+                      <img src="assets/imgs/works/bitcoin.jpg" alt="" />
+                    </div>
+                    <div class="info d-flex align-items-center">
+                      <div class="d-flex align-items-center">
+                        <div>
+                          <div class="author-img fit-img">
+                            <img src="assets/imgs/blogs/a1.jpg" alt="" />
+                          </div>
+                        </div>
+                        <div class="author-info ml-10">
+                          <span>Economic Times</span>
+                          <span class="sub-color">https://indiatimes.com</span>
+                        </div>
+                      </div>
+                      <div class="date ml-auto flex align-items-center">
+                        <span class="sub-color time-label"
+                          >38 minutes ago
+                        </span>
+                      </div>
+                    </div>
+                    <div class="cont mt-30">
+                      <h6>
+                        <a href="https://www.youtube.com/watch?v=pV1SjWrZK00">
+                          Record-breaking Bitcoin rally set to gain momentum</a
+                        >
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                  <div class="item">
+                    <div class="img fit-img mb-30">
+                      <img src="assets/imgs/works/corono.jpg" alt="" />
+                    </div>
+                    <div class="info d-flex align-items-center">
+                      <div class="d-flex align-items-center">
+                        <div>
+                          <div class="author-img fit-img">
+                            <img src="assets/imgs/blogs/a3.jpg" alt="" />
+                          </div>
+                        </div>
+                        <div class="author-info ml-10">
+                          <span>Coronavirus</span>
+                          <span class="sub-color">https://www.nbcnews.com</span>
+                        </div>
+                      </div>
+                      <div class="date ml-auto flex align-items-center">
+                        <span class="sub-color">48 hours ago </span>
+                      </div>
+                    </div>
+                    <div class="cont mt-30">
+                      <h6>
+                        <a href="https://www.youtube.com/watch?v=o9wJunSuIks"
+                          >The signature symptoms of long Covid in kids</a
+                        >
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==================== End Blog ==================== -->
+        </main>
+
+        <!-- ==================== Start Footer ==================== -->
+
+        <div id="footer-placeholder"></div>
+
+        <!-- ==================== End Footer ==================== -->
+      </div>
     </div>
 
     <script>
-        // Load nav
-        fetch("nav.html")
-            .then((res) => res.text())
-            .then((html) => {
-                document.getElementById("nav-placeholder").innerHTML = html;
+      // Load nav
+      fetch("nav.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("nav-placeholder").innerHTML = html;
 
-                const currentPage = window.location.pathname.split("/").pop();
+          const currentPage = window.location.pathname.split("/").pop();
 
-                // Highlight current link
-                document
-                    .querySelectorAll("a.nav-link, a.dropdown-item")
-                    .forEach((link) => {
-                        if (link.getAttribute("href") === currentPage) {
-                            link.classList.add("active");
+          // Highlight current link
+          document
+            .querySelectorAll("a.nav-link, a.dropdown-item")
+            .forEach((link) => {
+              if (link.getAttribute("href") === currentPage) {
+                link.classList.add("active");
 
-                            // If inside a dropdown, highlight the parent toggle
-                            const parentDropdown = link.closest(".dropdown-menu");
-                            if (parentDropdown) {
-                                const dropdownToggle = parentDropdown
-                                    .closest(".nav-item.dropdown")
-                                    .querySelector(".nav-link.dropdown-toggle");
+                // If inside a dropdown, highlight the parent toggle
+                const parentDropdown = link.closest(".dropdown-menu");
+                if (parentDropdown) {
+                  const dropdownToggle = parentDropdown
+                    .closest(".nav-item.dropdown")
+                    .querySelector(".nav-link.dropdown-toggle");
 
-                                if (dropdownToggle) {
-                                    dropdownToggle.classList.add("active");
-                                }
-                            }
-                        }
-                    });
+                  if (dropdownToggle) {
+                    dropdownToggle.classList.add("active");
+                  }
+                }
+              }
             });
+        });
 
-        // Load footer
-        fetch("footer.html")
-            .then((res) => res.text())
-            .then((html) => {
-                document.getElementById("footer-placeholder").innerHTML = html;
-            });
+      // Load footer
+      fetch("footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footer-placeholder").innerHTML = html;
+        });
     </script>
 
     <!-- jQuery -->
@@ -862,8 +950,5 @@
 
     <!-- custom scripts -->
     <script src="assets/js/inner_pages.js"></script>
-
-
-</body>
-
+  </body>
 </html>

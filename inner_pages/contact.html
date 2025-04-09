@@ -82,37 +82,6 @@
 
     <div id="nav-placeholder"></div>
 
-    <script>
-      fetch("nav.html")
-        .then((res) => res.text())
-        .then((html) => {
-          document.getElementById("nav-placeholder").innerHTML = html;
-
-          const currentPage = window.location.pathname.split("/").pop();
-
-          // Highlight exact matching nav link
-          document
-            .querySelectorAll("a.nav-link, a.dropdown-item")
-            .forEach((link) => {
-              if (link.getAttribute("href") === currentPage) {
-                link.classList.add("active");
-
-                // Also add 'active' class to parent dropdown toggle if it's a submenu
-                const parentDropdown = link.closest(".dropdown-menu");
-                if (parentDropdown) {
-                  const dropdownToggle = parentDropdown
-                    .closest(".nav-item.dropdown")
-                    .querySelector(".nav-link.dropdown-toggle");
-
-                  if (dropdownToggle) {
-                    dropdownToggle.classList.add("active");
-                  }
-                }
-              }
-            });
-        });
-    </script>
-
     <div class="hamenu">
       <div class="close-menu cursor-pointer ti-close"></div>
       <div class="container-fluid rest d-flex">
@@ -326,7 +295,8 @@
                           <div class="d-flex align-items-center">
                             <span>SUBMIT</span>
                             <span class="icon ml-10">
-                              <img style="filter: invert(1);"
+                              <img
+                                style="filter: invert(1)"
                                 src="../common/imgs/icons/arrow-top-right.svg"
                                 alt=""
                               />
