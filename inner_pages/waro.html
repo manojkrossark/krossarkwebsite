@@ -534,45 +534,6 @@
       </div>
     </div>
 
-    <script>
-      // Load nav
-      fetch("nav.html")
-        .then((res) => res.text())
-        .then((html) => {
-          document.getElementById("nav-placeholder").innerHTML = html;
-
-          const currentPage = window.location.pathname.split("/").pop();
-
-          // Highlight current link
-          document
-            .querySelectorAll("a.nav-link, a.dropdown-item")
-            .forEach((link) => {
-              if (link.getAttribute("href") === currentPage) {
-                link.classList.add("active");
-
-                // If inside a dropdown, highlight the parent toggle
-                const parentDropdown = link.closest(".dropdown-menu");
-                if (parentDropdown) {
-                  const dropdownToggle = parentDropdown
-                    .closest(".nav-item.dropdown")
-                    .querySelector(".nav-link.dropdown-toggle");
-
-                  if (dropdownToggle) {
-                    dropdownToggle.classList.add("active");
-                  }
-                }
-              }
-            });
-        });
-
-      // Load footer
-      fetch("footer.html")
-        .then((res) => res.text())
-        .then((html) => {
-          document.getElementById("footer-placeholder").innerHTML = html;
-        });
-    </script>
-
     <!-- jQuery -->
     <script src="../common/js/lib/jquery-3.6.0.min.js"></script>
     <script src="../common/js/lib/jquery-migrate-3.4.0.min.js"></script>
