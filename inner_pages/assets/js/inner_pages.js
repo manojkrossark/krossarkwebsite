@@ -105,18 +105,25 @@ $(function () {
     .then((html) => {
       document.getElementById("nav-placeholder").innerHTML = html;
 
-      // Highlight active link
       const currentPage = window.location.pathname.split("/").pop();
+
       document
         .querySelectorAll("a.nav-link, a.dropdown-item")
         .forEach((link) => {
-          if (link.getAttribute("href") === currentPage) {
+          const linkHref = link.getAttribute("href");
+          if (!linkHref) return;
+
+          const linkPage = linkHref.split("/").pop(); // ← only get the file name
+
+          if (linkPage === currentPage) {
             link.classList.add("active");
+
             const parentDropdown = link.closest(".dropdown-menu");
             if (parentDropdown) {
               const dropdownToggle = parentDropdown
                 .closest(".nav-item.dropdown")
-                .querySelector(".nav-link.dropdown-toggle");
+                ?.querySelector(".nav-link.dropdown-toggle");
+
               if (dropdownToggle) dropdownToggle.classList.add("active");
             }
           }
