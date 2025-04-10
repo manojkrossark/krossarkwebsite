@@ -1920,9 +1920,6 @@ p {
   }
 }
 
-.contact-hed {
-  padding-inline: 15px;
-}
 
 #form_email,
 #form_name,
@@ -2463,6 +2460,18 @@ p {
   background: var(--theme-color);
 }
 
+
+
+/* ====================  About.Html Css ==================== */
+
+.about-banner {
+  background-image: url(../imgs/about/banner.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100vh - 100px);
+}
+
 .aboutus-card {
   display: grid;
   height: 100%;
@@ -2476,16 +2485,6 @@ p {
   gap: 1.5rem;
 }
 
-/* ====================  About.Html Css ==================== */
-
-.about-banner {
-  background-image: url(../imgs/about/banner.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: calc(100vh - 100px);
-}
-
 .who-we p {
   margin-bottom: 30px;
 }
@@ -2495,4 +2494,11 @@ p {
     height: 400px;
     margin-top: 1rem;
   }
+
+  .contact-hed .section-padding {
+    padding-top: 15px;
+
+  }
 }
+
+/* ====================  Contact.Html Css ==================== */
