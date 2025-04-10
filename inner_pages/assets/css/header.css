@@ -248,6 +248,14 @@ li.nav-item {
     padding: 15px 0px;
   }
 
+  .navbar .logo img {
+    width: 20vh;
+  }
+
+  .topnav img {
+    width: 3.6vh;
+  }
+
 }
 
 @media screen and (max-width: 992px) {
