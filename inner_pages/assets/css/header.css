@@ -15,7 +15,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  padding: 15px 0;
+  padding: 10px 0;
   margin: 0;
   width: 100%;
   background: var(--primary-color);
@@ -29,7 +29,7 @@
   padding: 0;
   position: fixed;
   top: -80px;
-  padding: 15px 0;
+  padding: 10px 0;
   -webkit-transition: -webkit-transform .3s;
   transition: -webkit-transform .3s;
   -o-transition: transform .3s;
@@ -43,17 +43,17 @@
 }
 
 .navbar .logo {
-  padding: 4px 15px;
+  padding: 0 5px;
 }
 
 .logo img {
   filter: none;
-  width: 180px;
+  width: 140px;
 }
 
 .right-icon img {
   filter: invert(1);
-  width: 20px;
+  width: 15px;
 }
 
 .navbar .navbar-nav {
@@ -75,9 +75,9 @@ li.nav-item {
 }
 
 .navbar .navbar-nav .nav-link {
-  padding: 5px 15px;
+  padding: 5px 10px;
   border-radius: 30px;
-  font-size: 14px;
+  font-size: 12px;
   color: var(--text-color);
   font-weight: 500;
   font-family: "Inter", sans-serif;
@@ -152,7 +152,7 @@ li.nav-item {
 
 .dropdown-item {
   padding: 0 1rem;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   font-family: "Inter", sans-serif;
   color: var(--text-color);
@@ -170,20 +170,25 @@ li.nav-item {
   color: white;
 } */
 .navbar .topnav .butn {
-  padding: 7px 20px;
+  padding: 8px 15px;
   background: var(--main-color);
   color: var(--primary-color);
-  margin-right: 15px;
+  /* margin-right: 15px; */
+  font-size: 12px;
+}
+
+.navbar .topnav .butn .icon{
+  width: auto;
 }
 
 .star-icon img {
-  width: 33px;
+  width: 25px;
 }
 
 .search {
-  width: 150px;
+  width: 140px;
   border-radius: 30px;
-  padding: 7px 20px;
+  padding: 5px 15px;
   border-color: #7f7f7f4d;
   font-size: 12px;
 }
