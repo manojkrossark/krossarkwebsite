@@ -69,7 +69,7 @@ $(function () {
       navbar = $(".navbar"),
       logo = $(".navbar.change .logo> img");
 
-    if (bodyScroll > 300) {
+    if (bodyScroll > 200) {
       navbar.addClass("nav-scroll");
       logo.attr("src", "assets/imgs/logo-dark.png");
     } else {

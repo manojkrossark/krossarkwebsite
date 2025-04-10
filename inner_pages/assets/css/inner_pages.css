@@ -160,10 +160,10 @@ p {
 }
 
 .services-dm .item p {
-  opacity: 0;
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  transition: all 0.4s;
+  display: none;
+  -webkit-transition: all 0.8s;
+  -o-transition: all 0.8s;
+  transition: all 0.8s;
 }
 
 .services-dm .item .icon {
@@ -186,7 +186,7 @@ p {
 }
 
 .services-dm .item:hover p {
-  opacity: 1;
+  display: block;
 }
 
 .intro-iner {
@@ -918,6 +918,10 @@ p {
 
 .m-height-115 {
   min-height: 115px;
+}
+
+.height-80 {
+  height: 80vh;
 }
 
 /* --------------- Services --------------- */
@@ -1754,6 +1758,14 @@ p {
 }
 
 @media screen and (max-width: 768px) {
+
+  .aboutus-card{
+    gap: 2rem;
+  }
+
+  .sec-head .sub-head{
+    padding-left: 0;
+  }
   .section-even-padding {
     padding-top: 40px;
     padding-bottom: 40px;
@@ -1761,6 +1773,10 @@ p {
 
   .works-mp.project .item1 {
     padding-bottom: 30px;
+  }
+
+  .height-80 {
+    height: 25vh;
   }
 
   h1 {
@@ -2440,4 +2456,17 @@ p {
 
 .video-play:hover {
   background: var(--theme-color);
+}
+
+.aboutus-card {
+  display: grid;
+  height: 100%;
+  align-content: space-between;
+  padding: 1rem 0;
+}
+
+.about-top {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
