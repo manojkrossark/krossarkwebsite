@@ -118,8 +118,8 @@ img {
 }
 
 
-.logo img {
-  filter: brightness(0);
+.hamenu  .logo img {
+  filter: grayscale(1) brightness(5.5);
   width: 150px;
 }
 
@@ -279,7 +279,7 @@ figure {
   text-transform: uppercase;
   font-weight: 600;
   line-height: 1.2;
-  padding: 15px 30px;
+  padding: 20px 30px;
   width: 100%;
   position: relative;
   display: block;
@@ -359,7 +359,6 @@ figure {
 
 .hamenu .menu-links .main-menu .sub-menu {
   display: none;
-  padding: 20px 0;
 }
 
 .hamenu .menu-links .main-menu .sub-menu.no-bord {
@@ -376,11 +375,14 @@ figure {
 }
 
 .hamenu .menu-links .main-menu .sub-menu li a {
-  padding: 12px 12px 12px 40px;
+  padding: 20px 12px 20px 40px;
   opacity: .6;
   -webkit-transition: all .4s;
   -o-transition: all .4s;
   transition: all .4s;
+  text-transform: uppercase;
+  font-size: 2.5vh;
+  letter-spacing: 2px;
 }
 
 .hamenu .menu-links .main-menu .sub-menu li a:hover {
@@ -1539,6 +1541,7 @@ img.left {
   padding-top: 80px;
   padding-bottom: 80px;
 }
+
 .section-evenly-padding {
   padding-top: 40px;
   padding-bottom: 40px;
@@ -3166,9 +3169,10 @@ img.left {
 }
 
 @media screen and (max-width: 768px) {
-  .mb-80{
+  .mb-80 {
     margin-bottom: 40px !important;
   }
+
   .pb-80 {
     padding-bottom: 50px !important;
   }
@@ -3255,8 +3259,8 @@ img.left {
   .progress-wrap {
     display: none;
   }
-  
-  .copy.sub-color span.ml-30{
+
+  .copy.sub-color span.ml-30 {
     margin-left: 0 !important;
   }
 }

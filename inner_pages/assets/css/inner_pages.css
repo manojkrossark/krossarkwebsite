@@ -595,90 +595,7 @@ p {
   margin-top: 30px;
 }
 
-.footer-sa .call-action h2 {
-  font-size: 100px;
-  font-weight: 600;
-  text-transform: uppercase;
-  line-height: 1;
-  position: relative;
-}
 
-.footer-sa .call-action h2 .buton {
-  width: 210px;
-  height: 210px;
-  border-radius: 50%;
-  background: var(--main-color);
-  position: absolute;
-  top: -80px;
-  right: 8%;
-  font-size: 32px;
-  color: var(--primary-color);
-}
-
-.footer-sa .call-action h2 .buton img {
-  width: 30px;
-  filter: invert(1);
-}
-
-.footer-sa .logo {
-  width: 160px;
-}
-
-.footer-sa .contact-info .item {
-  margin-bottom: 50px;
-}
-
-.footer-sa .contact-info .item span {
-  font-size: 12px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  color: var(--theme-color);
-  font-weight: 600;
-}
-
-.footer-sa .contact-info .social-icon a {
-  width: 48px;
-  height: 48px;
-  line-height: 48px;
-  text-align: center;
-  border-radius: 50%;
-  font-size: 14px;
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  transition: all 0.4s;
-  background: var(--theme-color);
-  color: var(--primary-color);
-}
-
-.footer-sa .contact-info .social-icon a:hover {
-  border: 1px solid rgb(0, 0, 0);
-  background: transparent;
-  color: var(--theme-color);
-}
-
-.footer-sa .sub-footer .copy p {
-  font-size: 14px;
-}
-
-.footer-sa .sub-footer .copy p a {
-  color: var(--theme-color);
-}
-
-.footer-sa .sub-footer .links {
-  width: 100%;
-}
-
-.footer-sa .sub-footer .links a {
-  font-size: 14px;
-}
-
-.footer-sa .sub-footer .links a:hover {
-  color: var(--theme-color);
-}
-
-.footer-sa .sub-footer .links .active {
-  color: var(--theme-color);
-}
 
 .intro-cst .states .item {
   position: relative;
@@ -1752,9 +1669,6 @@ p {
     font-size: 70px;
   }
 
-  .footer-sa .call-action h2 .buton {
-    display: none !important;
-  }
 }
 
 @media screen and (max-width: 768px) {
@@ -2489,6 +2403,106 @@ p {
   margin-bottom: 30px;
 }
 
+/* ====================  Footer.Html Css ==================== */
+
+.footer-sa .call-action h2 {
+  font-size: 100px;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1;
+  position: relative;
+}
+
+.footer-sa .call-action h2 .buton {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: var(--main-color);
+  position: absolute;
+  top: -80px;
+  right: 18%;
+  font-size: 25px;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  word-spacing: 10px;
+  letter-spacing: 0px;
+}
+
+.footer-sa .call-action h2 .buton img {
+  width: 30px;
+  filter: invert(1);
+}
+
+.footer-sa .call-action h2 .buton a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-sa .logo {
+  width: 160px;
+}
+
+.footer-sa .contact-info .item {
+  margin-bottom: 50px;
+}
+
+.footer-sa .contact-info .item span {
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: var(--theme-color);
+  font-weight: 600;
+}
+
+.footer-sa .contact-info .social-icon a {
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 14px;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+  background: var(--theme-color);
+  color: var(--primary-color);
+}
+
+.footer-sa .contact-info .social-icon a:hover {
+  border: 1px solid rgb(0, 0, 0);
+  background: transparent;
+  color: var(--theme-color);
+}
+
+.footer-sa .sub-footer .copy p {
+  font-size: 14px;
+}
+
+.footer-sa .sub-footer .copy p a {
+  color: var(--theme-color);
+}
+
+.footer-sa .sub-footer .links {
+  width: 100%;
+}
+
+.footer-sa .sub-footer .links a {
+  font-size: 14px;
+}
+
+.footer-sa .sub-footer .links a:hover {
+  color: var(--theme-color);
+}
+
+.footer-sa .sub-footer .links .active {
+  color: var(--theme-color);
+}
+
 @media screen and (max-width: 768px) {
   .about-banner {
     height: 400px;
@@ -2497,7 +2511,18 @@ p {
 
   .contact-hed .section-padding {
     padding-top: 15px;
+  }
 
+  .footer-sa .call-action h2 .buton {
+    width: 90px;
+    height: 90px;
+    top: -45px;
+    right: 3%;
+    font-size: 14px;
+  }
+
+  .footer-sa .call-action h2 .buton img {
+    width: 18px;
   }
 }
 
