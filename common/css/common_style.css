@@ -275,7 +275,8 @@ figure {
 }
 
 .hamenu .menu-links .main-menu>li .link {
-  font-size: 50px;
+  font-size: 3vh;
+  text-transform: uppercase;
   font-weight: 600;
   line-height: 1.2;
   padding: 15px 30px;
@@ -304,7 +305,7 @@ figure {
   width: 1px;
   height: 16px;
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   background: #fff;
 }
@@ -314,8 +315,8 @@ figure {
   width: 16px;
   height: 1px;
   position: absolute;
-  top: calc(50% + 8px);
-  left: calc(50% - 8px);
+  top: calc(40% + 7px);
+  left: calc(50% - 7px);
   background: #fff;
 }
 
@@ -326,6 +327,7 @@ figure {
 .hamenu .menu-links .main-menu>li .link .fill-text {
   position: relative;
   color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 2px;
 }
 
 .hamenu .menu-links .main-menu>li .link .fill-text:after {
