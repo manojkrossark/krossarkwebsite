@@ -238,11 +238,6 @@ $(function () {
   if (contactForm) {
     contactForm.addEventListener("submit", function (event) {
       event.preventDefault(); // Prevent the default form submission
-      const response = grecaptcha.getResponse();
-      if (response.length === 0) {
-        alert("Please complete the reCAPTCHA.");
-        return;
-      }
 
       const name = document.getElementById("form_name").value.trim();
       const email = document.getElementById("form_email").value.trim();
@@ -252,6 +247,19 @@ $(function () {
         .getElementById("form_Organizations")
         .value.trim();
 
+      const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/;
+      
+      if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+      }
+
+      const response = grecaptcha.getResponse();
+      if (response.length === 0) {
+        alert("Please complete the reCAPTCHA.");
+        return;
+      }
+
       if (name && email && message && subject) {
         const gmailComposeUrl =
           "https://mail.google.com/mail/?view=cm&fs=1&to=info@krossark.com" +
@@ -260,13 +268,13 @@ $(function () {
           "&body=" +
           encodeURIComponent(
             "Name: " +
-              name +
-              "\nEmail: " +
-              email +
-              "\nOrganization: " +
-              organization +
-              "\n\n" +
-              message
+            name +
+            "\nEmail: " +
+            email +
+            "\nOrganization: " +
+            organization +
+            "\n\n" +
+            message
           );
 
         window.open(gmailComposeUrl, "_blank");
