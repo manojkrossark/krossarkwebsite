@@ -920,9 +920,7 @@ p {
   min-height: 115px;
 }
 
-.height-80 {
-  height: 80vh;
-}
+
 
 /* --------------- Services --------------- */
 
@@ -1679,6 +1677,8 @@ p {
 
 /* ====================== [ Start Responsive ] ====================== */
 @media screen and (max-width: 992px) {
+
+
   .sec-head .sub-head {
     margin-bottom: 15px !important;
   }
@@ -1759,13 +1759,18 @@ p {
 
 @media screen and (max-width: 768px) {
 
-  .aboutus-card{
+  .contact-lg-3 {
+    display: none;
+  }
+
+  .aboutus-card {
     gap: 2rem;
   }
 
-  .sec-head .sub-head{
+  .sec-head .sub-head {
     padding-left: 0;
   }
+
   .section-even-padding {
     padding-top: 40px;
     padding-bottom: 40px;
@@ -1916,7 +1921,7 @@ p {
 }
 
 .contact-hed {
-  padding-inline: 27px;
+  padding-inline: 15px;
 }
 
 #form_email,
@@ -2469,4 +2474,25 @@ p {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+
+/* ====================  About.Html Css ==================== */
+
+.about-banner {
+  background-image: url(../imgs/about/banner.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100vh - 100px);
+}
+
+.who-we p {
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .about-banner {
+    height: 400px;
+    margin-top: 1rem;
+  }
 }
