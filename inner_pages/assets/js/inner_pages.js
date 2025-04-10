@@ -100,7 +100,7 @@ $(function () {
   }
 
   // Load nav and re-bind events
-  fetch("nav.html")
+  fetch("../common/nav.html")
     .then((res) => res.text())
     .then((html) => {
       document.getElementById("nav-placeholder").innerHTML = html;
@@ -123,7 +123,7 @@ $(function () {
         });
     });
 
-  fetch("hamenu.html")
+  fetch("../common/hamenu.html")
     .then((res) => res.text())
     .then((html) => {
       document.getElementById("hamenu-placeholder").innerHTML = html;
@@ -132,7 +132,7 @@ $(function () {
     });
 
   // Load footer and bind if needed
-  fetch("footer.html")
+  fetch("../common/footer.html")
     .then((res) => res.text())
     .then((html) => {
       document.getElementById("footer-placeholder").innerHTML = html;
