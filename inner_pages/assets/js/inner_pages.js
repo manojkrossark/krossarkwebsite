@@ -239,61 +239,74 @@ $(function () {
     contactForm.addEventListener("submit", function (event) {
       event.preventDefault(); // Prevent the default form submission
 
+      // Get values
       const name = document.getElementById("form_name").value.trim();
       const email = document.getElementById("form_email").value.trim();
       const subject = document.getElementById("form_subject").value.trim();
       const message = document.getElementById("form_message").value.trim();
-      const organization = document
-        .getElementById("form_Organizations")
-        .value.trim();
+      const organization = document.getElementById("form_Organizations").value.trim();
 
-      const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/;
-      
-      if (!emailRegex.test(email)) {
-        alert("Please enter a valid email address.");
+      const inputElements = [
+        document.getElementById("form_name"),
+        document.getElementById("form_email"),
+        document.getElementById("form_subject"),
+        document.getElementById("form_message")
+      ];
+
+      const fieldValues = [name, email, subject, message];
+      const fieldNames = ["Name", "Email", "Subject", "Message"];
+      const alertArr = [];
+
+      // Reset styles & highlight errors
+      inputElements.forEach((input, index) => {
+        const value = fieldValues[index];
+        if (value === "") {
+          input.classList.add("input-error");
+          alertArr.push(fieldNames[index]);
+        } else {
+          input.classList.remove("input-error");
+        }
+      });
+
+      // Stop if any field is empty
+      if (alertArr.length > 0) {
+        alert("Please enter the following fields: " + alertArr.join(", "));
         return;
       }
 
+      // Validate email
+      const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/;
+      const emailInput = document.getElementById("form_email");
+
+      if (!emailRegex.test(email)) {
+        emailInput.classList.add("input-error");
+        alert("Please enter a valid email address.");
+        return;
+      } else {
+        emailInput.classList.remove("input-error");
+      }
+
+      // Validate reCAPTCHA
       const response = grecaptcha.getResponse();
       if (response.length === 0) {
         alert("Please complete the reCAPTCHA.");
         return;
       }
 
-      if (name && email && message && subject) {
-        const gmailComposeUrl =
-          "https://mail.google.com/mail/?view=cm&fs=1&to=info@krossark.com" +
-          "&su=" +
-          encodeURIComponent(subject) +
-          "&body=" +
-          encodeURIComponent(
-            "Name: " +
-            name +
-            "\nEmail: " +
-            email +
-            "\nOrganization: " +
-            organization +
-            "\n\n" +
-            message
-          );
+      // Compose email link for Gmail
+      const gmailComposeUrl =
+        "https://mail.google.com/mail/?view=cm&fs=1&to=info@krossark.com" +
+        "&su=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(
+          `Name: ${name}\nEmail: ${email}\nOrganization: ${organization}\n\n${message}`
+        );
 
-        window.open(gmailComposeUrl, "_blank");
+      // Open Gmail compose window
+      window.open(gmailComposeUrl, "_blank");
 
-        contactForm.reset();
-        grecaptcha.reset();
-      } else {
-        const fieldsArr = [name, email, subject, message];
-        const fieldNames = ["Name", "Email", "Subject", "Message"];
-        const alertArr = [];
-
-        for (let i = 0; i < fieldsArr.length; i++) {
-          if (fieldsArr[i] === "") {
-            alertArr.push(fieldNames[i]);
-          }
-        }
-
-        alert("Please enter the following fields: " + alertArr.join(", "));
-      }
+      // Reset form and reCAPTCHA
+      contactForm.reset();
+      grecaptcha.reset();
     });
   }
 });

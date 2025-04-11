@@ -2503,6 +2503,14 @@ p {
   color: var(--theme-color);
 }
 
+.input-error {
+  border-bottom: 2px solid red !important;
+}
+
+.input-error::placeholder {
+  color: red;
+}
+
 @media screen and (max-width: 768px) {
   .about-banner {
     height: 400px;
