@@ -2511,6 +2511,13 @@ p {
   color: red;
 }
 
+.error-message {
+  color: rgb(255, 0, 0);
+  font-size: 0.8rem;
+  margin-top: 4px;
+  height: 1em;
+}
+
 @media screen and (max-width: 768px) {
   .about-banner {
     height: 400px;

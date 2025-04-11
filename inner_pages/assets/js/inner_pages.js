@@ -232,79 +232,91 @@ $(function () {
     $(".showHide").slideToggle(500);
   });
 
-  // Contact form handling
   const contactForm = document.getElementById("contact-form");
 
   if (contactForm) {
     contactForm.addEventListener("submit", function (event) {
-      event.preventDefault(); // Prevent the default form submission
+      event.preventDefault();
 
-      // Get values
-      const name = document.getElementById("form_name").value.trim();
-      const email = document.getElementById("form_email").value.trim();
-      const subject = document.getElementById("form_subject").value.trim();
-      const message = document.getElementById("form_message").value.trim();
-      const organization = document.getElementById("form_Organizations").value.trim();
+      // Get input elements
+      const inputFields = {
+        name: document.getElementById("form_name"),
+        email: document.getElementById("form_email"),
+        subject: document.getElementById("form_subject"),
+        message: document.getElementById("form_message"),
+        organization: document.getElementById("form_Organizations")
+      };
 
-      const inputElements = [
-        document.getElementById("form_name"),
-        document.getElementById("form_email"),
-        document.getElementById("form_subject"),
-        document.getElementById("form_message")
-      ];
+      const errorMessages = {
+        name: "Name is required.",
+        email: "email is required.",
+        subject: "Subject is required.",
+        message: "Message is required."
+      };
 
-      const fieldValues = [name, email, subject, message];
-      const fieldNames = ["Name", "Email", "Subject", "Message"];
-      const alertArr = [];
+      const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/;
 
-      // Reset styles & highlight errors
-      inputElements.forEach((input, index) => {
-        const value = fieldValues[index];
+      let isValid = true;
+      let firstInvalidInput = null;
+
+      // Reset styles and messages
+      Object.keys(errorMessages).forEach((key) => {
+        const input = inputFields[key];
+        const errorDiv = input.nextElementSibling;
+
+        input.classList.remove("input-error");
+        errorDiv.textContent = "";
+      });
+
+      // Validate fields
+      Object.keys(errorMessages).forEach((key) => {
+        const input = inputFields[key];
+        const value = input.value.trim();
+        const errorDiv = input.nextElementSibling;
+
         if (value === "") {
           input.classList.add("input-error");
-          alertArr.push(fieldNames[index]);
-        } else {
-          input.classList.remove("input-error");
+          errorDiv.textContent = errorMessages[key];
+          isValid = false;
+          if (!firstInvalidInput) firstInvalidInput = input;
+        } else if (key === "email" && !emailRegex.test(value)) {
+          input.classList.add("input-error");
+          errorDiv.textContent = "Please enter a valid email address.";
+          isValid = false;
+          if (!firstInvalidInput) firstInvalidInput = input;
         }
       });
 
-      // Stop if any field is empty
-      if (alertArr.length > 0) {
-        alert("Please enter the following fields: " + alertArr.join(", "));
+      if (!isValid) {
+        firstInvalidInput.scrollIntoView({ behavior: "auto", block: "center" });
+        firstInvalidInput.focus();
         return;
-      }
-
-      // Validate email
-      const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/;
-      const emailInput = document.getElementById("form_email");
-
-      if (!emailRegex.test(email)) {
-        emailInput.classList.add("input-error");
-        alert("Please enter a valid email address.");
-        return;
-      } else {
-        emailInput.classList.remove("input-error");
       }
 
       // Validate reCAPTCHA
       const response = grecaptcha.getResponse();
       if (response.length === 0) {
-        alert("Please complete the reCAPTCHA.");
+        const captchaError = document.getElementById("captcha-error");
+        if (captchaError) captchaError.textContent = "Please complete the reCAPTCHA.";
         return;
+      } else {
+        const captchaError = document.getElementById("captcha-error");
+        if (captchaError) captchaError.textContent = "";
       }
 
       // Compose email link for Gmail
       const gmailComposeUrl =
         "https://mail.google.com/mail/?view=cm&fs=1&to=info@krossark.com" +
-        "&su=" + encodeURIComponent(subject) +
+        "&su=" + encodeURIComponent(inputFields.subject.value.trim()) +
         "&body=" + encodeURIComponent(
-          `Name: ${name}\nEmail: ${email}\nOrganization: ${organization}\n\n${message}`
+          `Name: ${inputFields.name.value.trim()}\n` +
+          `Email: ${inputFields.email.value.trim()}\n` +
+          `Organization: ${inputFields.organization.value.trim()}\n\n` +
+          `${inputFields.message.value.trim()}`
         );
 
-      // Open Gmail compose window
       window.open(gmailComposeUrl, "_blank");
 
-      // Reset form and reCAPTCHA
       contactForm.reset();
       grecaptcha.reset();
     });
