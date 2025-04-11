@@ -235,56 +235,82 @@ $(function () {
   const contactForm = document.getElementById("contact-form");
 
   if (contactForm) {
+    const inputFields = {
+      name: document.getElementById("form_name"),
+      email: document.getElementById("form_email"),
+      subject: document.getElementById("form_subject"),
+      message: document.getElementById("form_message"),
+      organization: document.getElementById("form_Organizations")
+    };
+
+    const errorMessages = {
+      name: "Name is required.",
+      email: "Email is required.",
+      subject: "Subject is required.",
+      message: "Message is required."
+    };
+
+    const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/;
+
+    //  On-change validation (input + blur)
+    Object.keys(errorMessages).forEach((key) => {
+      const input = inputFields[key];
+      const errorDiv = input.nextElementSibling;
+
+      input.addEventListener("input", () => {
+        const value = input.value.trim();
+        if (value !== "") {
+          input.classList.remove("input-error");
+          if (errorDiv) errorDiv.textContent = "";
+        }
+
+        if (key === "email" && value !== "" && !emailRegex.test(value)) {
+          input.classList.add("input-error");
+          if (errorDiv) errorDiv.textContent = "Please enter a valid email address.";
+        }
+      });
+
+      input.addEventListener("blur", () => {
+        const value = input.value.trim();
+        if (value === "") {
+          input.classList.add("input-error");
+          if (errorDiv) errorDiv.textContent = errorMessages[key];
+        } else if (key === "email" && !emailRegex.test(value)) {
+          input.classList.add("input-error");
+          if (errorDiv) errorDiv.textContent = "Please enter a valid email address.";
+        } else {
+          input.classList.remove("input-error");
+          if (errorDiv) errorDiv.textContent = "";
+        }
+      });
+    });
+
+    // Submit validation
     contactForm.addEventListener("submit", function (event) {
       event.preventDefault();
-
-      // Get input elements
-      const inputFields = {
-        name: document.getElementById("form_name"),
-        email: document.getElementById("form_email"),
-        subject: document.getElementById("form_subject"),
-        message: document.getElementById("form_message"),
-        organization: document.getElementById("form_Organizations")
-      };
-
-      const captchaError = document.getElementById("captcha-error");
-      if (captchaError) captchaError.textContent = "";
-
-      const errorMessages = {
-        name: "Name is required.",
-        email: "email is required.",
-        subject: "Subject is required.",
-        message: "Message is required."
-      };
-
-      const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/;
 
       let isValid = true;
       let firstInvalidInput = null;
 
-      // Reset styles and messages
-      Object.keys(errorMessages).forEach((key) => {
-        const input = inputFields[key];
-        const errorDiv = input.nextElementSibling;
+      const captchaError = document.getElementById("captcha-error");
+      if (captchaError) captchaError.textContent = "";
 
-        input.classList.remove("input-error");
-        errorDiv.textContent = "";
-      });
-
-      // Validate fields
       Object.keys(errorMessages).forEach((key) => {
         const input = inputFields[key];
         const value = input.value.trim();
         const errorDiv = input.nextElementSibling;
 
+        input.classList.remove("input-error");
+        if (errorDiv) errorDiv.textContent = "";
+
         if (value === "") {
           input.classList.add("input-error");
-          errorDiv.textContent = errorMessages[key];
+          if (errorDiv) errorDiv.textContent = errorMessages[key];
           isValid = false;
           if (!firstInvalidInput) firstInvalidInput = input;
         } else if (key === "email" && !emailRegex.test(value)) {
           input.classList.add("input-error");
-          errorDiv.textContent = "Please enter a valid email address.";
+          if (errorDiv) errorDiv.textContent = "Please enter a valid email address.";
           isValid = false;
           if (!firstInvalidInput) firstInvalidInput = input;
         }
@@ -301,9 +327,11 @@ $(function () {
       if (response.length === 0) {
         if (captchaError) captchaError.textContent = "Please complete the reCAPTCHA.";
         return;
+      } else {
+        if (captchaError) captchaError.textContent = "";
       }
 
-      // Compose email link for Gmail
+      // Compose Gmail URL
       const gmailComposeUrl =
         "https://mail.google.com/mail/?view=cm&fs=1&to=info@krossark.com" +
         "&su=" + encodeURIComponent(inputFields.subject.value.trim()) +
@@ -316,6 +344,7 @@ $(function () {
 
       window.open(gmailComposeUrl, "_blank");
 
+      // Reset form & captcha
       contactForm.reset();
       grecaptcha.reset();
     });
