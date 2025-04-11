@@ -247,6 +247,9 @@ $(function () {
         organization: document.getElementById("form_Organizations")
       };
 
+      const captchaError = document.getElementById("captcha-error");
+      if (captchaError) captchaError.textContent = "";
+
       const errorMessages = {
         name: "Name is required.",
         email: "email is required.",
@@ -296,12 +299,8 @@ $(function () {
       // Validate reCAPTCHA
       const response = grecaptcha.getResponse();
       if (response.length === 0) {
-        const captchaError = document.getElementById("captcha-error");
         if (captchaError) captchaError.textContent = "Please complete the reCAPTCHA.";
         return;
-      } else {
-        const captchaError = document.getElementById("captcha-error");
-        if (captchaError) captchaError.textContent = "";
       }
 
       // Compose email link for Gmail
