@@ -13,6 +13,9 @@
 /* Global
 -----------------------------------------------------------------*/
 
+@charset "UTF-8";
+
+/* ========= [ * inner pages ]  =========*/
 :root {
   --bg-color: #18191b;
   --theme-color: #0e0f11;
@@ -21,8 +24,14 @@
   --text-color: #7f7f7f;
   --text-main-color: #505050;
   --bg-gray-color: #f5f5f5;
-}
 
+  /* Font Size */
+
+  --font-paragraph-14: 14px;
+  --font-paragraph-16: 16px;
+  --font-paragraph-18: 18px;
+  --font-family-playfair: "Playfair Display", serif;
+}
 
 main {
   position: relative;
@@ -118,7 +127,7 @@ img {
 }
 
 
-.hamenu  .logo img {
+.hamenu .logo img {
   filter: grayscale(1) brightness(5.5);
   width: 150px;
 }
@@ -453,7 +462,7 @@ figure {
   }
 
   header {
-    padding-top: 80px !important;
+    padding-top: 70px !important;
   }
 }
 
@@ -500,7 +509,7 @@ body.loaded {
 
 .loader-wrap .loader-wrap-heading .load-text {
   color: #fff;
-  font-size: 16px;
+  font-size: var(--font-paragraph-16);
   font-weight: 200;
   letter-spacing: 10px;
   text-transform: uppercase;
@@ -606,7 +615,7 @@ a:hover {
 /* Buttons
 -----------------------------------------------------------------*/
 .butn {
-  font-size: 14px;
+  font-size: var(--font-paragraph-14);
   font-weight: 500;
 }
 

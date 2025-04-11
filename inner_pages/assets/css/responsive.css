@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* ========= [ * inner pages ]  =========*/
 :root {
     --bg-color: #18191b;
@@ -12,6 +14,7 @@
 
     --font-paragraph-14: 14px;
     --font-paragraph-16: 16px;
+    --font-paragraph-18: 18px;
     --font-family-playfair: "Playfair Display", serif;
 }
 
@@ -28,7 +31,8 @@
     .services-mp,
     .review-serve,
     .partner-client,
-    .blog-mp {
+    .blog-mp,
+    .contact-pg {
         padding-inline: 0.5rem;
     }
 
@@ -101,6 +105,10 @@
         height: 400px;
     }
 
+    .contact-lg-3 {
+        display: none;
+    }
+
     .footer-sa .call-action h2 {
         font-size: 70px;
     }
@@ -141,7 +149,7 @@
     }
 
     .partner-client h6 {
-        padding-block: 40px;
+        padding-block-end: 40px;
     }
 
     .about-banner {
@@ -149,14 +157,12 @@
         margin-top: 1rem;
     }
 
-    .contact-hed .section-padding {
+    .contact-pg .section-padding {
         padding-top: 15px;
     }
 
 
-    .contact-lg-3 {
-        display: none;
-    }
+
 
     .aboutus-card {
         gap: 2rem;
@@ -290,7 +296,7 @@
         height: 90px;
         top: -45px;
         right: 3%;
-        font-size: 14px;
+        font-size: var(--font-paragraph-14);
     }
 
     .footer-sa .call-action h2 .buton img {
