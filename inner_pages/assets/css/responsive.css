@@ -1,0 +1,307 @@
+/* ========= [ * inner pages ]  =========*/
+:root {
+    --bg-color: #18191b;
+    --theme-color: #0e0f11;
+    --main-color: rgb(10 101 192);
+    --primary-color: #ffffff;
+    --text-color: #7f7f7f;
+    --text-main-color: #505050;
+    --bg-gray-color: #f5f5f5;
+
+    /* Font Size */
+
+    --font-paragraph-14: 14px;
+    --font-paragraph-16: 16px;
+    --font-family-playfair: "Playfair Display", serif;
+}
+
+@media screen and (max-width: 992px) {
+
+    .header-image-banner h4,
+    .header-image-banner .sub-heads,
+    .header-image-banner a {
+        color: var(--primary-color) !important;
+    }
+
+    .projcet-quality,
+    .case-studies,
+    .services-mp,
+    .review-serve,
+    .partner-client,
+    .blog-mp {
+        padding-inline: 0.5rem;
+    }
+
+    .sec-head .sub-head {
+        margin-bottom: 15px !important;
+    }
+
+    .sec-head .text-indent {
+        text-indent: 0;
+    }
+
+    .sec-head .d-flex {
+        display: block !important;
+    }
+
+    .sec-head .ml-auto {
+        margin: 15px 0 0 !important;
+    }
+
+    .team-hed .caption h1 {
+        font-size: 100px;
+    }
+
+    .pricing-hed .caption h1,
+    .contact-hed .caption h1 {
+        font-size: 90px;
+    }
+
+    .services-dm .item {
+        display: block !important;
+        position: relative;
+    }
+
+    .services-dm .item .title h2 {
+        font-size: 60px;
+        letter-spacing: -2px;
+        margin-bottom: 10px;
+    }
+
+    .services-dm .item .icon {
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        margin-left: 30px;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+    .intro-iner .img-box {
+        width: calc(100% - 100px);
+        margin: 0 auto 80px;
+    }
+
+    .services-mp .content .item {
+        padding: 0 15px;
+    }
+
+    .team-mp .item .img {
+        width: 280px;
+    }
+
+    .team-mp .item h2 {
+        font-size: 30px;
+        line-height: 1.2;
+        letter-spacing: -1px;
+    }
+
+    .work-hed2 .fit-img {
+        height: 400px;
+    }
+
+    .footer-sa .call-action h2 {
+        font-size: 70px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        letter-spacing: normal;
+    }
+
+    h2 {
+        letter-spacing: normal;
+    }
+
+    h3 {
+        font-size: 32px;
+        letter-spacing: normal;
+    }
+
+    h4 {
+        font-size: 28px;
+        letter-spacing: normal;
+    }
+
+
+
+    .projcet-quality .item1 {
+        margin-top: 50px;
+    }
+
+    .case-studies .item1 {
+        min-height: auto;
+    }
+
+    .review-serve {
+        margin: 0;
+    }
+
+    .partner-client h6 {
+        padding-block: 40px;
+    }
+
+    .about-banner {
+        height: 400px;
+        margin-top: 1rem;
+    }
+
+    .contact-hed .section-padding {
+        padding-top: 15px;
+    }
+
+
+    .contact-lg-3 {
+        display: none;
+    }
+
+    .aboutus-card {
+        gap: 2rem;
+    }
+
+    .sec-head .sub-head {
+        padding-left: 0;
+    }
+
+    .section-even-padding {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .works-mp.project .item1 {
+        padding-bottom: 30px;
+    }
+
+    .about-hed h1 {
+        font-size: 30px;
+        letter-spacing: normal;
+    }
+
+    .team-hed .caption h1 {
+        font-size: 60px;
+    }
+
+    .team-hed .fit-img {
+        margin-top: -30px;
+    }
+
+    .pricing-hed .caption h1,
+    .contact-hed .caption h1 {
+        font-size: 40px;
+    }
+
+    .intro-iner .img-box {
+        width: 100%;
+    }
+
+    .intro-iner .img-box .states {
+        left: 30px;
+        bottom: 150px;
+    }
+
+    .team-mp .item {
+        padding: 30px;
+    }
+
+    .team-mp .item .d-flex {
+        display: block !important;
+    }
+
+    .team-mp .item .img {
+        width: auto;
+        height: auto;
+        background: var(--theme-color);
+    }
+
+    .team-mp .item .cont {
+        padding: 30px 0 0;
+        text-align: center;
+    }
+
+    .team-mp .item .ml-auto {
+        width: -webkit-max-content;
+        width: -moz-max-content;
+        width: max-content;
+        margin: auto !important;
+    }
+
+    .team-mp .item .social-icon {
+        padding: 0;
+        margin-top: 30px;
+    }
+
+    .testimonials-ds .qoute-icon .text {
+        width: 180px;
+    }
+
+    .testimonials-ds .qoute-icon .icon {
+        width: 80px;
+    }
+
+    .testimonials-ds .item h4 {
+        font-size: 25px;
+        letter-spacing: normal;
+    }
+
+    .faqs-pg .sec-head h2 {
+        font-size: 30px;
+    }
+
+    .faqs-pg .accordion-item .accordion-header button {
+        font-size: 20px;
+    }
+
+    .contact-pg .sec-head h2 {
+        font-size: 30px;
+    }
+
+
+    .work-hed2 h1 {
+        font-size: 40px !important;
+    }
+
+
+    .work-hed2 .list ul {
+        padding: 0;
+    }
+
+    .work-hed .caption h1 {
+        font-size: 45px;
+    }
+
+    .work-card .card-item .img {
+        height: 500px;
+    }
+
+    .work-card .card-item h5 {
+        font-size: 35px;
+    }
+
+    .footer-sa .call-action h2 {
+        font-size: 35px;
+        line-height: 1.4;
+    }
+
+    .footer-sa .call-action h2 .buton {
+        width: 90px;
+        height: 90px;
+        top: -45px;
+        right: 3%;
+        font-size: 14px;
+    }
+
+    .footer-sa .call-action h2 .buton img {
+        width: 18px;
+    }
+
+
+}
+
+@media screen and (min-width: 320px) and (max-width: 1024px) {
+    .menu-icon {
+        display: inline-block !important;
+    }
+}
