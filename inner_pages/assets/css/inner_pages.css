@@ -1822,10 +1822,7 @@ p {
   }
 
 
-  .footer-sa .call-action h2 {
-    font-size: 35px;
-    line-height: 1.4;
-  }
+
 }
 
 @media screen and (min-width: 320px) and (max-width: 1024px) {
@@ -2528,6 +2525,11 @@ p {
     padding-top: 15px;
   }
 
+  .footer-sa .call-action h2 {
+    font-size: 35px;
+    line-height: 1.4;
+  }
+
   .footer-sa .call-action h2 .buton {
     width: 90px;
     height: 90px;
@@ -2539,6 +2541,8 @@ p {
   .footer-sa .call-action h2 .buton img {
     width: 18px;
   }
+
+
 }
 
 /* ====================  Contact.Html Css ==================== */
