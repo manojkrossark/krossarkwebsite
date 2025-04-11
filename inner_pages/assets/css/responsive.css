@@ -105,6 +105,10 @@
         height: 400px;
     }
 
+    .our-process .item .title h2 {
+        font-size: 40px;
+    }
+
     .contact-lg-3 {
         display: none;
     }
@@ -153,16 +157,13 @@
     }
 
     .about-banner {
-        height: 400px;
+        height: 200px;
         margin-top: 1rem;
     }
 
     .contact-pg .section-padding {
         padding-top: 15px;
     }
-
-
-
 
     .aboutus-card {
         gap: 2rem;
@@ -252,18 +253,13 @@
         letter-spacing: normal;
     }
 
-    .faqs-pg .sec-head h2 {
+    .sec-head h2 {
         font-size: 30px;
     }
 
     .faqs-pg .accordion-item .accordion-header button {
         font-size: 20px;
     }
-
-    .contact-pg .sec-head h2 {
-        font-size: 30px;
-    }
-
 
     .work-hed2 h1 {
         font-size: 40px !important;
@@ -287,7 +283,7 @@
     }
 
     .footer-sa .call-action h2 {
-        font-size: 35px;
+        font-size: 28px;
         line-height: 1.4;
     }
 
