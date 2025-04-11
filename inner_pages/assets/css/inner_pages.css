@@ -1825,6 +1825,15 @@ p {
 
 /* ====================  Homepage.Html Css ==================== */
 
+.header-image-banner {
+  background-image: url('../imgs/homepage/Banner.jpg');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 80px 0;
+  position: relative;
+}
+
 .header-mp .overlay {
   position: absolute;
   top: 0;
