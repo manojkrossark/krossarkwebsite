@@ -1437,6 +1437,24 @@ p {
   overflow: hidden;
   display: inline-block;
   border-radius: 15px;
+  position: relative;
+}
+
+.image-zoom-container .img-container {
+  display: none;
+}
+
+.image-zoom-container:hover .img-container {
+  display: block;
+  position: absolute;
+  inset: 0;
+  background: #0000009e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  font-size: 40px;
+  transition: 0.5s ease-in-out;
 }
 
 .image-zoom-container img {
@@ -1826,7 +1844,7 @@ p {
 /* ====================  Homepage.Html Css ==================== */
 
 .header-image-banner {
-  
+
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2254,4 +2272,29 @@ p {
   font-size: 0.8rem;
   margin-top: 4px;
   height: 1em;
+}
+
+/* ====================  Our Workd.Html Css ==================== */
+
+.work-banner {
+  background-image: url(../imgs/works/banner.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100vh - 100px);
+}
+
+.featured-works .row .col-lg-6 {
+  padding-block: 2rem;
+}
+
+.featured-works .item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.featured-works .row .col-lg-4 h2 {
+  margin: 2rem 0px;
 }
