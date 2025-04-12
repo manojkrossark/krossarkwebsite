@@ -334,3 +334,10 @@
         display: inline-block !important;
     }
 }
+
+
+@media screen and (max-width: 767px) {
+    .topnav img {
+        display: none;
+    }
+}
