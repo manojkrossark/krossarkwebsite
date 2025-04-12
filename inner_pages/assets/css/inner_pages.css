@@ -1985,6 +1985,26 @@ p {
   justify-content: center;
 }
 
+.w-100 {
+  width: 100px;
+}
+
+.w-120 {
+  width: 120px;
+}
+
+.w-130 {
+  width: 130px;
+}
+
+.w-140 {
+  width: 140px;
+}
+
+.w-150 {
+  width: 150px;
+}
+
 .blog-mp .bord {
   position: relative;
 }
