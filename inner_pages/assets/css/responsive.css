@@ -340,4 +340,12 @@
     .topnav img {
         display: none;
     }
+
+    .navbar .logo img {
+        width: 14vh;
+    }
+
+    .menu-icon {
+        font-size: 2vh;
+    }
 }
