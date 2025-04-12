@@ -2156,7 +2156,7 @@ p {
 /* ====================  About.Html Css ==================== */
 
 .about-banner {
-  background-image: url(../imgs/about/banner.jpg);
+  background-image: url(../imgs/about/banner.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
