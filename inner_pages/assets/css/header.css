@@ -113,6 +113,8 @@ li.nav-item {
 
 .navbar .navbar-nav .nav-link.active {
   color: var(--main-color);
+  border-bottom: 2px solid var(--main-color);
+  border-radius: 0;
 }
 
 .navbar .navbar-nav .nav-link.active::after {

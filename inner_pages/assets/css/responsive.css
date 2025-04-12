@@ -138,7 +138,12 @@
         letter-spacing: normal;
     }
 
-
+    .proj-details .accordion-item .accordion-header button span{
+        margin-right: 20px;
+    }
+    .proj-details .accordion-item .accordion-body{
+        padding: 0 0 15px 35px;
+    }
 
     .projcet-quality .item1 {
         margin-top: 50px;
@@ -178,9 +183,8 @@
     .featured-works .row .col-lg-6 .item p {
         text-align: justify;
     }
-
-    .featured-works .row .col-lg-6 .item a {
-        margin-top: 2rem;
+    .image-zoom-container:hover .img-container{
+        font-size: 22px;
     }
 
     .clients-dm:after,

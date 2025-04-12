@@ -1454,6 +1454,7 @@ p {
   justify-content: center;
   color: var(--primary-color);
   font-size: 40px;
+  text-align: center;
   transition: 0.5s ease-in-out;
 }
 
@@ -2297,4 +2298,8 @@ p {
 
 .featured-works .row .col-lg-4 h2 {
   margin: 2rem 0px;
+}
+
+.featured-works .row .col-lg-6 .item a {
+  margin-top: 2rem;
 }
