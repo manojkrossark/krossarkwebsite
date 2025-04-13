@@ -138,10 +138,11 @@
         letter-spacing: normal;
     }
 
-    .proj-details .accordion-item .accordion-header button span{
+    .proj-details .accordion-item .accordion-header button span {
         margin-right: 20px;
     }
-    .proj-details .accordion-item .accordion-body{
+
+    .proj-details .accordion-item .accordion-body {
         padding: 0 0 15px 35px;
     }
 
@@ -167,7 +168,8 @@
         margin-top: 1rem;
     }
 
-    .featured-works .row.column-reverse {
+    .featured-works .row.column-reverse,
+    .mission-dm .row.column-reverse {
         flex-direction: column-reverse;
     }
 
@@ -183,7 +185,8 @@
     .featured-works .row .col-lg-6 .item p {
         text-align: justify;
     }
-    .image-zoom-container:hover .img-container{
+
+    .image-zoom-container:hover .img-container {
         font-size: 22px;
     }
 
