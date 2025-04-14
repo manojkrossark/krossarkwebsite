@@ -16,6 +16,13 @@ $(function () {
     });
   });
 
+  $(function () {
+    $(".item").hover(function () {
+      $(".item").removeClass("active"); // Remove from all
+      $(this).addClass("active");       // Add to hovered one
+    });
+  });
+
 
   function bindNavEvents() {
     // Dropdown hover

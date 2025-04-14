@@ -193,12 +193,12 @@ p {
   width: 30px;
 }
 
-.services-dm .item:hover .title {
+.services-dm .item:hover .title, .services-dm .item.active {
   margin-bottom: 0;
   color: var(--main-color);
 }
 
-.services-dm .item:hover p {
+.services-dm .item:hover p, .services-dm .item.active p {
   display: block;
 }
 
@@ -2308,7 +2308,7 @@ p {
 .waro-serve {
   margin: 0;
   padding-inline: 40px;
-  background-color: var(--bg-gray-color);
+  background-color: var(--bs-gray-100);
   border-radius: 20px;
 }
 
@@ -2344,3 +2344,12 @@ p {
 .more-item {
   display: none;
 }
+
+.app-banner {
+  background-image: url(../imgs/portfolio/app-banner.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100vh - 100px);
+}
+

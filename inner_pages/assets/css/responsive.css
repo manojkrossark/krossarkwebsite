@@ -121,21 +121,34 @@
 
 @media screen and (max-width: 768px) {
     h1 {
-        letter-spacing: normal;
-    }
-
-    h2 {
-        letter-spacing: normal;
-    }
-
-    h3 {
         font-size: 32px;
         letter-spacing: normal;
     }
 
-    h4 {
+    h2 {
+        font-size: 30px;
+        letter-spacing: normal;
+    }
+
+    h3 {
         font-size: 28px;
         letter-spacing: normal;
+    }
+
+    h4 {
+        font-size: 26px;
+        letter-spacing: normal;
+    }
+
+    h5 {
+        font-size: 24px;
+        letter-spacing: normal;
+    }
+
+    .video-play {
+        inset: 0;
+        right: 0;
+        margin: auto;
     }
 
     .proj-details .accordion-item .accordion-header button span {
@@ -163,7 +176,8 @@
     }
 
     .about-banner,
-    .work-banner {
+    .work-banner,
+    .app-banner {
         height: 200px;
         margin-top: 1rem;
     }
@@ -324,7 +338,10 @@
         min-height: auto;
     }
 
-    
+    .app-development-screen h2 {
+        font-size: 24px;
+    }
+
 
     .footer-sa {
         margin-top: 80px;
