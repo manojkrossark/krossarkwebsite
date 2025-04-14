@@ -108,6 +108,13 @@ p {
   border-radius: 15px;
 }
 
+.padd-inline{
+  padding-inline: 40px;
+}
+.marg-inline{
+  margin-inline: 20px;
+}
+
 /* --------------- about pg --------------- */
 .about-hed .caption {
   position: relative;
