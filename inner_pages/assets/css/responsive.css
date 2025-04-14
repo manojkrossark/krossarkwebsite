@@ -91,16 +91,7 @@
         padding: 0 15px;
     }
 
-    .team-mp .item .img {
-        width: 280px;
-    }
-
-    .team-mp .item h2 {
-        font-size: 30px;
-        line-height: 1.2;
-        letter-spacing: -1px;
-    }
-
+    
     .work-hed2 .fit-img {
         height: 400px;
     }
@@ -236,11 +227,6 @@
         padding-bottom: 30px;
     }
 
-    .about-hed h1 {
-        font-size: 30px;
-        letter-spacing: normal;
-    }
-
     .team-hed .caption h1 {
         font-size: 60px;
     }
@@ -263,49 +249,7 @@
         bottom: 150px;
     }
 
-    .team-mp .item {
-        padding: 30px;
-    }
 
-    .team-mp .item .d-flex {
-        display: block !important;
-    }
-
-    .team-mp .item .img {
-        width: auto;
-        height: auto;
-        background: var(--theme-color);
-    }
-
-    .team-mp .item .cont {
-        padding: 30px 0 0;
-        text-align: center;
-    }
-
-    .team-mp .item .ml-auto {
-        width: -webkit-max-content;
-        width: -moz-max-content;
-        width: max-content;
-        margin: auto !important;
-    }
-
-    .team-mp .item .social-icon {
-        padding: 0;
-        margin-top: 30px;
-    }
-
-    .testimonials-ds .qoute-icon .text {
-        width: 180px;
-    }
-
-    .testimonials-ds .qoute-icon .icon {
-        width: 80px;
-    }
-
-    .testimonials-ds .item h4 {
-        font-size: 25px;
-        letter-spacing: normal;
-    }
 
     .sec-head h2 {
         font-size: 30px;
