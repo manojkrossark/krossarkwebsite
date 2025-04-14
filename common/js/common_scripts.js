@@ -249,22 +249,6 @@ $(function () {
     $(this).addClass("active").siblings().removeClass("active");
   });
 
-  /* =============================================================================
-    -------------------------------  Progress Bar  ---------------------------------
-    ============================================================================= */
-
-  wind.on("scroll", function () {
-    $(".skill-progress .progres").each(function () {
-      var bottom_of_object = $(this).offset().top + $(this).outerHeight();
-      var bottom_of_window = $(window).scrollTop() + $(window).height();
-      var myVal = $(this).attr("data-value");
-      if (bottom_of_window > bottom_of_object) {
-        $(this).css({
-          width: myVal,
-        });
-      }
-    });
-  });
 
   /* =============================================================================
     -----------------------------  Trigger Plugins  --------------------------------
@@ -314,104 +298,12 @@ $(function () {
     -----------------------------  Text Animation  -----------------------------
     ============================================================================= */
 
-  let elements = document.querySelectorAll(".rolling-text");
-
-  elements.forEach((element) => {
-    let innerText = element.innerText;
-    element.innerHTML = "";
-
-    let textContainer = document.createElement("div");
-    textContainer.classList.add("block");
-
-    for (let letter of innerText) {
-      let span = document.createElement("span");
-      span.innerText = letter.trim() === "" ? "\xa0" : letter;
-      span.classList.add("letter");
-      textContainer.appendChild(span);
-    }
-
-    element.appendChild(textContainer);
-    element.appendChild(textContainer.cloneNode(true));
-  });
-
-  elements.forEach((element) => {
-    element.addEventListener("mouseover", () => {
-      element.classList.remove("play");
-    });
-  });
+ 
 })();
 
 /* =============================================================================
 ////////////////////////////////////////////////////////////////////////////////
 ============================================================================= */
-
-$(window).on("load", function () {
-  /* =============================================================================
-    -----------------------------  isotope Masonery   ------------------------------
-    ============================================================================= */
-
-  $(".gallery").isotope({
-    itemSelector: ".items",
-  });
-
-  // isotope
-  $(".gallery2").isotope({
-    // options
-    itemSelector: ".items",
-    masonry: {
-      // use element for option
-      columnWidth: ".width2",
-    },
-  });
-
-  var $gallery = $(".gallery , .gallery2").isotope();
-
-  $(".filtering").on("click", "span", function () {
-    var filterValue = $(this).attr("data-filter");
-    $gallery.isotope({ filter: filterValue });
-  });
-
-  $(".filtering").on("click", "span", function () {
-    $(this).addClass("active").siblings().removeClass("active");
-  });
-
-  /* =============================================================================
-    -----------------------------  Contact Valdition   -----------------------------
-    ============================================================================= */
-
-  $("#contact-form").validator();
-
-  $("#contact-form").on("submit", function (e) {
-    if (!e.isDefaultPrevented()) {
-      // var url = "contact.php";
-      var url = "assets/js/sendEmail.php";
-
-      $.ajax({
-        type: "POST",
-        url: url,
-        data: $(this).serialize(),
-        success: function (data) {
-          var messageAlert = "alert-" + data.type;
-          var messageText = data.message;
-
-          var alertBox =
-            '<div class="alert ' +
-            messageAlert +
-            ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' +
-            messageText +
-            "</div>";
-          if (messageAlert && messageText) {
-            $("#contact-form").find(".messages").html(alertBox);
-            $("#contact-form")[0].reset();
-          }
-        },
-      });
-      return false;
-    }
-  });
-
-  $(".header-cst .caption h1").addClass("normal");
-});
 
 /* =============================================================================
 -----------------------------  Button scroll up   ------------------------------
@@ -465,45 +357,3 @@ wow.init();
 /* =============================================================================
 ////////////////////////////////////////////////////////////////////////////////
 ============================================================================= */
-
-$(function () {
-  /* =============================================================================
-    -------------------------------  Preloader svg   -------------------------------
-    ============================================================================= */
-
-  const svg = document.getElementById("svg");
-  const tl = gsap.timeline();
-  const curve = "M0 502S175 272 500 272s500 230 500 230V0H0Z";
-  const flat = "M0 2S175 1 500 1s500 1 500 1V0H0Z";
-
-  tl.to(".loader-wrap-heading .load-text , .loader-wrap-heading .cont", {
-    delay: 1.5,
-    y: -100,
-    opacity: 0,
-  });
-  tl.to(svg, {
-    duration: 0.5,
-    attr: { d: curve },
-    ease: "power2.easeIn",
-  }).to(svg, {
-    duration: 0.5,
-    attr: { d: flat },
-    ease: "power2.easeOut",
-  });
-  tl.to(".loader-wrap", {
-    y: -1500,
-  });
-  tl.to(".loader-wrap", {
-    zIndex: -1,
-    display: "none",
-  });
-  tl.from(
-    "header .container",
-    {
-      y: 100,
-      opacity: 0,
-      delay: 0.3,
-    },
-    "-=1.5"
-  );
-});
