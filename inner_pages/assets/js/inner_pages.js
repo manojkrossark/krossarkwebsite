@@ -1,11 +1,57 @@
 $(function () {
   "use strict";
 
+  // Load nav and re-bind events
+  fetch("../common/nav.html")
+    .then((res) => res.text())
+    .then((html) => {
+      document.getElementById("nav-placeholder").innerHTML = html;
+
+      const currentPage = window.location.pathname.split("/").pop();
+
+      document
+        .querySelectorAll("a.nav-link, a.dropdown-item")
+        .forEach((link) => {
+          const linkHref = link.getAttribute("href");
+          if (!linkHref) return;
+
+          const linkPage = linkHref.split("/").pop(); // ← only get the file name
+
+          if (linkPage === currentPage) {
+            link.classList.add("active");
+
+            const parentDropdown = link.closest(".dropdown-menu");
+            if (parentDropdown) {
+              const dropdownToggle = parentDropdown
+                .closest(".nav-item.dropdown")
+                ?.querySelector(".nav-link.dropdown-toggle");
+
+              if (dropdownToggle) dropdownToggle.classList.add("active");
+            }
+          }
+        });
+    });
+
+  fetch("../common/hamenu.html")
+    .then((res) => res.text())
+    .then((html) => {
+      document.getElementById("hamenu-placeholder").innerHTML = html;
+      // Re-bind nav events after content is added
+      bindNavEvents();
+    });
+
+  // Load footer and bind if needed
+  fetch("../common/footer.html")
+    .then((res) => res.text())
+    .then((html) => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+    });
+
   $(function () {
     $(".view-more-btn").on("click", function () {
       const $btn = $(this);
       const isExpanded = $btn.hasClass("expanded");
-  
+
       if (isExpanded) {
         $(".more-item").slideUp();
         $btn.removeClass("expanded").find(".text").text("View More");
@@ -136,51 +182,7 @@ $(function () {
   }
   window.toggleParagraph = toggleParagraph;
 
-  // Load nav and re-bind events
-  fetch("../common/nav.html")
-    .then((res) => res.text())
-    .then((html) => {
-      document.getElementById("nav-placeholder").innerHTML = html;
 
-      const currentPage = window.location.pathname.split("/").pop();
-
-      document
-        .querySelectorAll("a.nav-link, a.dropdown-item")
-        .forEach((link) => {
-          const linkHref = link.getAttribute("href");
-          if (!linkHref) return;
-
-          const linkPage = linkHref.split("/").pop(); // ← only get the file name
-
-          if (linkPage === currentPage) {
-            link.classList.add("active");
-
-            const parentDropdown = link.closest(".dropdown-menu");
-            if (parentDropdown) {
-              const dropdownToggle = parentDropdown
-                .closest(".nav-item.dropdown")
-                ?.querySelector(".nav-link.dropdown-toggle");
-
-              if (dropdownToggle) dropdownToggle.classList.add("active");
-            }
-          }
-        });
-    });
-
-  fetch("../common/hamenu.html")
-    .then((res) => res.text())
-    .then((html) => {
-      document.getElementById("hamenu-placeholder").innerHTML = html;
-      // Re-bind nav events after content is added
-      bindNavEvents();
-    });
-
-  // Load footer and bind if needed
-  fetch("../common/footer.html")
-    .then((res) => res.text())
-    .then((html) => {
-      document.getElementById("footer-placeholder").innerHTML = html;
-    });
 
   // Scroll-triggered animation
   if (window.innerWidth > 991) {
