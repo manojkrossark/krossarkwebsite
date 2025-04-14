@@ -64,8 +64,11 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="/inner_pages/assets/imgs/favicon.webp" />
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Plugins -->
     <link rel="stylesheet" href="/common/css/plugins.css" />
@@ -85,7 +88,7 @@
   <body>
     <!-- ==================== Start Loading ==================== -->
 
-  <!-- <div class="loader-wrap">
+    <!-- <div class="loader-wrap">
     <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
       <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
     </svg>
@@ -125,9 +128,241 @@
 
     <!-- ==================== Start Navbar ==================== -->
 
-    <div id="nav-placeholder"></div>
+    <!-- nav.html -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <!-- Logo -->
+        <a class="logo" href="/homepage.html">
+          <img src="/common/imgs/Krossark_logo.svg" alt="logo" />
+        </a>
 
-    <div id="hamenu-placeholder"></div>
+        <!-- navbar links -->
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/inner_pages/industries.html"
+                >Industries</a
+              >
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownServices"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >Services</a
+              >
+              <div
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdownServices"
+              >
+                <div class="dropdown-container">
+                  <a
+                    class="dropdown-item"
+                    href="/inner_pages/app-development.html"
+                    >App Development</a
+                  >
+                  <a class="dropdown-item" href="/inner_pages/tech_service.html"
+                    >Tech Service</a
+                  >
+                  <a class="dropdown-item" href="/inner_pages/marketing.html"
+                    >Marketing Service</a
+                  >
+                </div>
+              </div>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#">Products</a>
+              <div class="dropdown-menu">
+                <div class="dropdown-container">
+                  <a class="dropdown-item" href="/inner_pages/waro.html"
+                    >Waro</a
+                  >
+                  <a class="dropdown-item" href="/inner_pages/alto.html"
+                    >Alto</a
+                  >
+                  <a class="dropdown-item" href="/inner_pages/fetchh.html"
+                    >Fetchh</a
+                  >
+                </div>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/inner_pages/our_work.html">Our Work</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/inner_pages/about.html">about us</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="topnav">
+          <a href="/inner_pages/contact.html" class="butn rounded-pill">
+            <span>Contact US</span>
+          </a>
+
+          <input
+            class="form-control search border rounded-pill"
+            type="search"
+            value="search"
+            id="example-search-input"
+            placeholder="search"
+          />
+
+          <!-- <div class="position-relative search-division"> -->
+          <!-- <input
+          id="search"
+          type="search"
+          name="search"
+          placeholder="SEARCH"
+          class="search"
+        />
+        <i class="fa fa-search"></i> -->
+
+          <!-- <div class="input-group w-50"> -->
+          <!-- <input class="form-control border rounded-pill h-25" type="search" value="search" id="example-search-input"> -->
+          <!-- <span class="input-group-append">
+              <button class="btn btn-outline-secondary bg-white border-bottom-0 border rounded-pill ms-n5" type="button">
+                  <i class="fa fa-search"></i>
+              </button>
+          </span> -->
+          <!-- </div> -->
+          <!-- </div> -->
+
+          <!-- <span class="star-icon"> -->
+          <img src="/inner_pages/assets/imgs/star.webp" alt="Chat Star" />
+          <!-- </span> -->
+
+          <div class="menu-icon cursor-pointer">
+            <span class="icon ti-align-right"></span>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hamenu">
+      <div class="close-menu cursor-pointer ti-close"></div>
+      <div class="container-fluid rest d-flex">
+        <div class="menu-links">
+          <ul class="main-menu rest">
+            <li>
+              <div class="o-hidden">
+                <a href="/homepage.html" class="link"
+                  ><span class="fill-text" data-text="Home">Home</span></a
+                >
+              </div>
+            </li>
+            <li>
+              <div class="o-hidden">
+                <a href="/inner_pages/industries.html" class="link"
+                  ><span class="fill-text" data-text="Industries"
+                    >Industries</span
+                  ></a
+                >
+              </div>
+            </li>
+            <li>
+              <div class="o-hidden">
+                <div class="link cursor-pointer dmenu">
+                  <span class="fill-text" data-text="Services">Services</span>
+                  <i></i>
+                </div>
+              </div>
+              <div class="sub-menu">
+                <ul>
+                  <li>
+                    <a href="/inner_pages/app-development.html"
+                      >App Development</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/inner_pages/tech_service.html">Tech Service</a>
+                  </li>
+                  <li>
+                    <a href="/inner_pages/marketing.html">Marketing Service</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="o-hidden">
+                <div class="link cursor-pointer dmenu">
+                  <span class="fill-text" data-text="Products">Products</span>
+                  <i></i>
+                </div>
+              </div>
+              <div class="sub-menu">
+                <ul>
+                  <li>
+                    <a href="/inner_pages/waro.html" class="sub-link">Waro</a>
+                  </li>
+                  <li>
+                    <a href="/inner_pages/alto.html" class="sub-link">Alto</a>
+                  </li>
+                  <li>
+                    <a href="/inner_pages/fetchh.html" class="sub-link"
+                      >Fetchh</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="o-hidden">
+                <a href="/inner_pages/our_work.html" class="link"
+                  ><span class="fill-text" data-text="Our Work"
+                    >Our Work</span
+                  ></a
+                >
+              </div>
+            </li>
+            <li>
+              <div class="o-hidden">
+                <a href="/inner_pages/about.html" class="link"
+                  ><span class="fill-text" data-text="About Us"
+                    >About Us</span
+                  ></a
+                >
+              </div>
+            </li>
+            <li>
+              <div class="o-hidden">
+                <a href="/inner_pages/contact.html" class="link"
+                  ><span class="fill-text" data-text="Contact Us"
+                    >Contact Us</span
+                  ></a
+                >
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="cont-info valign">
+          <div class="text-center full-width">
+            <div class="logo">
+              <img src="/common/imgs/Krossark_logo.svg" alt="logo" />
+            </div>
+            <div class="item mt-30">
+              <h5>
+                7094, Peachtree industrial Blvd., Suite 270 <br />
+                Norcross, GA 30071, USA
+              </h5>
+            </div>
+            <div class="item mt-10">
+              <h5><a href="#0">info@krossark.com</a></h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- ==================== End Navbar ==================== -->
 
@@ -507,112 +742,139 @@
                       <div class="item lighten">
                         <i class="fa fa-quote-right" aria-hidden="true"></i>
 
-                      <h6 class="text-black">
-                        The Krossark team transformed our vision into stunning
-                        visuals that speak volumes.
-                      </h6>
-                      <div class="info">
-                        <div class="mr-auto">
-                          <div class="img-author fit-img">
-                            <img src="/inner_pages/assets/imgs/testim/avatar2.webp" alt="avatar2" />
+                        <h6 class="text-black">
+                          The Krossark team transformed our vision into stunning
+                          visuals that speak volumes.
+                        </h6>
+                        <div class="info">
+                          <div class="mr-auto">
+                            <div class="img-author fit-img">
+                              <img
+                                src="/inner_pages/assets/imgs/testim/avatar2.webp"
+                                alt="avatar2"
+                              />
+                            </div>
                           </div>
-                        </div>
-                        <div class="info-text ml-20">
-                          <span>Rahul Verma</span>
-                          <p>CEO, NexGen Tech Solutions</p>
+                          <div class="info-text ml-20">
+                            <span>Rahul Verma</span>
+                            <p>CEO, NexGen Tech Solutions</p>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                  <div class="card">
-                    <div class="item lighten">
-                      <i class="fa fa-quote-right text-blue" aria-hidden="true"></i>
+                  <div class="col-lg-4 col-sm-6">
+                    <div class="card">
+                      <div class="item lighten">
+                        <i
+                          class="fa fa-quote-right text-blue"
+                          aria-hidden="true"
+                        ></i>
 
-                      <h6>
-                        Seamless collaboration and exceptional design-Krossark
-                        brought our message to life.
-                      </h6>
-                      <div class="info">
-                        <div class="mr-auto">
-                          <div class="img-author fit-img">
-                            <img src="/inner_pages/assets/imgs/testim/avatar4.webp" alt="avatar4" />
+                        <h6>
+                          Seamless collaboration and exceptional design-Krossark
+                          brought our message to life.
+                        </h6>
+                        <div class="info">
+                          <div class="mr-auto">
+                            <div class="img-author fit-img">
+                              <img
+                                src="/inner_pages/assets/imgs/testim/avatar4.webp"
+                                alt="avatar4"
+                              />
+                            </div>
                           </div>
-                        </div>
-                        <div class="info-text ml-20">
-                          <span>Samantha Lee</span>
-                          <p>Marketing Head, Urban Eats</p>
+                          <div class="info-text ml-20">
+                            <span>Samantha Lee</span>
+                            <p>Marketing Head, Urban Eats</p>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                  <div class="card" style="background: #000000">
-                    <div class="item lighten">
-                      <i class="fa fa-quote-right text-white" aria-hidden="true"></i>
+                  <div class="col-lg-4 col-sm-6">
+                    <div class="card" style="background: #000000">
+                      <div class="item lighten">
+                        <i
+                          class="fa fa-quote-right text-white"
+                          aria-hidden="true"
+                        ></i>
 
-                      <h6 class="text-white">
-                        Their expertise in visuals made our messaging more
-                        impactful and engaging.
-                      </h6>
-                      <div class="info">
-                        <div class="mr-auto">
-                          <div class="img-author fit-img">
-                            <img src="/inner_pages/assets/imgs/testim/avatar4.webp" alt="avatar4" />
+                        <h6 class="text-white">
+                          Their expertise in visuals made our messaging more
+                          impactful and engaging.
+                        </h6>
+                        <div class="info">
+                          <div class="mr-auto">
+                            <div class="img-author fit-img">
+                              <img
+                                src="/inner_pages/assets/imgs/testim/avatar4.webp"
+                                alt="avatar4"
+                              />
+                            </div>
                           </div>
-                        </div>
-                        <div class="info-text ml-20">
-                          <span class="text-white">Vikram Sood</span>
-                          <p class="text-white">Director, Zenith Constructions</p>
+                          <div class="info-text ml-20">
+                            <span class="text-white">Vikram Sood</span>
+                            <p class="text-white">
+                              Director, Zenith Constructions
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                  <div class="card">
-                    <div class="item lighten">
-                      <i class="fa fa-quote-right text-blue" aria-hidden="true"></i>
+                  <div class="col-lg-4 col-sm-6">
+                    <div class="card">
+                      <div class="item lighten">
+                        <i
+                          class="fa fa-quote-right text-blue"
+                          aria-hidden="true"
+                        ></i>
 
-                      <h6>
-                        Brilliant execution! Krossark turned our ideas into
-                        visually compelling narratives.
-                      </h6>
-                      <div class="info">
-                        <div class="mr-auto">
-                          <div class="img-author fit-img">
-                            <img src="/inner_pages/assets/imgs/testim/avatar3.webp" alt="avatar3" />
+                        <h6>
+                          Brilliant execution! Krossark turned our ideas into
+                          visually compelling narratives.
+                        </h6>
+                        <div class="info">
+                          <div class="mr-auto">
+                            <div class="img-author fit-img">
+                              <img
+                                src="/inner_pages/assets/imgs/testim/avatar3.webp"
+                                alt="avatar3"
+                              />
+                            </div>
                           </div>
-                        </div>
-                        <div class="info-text ml-20">
-                          <span>Arjun Malhotra</span>
-                          <p>COO, Stellar Logistic</p>
+                          <div class="info-text ml-20">
+                            <span>Arjun Malhotra</span>
+                            <p>COO, Stellar Logistic</p>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                  <div class="card" style="background: #e5e5e5">
-                    <div class="item lighten">
-                      <i class="fa fa-quote-right" aria-hidden="true"></i>
+                  <div class="col-lg-4 col-sm-6">
+                    <div class="card" style="background: #e5e5e5">
+                      <div class="item lighten">
+                        <i class="fa fa-quote-right" aria-hidden="true"></i>
 
                         <h6>
                           Krossark didn't just design-they amplified our brand's
                           voice with precision.
                         </h6>
 
-                      <div class="info">
-                        <div class="mr-auto">
-                          <div class="img-author fit-img">
-                            <img src="/inner_pages/assets/imgs/testim/avatar1.webp" alt="avatar1" />
+                        <div class="info">
+                          <div class="mr-auto">
+                            <div class="img-author fit-img">
+                              <img
+                                src="/inner_pages/assets/imgs/testim/avatar1.webp"
+                                alt="avatar1"
+                              />
+                            </div>
                           </div>
-                        </div>
-                        <div class="info-text ml-20">
-                          <span>Rohit Khanna</span>
-                          <p>Founder, Elevate Fitness Studios</p>
+                          <div class="info-text ml-20">
+                            <span>Rohit Khanna</span>
+                            <p>Founder, Elevate Fitness Studios</p>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -620,9 +882,7 @@
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-
+          </section>
 
           <!-- ==================== Partner Client ==================== -->
 
@@ -860,7 +1120,96 @@
 
         <!-- ==================== Start Footer ==================== -->
 
-        <div id="footer-placeholder"></div>
+        <!-- footer.html -->
+        <footer class="footer-sa pb-80">
+          <div class="container section-even-padding">
+            <div class="call-action text-center mb-100">
+              <h2 class="">
+                <a href="#"
+                  >Let's Make <br />
+                  Something Great!</a
+                >
+                <div class="buton">
+                  <a href="/inner_pages/contact.html">
+                    <span>Contact</span>
+                    <span
+                      >Us
+                      <img src="/common/imgs/icons/arrow-top-right.svg" alt=""
+                    /></span>
+                  </a>
+                </div>
+              </h2>
+            </div>
+            <div class="contact-info">
+              <div class="row">
+                <div class="col-lg-3">
+                  <a href="../homepage.html" class="logo md-mb50">
+                    <img src="/common/imgs/Krossark_logo.svg" alt="logo" />
+                  </a>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                  <div class="item">
+                    <span class="sub-color">location</span>
+                    <p>
+                      7094, Peachtree industrial Blvd., Suite 270 Norcross, GA
+                      30071, USA
+                    </p>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                  <div class="item">
+                    <span class="sub-color">Contact</span>
+                    <p>info@krossark.com</p>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                  <div class="social-icon">
+                    <a href="fa-x-twitter"
+                      ><i class="fa-brands fa-x-twitter"></i
+                    ></a>
+                    <a href="fa-instagram"
+                      ><i class="fa-brands fa-instagram"></i
+                    ></a>
+                    <a href="fa-facebook"
+                      ><i class="fa-brands fa-facebook"></i
+                    ></a>
+                    <a href="fa-youtube"
+                      ><i class="fa-brands fa-youtube"></i
+                    ></a>
+                    <a href="fa-linkedin-in"
+                      ><i class="fa-brands fa-linkedin-in"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sub-footer">
+            <div class="container bord-thin-top-light pt-50">
+              <div class="row">
+                <div class="col-lg-8">
+                  <div class="copy sub-color md-mb30">
+                    <p>
+                      © 2025 All Right Reserved <a href="#">Krossark inc</a>.
+                      <span class="ml-30">Powered by AI</span>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 d-flex justify-content-end">
+                  <div class="links sub-color d-flex justify-content-between">
+                    <a href="/inner_pages/industries.html">Industries</a>
+                    <a href="/inner_pages/tech_service.html">Services</a>
+                    <a href="/inner_pages/waro.html">Products</a>
+                    <a href="/inner_pages/our_work.html">Our Work</a>
+                    <a href="/inner_pages/about.html">About us</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
 
         <!-- ==================== End Footer ==================== -->
       </div>
