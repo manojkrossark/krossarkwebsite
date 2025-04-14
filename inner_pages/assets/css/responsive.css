@@ -316,6 +316,20 @@
         font-size: 35px;
     }
 
+    .waro-serve {
+        padding-inline: 20px;
+    }
+
+    .solution-design h6 {
+        min-height: auto;
+    }
+
+    
+
+    .footer-sa {
+        margin-top: 80px;
+    }
+
     .footer-sa .call-action h2 {
         font-size: 28px;
         line-height: 1.4;

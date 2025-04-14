@@ -2303,3 +2303,44 @@ p {
 .featured-works .row .col-lg-6 .item a {
   margin-top: 2rem;
 }
+
+
+.waro-serve {
+  margin: 0;
+  padding-inline: 40px;
+  background-color: var(--bg-gray-color);
+  border-radius: 20px;
+}
+
+.category-list ul.rest li {
+  font-size: 30px;
+  font-weight: 500;
+  padding-block: 30px;
+  cursor: pointer;
+}
+
+.category-list ul.rest li:hover {
+  color: var(--main-color);
+}
+
+.solution-design h6 {
+  min-height: 50px;
+}
+
+.toggle-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 0.3s ease;
+}
+
+.toggle-text.expanded {
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+.more-item {
+  display: none;
+}

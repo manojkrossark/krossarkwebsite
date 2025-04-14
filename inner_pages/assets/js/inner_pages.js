@@ -1,6 +1,22 @@
 $(function () {
   "use strict";
 
+  $(function () {
+    $(".view-more-btn").on("click", function () {
+      const $btn = $(this);
+      const isExpanded = $btn.hasClass("expanded");
+  
+      if (isExpanded) {
+        $(".more-item").slideUp();
+        $btn.removeClass("expanded").find(".text").text("View More");
+      } else {
+        $(".more-item").slideDown();
+        $btn.addClass("expanded").find(".text").text("View Less");
+      }
+    });
+  });
+
+
   function bindNavEvents() {
     // Dropdown hover
     $(".navbar .dropdown")
@@ -98,6 +114,20 @@ $(function () {
         $(this).toggleClass("dopen");
       });
   }
+
+  function toggleParagraph(link) {
+    const $link = $(link);
+    const $paragraph = $link.prev("p");
+
+    $paragraph.toggleClass("expanded");
+
+    if ($paragraph.hasClass("expanded")) {
+      $link.html('View Less <i class="fa fa-arrow-up"></i>');
+    } else {
+      $link.html('Know More <i class="fa fa-arrow-right"></i>');
+    }
+  }
+  window.toggleParagraph = toggleParagraph;
 
   // Load nav and re-bind events
   fetch("../common/nav.html")
