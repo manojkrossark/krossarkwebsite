@@ -160,12 +160,8 @@
         margin-top: 50px;
     }
 
-    .case-studies .item1 {
+    .case-studies .item1, .tech-services .tech-content p {
         min-height: auto;
-    }
-
-    .review-serve {
-        margin: 0;
     }
 
     .partner-client h6 {
