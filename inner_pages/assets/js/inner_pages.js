@@ -37,6 +37,9 @@ $(function () {
   }
   window.toggleParagraph = toggleParagraph;
 
+
+ 
+
   // Scroll-triggered animation
   if (window.innerWidth > 991) {
     const tl = gsap.timeline({
@@ -236,9 +239,9 @@ $(function () {
         "&body=" +
         encodeURIComponent(
           `Name: ${inputFields.name.value.trim()}\n` +
-            `Email: ${inputFields.email.value.trim()}\n` +
-            `Organization: ${inputFields.organization.value.trim()}\n\n` +
-            `${inputFields.message.value.trim()}`
+          `Email: ${inputFields.email.value.trim()}\n` +
+          `Organization: ${inputFields.organization.value.trim()}\n\n` +
+          `${inputFields.message.value.trim()}`
         );
 
       window.open(gmailComposeUrl, "_blank");

@@ -144,8 +144,10 @@
         background-color: rgb(0 0 0 / 20%);
     }
 
-    .featured-works h2 {
-        color: var(--main-color);
+    .about-work .fit-img,
+    .app-developments .fit-img,
+    .our-work .fit-img {
+        height: auto;
     }
 
     .video-play {
