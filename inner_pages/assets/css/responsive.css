@@ -91,7 +91,7 @@
         padding: 0 15px;
     }
 
-    
+
     .work-hed2 .fit-img {
         height: 400px;
     }
@@ -136,11 +136,17 @@
         letter-spacing: normal;
     }
 
+    .padd-inline {
+        padding-inline: 10px;
+    }
+
     .header-mp .overlay {
         background-color: rgb(0 0 0 / 20%);
-      }
-      
+    }
 
+    .featured-works h2 {
+        color: var(--main-color);
+    }
 
     .video-play {
         inset: 0;
@@ -160,7 +166,8 @@
         margin-top: 50px;
     }
 
-    .case-studies .item1, .tech-services .tech-content p {
+    .case-studies .item1,
+    .tech-services .tech-content p {
         min-height: auto;
     }
 

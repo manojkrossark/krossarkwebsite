@@ -1687,12 +1687,22 @@ p {
 }
 
 /* ====================  About.Html Css ==================== */
-.about-banner {
-  background-image: url(../imgs/about/banner.webp);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: calc(100vh - 100px);
+.about-work .fit-img {
+  height: 620px;
+}
+
+.about-work .fit-img {
+  overflow: hidden;
+}
+
+.about-work .fit-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center center;
+  object-position: center center;
+  border-radius: 15px;
 }
 
 .aboutus-card {
@@ -1766,13 +1776,25 @@ p {
 }
 
 /* ====================  Our Workd.Html Css ==================== */
-.work-banner {
-  background-image: url(../imgs/works/banner.webp);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: calc(100vh - 100px);
+
+.our-work .fit-img {
+  height: 620px;
 }
+
+.our-work .fit-img {
+  overflow: hidden;
+}
+
+.our-work .fit-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center center;
+  object-position: center center;
+  border-radius: 15px;
+}
+
 
 .featured-works .row .col-lg-6 {
   padding-block: 2rem;
@@ -1833,13 +1855,23 @@ p {
   display: none;
 }
 
-.app-banner {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: calc(100vh - 100px);
+.app-developments .fit-img {
+  height: 620px;
 }
 
+.app-developments .fit-img {
+  overflow: hidden;
+}
+
+.app-developments .fit-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center center;
+  object-position: center center;
+  border-radius: 15px;
+}
 
 .tech-services .tech-content {
   margin-top: 50px;
