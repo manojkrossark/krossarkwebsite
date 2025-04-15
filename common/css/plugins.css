@@ -20,13 +20,13 @@
 @import url("plugins/fontawesome-all.min.css");
 
 /* == justifiedGallery.min == */
-@import url("plugins/justifiedGallery.min.css");
+/* @import url("plugins/justifiedGallery.min.css"); */
 
 /* == magnific-popup == */
 @import url("plugins/magnific-popup.css");
 
 /* == YouTubePopUp == */
-@import url("plugins/YouTubePopUp.css");
+/* @import url("plugins/YouTubePopUp.css"); */
 
 /* == swiper.min font == */
 @import url("plugins/swiper.min.css");
