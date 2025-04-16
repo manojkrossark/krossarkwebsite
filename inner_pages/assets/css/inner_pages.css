@@ -265,14 +265,13 @@ p {
   font-size: 140px;
   font-weight: 600;
   text-transform: uppercase;
-  color: var(--main-color);
+  /* color: var(--main-color); */
   font-family: "Playfair Display", serif;
 }
 
 .team-hed .fit-img {
   height: 540px;
   position: relative;
-  margin-top: -60px;
   z-index: -1;
 }
 
