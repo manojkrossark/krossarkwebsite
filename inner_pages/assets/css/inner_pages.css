@@ -265,8 +265,18 @@ p {
   font-size: 140px;
   font-weight: 600;
   text-transform: uppercase;
-  /* color: var(--main-color); */
-  font-family: "Playfair Display", serif;
+  font-family: "Playfair Display", serif;  
+  background-clip: text;
+  background-size: contain;
+}
+
+.petsy-back {
+  background-image: url(../imgs/team/cat-tongue.jpg);
+  color: transparent;
+}
+.backhaul-back {
+  background-image: url(../imgs/team/truck-back.jpg);
+  color: transparent;
 }
 
 .team-hed .fit-img {
@@ -1907,3 +1917,5 @@ p {
   -o-object-position: center;
   object-position: center;
 }
+
+
