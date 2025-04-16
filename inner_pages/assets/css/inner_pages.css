@@ -265,6 +265,8 @@ p {
   font-size: 140px;
   font-weight: 600;
   text-transform: uppercase;
+  color: var(--main-color);
+  font-family: "Playfair Display", serif;
 }
 
 .team-hed .fit-img {
