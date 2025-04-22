@@ -385,11 +385,18 @@ $(window).on("load", function () {
     if (!e.isDefaultPrevented()) {
       // var url = "contact.php";
       var url = "assets/js/sendEmail.php";
+      const captchaResponse = grecaptcha.getResponse();
+      if (!captchaResponse) {
+        $("#g-recaptcha").addClass('error');
+        $("#contact-form .messages").html('<div class="alert alert-danger">Please complete the reCAPTCHA.</div>');
+        return;
+      }
+      var formData = $(this).serialize() + "&g-recaptcha-response=" + captchaResponse;
 
       $.ajax({
         type: "POST",
         url: url,
-        data: $(this).serialize(),
+        data: formData,
         success: function (data) {
           var messageAlert = "alert-" + data.type;
           var messageText = data.message;

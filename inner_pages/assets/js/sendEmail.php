@@ -11,6 +11,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $recaptchaToken = $_POST['g-recaptcha-response'];
+    $secretKey = "6LdoOQ0rAAAAANbvkD1jIEWjdc88rdaPavVbMO4w";
+
+    $verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$recaptchaToken");
+        $captchaSuccess = json_decode($verify);
+    
+        if (!$captchaSuccess->success) {
+            // reCAPTCHA failed
+            echo json_encode([
+                "type" => "danger",
+                "message" => "reCAPTCHA verification failed. Please try again."
+            ]);
+            exit;
+        }
+
     // Collect form data
     $name = $_POST['name']; 
     $email = $_POST['email'];
@@ -20,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate the data
     if (!empty($name) && !empty($email) && !empty($message)) {
         // Prepare the email content
-        $to = "vinoth.m@krossark.com";  // Recipient's email address
+        $to = "kalaiyarasan.p@krossark.com";  // Recipient's email address
         $headers = "From: $email\r\n";
         $headers .= "Reply-To: $email\r\n";
         $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
