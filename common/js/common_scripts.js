@@ -459,6 +459,24 @@ $(document).ready(function () {
   });
 });
 
+
+/* =============================================================================
+-----------------------------  Modal Open   ------------------------------
+============================================================================= */
+
+// Load modal HTML dynamically
+fetch('/common/common-modal.html')
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById('modal-container').innerHTML = html;
+  });
+
+// Function to open the modal
+function openModal() {
+  const modal = new bootstrap.Modal(document.getElementById('exampleModal'));
+  modal.show();
+}
+
 /* =============================================================================
 -------------------------------  Wow Animation   -------------------------------
 ============================================================================= */

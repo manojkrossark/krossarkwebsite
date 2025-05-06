@@ -20,7 +20,7 @@
   margin: 0;
   width: 100%;
   background: var(--primary-color);
-  z-index: 9999999;
+  z-index: 999;
   text-transform: uppercase;
   border-bottom: 1px solid var(--border-color);
   box-shadow: 0 0px 9px rgba(10, 101, 192, 0.1);

@@ -253,7 +253,9 @@
         left: 30px;
         bottom: 150px;
     }
-
+    .container-cardface{
+        height: 26vh;
+    }
 
 
     .sec-head h2 {

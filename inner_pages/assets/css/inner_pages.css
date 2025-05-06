@@ -265,7 +265,7 @@ p {
   font-size: 140px;
   font-weight: 600;
   text-transform: uppercase;
-  font-family: "Playfair Display", serif;  
+  font-family: "Playfair Display", serif;
   background-clip: text;
   background-size: contain;
 }
@@ -274,6 +274,7 @@ p {
   background-image: url(../imgs/team/cat-tongue.jpg);
   color: transparent;
 }
+
 .backhaul-back {
   background-image: url(../imgs/team/truck-back.jpg);
   color: transparent;
@@ -1918,4 +1919,316 @@ p {
   object-position: center;
 }
 
+.toggle-paragraph {
+  min-height: 67px;
+}
 
+#exampleModal{
+  overflow: hidden;
+}
+
+.modal-body {
+  max-height: calc(100vh - 52px);
+  overflow: auto;
+}
+
+.btn-primary {
+  background-color: var(--main-color) !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 50px;
+  padding-inline: 20px;
+  text-transform: capitalize;
+}
+
+.btn-primary:hover {
+  background-color: var(--bg-color) !important;
+  border-color: var(--bg-color);
+}
+
+.primary-button {
+  min-height: auto !important;
+}
+
+.yenlo-wl-hero-subtitle {
+  color: var(--main-color);
+  font-size: 1rem;
+  display: block;
+  width: 100%;
+  text-transform: uppercase;
+  font-family: 'themify';
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.yenlo-wl-hero-title {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-family: math;
+  letter-spacing: 0;
+  font-weight: 600;
+}
+
+.form-info {
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+}
+
+.control-material {
+  position: relative;
+  margin-bottom: 1em;
+  font-family: "Roboto", sans-serif;
+}
+
+.control-material input,
+.control-material textarea {
+  border-radius: 0 !important;
+}
+
+
+.control-material .material-input,
+.control-material textarea {
+  width: 100% !important;
+  font-size: 1.15rem;
+  padding: .625em .625em .625em .3125em;
+  display: block;
+  width: 18.75em;
+  border: none;
+  border-bottom: 1px solid #a9abac;
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.control-material .material-input:focus,
+.control-material textarea:focus {
+  outline: none;
+}
+
+.control-material .bar {
+  position: relative;
+  display: block;
+}
+
+.control-material .bar:before,
+.control-material .bar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 0px;
+  position: absolute;
+  transition: .2s ease all;
+  -moz-transition: .2s ease all;
+  -webkit-transition: .2s ease all;
+}
+
+.control-material .bar:before {
+  left: 50%;
+}
+
+.control-material .bar:after {
+  right: 50%;
+}
+
+.control-material.is-primary .bar:before,
+.control-material.is-primary .bar:after {
+  background: var(--main-color);
+}
+
+.control-material .material-input:focus~.bar:before,
+.control-material input.material-input:focus~.bar:after,
+.control-material textarea:focus~.bar:before,
+.control-material textarea:focus~.bar:after {
+  width: 50%;
+}
+
+.control-material label {
+  font-family: "Roboto", sans-serif;
+  color: #cecece;
+  font-size: .9rem;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  top: 1em;
+  left: .3125em;
+  transition: .2s ease all;
+  -moz-transition: .2s ease all;
+  -webkit-transition: .2s ease all;
+}
+
+
+.control-material .material-input:focus~label,
+.control-material input:valid~label,
+.control-material textarea:focus~label {
+  top: -4px;
+  left: -2px;
+  font-size: 12px;
+}
+
+.control-material.is-primary input.material-input:focus~label,
+.control-material.is-primary input:valid~label,
+.control-material.is-primary textarea:focus~label {
+  color: var(--main-color);
+}
+
+
+.container-cardface {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  height: 100%;
+}
+
+.box-card {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s ease;
+  cursor: pointer;
+}
+
+.box-card:hover {
+  animation: rotate3d 8s infinite linear;
+}
+
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  backface-visibility: visible;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #ffffff, #fffcfc);
+  border: 2px solid #646cff;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  color: var(--main-color);
+}
+
+.face::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  top: -100%;
+  left: -100%;
+  transition: all 0.5s ease;
+  transform: translateZ(20px);
+}
+
+.face::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.05) 50%,
+      transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.face:hover::before {
+  top: 100%;
+  left: 100%;
+}
+
+.face:hover::after {
+  opacity: 1;
+}
+
+.front {
+  transform: translateZ(100px);
+  border-color: #646cff;
+}
+
+.back {
+  transform: translateZ(-100px) rotateY(180deg);
+  border-color: #00bcd4;
+}
+
+.right {
+  transform: translateX(100px) rotateY(90deg);
+  border-color: #4caf50;
+}
+
+.left {
+  transform: translateX(-100px) rotateY(-90deg);
+  border-color: #ff4081;
+}
+
+.top {
+  transform: translateY(-100px) rotateX(90deg);
+  border-color: #ffc107;
+}
+
+.bottom {
+  transform: translateY(100px) rotateX(-90deg);
+  border-color: #9c27b0;
+}
+
+@keyframes rotate3d {
+  0% {
+    transform: rotateX(0) rotateY(0);
+  }
+
+  25% {
+    transform: rotateX(90deg) rotateY(90deg);
+  }
+
+  50% {
+    transform: rotateX(180deg) rotateY(180deg);
+  }
+
+  75% {
+    transform: rotateX(270deg) rotateY(270deg);
+  }
+
+  100% {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .box-card {
+    width: 150px;
+    height: 150px;
+  }
+
+  .front {
+    transform: translateZ(75px);
+  }
+
+  .back {
+    transform: translateZ(-75px) rotateY(180deg);
+  }
+
+  .right {
+    transform: translateX(75px) rotateY(90deg);
+  }
+
+  .left {
+    transform: translateX(-75px) rotateY(-90deg);
+  }
+
+  .top {
+    transform: translateY(-75px) rotateX(90deg);
+  }
+
+  .bottom {
+    transform: translateY(75px) rotateX(-90deg);
+  }
+}
+
+.error-msg {
+  color: red;
+  font-size: 13px;
+  margin-top: 5px;
+}
