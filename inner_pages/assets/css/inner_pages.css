@@ -1923,7 +1923,7 @@ p {
   min-height: 67px;
 }
 
-#exampleModal{
+#exampleModal {
   overflow: hidden;
 }
 
@@ -1947,8 +1947,12 @@ p {
   border-color: var(--bg-color);
 }
 
-.primary-button {
-  min-height: auto !important;
+.primary-intertest {
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .yenlo-wl-hero-subtitle {
@@ -1958,7 +1962,7 @@ p {
   width: 100%;
   text-transform: uppercase;
   font-family: 'themify';
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
@@ -2071,11 +2075,20 @@ p {
   color: var(--main-color);
 }
 
+.form-check-label {
+  color: #181515;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.form-check-label a {
+  text-decoration: underline;
+}
 
 .container-cardface {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   transform-style: preserve-3d;
   height: 100%;
 }
