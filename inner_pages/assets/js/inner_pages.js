@@ -38,8 +38,6 @@ $(function () {
   window.toggleParagraph = toggleParagraph;
 
 
- 
-
   // Scroll-triggered animation
   if (window.innerWidth > 991) {
     const tl = gsap.timeline({
@@ -231,7 +229,31 @@ $(function () {
         if (captchaError) captchaError.textContent = "";
       }
 
-      // Compose Gmail URL
+      var url = "assets/js/sendEmail.php";
+      var formData = $(this).serialize() + "&g-recaptcha-response=" + response;
+
+      $.ajax({
+        type: "POST",
+        url: url,
+        data: formData,
+        success: function (data) {
+          var messageAlert = "alert-" + data.type;
+          var messageText = data.message;
+
+          var alertBox =
+            '<div class="alert ' +
+            messageAlert +
+            ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' +
+            messageText +
+            "</div>";
+          if (messageAlert && messageText) {
+            $("#contact-form").find(".messages").html(alertBox);
+            $("#contact-form")[0].reset();
+          }
+        },
+      });
+      
+      //Compose Gmail URL
       const gmailComposeUrl =
         "https://mail.google.com/mail/?view=cm&fs=1&to=info@krossark.com" +
         "&su=" +
