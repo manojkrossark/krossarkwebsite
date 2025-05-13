@@ -2,8 +2,9 @@
   "name": "krossarkwebsite",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "type": "module", 
   "scripts": {
+    "start": "echo 'No server to start. Use your browser to view the HTML files.'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
