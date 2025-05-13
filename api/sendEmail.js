@@ -1,7 +1,12 @@
 import nodemailer from 'nodemailer';
 import axios from 'axios';
 
+const secretKey = process.env.RECAPTCHA_SECRET;
+const gmailUser = process.env.GMAIL_USERNAME;
+const gmailPass = process.env.GMAIL_APP_PASSWORD;
+
 export default async function handler(req, res) {
+    console.log(" /api/sendEmail hit with method:", req.method);
   if (req.method === 'OPTIONS') {
     res.status(200).end();
     return;
@@ -22,7 +27,6 @@ export default async function handler(req, res) {
 
   try {
     // reCAPTCHA verification
-    const secretKey = '6LdoOQ0rAAAAANbvkD1jIEWjdc88rdaPavVbMO4w';
     const captchaRes = await axios.post(
       `https://www.google.com/recaptcha/api/siteverify`,
       null,
@@ -51,8 +55,8 @@ export default async function handler(req, res) {
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'kalaiyarasan.p@krossark.com',
-        pass: 'iqec nhyt ketx pibx',
+        user: gmailUser,
+        pass: gmailPass,
       },
     });
 
