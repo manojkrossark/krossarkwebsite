@@ -1,5 +1,5 @@
 import nodemailer from 'nodemailer';
-import axios from 'axios';
+//import axios from 'axios';
 
 const secretKey = process.env.RECAPTCHA_SECRET;
 const gmailUser = process.env.GMAIL_USERNAME;
@@ -27,23 +27,23 @@ export default async function handler(req, res) {
 
   try {
     // reCAPTCHA verification
-    const captchaRes = await axios.post(
-      `https://www.google.com/recaptcha/api/siteverify`,
-      null,
-      {
-        params: {
-          secret: secretKey,
-          response: captchaToken,
-        },
-      }
-    );
+    // const captchaRes = await axios.post(
+    //   `https://www.google.com/recaptcha/api/siteverify`,
+    //   null,
+    //   {
+    //     params: {
+    //       secret: secretKey,
+    //       response: captchaToken,
+    //     },
+    //   }
+    // );
 
-    if (!captchaRes.data.success) {
-      return res.status(400).json({
-        type: 'danger',
-        message: 'reCAPTCHA failed.',
-      });
-    }
+    // if (!captchaRes.data.success) {
+    //   return res.status(400).json({
+    //     type: 'danger',
+    //     message: 'reCAPTCHA failed.',
+    //   });
+    // }
 
     if (!name || !email || !message) {
       return res.status(400).json({
