@@ -2,8 +2,8 @@ import nodemailer from 'nodemailer';
 import axios from 'axios';
 
 const secretKey = process.env.RECAPTCHA_SECRET;
-const gmailUser = process.env.GMAIL_USERNAME;
-const gmailPass = process.env.GMAIL_APP_PASSWORD;
+const emailUser = process.env.EMAIL_USER;
+const emailPass = process.env.EMAIL_PASS;
 
 export default async function handler(req, res) {
     console.log(" /api/sendEmail hit with method:", req.method);
@@ -55,9 +55,10 @@ export default async function handler(req, res) {
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: gmailUser,
-        pass: gmailPass,
+        user: emailUser,
+        pass: emailPass,
       },
+      secure: true,
     });
 
     await transporter.sendMail({
