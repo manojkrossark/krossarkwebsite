@@ -191,6 +191,7 @@ $(function () {
       const captchaError = document.getElementById("captcha-error");
       if (captchaError) captchaError.textContent = "";
 
+      // Check for form errors
       Object.keys(errorMessages).forEach((key) => {
         const input = inputFields[key];
         const value = input.value.trim();
@@ -224,36 +225,48 @@ $(function () {
       if (response.length === 0) {
         if (captchaError)
           captchaError.textContent = "Please complete the reCAPTCHA.";
-        return;
+        //return;
       } else {
         if (captchaError) captchaError.textContent = "";
       }
 
-      var url = "assets/js/sendEmail.php";
-      var formData = $(this).serialize() + "&g-recaptcha-response=" + response;
+      // Get form data
+      const formData = {
+        name: inputFields.name.value.trim(),
+        email: inputFields.email.value.trim(),
+        subject: inputFields.subject.value.trim(),
+        message: inputFields.message.value.trim(),
+        "g-recaptcha-response": response,
+      };
 
-      $.ajax({
-        type: "POST",
-        url: url,
-        data: formData,
-        success: function (data) {
-          var messageAlert = "alert-" + data.type;
-          var messageText = data.message;
+      // Add organization only if it's not empty
+      const organization = inputFields.organization.value.trim();
+      if (organization) {
+        formData.organization = organization;
+      }
 
-          var alertBox =
-            '<div class="alert ' +
-            messageAlert +
-            ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' +
-            messageText +
-            "</div>";
-          if (messageAlert && messageText) {
-            $("#contact-form").find(".messages").html(alertBox);
-            $("#contact-form")[0].reset();
-          }
+      // Send form data to the API
+      fetch("/api/sendEmail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-      });
-      
-      //Compose Gmail URL
+        body: JSON.stringify(formData),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          const alertBox = `<div class="alert alert-${data.type}">${data.message}</div>`;
+          document.querySelector("#contact-form .messages").innerHTML = alertBox;
+          contactForm.reset();
+          grecaptcha.reset(); // Make sure reCAPTCHA is included in your form
+        })
+        .catch(() => {
+          document.querySelector("#contact-form .messages").innerHTML =
+            '<div class="alert alert-danger">Error sending message.</div>';
+        });
+
+
+      // Compose Gmail URL
       const gmailComposeUrl =
         "https://mail.google.com/mail/?view=cm&fs=1&to=info@krossark.com" +
         "&su=" +
@@ -266,11 +279,13 @@ $(function () {
           `${inputFields.message.value.trim()}`
         );
 
+      // Open Gmail compose window
       window.open(gmailComposeUrl, "_blank");
 
       // Reset form & captcha
       contactForm.reset();
       grecaptcha.reset();
     });
+
   }
 });
