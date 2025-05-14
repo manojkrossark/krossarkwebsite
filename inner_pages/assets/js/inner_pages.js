@@ -245,7 +245,6 @@ $(function () {
         formData.organization = organization;
       }
 
-      // Send form data to the API
       fetch("/api/sendEmail", {
         method: "POST",
         headers: {
@@ -256,36 +255,32 @@ $(function () {
         .then((response) => response.json())
         .then((data) => {
           const alertBox = `<div class="alert alert-${data.type}">${data.message}</div>`;
-          document.querySelector("#contact-form .messages").innerHTML = alertBox;
+          document.getElementById("formError").innerHTML = alertBox;
           contactForm.reset();
-          grecaptcha.reset(); // Make sure reCAPTCHA is included in your form
+          grecaptcha.reset(); // Reset reCAPTCHA
         })
         .catch(() => {
-          document.querySelector("#contact-form .messages").innerHTML =
+          document.getElementById("formError").innerHTML =
             '<div class="alert alert-danger">Error sending message.</div>';
+
+          // Compose Gmail URL (fallback)
+          const gmailComposeUrl =
+            "https://mail.google.com/mail/?view=cm&fs=1&to=info@krossark.com" +
+            "&su=" +
+            encodeURIComponent(inputFields.subject.value.trim()) +
+            "&body=" +
+            encodeURIComponent(
+              `Name: ${inputFields.name.value.trim()}\n` +
+              `Email: ${inputFields.email.value.trim()}\n` +
+              `Organization: ${inputFields.organization.value.trim()}\n\n` +
+              `${inputFields.message.value.trim()}`
+            );
+
+          window.open(gmailComposeUrl, "_blank");
+
+          contactForm.reset();
+          grecaptcha.reset();
         });
-
-
-      // Compose Gmail URL
-      const gmailComposeUrl =
-        "https://mail.google.com/mail/?view=cm&fs=1&to=info@krossark.com" +
-        "&su=" +
-        encodeURIComponent(inputFields.subject.value.trim()) +
-        "&body=" +
-        encodeURIComponent(
-          `Name: ${inputFields.name.value.trim()}\n` +
-          `Email: ${inputFields.email.value.trim()}\n` +
-          `Organization: ${inputFields.organization.value.trim()}\n\n` +
-          `${inputFields.message.value.trim()}`
-        );
-
-      // Open Gmail compose window
-      window.open(gmailComposeUrl, "_blank");
-
-      // Reset form & captcha
-      contactForm.reset();
-      grecaptcha.reset();
     });
-
   }
 });

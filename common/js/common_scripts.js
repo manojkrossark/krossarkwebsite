@@ -473,9 +473,25 @@ fetch('/common/common-modal.html')
 
 // Function to open the modal
 function openModal() {
+  resetModal();
   const modal = new bootstrap.Modal(document.getElementById('exampleModal'));
   modal.show();
 }
+
+function closeModal() {
+  resetModal();
+  const modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
+  modal.hide();
+}
+
+function resetModal() {
+  document.getElementById('whitepaper').style.display = 'block';
+  document.getElementById('infoText').style.display = 'block';
+  document.getElementById('successMessage').style.display = 'none';
+  var form = document.getElementById('whitepaperForm');
+  form.reset();
+}
+
 
 /* =============================================================================
 -------------------------------  Wow Animation   -------------------------------
@@ -542,3 +558,80 @@ $(function () {
     ease: "power2.out",
   });
 });
+
+
+/* =============================================================================
+-----------------------------  Common Modal      ------------------------------
+============================================================================= */
+
+
+function handleSubmit(event) {
+  event.preventDefault();
+
+  const name = document.getElementById('fullName').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const company = document.getElementById('company').value.trim();
+  const jobTitle = document.getElementById('jobTitle').value.trim();
+  const consent = document.getElementById('gridCheck').checked;
+
+  clearErrorMessages();
+
+  const validationRules = [
+    { field: 'fullName', value: name, message: 'Full Name is required.' },
+    { field: 'email', value: email, message: 'Please enter a valid email address.', pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/ },
+    { field: 'company', value: company, message: 'Company is required.' },
+    { field: 'jobTitle', value: jobTitle, message: 'Job Title is required.' },
+    { field: 'gridCheck', value: consent, message: 'You must agree to the Privacy Policy.' },
+  ];
+
+  let hasError = false;
+
+  validationRules.forEach(rule => {
+    if (!rule.value || (rule.pattern && !rule.pattern.test(rule.value))) {
+      showError(rule.field, rule.message);
+      hasError = true;
+    }
+  });
+
+  if (hasError) return;
+
+  fetch('/api/sendWhitePaper', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, email, company, jobTitle }),
+  })
+    .then(response => response.json())
+    .then(data => {
+      if (data.status === 'success') {
+        document.getElementById('whitepaper').style.display = 'none';
+        document.getElementById('infoText').style.display = 'none'; 
+        document.getElementById('successMessage').style.display = 'block';
+        event.target.reset(); // Reset the form
+      } else {
+        console.error(data.message);
+        // Optionally show form-level error message
+      }
+    })
+    .catch(error => {
+      console.error('Error sending form:', error);
+    });
+}
+
+
+function showError(inputId, message) {
+  const inputElement = document.getElementById(inputId);
+  const errorMessage = document.createElement('div');
+  errorMessage.className = 'error-message';
+  errorMessage.style.color = 'red';  
+  errorMessage.textContent = message;
+  
+  // Append the error message below the input field
+  inputElement.parentNode.appendChild(errorMessage);
+}
+
+// Function to clear previous error messages
+function clearErrorMessages() {
+  const errorMessages = document.querySelectorAll('.error-message');
+  errorMessages.forEach(message => message.remove());
+}
+

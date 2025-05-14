@@ -16,23 +16,8 @@
                 <div class="container-fluid">
                     <div class="row">
 
-                        <!-- After download whitepaper button hit need to show this line code -->
-                        <div class="col-md-12" id="successMessage" style="display: none; padding: 20px 0;text-align: center;">
-                            <!-- Success Message Placeholder -->
-                            <div class="text-center primary-intertest">
-                                <!-- <img src="../inner_pages/assets/imgs/kross-book.png" alt=""> -->
-                                <h2>Thank you for your interest </h2>
-                                <p class="mt-40"> By downloading our whitepaper “Whitepaper: What is the
-                                    right integration strategy
-                                    for software vendors?“. You will receive a download link by mail within a few
-                                    minutes. Can't find the email? Please check your spam folder.</p>
-                                <button data-bs-dismiss="modal" aria-label="Close"
-                                    class="btn close btn-primary mt-40">Go to Homepage</button>
-                            </div>
-                        </div>
-
                         <!-- hide this code after click whitepaper -->
-                        <div class="col-md-7 offset-lg-5">
+                        <div class="col-md-7 offset-lg-5" id="infoText">
                             <p class="form-info">Fill in the form below and we will send you an unique download link in
                                 your mailbox in minutes. As always: Don’t forget to check your spam folder.</p>
                         </div>
@@ -49,8 +34,8 @@
                                 <!-- </div> -->
                             </div>
                         </div>
-                        <div class="col-md-7" id="whitepaperForm">
-                            <form onsubmit="handleSubmit(event)">
+                        <div class="col-md-7" id="whitepaper">
+                            <form id="whitepaperForm" onsubmit="handleSubmit(event)">
                                 <div class="control-material is-primary">
                                     <input class="material-input" type="text" id="fullName" required />
                                     <span class="bar"></span>
@@ -88,6 +73,23 @@
                                     Whitepaper</button>
                             </form>
                         </div>
+
+                        
+
+                        <!-- After download whitepaper button hit need to show this line code -->
+                        <div class="col-md-7" id="successMessage" style="display: none; padding: 20px 0;text-align: center;">
+                            <!-- Success Message Placeholder -->
+                            <div class="text-center primary-intertest">
+                                <!-- <img src="../inner_pages/assets/imgs/kross-book.png" alt=""> -->
+                                <h2>Thank you for your interest </h2>
+                                <p class="mt-40"> By downloading our whitepaper “Whitepaper: What is the
+                                    right integration strategy
+                                    for software vendors?“. You will receive a download link by mail within a few
+                                    minutes. Can't find the email? Please check your spam folder.</p>
+                                    <button data-bs-dismiss="modal" aria-label="Close" onclick="closeModal()"
+                                        class="btn close btn-primary mt-40">Go to Homepage</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -95,3 +97,6 @@
         </div>
     </div>
 </div>
+
+<!-- common scripts -->
+  <script src="../common/js/common_scripts.js"></script>
