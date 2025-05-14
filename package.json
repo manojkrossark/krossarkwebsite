@@ -1,0 +1,25 @@
+{
+  "name": "krossarkwebsite",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module", 
+  "scripts": {
+    "start": "echo 'No server to start. Use your browser to view the HTML files.'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/manojkrossark/krossarkwebsite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manojkrossark/krossarkwebsite/issues"
+  },
+  "homepage": "https://github.com/manojkrossark/krossarkwebsite#readme",
+  "dependencies": {
+    "axios": "^1.9.0",
+    "nodemailer": "^7.0.3"
+  }
+}

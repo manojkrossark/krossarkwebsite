@@ -1,6 +1,6 @@
 <?php
 echo "php runs";
-header("Access-Control-Allow-Origin: "); // You can replace * with specific domain for production like "https://yourdomain.com"
+header("Access-Control-Allow-Origin: *"); // You can replace * with specific domain for production like "https://yourdomain.com"
     header("Access-Control-Allow-Methods: GET, POST, OPTIONS"); // Allow GET, POST, and OPTIONS methods
     header("Access-Control-Allow-Headers: Content-Type, X-Requested-With, Authorization"); // Allow the necessary headers
     header("Access-Control-Allow-Credentials: true");

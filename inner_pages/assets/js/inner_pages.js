@@ -38,8 +38,6 @@ $(function () {
   window.toggleParagraph = toggleParagraph;
 
 
- 
-
   // Scroll-triggered animation
   if (window.innerWidth > 991) {
     const tl = gsap.timeline({
@@ -193,6 +191,7 @@ $(function () {
       const captchaError = document.getElementById("captcha-error");
       if (captchaError) captchaError.textContent = "";
 
+      // Check for form errors
       Object.keys(errorMessages).forEach((key) => {
         const input = inputFields[key];
         const value = input.value.trim();
@@ -226,29 +225,62 @@ $(function () {
       if (response.length === 0) {
         if (captchaError)
           captchaError.textContent = "Please complete the reCAPTCHA.";
-        return;
+        //return;
       } else {
         if (captchaError) captchaError.textContent = "";
       }
 
-      // Compose Gmail URL
-      const gmailComposeUrl =
-        "https://mail.google.com/mail/?view=cm&fs=1&to=info@krossark.com" +
-        "&su=" +
-        encodeURIComponent(inputFields.subject.value.trim()) +
-        "&body=" +
-        encodeURIComponent(
-          `Name: ${inputFields.name.value.trim()}\n` +
-          `Email: ${inputFields.email.value.trim()}\n` +
-          `Organization: ${inputFields.organization.value.trim()}\n\n` +
-          `${inputFields.message.value.trim()}`
-        );
+      // Get form data
+      const formData = {
+        name: inputFields.name.value.trim(),
+        email: inputFields.email.value.trim(),
+        subject: inputFields.subject.value.trim(),
+        message: inputFields.message.value.trim(),
+        "g-recaptcha-response": response,
+      };
 
-      window.open(gmailComposeUrl, "_blank");
+      // Add organization only if it's not empty
+      const organization = inputFields.organization.value.trim();
+      if (organization) {
+        formData.organization = organization;
+      }
 
-      // Reset form & captcha
-      contactForm.reset();
-      grecaptcha.reset();
+      fetch("/api/sendEmail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          const alertBox = `<div class="alert alert-${data.type}">${data.message}</div>`;
+          document.getElementById("formError").innerHTML = alertBox;
+          contactForm.reset();
+          grecaptcha.reset(); // Reset reCAPTCHA
+        })
+        .catch(() => {
+          document.getElementById("formError").innerHTML =
+            '<div class="alert alert-danger">Error sending message.</div>';
+
+          // Compose Gmail URL (fallback)
+          const gmailComposeUrl =
+            "https://mail.google.com/mail/?view=cm&fs=1&to=info@krossark.com" +
+            "&su=" +
+            encodeURIComponent(inputFields.subject.value.trim()) +
+            "&body=" +
+            encodeURIComponent(
+              `Name: ${inputFields.name.value.trim()}\n` +
+              `Email: ${inputFields.email.value.trim()}\n` +
+              `Organization: ${inputFields.organization.value.trim()}\n\n` +
+              `${inputFields.message.value.trim()}`
+            );
+
+          window.open(gmailComposeUrl, "_blank");
+
+          contactForm.reset();
+          grecaptcha.reset();
+        });
     });
   }
 });
