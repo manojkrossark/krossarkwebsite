@@ -453,7 +453,7 @@ p {
 
 .work-card .card-item .cont {
   height: 100%;
-  padding: 40px 80px 40px 40px;
+  padding: 40px 40px 40px 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
