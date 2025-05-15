@@ -490,8 +490,7 @@ function closeModal() {
 }
 
 function resetModal() {
-  document.getElementById('whitepaper').style.display = 'block';
-  document.getElementById('infoText').style.display = 'block';
+  document.getElementById('formContainer').style.display = 'block';
   document.getElementById('successMessage').style.display = 'none';
   var form = document.getElementById('whitepaperForm');
   form.reset();
@@ -608,8 +607,7 @@ function handleSubmit(event) {
     .then(response => response.json())
     .then(data => {
       if (data.status === 'success') {
-        document.getElementById('whitepaper').style.display = 'none';
-        document.getElementById('infoText').style.display = 'none'; 
+        document.getElementById('formContainer').style.display = 'none';
         document.getElementById('successMessage').style.display = 'block';
         event.target.reset(); // Reset the form
       } else {
