@@ -10,93 +10,92 @@
             </div> -->
             <div class="modal-body">
                 <span class="yenlo-wl-hero-subtitle">Krossark whitepaper</span>
-                <h1 class="yenlo-wl-hero-title">Whitepaper: What is the right integration strategy for software vendors?
-                </h1>
+                <div id="formContainer">
+                    <h1 class="yenlo-wl-hero-title">Whitepaper: What is the right integration strategy for
+                        software vendors?
+                    </h1>
+                    <div class="container-fluid">
+                        <div class="row">
 
-                <div class="container-fluid">
-                    <div class="row">
-
-                        <!-- hide this code after click whitepaper -->
-                        <div class="col-md-7 offset-lg-5" id="infoText">
-                            <p class="form-info">Fill in the form below and we will send you an unique download link in
-                                your mailbox in minutes. As always: Don’t forget to check your spam folder.</p>
-                        </div>
-                        <div class="col-md-5">
-                            <div class="container-cardface">
-                                <!-- <div class="box-card"> -->
-                                <!-- <div class="face front">Krossark</div>
+                            <!-- hide this code after click whitepaper -->
+                            <div class="col-md-7 offset-lg-5">
+                                <p class="form-info">Fill in the form below and we will send you an unique download link
+                                    in
+                                    your mailbox in minutes. As always: Don’t forget to check your spam folder.</p>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="container-cardface">
+                                    <!-- <div class="box-card"> -->
+                                    <!-- <div class="face front">Krossark</div>
                                     <div class="face back">Krossark</div>
                                     <div class="face right">Krossark</div>
                                     <div class="face left">Krossark</div>
                                     <div class="face top">Krossark</div>
                                     <div class="face bottom">Krossark</div> -->
-                                <img src="../inner_pages/assets/imgs/kross-book.png" alt="">
-                                <!-- </div> -->
+                                    <img src="../inner_pages/assets/imgs/kross-book.png" alt="">
+                                    <!-- </div> -->
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-7" id="whitepaper">
-                            <form id="whitepaperForm" onsubmit="handleSubmit(event)">
-                                <div class="control-material is-primary">
-                                    <input class="material-input" type="text" id="fullName" required />
-                                    <span class="bar"></span>
-                                    <label>Full Name</label>
-                                </div>
-
-                                <div class="control-material is-primary">
-                                    <input class="material-input" type="email" id="email" required />
-                                    <span class="bar"></span>
-                                    <label>Email</label>
-                                </div>
-
-                                <div class="control-material is-primary">
-                                    <input class="material-input" type="text" id="company" required />
-                                    <span class="bar"></span>
-                                    <label>Company</label>
-                                </div>
-
-                                <div class="control-material is-primary">
-                                    <input class="material-input" type="text" id="jobTitle" required />
-                                    <span class="bar"></span>
-                                    <label>Job Title</label>
-                                </div>
-
-                                <div class="form-group mt-40">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                                        <label class="form-check-label" for="gridCheck">
-                                            I agree to the <a href="#">Privacy Policy</a> by Krossark*
-                                        </label>
+                            <div class="col-md-7" id="whitepaper">
+                                <form id="whitepaperForm" onsubmit="handleSubmit(event)">
+                                    <div class="control-material is-primary">
+                                        <input class="material-input" type="text" id="fullName" required />
+                                        <span class="bar"></span>
+                                        <label>Full Name</label>
                                     </div>
-                                </div>
 
-                                <button type="submit" class="btn btn-primary mt-40">Download
-                                    Whitepaper</button>
-                            </form>
-                        </div>
+                                    <div class="control-material is-primary">
+                                        <input class="material-input" type="email" id="email" required />
+                                        <span class="bar"></span>
+                                        <label>Email</label>
+                                    </div>
 
-                        
+                                    <div class="control-material is-primary">
+                                        <input class="material-input" type="text" id="company" required />
+                                        <span class="bar"></span>
+                                        <label>Company</label>
+                                    </div>
 
-                        <!-- After download whitepaper button hit need to show this line code -->
-                        <div class="col-md-7" id="successMessage" style="display: none; padding: 20px 0;text-align: center;">
-                            <!-- Success Message Placeholder -->
-                            <div class="text-center primary-intertest">
-                                <!-- <img src="../inner_pages/assets/imgs/kross-book.png" alt=""> -->
-                                <h2>Thank you for your interest </h2>
-                                <p class="mt-40"> By downloading our whitepaper “Whitepaper: What is the
-                                    right integration strategy
-                                    for software vendors?“. You will receive a download link by mail within a few
-                                    minutes. Can't find the email? Please check your spam folder.</p>
-                                    <button data-bs-dismiss="modal" aria-label="Close" onclick="closeModal()"
-                                        class="btn close btn-primary mt-40">Go to Homepage</button>
+                                    <div class="control-material is-primary">
+                                        <input class="material-input" type="text" id="jobTitle" required />
+                                        <span class="bar"></span>
+                                        <label>Job Title</label>
+                                    </div>
+
+                                    <div class="form-group mt-40">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                                            <label class="form-check-label" for="gridCheck">
+                                                I agree to the <a href="#">Privacy Policy</a> by Krossark*
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary mt-40">Download
+                                        Whitepaper</button>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
-
+                <!-- After download whitepaper button hit need to show this line code -->
+                <div class="col-md-30" id="successMessage" style="display: none; padding: 20px 0;text-align: center;">
+                    <!-- Success Message Placeholder -->
+                    <div class="text-center primary-intertest">
+                        <!-- <img src="../inner_pages/assets/imgs/kross-book.png" alt=""> -->
+                        <h2>Thank you for your interest </h2>
+                        <p class="mt-40"> By downloading our whitepaper “Whitepaper: What is the
+                            right integration strategy
+                            for software vendors?“. You will receive a download link by mail within a few
+                            minutes. Can't find the email? Please check your spam folder.</p>
+                        <button data-bs-dismiss="modal" aria-label="Close" onclick="closeModal()"
+                            class="btn close btn-primary mt-40">Go to Homepage</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 <!-- common scripts -->
-  <script src="../common/js/common_scripts.js"></script>
+<script src="../common/js/common_scripts.js"></script>
