@@ -468,7 +468,12 @@ $(document).ready(function () {
 fetch('/common/common-modal.html')
   .then(res => res.text())
   .then(html => {
-    document.getElementById('modal-container').innerHTML = html;
+    const container = document.getElementById('modal-container');
+      if (container) {
+        container.innerHTML = html;
+      } else {
+        console.error('modal-container not found in the DOM');
+      }
   });
 
 // Function to open the modal

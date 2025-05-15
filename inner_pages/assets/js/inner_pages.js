@@ -225,7 +225,7 @@ $(function () {
       if (response.length === 0) {
         if (captchaError)
           captchaError.textContent = "Please complete the reCAPTCHA.";
-        //return;
+          return;
       } else {
         if (captchaError) captchaError.textContent = "";
       }
