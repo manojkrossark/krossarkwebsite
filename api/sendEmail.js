@@ -64,7 +64,7 @@ export default async function handler(req, res) {
     await transporter.sendMail({
       from: email,
       replyTo: email,
-      to: 'info@krossark.com',
+      to: 'kalaiyarasan.p@krossark.com',
       subject: subject || 'Contact us',
       html: `
         <h2>Contact Form Submission</h2>
