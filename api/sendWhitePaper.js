@@ -34,7 +34,7 @@ export default async function handler(req, res) {
   const pdfLink = 'https://krossarkwebsite.vercel.app/assets/pdf/sample.pdf'; // Use actual hosted URL
 
   const mailOptions = {
-    from: '"Krossark" <kalaiyarasan.p@krossark.com>',
+    from: '"Krossark" <info@krossark.com>',
     to: email,
     subject: 'Download Your Whitepaper from Krossark',
     html: `

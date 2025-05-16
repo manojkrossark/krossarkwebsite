@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate the data
     if (!empty($name) && !empty($email) && !empty($message)) {
         // Prepare the email content
-        $to = "kalaiyarasan.p@krossark.com";  // Recipient's email address
+        $to = "info@krossark.com";  // Recipient's email address
         $headers = "From: $email\r\n";
         $headers .= "Reply-To: $email\r\n";
         $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
