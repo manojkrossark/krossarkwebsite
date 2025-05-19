@@ -66,17 +66,10 @@ jobs:
           -H "Content-Type: application/json" \
           -d "$PAYLOAD")
 
-        HTTP_STATUS=$(echo "$RESPONSE" | tr '\n' ' ' | sed -E 's/.*HTTP_STATUS:([0-9]+).*/\1/')
-        BODY=$(echo "$RESPONSE" | sed -E 's/HTTP_STATUS:[0-9]+//g')
+        
+        BODY=$(echo "$RESPONSE")
 
-        echo "HTTP status: $HTTP_STATUS"
         echo "Response body: $BODY"
-
-        if [ "$HTTP_STATUS" != "200" ]; then
-          echo "Error response from Google Gemini API"
-          echo "review=Error: HTTP status $HTTP_STATUS from API" >> $GITHUB_OUTPUT
-          exit 1
-        fi
 
         REVIEW=$(echo "$BODY" | jq -r '.candidates[0].output // empty')
 
