@@ -40,8 +40,10 @@ jobs:
           exit 0
         fi
 
-        PROMPT="You are a helpful code reviewer. Please review the following git diff and provide feedback on potential issues and improvements:\n\n$DIFF_CONTENT\n\n"
+        DIFF_RAW=$(echo "$DIFF_CONTENT" | jq -r .)
 
+        PROMPT="You are a helpful code reviewer. Please review the following git diff and provide feedback on potential issues and improvements:\n\n$DIFF_RAW\n\n"
+       
         MODEL="gemini-1.5-flash"
         ENDPOINT="https://generativelanguage.googleapis.com/v1beta2/models/${MODEL}:generateText"
 
