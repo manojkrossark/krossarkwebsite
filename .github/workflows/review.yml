@@ -31,11 +31,17 @@ jobs:
 
         DIFF_CONTENT=${{ steps.diff.outputs.diff }}
 
+        if [ -z "$DIFF_CONTENT" ]; then
+          echo "No diff content found!"
+          echo "review=No diff content to review." >> $GITHUB_OUTPUT
+          exit 0
+        fi
+
         PROMPT="You are a helpful code reviewer. Please review the following git diff and provide feedback on potential issues and improvements:\n\n$DIFF_CONTENT\n\n"
 
         MODEL="gemini-1.5-flash"
-        ENDPOINT="https://generativelanguage.googleapis.com/v1beta2/models/models/${MODEL}:generateText"
-        
+        ENDPOINT="https://generativelanguage.googleapis.com/v1beta2/models/${MODEL}:generateText"
+
         PAYLOAD=$(jq -n \
           --arg prompt "$PROMPT" \
           '{
@@ -47,21 +53,37 @@ jobs:
             topP: 0.95,
             topK: 40
           }')
-        
-        RESPONSE=$(curl -s -X POST "$ENDPOINT?key=$GOOGLE_API_KEY" \
+
+        echo "Payload sent:"
+        echo "$PAYLOAD"
+
+        RESPONSE=$(curl -w "\nHTTP_STATUS:%{http_code}\n" -s -X POST "$ENDPOINT?key=$GOOGLE_API_KEY" \
           -H "Content-Type: application/json" \
           -d "$PAYLOAD")
-        
-          echo "Raw Gemini API response:"
-          echo "$RESPONSE"
-      
-          # Try parsing the review text safely (fallback to empty if parsing fails)
-          REVIEW=$(echo "$RESPONSE" | jq -r '.candidates[0].output // empty')
-      
-          echo "Parsed review:"
-          echo "$REVIEW"
-      
-          echo "review=$REVIEW" >> $GITHUB_OUTPUT
+
+        HTTP_STATUS=$(echo "$RESPONSE" | tr '\n' ' ' | sed -E 's/.*HTTP_STATUS:([0-9]+).*/\1/')
+        BODY=$(echo "$RESPONSE" | sed -E 's/HTTP_STATUS:[0-9]+//g')
+
+        echo "HTTP status: $HTTP_STATUS"
+        echo "Response body: $BODY"
+
+        if [ "$HTTP_STATUS" != "200" ]; then
+          echo "Error response from Google Gemini API"
+          echo "review=Error: HTTP status $HTTP_STATUS from API" >> $GITHUB_OUTPUT
+          exit 1
+        fi
+
+        REVIEW=$(echo "$BODY" | jq -r '.candidates[0].output // empty')
+
+        if [ -z "$REVIEW" ]; then
+          echo "No review text found in Gemini response."
+          REVIEW="No review generated or unexpected response format."
+        fi
+
+        echo "Parsed review:"
+        echo "$REVIEW"
+
+        echo "review=$REVIEW" >> $GITHUB_OUTPUT
 
     - name: Post review comment on PR
       uses: peter-evans/create-or-update-comment@v2
