@@ -83,7 +83,7 @@ jobs:
         echo "Parsed review:"
         echo "$REVIEW"
 
-        echo "review=$REVIEW" >> $GITHUB_OUTPUT
+        echo "review_b64=$(echo -n "$REVIEW" | base64)" >> $GITHUB_OUTPUT
 
     - name: Decode review output
       id: decode
