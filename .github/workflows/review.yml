@@ -9,94 +9,91 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
-    - name: Get changed files diff
-      id: diff
-      run: |
-        git fetch origin ${{ github.event.pull_request.base.ref }}
-        git fetch origin ${{ github.event.pull_request.head.ref }}
-    
-        git diff origin/${{ github.event.pull_request.base.ref }} origin/${{ github.event.pull_request.head.ref }} > changes.diff
-    
-        DIFF=$(head -c 65536 changes.diff | jq -Rs .)
-        echo "diff=$DIFF" >> $GITHUB_OUTPUT
+      - name: Get changed files diff
+        id: diff
+        run: |
+          git fetch origin ${{ github.event.pull_request.base.ref }}
+          git fetch origin ${{ github.event.pull_request.head.ref }}
+          git diff origin/${{ github.event.pull_request.base.ref }} origin/${{ github.event.pull_request.head.ref }} > changes.diff
+          DIFF=$(head -c 65536 changes.diff | jq -Rs .)
+          echo "diff=$DIFF" >> $GITHUB_OUTPUT
 
-    - name: Call Google Gemini API for review
-      id: gemini
-      env:
-        GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-      run: |
-        echo "Requesting Google Gemini code review..."
+      - name: Call Google Gemini API for review
+        id: gemini
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: |
+          echo "Requesting Google Gemini code review..."
 
-        DIFF_CONTENT=${{ steps.diff.outputs.diff }}
+          DIFF_CONTENT=${{ steps.diff.outputs.diff }}
 
-        if [ -z "$DIFF_CONTENT" ]; then
-          echo "No diff content found!"
-          echo "review=No diff content to review." >> $GITHUB_OUTPUT
-          exit 0
-        fi
+          if [ -z "$DIFF_CONTENT" ]; then
+            echo "No diff content found!"
+            echo "review=No diff content to review." >> $GITHUB_OUTPUT
+            exit 0
+          fi
 
-        DIFF_RAW=$(echo "$DIFF_CONTENT" | jq -r .)
+          DIFF_RAW=$(echo "$DIFF_CONTENT" | jq -r .)
+          PROMPT="You are a helpful code reviewer. Please review the following git diff and provide feedback on potential issues and improvements:\n\n$DIFF_RAW\n\n"
 
-        PROMPT="You are a helpful code reviewer. Please review the following git diff and provide feedback on potential issues and improvements:\n\n$DIFF_RAW\n\n"
-       
-        MODEL="gemini-1.5-flash"
-        ENDPOINT="https://generativelanguage.googleapis.com/v1beta2/models/${MODEL}:generateContent"
+          MODEL="gemini-1.5-flash"
+          ENDPOINT="https://generativelanguage.googleapis.com/v1beta1/models/${MODEL}:generateContent"
 
-        PAYLOAD=$(jq -n \
-          --arg prompt "$PROMPT" \
-          '{
-            prompt: {
-              text: $prompt
-            },
-            temperature: 0.2,
-            candidateCount: 1,
-            topP: 0.95,
-            topK: 40
-          }')
+          PAYLOAD=$(jq -n \
+            --arg prompt "$PROMPT" \
+            '{
+              contents: [
+                {
+                  role: "user",
+                  parts: [
+                    {
+                      text: $prompt
+                    }
+                  ]
+                }
+              ]
+            }')
 
-        echo "Payload sent:"
-        echo "$PAYLOAD"
+          echo "Payload sent:"
+          echo "$PAYLOAD"
 
-        RESPONSE=$(curl -w "\nHTTP_STATUS:%{http_code}\n" -s -X POST "$ENDPOINT?key=$GOOGLE_API_KEY" \
-          -H "Content-Type: application/json" \
-          -d "$PAYLOAD")
+          RESPONSE=$(curl -s -X POST "$ENDPOINT?key=$GOOGLE_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d "$PAYLOAD")
 
-        
-        BODY=$(echo "$RESPONSE")
+          echo "Response body: $RESPONSE"
 
-        echo "Response body: $BODY"
+          REVIEW=$(echo "$RESPONSE" | jq -r '.candidates[0].content.parts[0].text // empty')
 
-        REVIEW=$(echo "$BODY" | jq -r '.candidates[0].output // empty')
+          if [ -z "$REVIEW" ]; then
+            echo "No review text found in Gemini response."
+            REVIEW="No review generated or unexpected response format."
+          fi
 
-        if [ -z "$REVIEW" ]; then
-          echo "No review text found in Gemini response."
-          REVIEW="No review generated or unexpected response format."
-        fi
+          echo "Parsed review:"
+          echo "$REVIEW"
 
-        echo "Parsed review:"
-        echo "$REVIEW"
+          echo "review_b64=$(echo "$REVIEW" | base64 | tr -d '\n')" >> $GITHUB_OUTPUT
 
-        echo "review_b64=$(echo "$REVIEW" | base64 | tr -d '\n')" >> $GITHUB_OUTPUT
-    - name: Decode review output
-      id: decode
-      run: |
-        echo "${{ steps.gemini.outputs.review_b64 }}" | base64 --decode > review.txt
-        echo "decoded_review<<EOF" >> $GITHUB_OUTPUT
-        cat review.txt >> $GITHUB_OUTPUT
-        echo "EOF" >> $GITHUB_OUTPUT
-    
-    - name: Post review comment on PR
-      uses: peter-evans/create-or-update-comment@v2
-      with:
-        token: ${{ secrets.PAT }}
-        issue-number: ${{ github.event.pull_request.number }}
-        body: |
-          ### 🤖 Google Gemini AI Code Review
-    
-          ${{ steps.decode.outputs.decoded_review }}
+      - name: Decode review output
+        id: decode
+        run: |
+          echo "${{ steps.gemini.outputs.review_b64 }}" | base64 --decode > review.txt
+          echo "decoded_review<<EOF" >> $GITHUB_OUTPUT
+          cat review.txt >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
+      - name: Post review comment on PR
+        uses: peter-evans/create-or-update-comment@v2
+        with:
+          token: ${{ secrets.PAT }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            ### 🤖 Google Gemini AI Code Review
+
+            ${{ steps.decode.outputs.decoded_review }}
