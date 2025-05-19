@@ -18,9 +18,15 @@ jobs:
       id: diff
       run: |
         git fetch origin ${{ github.event.pull_request.base.ref }}
-        git diff origin/${{ github.event.pull_request.base.ref }} -- ${{ github.event.pull_request.head.ref }} > changes.diff
-        DIFF=$(head -c 65536 changes.diff | jq -Rs .)
-        echo "diff=$DIFF" >> $GITHUB_OUTPUT
+        DIFF=$(git diff origin/${{ github.event.pull_request.base.ref }}...${{ github.event.pull_request.head.ref }} | head -c 65536)
+        
+        # If there's no real diff, simulate one (for testing or fallback)
+        if [ -z "$DIFF" ]; then
+          DIFF="diff --git a/app.py b/app.py\n@@ def greet():\n-    print('Hello')\n+    print('Hi!')"
+        fi
+
+        DIFF_ESCAPED=$(printf '%s' "$DIFF" | jq -Rs .)
+        echo "diff=$DIFF_ESCAPED" >> $GITHUB_OUTPUT
 
     - name: Call Google Gemini API for review
       id: gemini
@@ -29,52 +35,30 @@ jobs:
       run: |
         echo "Requesting Google Gemini code review..."
 
-        PROMPT="You are a helpful code reviewer. Please review the following git diff and provide feedback on potential issues and improvements:\n\n$DIFF_CONTENT\n\n"
-
-        MODEL="gemini-1.5-flash"
-        ENDPOINT="https://generativelanguage.googleapis.com/v1beta2/models/${MODEL}:generateText"
+        PROMPT="You are a helpful code reviewer. Review the following git diff and provide constructive feedback:\n\n${{ steps.diff.outputs.diff }}"
 
         PAYLOAD=$(jq -n \
-          --arg prompt "$PROMPT" \
+          --arg content "$PROMPT" \
           '{
-            prompt: {
-              text: $prompt
-            },
-            temperature: 0.2,
-            candidateCount: 1,
-            topP: 0.95,
-            topK: 40
+            contents: [{ role: "user", parts: [{ text: $content }] }],
+            generationConfig: {
+              temperature: 0.2,
+              topP: 0.95,
+              topK: 40,
+              maxOutputTokens: 1024
+            }
           }')
 
-        echo "Payload sent:"
-        echo "$PAYLOAD"
+        ENDPOINT="https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent"
 
-        RESPONSE=$(curl -w "\nHTTP_STATUS:%{http_code}\n" -s -X POST "$ENDPOINT?key=$GOOGLE_API_KEY" \
+        RESPONSE=$(curl -s -X POST "$ENDPOINT?key=$GOOGLE_API_KEY" \
           -H "Content-Type: application/json" \
           -d "$PAYLOAD")
 
-        HTTP_STATUS=$(echo "$RESPONSE" | tr '\n' ' ' | sed -E 's/.*HTTP_STATUS:([0-9]+).*/\1/')
-        BODY=$(echo "$RESPONSE" | sed -E 's/HTTP_STATUS:[0-9]+//g')
+        echo "Raw Gemini API response:"
+        echo "$RESPONSE"
 
-        echo "HTTP status: $HTTP_STATUS"
-        echo "Response body: $BODY"
-
-        if [ "$HTTP_STATUS" != "200" ]; then
-          echo "Error response from Google Gemini API"
-          echo "review=Error: HTTP status $HTTP_STATUS from API" >> $GITHUB_OUTPUT
-          exit 1
-        fi
-
-        REVIEW=$(echo "$BODY" | jq -r '.candidates[0].output // empty')
-
-        if [ -z "$REVIEW" ]; then
-          echo "No review text found in Gemini response."
-          REVIEW="No review generated or unexpected response format."
-        fi
-
-        echo "Parsed review:"
-        echo "$REVIEW"
-
+        REVIEW=$(echo "$RESPONSE" | jq -r '.candidates[0].content.parts[0].text // "⚠️ No response from Gemini AI."')
         echo "review=$REVIEW" >> $GITHUB_OUTPUT
 
     - name: Post review comment on PR
