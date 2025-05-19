@@ -25,7 +25,7 @@ jobs:
     - name: Call Claude API for review
       id: claude
       env:
-        CLAUDE_API_KEY: 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
+        CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
       run: |
         echo "Requesting Claude review..."
 
@@ -49,8 +49,14 @@ jobs:
           -H "x-api-key: $CLAUDE_API_KEY" \
           -d "$PAYLOAD")
 
-        REVIEW=$(echo "$RESPONSE" | jq -r '.completion')
+        echo "Sending payload to Claude:"
+        echo "$PAYLOAD"
+        echo "Claude API response:"
+        echo "$RESPONSE"
+
+        REVIEW=$(echo "$RESPONSE" | jq -r '.completion // "No review returned."')
         echo "review=$REVIEW" >> $GITHUB_OUTPUT
+
 
     - name: Post review comment on PR
       uses: peter-evans/create-or-update-comment@v2
