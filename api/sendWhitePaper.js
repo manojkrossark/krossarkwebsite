@@ -28,13 +28,14 @@ export default async function handler(req, res) {
     auth: {
       user: emailUser,
       pass: emailPass, // Gmail App Password 
-    },
+    },    
+    secure: true,
   });
 
   const pdfLink = 'https://krossarkwebsite.vercel.app/assets/pdf/sample.pdf'; // Use actual hosted URL
 
   const mailOptions = {
-    from: '"Krossark" <kalaiyarasan.p@krossark.com>',
+    from: '"Krossark" <info@krossark.com>',
     to: email,
     subject: 'Download Your Whitepaper from Krossark',
     html: `
@@ -43,7 +44,7 @@ export default async function handler(req, res) {
       <p> <strong>Company:</strong> ${company}<br>
           <strong>Job Title:</strong> ${jobTitle}
           </p>
-      <p><a href="${pdfLink}" download="KROSSARK.pdf" style="padding:10px 15px;background:#007BFF;color:white;text-decoration:none;border-radius:5px;">Click here to download</a></p>
+      <p><a href="${pdfLink}" style="padding:10px 15px;background:#007BFF;color:white;text-decoration:none;border-radius:5px;">Click here to download</a></p>
       <p>Regards,<br>Krossark Team</p>
     `,
   };
