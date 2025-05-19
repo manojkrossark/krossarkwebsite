@@ -56,12 +56,11 @@ jobs:
           echo "$RESPONSE"
       
           # Try parsing the review text safely (fallback to empty if parsing fails)
-          REVIEW=$(echo "$RESPONSE" | jq -r '.candidates[0].message.content.text // empty')
+          REVIEW=$(echo "$RESPONSE" | jq -r '.candidates[0].output // empty')
       
           echo "Parsed review:"
           echo "$REVIEW"
       
-          REVIEW=$(echo "$RESPONSE" | jq -r '.candidates[0].message.content.text')
           echo "review=$REVIEW" >> $GITHUB_OUTPUT
 
     - name: Post review comment on PR
