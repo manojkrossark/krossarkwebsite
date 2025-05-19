@@ -36,6 +36,10 @@
         padding-inline: 0.5rem;
     }
 
+    .md-mb50 {
+        margin-bottom: 50px !important;
+    }
+
     .sec-head .sub-head {
         margin-bottom: 15px !important;
     }
@@ -253,7 +257,8 @@
         left: 30px;
         bottom: 150px;
     }
-    .container-cardface{
+
+    .container-cardface {
         height: 26vh;
     }
 
@@ -279,9 +284,9 @@
         font-size: 45px;
     }
 
-    .work-card .card-item .img {
+    /* .work-card .card-item .img {
         height: 500px;
-    }
+    } */
 
     .work-card .card-item h5 {
         font-size: 35px;
