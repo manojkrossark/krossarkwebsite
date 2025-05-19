@@ -44,7 +44,7 @@ EOF
     - name: Post review comment on PR
       uses: peter-evans/create-or-update-comment@v2
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: "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"
         issue-number: ${{ github.event.pull_request.number }}
         body: |
           ### 🤖 Claude AI Code Review
