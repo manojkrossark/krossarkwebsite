@@ -29,9 +29,10 @@ jobs:
       id: gemini
       env:
         GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-        DIFF_CONTENT: ${{ steps.diff.outputs.diff }}
       run: |
         echo "Requesting Google Gemini code review..."
+    
+        DIFF_CONTENT=${{ steps.diff.outputs.diff }}
     
         if [ -z "$DIFF_CONTENT" ]; then
           echo "No diff content found!"
@@ -44,32 +45,45 @@ jobs:
         PROMPT="You are a helpful code reviewer. Please review the following git diff and provide feedback on potential issues and improvements:\n\n$DIFF_RAW\n\n"
     
         MODEL="gemini-1.5-flash"
-        ENDPOINT="https://generativelanguage.googleapis.com/v1beta2/models/${MODEL}:generateText"
+        ENDPOINT="https://generativelanguage.googleapis.com/v1/models/${MODEL}:generateContent"
     
         PAYLOAD=$(jq -n \
           --arg prompt "$PROMPT" \
           '{
-            prompt: {
-              text: $prompt
-            },
-            temperature: 0.2,
-            candidateCount: 1,
-            topP: 0.95,
-            topK: 40
+            contents: [
+              {
+                role: "user",
+                parts: [
+                  {
+                    text: $prompt
+                  }
+                ]
+              }
+            ]
           }')
+    
+        echo "Payload sent:"
+        echo "$PAYLOAD"
     
         RESPONSE=$(curl -s -X POST "$ENDPOINT?key=$GOOGLE_API_KEY" \
           -H "Content-Type: application/json" \
           -d "$PAYLOAD")
     
-        REVIEW=$(echo "$RESPONSE" | jq -r '.candidates[0].output // empty')
+        echo "Response body: $RESPONSE"
+    
+        REVIEW=$(echo "$RESPONSE" | jq -r '.candidates[0].content.parts[0].text // empty')
     
         if [ -z "$REVIEW" ]; then
           echo "No review text found in Gemini response."
           REVIEW="No review generated or unexpected response format."
         fi
     
+        echo "Parsed review:"
+        echo "$REVIEW"
+    
         echo "review_b64=$(echo "$REVIEW" | base64 | tr -d '\n')" >> $GITHUB_OUTPUT
+  
+
     
     - name: Decode review output
       id: decode
