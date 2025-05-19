@@ -1,11 +1,11 @@
-name: Claude Code Review
+name: Google Gemini Code Review
 
 on:
   pull_request:
     types: [opened, synchronize, reopened]
 
 jobs:
-  claude_review:
+  gemini_review:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,41 +22,42 @@ jobs:
         DIFF=$(head -c 65536 changes.diff | jq -Rs .)
         echo "diff=$DIFF" >> $GITHUB_OUTPUT
 
-    - name: Call Claude API for review
-      id: claude
+    - name: Call Google Gemini API for review
+      id: gemini
       env:
-        CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
+        GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
       run: |
-        echo "Requesting Claude review..."
+        echo "Requesting Google Gemini code review..."
 
         DIFF_CONTENT=${{ steps.diff.outputs.diff }}
 
         PROMPT="You are a helpful code reviewer. Please review the following git diff and provide feedback on potential issues and improvements:\n\n$DIFF_CONTENT\n\n"
 
+        # Build JSON payload
         PAYLOAD=$(jq -n \
-          --arg model "claude-2" \
           --arg prompt "$PROMPT" \
-          --argjson max_tokens_to_sample 500 \
-          --argjson temperature 0.2 \
           '{
-            model: $model,
-            prompt: $prompt,
-            max_tokens_to_sample: $max_tokens_to_sample,
-            temperature: $temperature
+            "model": "models/chat-bison-001",
+            "prompt": {
+              "messages": [
+                {
+                  "author": "user",
+                  "content": {
+                    "text": $prompt
+                  }
+                }
+              ]
+            },
+            "temperature": 0.2,
+            "maxOutputTokens": 500
           }')
-        RESPONSE=$(curl -s -X POST https://api.anthropic.com/v1/complete \
+
+        RESPONSE=$(curl -s -X POST "https://generativelanguage.googleapis.com/v1beta2/models/chat-bison-001:generateMessage?key=$GOOGLE_API_KEY" \
           -H "Content-Type: application/json" \
-          -H "x-api-key: $CLAUDE_API_KEY" \
           -d "$PAYLOAD")
 
-        echo "Sending payload to Claude:"
-        echo "$PAYLOAD"
-        echo "Claude API response:"
-        echo "$RESPONSE"
-
-        REVIEW=$(echo "$RESPONSE" | jq -r '.completion // "No review returned."')
+        REVIEW=$(echo "$RESPONSE" | jq -r '.candidates[0].message.content.text')
         echo "review=$REVIEW" >> $GITHUB_OUTPUT
-
 
     - name: Post review comment on PR
       uses: peter-evans/create-or-update-comment@v2
@@ -64,5 +65,5 @@ jobs:
         token: ${{ secrets.PAT }}
         issue-number: ${{ github.event.pull_request.number }}
         body: |
-          ### 🤖 Claude AI Code Review
-          ${{ steps.claude.outputs.review }}
+          ### 🤖 Google Gemini AI Code Review
+          ${{ steps.gemini.outputs.review }}
