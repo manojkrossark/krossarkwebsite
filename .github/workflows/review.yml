@@ -55,7 +55,7 @@ jobs:
     - name: Post review comment on PR
       uses: peter-evans/create-or-update-comment@v2
       with:
-        token: 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
+        token: ${{ secrets.PAT }}
         issue-number: ${{ github.event.pull_request.number }}
         body: |
           ### 🤖 Claude AI Code Review
