@@ -18,7 +18,10 @@ jobs:
       id: diff
       run: |
         git fetch origin ${{ github.event.pull_request.base.ref }}
-        git diff origin/${{ github.event.pull_request.base.ref }} -- ${{ github.event.pull_request.head.ref }} > changes.diff
+        git fetch origin ${{ github.event.pull_request.head.ref }}
+    
+        git diff origin/${{ github.event.pull_request.base.ref }} origin/${{ github.event.pull_request.head.ref }} > changes.diff
+    
         DIFF=$(head -c 65536 changes.diff | jq -Rs .)
         echo "diff=$DIFF" >> $GITHUB_OUTPUT
 
