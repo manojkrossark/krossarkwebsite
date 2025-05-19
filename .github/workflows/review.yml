@@ -29,14 +29,6 @@ jobs:
       run: |
         echo "Requesting Google Gemini code review..."
 
-        DIFF_CONTENT=${{ steps.diff.outputs.diff }}
-
-        if [ -z "$DIFF_CONTENT" ]; then
-          echo "No diff content found!"
-          echo "review=No diff content to review." >> $GITHUB_OUTPUT
-          exit 0
-        fi
-
         PROMPT="You are a helpful code reviewer. Please review the following git diff and provide feedback on potential issues and improvements:\n\n$DIFF_CONTENT\n\n"
 
         MODEL="gemini-1.5-flash"
