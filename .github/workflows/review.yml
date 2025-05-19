@@ -25,7 +25,7 @@ jobs:
     - name: Call Claude API for review
       id: claude
       env:
-        CLAUDE_API_KEY: "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"
+        CLAUDE_API_KEY: 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
       run: |
         echo "Requesting Claude review..."
 
@@ -55,7 +55,7 @@ jobs:
     - name: Post review comment on PR
       uses: peter-evans/create-or-update-comment@v2
       with:
-        token: "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"
+        token: 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
         issue-number: ${{ github.event.pull_request.number }}
         body: |
           ### 🤖 Claude AI Code Review
