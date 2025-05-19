@@ -1,1 +1,52 @@
+name: Claude Code Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  claude_review:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    - name: Get changed files diff
+      id: diff
+      run: |
+        git fetch origin ${{ github.event.pull_request.base.ref }}
+        git diff origin/${{ github.event.pull_request.base.ref }} -- ${{ github.event.pull_request.head.ref }} > changes.diff
+        echo "::set-output name=diff::$(head -c 65536 changes.diff | jq -Rs .)"
+
+    - name: Call Claude API for review
+      id: claude
+      env:
+        CLAUDE_API_KEY: "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"
+      run: |
+        echo "Requesting Claude review..."
+        RESPONSE=$(curl -s -X POST https://api.anthropic.com/v1/complete \
+          -H "Content-Type: application/json" \
+          -H "x-api-key: $CLAUDE_API_KEY" \
+          -d @- <<EOF
+{
+  "model": "claude-2",
+  "prompt": "You are a helpful code reviewer. Please review the following git diff and provide feedback on potential issues and improvements:\n\n${{ steps.diff.outputs.diff }}\n\n",
+  "max_tokens_to_sample": 500,
+  "temperature": 0.2
+}
+EOF
+)
+        echo "::set-output name=review::$(echo $RESPONSE | jq -r '.completion')"
+
+    - name: Post review comment on PR
+      uses: peter-evans/create-or-update-comment@v2
+      with:
+        token: "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"
+        issue-number: ${{ github.event.pull_request.number }}
+        body: |
+          ### 🤖 Claude AI Code Review
+          ${{ steps.claude.outputs.review }}
 
