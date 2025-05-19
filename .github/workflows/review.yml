@@ -44,7 +44,6 @@ jobs:
             max_tokens_to_sample: $max_tokens_to_sample,
             temperature: $temperature
           }')
-
         RESPONSE=$(curl -s -X POST https://api.anthropic.com/v1/complete \
           -H "Content-Type: application/json" \
           -H "x-api-key: $CLAUDE_API_KEY" \
