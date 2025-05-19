@@ -85,6 +85,15 @@ jobs:
 
         echo "review=$REVIEW" >> $GITHUB_OUTPUT
 
+    - name: Decode review output
+      id: decode
+      run: |
+        echo "${{ steps.gemini.outputs.review_b64 }}" | base64 --decode > review.txt
+        # Also set output to entire text for use by next step
+        echo "decoded_review<<EOF" >> $GITHUB_OUTPUT
+        cat review.txt >> $GITHUB_OUTPUT
+        echo "EOF" >> $GITHUB_OUTPUT
+
     - name: Post review comment on PR
       uses: peter-evans/create-or-update-comment@v2
       with:
@@ -92,4 +101,7 @@ jobs:
         issue-number: ${{ github.event.pull_request.number }}
         body: |
           ### 🤖 Google Gemini AI Code Review
-          ${{ steps.gemini.outputs.review }}
+
+          ${{ steps.decode.outputs.decoded_review }}
+
+   
