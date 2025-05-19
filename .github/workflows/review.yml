@@ -33,26 +33,23 @@ jobs:
 
         PROMPT="You are a helpful code reviewer. Please review the following git diff and provide feedback on potential issues and improvements:\n\n$DIFF_CONTENT\n\n"
 
-        # Build JSON payload
-              PAYLOAD=$(jq -n \
-        --arg prompt "$PROMPT" \
-        '{
-          "model": "models/chat-bison-001",
-          "prompt": {
+             # Build JSON payload
+        PAYLOAD=$(jq -n \
+          --arg prompt "$PROMPT" \
+          '{
             "messages": [
               {
-                "author": "user",
+                "role": "user",
                 "content": $prompt
               }
-            ]
-          },
-          "temperature": 0.2
-        }')
-
-        RESPONSE=$(curl -s -X POST "https://generativelanguage.googleapis.com/v1beta2/models/chat-bison-001:generateMessage?key=$GOOGLE_API_KEY" \
+            ],
+            "temperature": 0.2,
+            "maxOutputTokens": 500
+          }')
+        
+        RESPONSE=$(curl -s -X POST "https://generativelanguage.googleapis.com/v1beta2/models/gemini-2.5-pro-preview-05-06:generateMessage?key=$GOOGLE_API_KEY" \
           -H "Content-Type: application/json" \
           -d "$PAYLOAD")
-
       
           echo "Raw Gemini API response:"
           echo "$RESPONSE"
