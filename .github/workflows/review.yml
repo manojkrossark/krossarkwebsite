@@ -56,8 +56,21 @@ jobs:
           -H "Content-Type: application/json" \
           -d "$PAYLOAD")
 
-        REVIEW=$(echo "$RESPONSE" | jq -r '.candidates[0].message.content.text')
-        echo "review=$REVIEW" >> $GITHUB_OUTPUT
+      
+          echo "Raw Gemini API response:"
+          echo "$RESPONSE"
+      
+          # Save response to a file for easier download/view in logs (optional)
+          echo "$RESPONSE" > gemini_response.json
+      
+          # Try parsing the review text safely (fallback to empty if parsing fails)
+          REVIEW=$(echo "$RESPONSE" | jq -r '.candidates[0].message.content.text // empty')
+      
+          echo "Parsed review:"
+          echo "$REVIEW"
+      
+          REVIEW=$(echo "$RESPONSE" | jq -r '.candidates[0].message.content.text')
+          echo "review=$REVIEW" >> $GITHUB_OUTPUT
 
     - name: Post review comment on PR
       uses: peter-evans/create-or-update-comment@v2
