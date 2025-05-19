@@ -22,11 +22,12 @@ jobs:
         HEAD_SHA="${{ github.event.pull_request.head.sha }}"
 
         echo "Generating git diff from $BASE_SHA to $HEAD_SHA"
-        git fetch origin $BASE_SHA $HEAD_SHA || true
+        git fetch origin "$BASE_SHA" "$HEAD_SHA" || true
         git diff "$BASE_SHA" "$HEAD_SHA" > changes.diff || echo "No diff found."
 
-        DIFF=$(head -c 65536 changes.diff | jq -Rs .)
-        echo "diff=$DIFF" >> $GITHUB_OUTPUT
+        DIFF=$(head -c 65536 changes.diff)
+        ESCAPED_DIFF=$(jq -Rs <<< "$DIFF")
+        echo "diff=$ESCAPED_DIFF" >> $GITHUB_OUTPUT
 
     - name: Call Google Gemini API for review
       id: gemini
@@ -36,23 +37,22 @@ jobs:
         echo "Requesting Google Gemini code review..."
 
         DIFF_CONTENT=${{ steps.diff.outputs.diff }}
+        FULL_PROMPT="You are a helpful code reviewer. Review the following git diff and provide constructive feedback:\n\n${DIFF_CONTENT}"
 
-        PAYLOAD=$(jq -n \
-          --arg prompt "$DIFF_CONTENT" \
-          '{
-            contents: [{
-              role: "user",
-              parts: [{
-                text: "You are a helpful code reviewer. Review the following git diff and provide constructive feedback:\n\n" + $prompt
-              }]
-            }],
-            generationConfig: {
-              temperature: 0.2,
-              topP: 0.95,
-              topK: 40,
-              maxOutputTokens: 1024
-            }
-          }')
+        PAYLOAD=$(jq -n --arg prompt "$FULL_PROMPT" '{
+          contents: [{
+            role: "user",
+            parts: [{
+              text: $prompt
+            }]
+          }],
+          generationConfig: {
+            temperature: 0.2,
+            topP: 0.95,
+            topK: 40,
+            maxOutputTokens: 1024
+          }
+        }')
 
         ENDPOINT="https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent"
 
