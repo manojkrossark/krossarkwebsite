@@ -29,24 +29,23 @@ jobs:
       id: gemini
       env:
         GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        DIFF_CONTENT: ${{ steps.diff.outputs.diff }}
       run: |
         echo "Requesting Google Gemini code review..."
-
-        DIFF_CONTENT=${{ steps.diff.outputs.diff }}
-
+    
         if [ -z "$DIFF_CONTENT" ]; then
           echo "No diff content found!"
           echo "review=No diff content to review." >> $GITHUB_OUTPUT
           exit 0
         fi
-
+    
         DIFF_RAW=$(echo "$DIFF_CONTENT" | jq -r .)
-
+    
         PROMPT="You are a helpful code reviewer. Please review the following git diff and provide feedback on potential issues and improvements:\n\n$DIFF_RAW\n\n"
-       
+    
         MODEL="gemini-1.5-flash"
         ENDPOINT="https://generativelanguage.googleapis.com/v1beta2/models/${MODEL}:generateText"
-
+    
         PAYLOAD=$(jq -n \
           --arg prompt "$PROMPT" \
           '{
@@ -58,30 +57,20 @@ jobs:
             topP: 0.95,
             topK: 40
           }')
-
-        echo "Payload sent:"
-        echo "$PAYLOAD"
-
-        RESPONSE=$(curl -w "\nHTTP_STATUS:%{http_code}\n" -s -X POST "$ENDPOINT?key=$GOOGLE_API_KEY" \
+    
+        RESPONSE=$(curl -s -X POST "$ENDPOINT?key=$GOOGLE_API_KEY" \
           -H "Content-Type: application/json" \
           -d "$PAYLOAD")
-
-        
-        BODY=$(echo "$RESPONSE")
-
-        echo "Response body: $BODY"
-
-        REVIEW=$(echo "$BODY" | jq -r '.candidates[0].output // empty')
-
+    
+        REVIEW=$(echo "$RESPONSE" | jq -r '.candidates[0].output // empty')
+    
         if [ -z "$REVIEW" ]; then
           echo "No review text found in Gemini response."
           REVIEW="No review generated or unexpected response format."
         fi
-
-        echo "Parsed review:"
-        echo "$REVIEW"
-
+    
         echo "review_b64=$(echo "$REVIEW" | base64 | tr -d '\n')" >> $GITHUB_OUTPUT
+    
     - name: Decode review output
       id: decode
       run: |
