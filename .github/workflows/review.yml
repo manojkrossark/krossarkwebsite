@@ -37,7 +37,7 @@ jobs:
   "max_tokens_to_sample": 500,
   "temperature": 0.2
 }
-EOF
+
 )
         echo "::set-output name=review::$(echo $RESPONSE | jq -r '.completion')"
 
