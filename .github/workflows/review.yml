@@ -9,71 +9,68 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
+    - name: Checkout code
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
 
-      - name: Get changed files diff
-        id: diff
-        run: |
-          echo "Fetching base and head commits..."
-          BASE_SHA=${{ github.event.pull_request.base.sha }}
-          HEAD_SHA=${{ github.event.pull_request.head.sha }}
+    - name: Get changed files diff
+      id: diff
+      run: |
+        echo "Fetching base and head commits..."
+        BASE_SHA="${{ github.event.pull_request.base.sha }}"
+        HEAD_SHA="${{ github.event.pull_request.head.sha }}"
 
-          echo "Generating git diff from $BASE_SHA to $HEAD_SHA"
-          git fetch --unshallow || true
-          git fetch origin $BASE_SHA $HEAD_SHA
+        echo "Generating git diff from $BASE_SHA to $HEAD_SHA"
+        git fetch origin $BASE_SHA $HEAD_SHA || true
+        git diff "$BASE_SHA" "$HEAD_SHA" > changes.diff || echo "No diff found."
 
-          git diff $BASE_SHA $HEAD_SHA > changes.diff || echo "No diff found."
+        DIFF=$(head -c 65536 changes.diff | jq -Rs .)
+        echo "diff=$DIFF" >> $GITHUB_OUTPUT
 
-          DIFF=$(head -c 65536 changes.diff | jq -Rs .)
-          echo "diff=$DIFF" >> $GITHUB_OUTPUT
+    - name: Call Google Gemini API for review
+      id: gemini
+      env:
+        GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+      run: |
+        echo "Requesting Google Gemini code review..."
 
-      - name: Call Google Gemini API for review
-        id: gemini
-        env:
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-        run: |
-          echo "Requesting Google Gemini code review..."
+        DIFF_CONTENT=${{ steps.diff.outputs.diff }}
 
-          DIFF_CONTENT=${{ steps.diff.outputs.diff }}
-          PROMPT=$(printf 'You are a helpful code reviewer. Review the following git diff and provide constructive feedback:\n\n%s' "$DIFF_CONTENT" | jq -Rs .)
+        PAYLOAD=$(jq -n \
+          --arg prompt "$DIFF_CONTENT" \
+          '{
+            contents: [{
+              role: "user",
+              parts: [{
+                text: "You are a helpful code reviewer. Review the following git diff and provide constructive feedback:\n\n" + $prompt
+              }]
+            }],
+            generationConfig: {
+              temperature: 0.2,
+              topP: 0.95,
+              topK: 40,
+              maxOutputTokens: 1024
+            }
+          }')
 
-          PAYLOAD=$(jq -n \
-            --argjson prompt $PROMPT \
-            '{
-              contents: [{
-                role: "user",
-                parts: [{
-                  text: $prompt
-                }]
-              }],
-              generationConfig: {
-                temperature: 0.2,
-                topP: 0.95,
-                topK: 40,
-                maxOutputTokens: 1024
-              }
-            }')
+        ENDPOINT="https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent"
 
-          ENDPOINT="https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent"
+        RESPONSE=$(curl -s -X POST "$ENDPOINT?key=$GOOGLE_API_KEY" \
+          -H "Content-Type: application/json" \
+          -d "$PAYLOAD")
 
-          RESPONSE=$(curl -s -X POST "$ENDPOINT?key=$GOOGLE_API_KEY" \
-            -H "Content-Type: application/json" \
-            -d "$PAYLOAD")
+        echo "Raw Gemini API response:"
+        echo "$RESPONSE"
 
-          echo "Raw Gemini API response:"
-          echo "$RESPONSE"
+        REVIEW=$(echo "$RESPONSE" | jq -r '.candidates[0].content.parts[0].text // "⚠️ No response from Gemini AI."')
+        echo "review=$REVIEW" >> $GITHUB_OUTPUT
 
-          REVIEW=$(echo "$RESPONSE" | jq -r '.candidates[0].content.parts[0].text // "⚠️ No response from Gemini AI."')
-          echo "review=$REVIEW" >> $GITHUB_OUTPUT
-
-      - name: Post review comment on PR
-        uses: peter-evans/create-or-update-comment@v2
-        with:
-          token: ${{ secrets.PAT }}
-          issue-number: ${{ github.event.pull_request.number }}
-          body: |
-            ### 🤖 Google Gemini AI Code Review
-            ${{ steps.gemini.outputs.review }}
+    - name: Post review comment on PR
+      uses: peter-evans/create-or-update-comment@v2
+      with:
+        token: ${{ secrets.PAT }}
+        issue-number: ${{ github.event.pull_request.number }}
+        body: |
+          ### 🤖 Google Gemini AI Code Review
+          ${{ steps.gemini.outputs.review }}
