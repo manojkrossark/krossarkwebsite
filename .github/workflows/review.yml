@@ -33,27 +33,27 @@ jobs:
 
         PROMPT="You are a helpful code reviewer. Please review the following git diff and provide feedback on potential issues and improvements:\n\n$DIFF_CONTENT\n\n"
 
-             PAYLOAD=$(jq -n \
-        --arg prompt "$PROMPT" \
-        '{
-          prompt: {
-            text: $prompt
-          },
-          temperature: 0.2,
-          candidateCount: 1,
-          topP: 0.95,
-          topK: 40
-        }')
-      
-        RESPONSE=$(curl -s -X POST "https://generativelanguage.googleapis.com/v1beta2/models/gemini-2.5-turbo:generateText?key=$GOOGLE_API_KEY" \
+        MODEL="gemini-1.5-flash"
+        ENDPOINT="https://generativelanguage.googleapis.com/v1beta2/models/models/${MODEL}:generateText"
+        
+        PAYLOAD=$(jq -n \
+          --arg prompt "$PROMPT" \
+          '{
+            prompt: {
+              text: $prompt
+            },
+            temperature: 0.2,
+            candidateCount: 1,
+            topP: 0.95,
+            topK: 40
+          }')
+        
+        RESPONSE=$(curl -s -X POST "$ENDPOINT?key=$GOOGLE_API_KEY" \
           -H "Content-Type: application/json" \
           -d "$PAYLOAD")
         
           echo "Raw Gemini API response:"
           echo "$RESPONSE"
-      
-          # Save response to a file for easier download/view in logs (optional)
-          echo "$RESPONSE" > gemini_response.json
       
           # Try parsing the review text safely (fallback to empty if parsing fails)
           REVIEW=$(echo "$RESPONSE" | jq -r '.candidates[0].message.content.text // empty')
