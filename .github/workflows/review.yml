@@ -19,7 +19,8 @@ jobs:
       run: |
         git fetch origin ${{ github.event.pull_request.base.ref }}
         git diff origin/${{ github.event.pull_request.base.ref }} -- ${{ github.event.pull_request.head.ref }} > changes.diff
-        echo "::set-output name=diff::$(head -c 65536 changes.diff | jq -Rs .)"
+        DIFF=$(head -c 65536 changes.diff | jq -Rs .)
+        echo "diff=$DIFF" >> $GITHUB_OUTPUT
 
     - name: Call Claude API for review
       id: claude
@@ -27,19 +28,30 @@ jobs:
         CLAUDE_API_KEY: "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"
       run: |
         echo "Requesting Claude review..."
+
+        DIFF_CONTENT=${{ steps.diff.outputs.diff }}
+
+        PROMPT="You are a helpful code reviewer. Please review the following git diff and provide feedback on potential issues and improvements:\n\n$DIFF_CONTENT\n\n"
+
+        PAYLOAD=$(jq -n \
+          --arg model "claude-2" \
+          --arg prompt "$PROMPT" \
+          --argjson max_tokens_to_sample 500 \
+          --argjson temperature 0.2 \
+          '{
+            model: $model,
+            prompt: $prompt,
+            max_tokens_to_sample: $max_tokens_to_sample,
+            temperature: $temperature
+          }')
+
         RESPONSE=$(curl -s -X POST https://api.anthropic.com/v1/complete \
           -H "Content-Type: application/json" \
           -H "x-api-key: $CLAUDE_API_KEY" \
-          -d @- <<EOF
-{
-  "model": "claude-2",
-  "prompt": "You are a helpful code reviewer. Please review the following git diff and provide feedback on potential issues and improvements:\n\n${{ steps.diff.outputs.diff }}\n\n",
-  "max_tokens_to_sample": 500,
-  "temperature": 0.2
-}
+          -d "$PAYLOAD")
 
-)
-        echo "::set-output name=review::$(echo $RESPONSE | jq -r '.completion')"
+        REVIEW=$(echo "$RESPONSE" | jq -r '.completion')
+        echo "review=$REVIEW" >> $GITHUB_OUTPUT
 
     - name: Post review comment on PR
       uses: peter-evans/create-or-update-comment@v2
