@@ -112,6 +112,9 @@
         font-size: 70px;
     }
 
+    .container-cardface {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -259,7 +262,7 @@
     }
 
     .container-cardface {
-        height: 26vh;
+        display: none;
     }
 
 
