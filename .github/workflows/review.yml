@@ -79,7 +79,7 @@ jobs:
       - name: Post Gemini AI Review as PR Comment
         uses: peter-evans/create-or-update-comment@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT }}
           issue-number: ${{ github.event.pull_request.number }}
           body: |
             ### 🤖 Google Gemini AI Code Review
