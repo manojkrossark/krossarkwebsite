@@ -14,22 +14,12 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Get changed files diff
-        id: get_diff
+      - name: Generate git diff
+        id: diff
         run: |
           git fetch origin ${{ github.event.pull_request.base.ref }}
           git fetch origin ${{ github.event.pull_request.head.ref }}
           git diff origin/${{ github.event.pull_request.base.ref }} origin/${{ github.event.pull_request.head.ref }} > changes.diff
-
-          if [ ! -s changes.diff ]; then
-            echo "No changes detected."
-            echo "review=No diff content to review." >> $GITHUB_OUTPUT
-            exit 0
-          fi
-
-          # Encode diff as JSON-safe string
-          DIFF=$(head -c 65536 changes.diff | jq -Rs .)
-          echo "diff=$DIFF" >> $GITHUB_OUTPUT
 
       - name: Call Google Gemini API for review
         id: gemini
@@ -38,8 +28,14 @@ jobs:
         run: |
           echo "Requesting Google Gemini code review..."
 
-          DIFF_CONTENT=${{ steps.get_diff.outputs.diff }}
-          PROMPT="You are a helpful code reviewer. Please review the following git diff and provide feedback on potential issues and improvements:\n\n${DIFF_CONTENT}\n"
+          if [ ! -s changes.diff ]; then
+            echo "No diff content found."
+            echo "review=No diff content to review." >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          DIFF_CONTENT=$(cat changes.diff | head -c 65536 | jq -Rs .)
+          PROMPT=$(jq -r --arg diff "$DIFF_CONTENT" ' "You are a helpful code reviewer. Please review the following git diff and provide feedback on potential issues and improvements:\n\n\($diff)\n" ')
 
           MODEL="gemini-1.5-flash"
           ENDPOINT="https://generativelanguage.googleapis.com/v1beta1/models/${MODEL}:generateContent"
@@ -79,7 +75,7 @@ jobs:
       - name: Post Gemini AI Review as PR Comment
         uses: peter-evans/create-or-update-comment@v2
         with:
-          token: ${{ secrets.PAT }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.pull_request.number }}
           body: |
             ### 🤖 Google Gemini AI Code Review
