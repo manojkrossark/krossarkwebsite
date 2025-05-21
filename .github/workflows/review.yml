@@ -15,11 +15,19 @@ jobs:
           fetch-depth: 0
 
       - name: Get changed files diff
-        id: diff
+        id: get_diff
         run: |
           git fetch origin ${{ github.event.pull_request.base.ref }}
           git fetch origin ${{ github.event.pull_request.head.ref }}
           git diff origin/${{ github.event.pull_request.base.ref }} origin/${{ github.event.pull_request.head.ref }} > changes.diff
+
+          if [ ! -s changes.diff ]; then
+            echo "No changes detected."
+            echo "review=No diff content to review." >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # Encode diff as JSON-safe string
           DIFF=$(head -c 65536 changes.diff | jq -Rs .)
           echo "diff=$DIFF" >> $GITHUB_OUTPUT
 
@@ -30,16 +38,8 @@ jobs:
         run: |
           echo "Requesting Google Gemini code review..."
 
-          DIFF_CONTENT=${{ steps.diff.outputs.diff }}
-
-          if [ -z "$DIFF_CONTENT" ]; then
-            echo "No diff content found!"
-            echo "review=No diff content to review." >> $GITHUB_OUTPUT
-            exit 0
-          fi
-
-          DIFF_RAW=$(echo "$DIFF_CONTENT" | jq -r .)
-          PROMPT="You are a helpful code reviewer. Please review the following git diff and provide feedback on potential issues and improvements:\n\n$DIFF_RAW\n\n"
+          DIFF_CONTENT=${{ steps.get_diff.outputs.diff }}
+          PROMPT="You are a helpful code reviewer. Please review the following git diff and provide feedback on potential issues and improvements:\n\n${DIFF_CONTENT}\n"
 
           MODEL="gemini-1.5-flash"
           ENDPOINT="https://generativelanguage.googleapis.com/v1beta1/models/${MODEL}:generateContent"
@@ -59,41 +59,28 @@ jobs:
               ]
             }')
 
-          echo "Payload sent:"
-          echo "$PAYLOAD"
-
           RESPONSE=$(curl -s -X POST "$ENDPOINT?key=$GOOGLE_API_KEY" \
             -H "Content-Type: application/json" \
             -d "$PAYLOAD")
 
-          echo "Response body: $RESPONSE"
+          echo "Gemini response received."
 
           REVIEW=$(echo "$RESPONSE" | jq -r '.candidates[0].content.parts[0].text // empty')
 
           if [ -z "$REVIEW" ]; then
-            echo "No review text found in Gemini response."
-            REVIEW="No review generated or unexpected response format."
+            echo "No review found in the Gemini response."
+            REVIEW="⚠️ No review generated or unexpected response format."
           fi
 
-          echo "Parsed review:"
-          echo "$REVIEW"
-
-          echo "review_b64=$(echo "$REVIEW" | base64 | tr -d '\n')" >> $GITHUB_OUTPUT
-
-      - name: Decode review output
-        id: decode
-        run: |
-          echo "${{ steps.gemini.outputs.review_b64 }}" | base64 --decode > review.txt
-          echo "decoded_review<<EOF" >> $GITHUB_OUTPUT
-          cat review.txt >> $GITHUB_OUTPUT
+          echo "review<<EOF" >> $GITHUB_OUTPUT
+          echo "$REVIEW" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
 
-      - name: Post review comment on PR
+      - name: Post Gemini AI Review as PR Comment
         uses: peter-evans/create-or-update-comment@v2
         with:
-          token: ${{ secrets.PAT }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.pull_request.number }}
           body: |
             ### 🤖 Google Gemini AI Code Review
-
-            ${{ steps.decode.outputs.decoded_review }}
+            ${{ steps.gemini.outputs.review }}
