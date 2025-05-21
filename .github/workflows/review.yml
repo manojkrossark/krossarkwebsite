@@ -1,82 +1,41 @@
-name: Google Gemini Code Review
+name: Gemini AI Code Reviewer
 
 on:
-  pull_request:
-    types: [opened, synchronize, reopened]
+  issue_comment:
+    types: [created]
+
+permissions: write-all
 
 jobs:
-  gemini_review:
+  gemini-code-review:
     runs-on: ubuntu-latest
-
+    if: |
+      github.event.issue.pull_request &&
+      contains(github.event.comment.body, '/gemini-review')
     steps:
-      - name: Checkout code
+      - name: PR Info
+        run: |
+          echo "Comment: ${{ github.event.comment.body }}"
+          echo "Issue Number: ${{ github.event.issue.number }}"
+          echo "Repository: ${{ github.repository }}"
+
+      - name: Checkout Repo
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      - name: Generate git diff
-        id: diff
+      - name: Get PR Details
+        id: pr
         run: |
-          git fetch origin ${{ github.event.pull_request.base.ref }}
-          git fetch origin ${{ github.event.pull_request.head.ref }}
-          git diff origin/${{ github.event.pull_request.base.ref }} origin/${{ github.event.pull_request.head.ref }} > changes.diff
-
-      - name: Call Google Gemini API for review
-        id: gemini
+          PR_JSON=$(gh api repos/${{ github.repository }}/pulls/${{ github.event.issue.number }})
+          echo "head_sha=$(echo $PR_JSON | jq -r .head.sha)" >> $GITHUB_OUTPUT
+          echo "base_sha=$(echo $PR_JSON | jq -r .base.sha)" >> $GITHUB_OUTPUT
         env:
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-        run: |
-          echo "Requesting Google Gemini code review..."
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-          if [ ! -s changes.diff ]; then
-            echo "No diff content found."
-            echo "review=No diff content to review." >> $GITHUB_OUTPUT
-            exit 0
-          fi
-
-          DIFF_CONTENT=$(cat changes.diff | head -c 65536 | jq -Rs .)
-          PROMPT=$(jq -r --arg diff "$DIFF_CONTENT" ' "You are a helpful code reviewer. Please review the following git diff and provide feedback on potential issues and improvements:\n\n\($diff)\n" ')
-
-          MODEL="gemini-1.5-flash"
-          ENDPOINT="https://generativelanguage.googleapis.com/v1beta1/models/${MODEL}:generateContent"
-
-          PAYLOAD=$(jq -n \
-            --arg prompt "$PROMPT" \
-            '{
-              contents: [
-                {
-                  role: "user",
-                  parts: [
-                    {
-                      text: $prompt
-                    }
-                  ]
-                }
-              ]
-            }')
-
-          RESPONSE=$(curl -s -X POST "$ENDPOINT?key=$GOOGLE_API_KEY" \
-            -H "Content-Type: application/json" \
-            -d "$PAYLOAD")
-
-          echo "Gemini response received."
-
-          REVIEW=$(echo "$RESPONSE" | jq -r '.candidates[0].content.parts[0].text // empty')
-
-          if [ -z "$REVIEW" ]; then
-            echo "No review found in the Gemini response."
-            REVIEW="⚠️ No review generated or unexpected response format."
-          fi
-
-          echo "review<<EOF" >> $GITHUB_OUTPUT
-          echo "$REVIEW" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
-
-      - name: Post Gemini AI Review as PR Comment
-        uses: peter-evans/create-or-update-comment@v2
+      - uses: truongnh1992/gemini-ai-code-reviewer@main
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          issue-number: ${{ github.event.pull_request.number }}
-          body: |
-            ### 🤖 Google Gemini AI Code Review
-            ${{ steps.gemini.outputs.review }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: gemini-2.5-pro-preview-05-06 # Optional, default is `gemini-2.0-flash-001`
+          EXCLUDE: "*.md,*.txt,package-lock.json,*.yml,*.yaml"
