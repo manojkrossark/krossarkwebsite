@@ -1,4 +1,4 @@
-name: Gemini AI Code Reviewer
+name: Krossark Reveiwer
 
 on:
   pull_request:
