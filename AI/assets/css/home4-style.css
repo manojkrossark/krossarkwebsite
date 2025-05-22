@@ -1,7 +1,7 @@
 :root {
   --bg-color: #EEEEEE;
   --theme-color: #fff;
-  --main-color: #85EE00; }
+  --main-color: #0a65c0; }
 
 /* --------------- Menu --------------- */
 .navbar {
@@ -846,3 +846,37 @@ p {
     line-height: 1.2; }
   .footer-mp .footer-logo .union {
     display: none; } }
+
+.video-header {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Optional dark overlay */
+  z-index: 2;
+}
+
+.header-mp .container {
+  position: relative;
+  z-index: 3;
+}
