@@ -376,26 +376,28 @@
             <!-- ==================== Start Header ==================== -->
 
             <header class="header-mp video-header">
-              <!-- <video autoplay muted loop playsinline class="bg-video">
-                <source
-                  src="https://firebasestorage.googleapis.com/v0/b/newapp-6795d.appspot.com/o/Untitled%20(1).mp4?alt=media&token=cf8aa34a-46db-4fca-bba4-31acce718fdc"
-                  type="video/mp4"
-                />
-                Your browser does not support the video tag.
-              </video> -->
-              <video autoplay muted loop playsinline class="bg-video">
-              <source src="/AI/assets/video/ai_intro_video.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-              </video>
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="/AI/assets/video/ai_intro_video.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
 
-              <div class="overlay"></div>
-            </header>
+  <!-- Dark overlay for contrast -->
+  <div class="overlay"></div>
+
+  <!-- Content overlay -->
+  <div class="video-content">
+    <h1>Welcome to Alto</h1>
+    <p>Experience the future with Krossark’s AI Lens Framework</p>
+    <a href="#explore" class="cta-button">Explore Now</a>
+  </div>
+</header>
 
             <!-- ==================== End Header ==================== -->
 
             <!-- ==================== Start Portfolio ==================== -->
 
-            <div class="works-mp section-padding pt-40">
+                    <div class="works-mp section-padding pt-40">
               <div class="container">
                 <div class="sec-head mb-80">
                   <div class="row">
@@ -417,8 +419,11 @@
                     <div class="item">
                       <div class="cont d-flex align-items-center">
                         <div>
-                          <h5>Swat Co.</h5>
-                          <span>branding, ui/ux design</span>
+                          <h5>Alto Lens Frameworks</h5>
+						  
+                       <span>The foundation of perception.
+AI frameworks that power computer vision, NLP, and generative intelligence—designed for developers, researchers, and businesses to build smarter applications.
+   </span>
                         </div>
                         <div class="ml-auto">
                           <a href="../inner_pages/project-details.html">
@@ -435,10 +440,10 @@
                     <div class="item">
                       <div class="cont d-flex align-items-center">
                         <div>
-                          <h5>ZumaCons Firm</h5>
+                          <h5>Alto.Retail</h5>
                           <span
-                            >branding, ui/ux design, <br />
-                            motion, seo</span
+                            >Redefining commerce with intelligence <br />
+                            </span
                           >
                         </div>
                         <div class="ml-auto">
@@ -456,10 +461,11 @@
                     <div class="item">
                       <div class="cont d-flex align-items-center">
                         <div>
-                          <h5>Newz Magazine Site</h5>
+                          <h5>Alto.ai Assistant</h5>
                           <span
-                            >ui/ux design, Illustration <br />
-                            photography,</span
+                            >Your intelligent co-pilot.
+A conversational AI platform tailored for productivity, learning, and creativity—across devices, apps, and industries.
+</span
                           >
                         </div>
                         <div class="ml-auto">
@@ -477,10 +483,11 @@
                     <div class="item">
                       <div class="cont d-flex align-items-center">
                         <div>
-                          <h5>Archin</h5>
+                         <h5>Alto Park</h5>
                           <span
-                            >branding, ui/ux design, <br />
-                            motion, seo</span
+                            >Smarter cities begin here.
+AI-powered urban infrastructure—from autonomous vehicle parking to dynamic traffic systems—creating seamless, green, and optimized urban experiences
+</span
                           >
                         </div>
                         <div class="ml-auto">
@@ -498,31 +505,10 @@
                     <div class="item">
                       <div class="cont d-flex align-items-center">
                         <div>
-                          <h5>Jorger Clarkson</h5>
+                          <h5>Alto.Nutri</h5>
                           <span
-                            >UI/UX Designm Landing Page, <br />
-                            Webflow, Framer</span
-                          >
-                        </div>
-                        <div class="ml-auto">
-                          <a href="../inner_pages/project-details.html">
-                            <i class="fa-solid fa-chevron-right"></i>
-                          </a>
-                        </div>
-                      </div>
-                      <div class="img">
-                        <img src="assets/imgs/works/6.jpg" alt="" />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 items">
-                    <div class="item">
-                      <div class="cont d-flex align-items-center">
-                        <div>
-                          <h5>LW Rebrand</h5>
-                          <span
-                            >branding, rebrand, postion <br />
-                            strategy, animation</span
+                            >AI for better health and nutrition.
+Personalized meal planning, smart grocery recommendations</span
                           >
                         </div>
                         <div class="ml-auto">
@@ -536,7 +522,29 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-4 items">
+              <div class="col-lg-4 items">
+                    <div class="item">
+                      <div class="cont d-flex align-items-center">
+                        <div>
+                          <h5>Alto.ev</h5>
+                          <span
+                            >
+Driving the future.AI-optimized electric vehicle tech—route prediction, battery intelligence, and fleet management systems designed for sustainable transport.
+                           </span
+                          >
+                        </div>
+                        <div class="ml-auto">
+                          <a href="../inner_pages/project-details.html">
+                            <i class="fa-solid fa-chevron-right"></i>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="img">
+                        <img src="assets/imgs/works/6.jpg" alt="" />
+                      </div>
+                    </div>
+                  </div> 
+                  <!-- <div class="col-lg-4 items">
                     <div class="item">
                       <div class="cont d-flex align-items-center">
                         <div>
@@ -574,8 +582,8 @@
                         <img src="assets/imgs/works/7.jpg" alt="" />
                       </div>
                     </div>
-                  </div>
-                  <div class="col-lg-4 items">
+                  </div> -->
+                 <!--  <div class="col-lg-4 items">
                     <div class="item">
                       <div class="cont d-flex align-items-center">
                         <div>
@@ -592,10 +600,11 @@
                         <img src="assets/imgs/works/8.jpg" alt="" />
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
+
 
             <!-- ==================== End Portfolio ==================== -->
 
@@ -696,7 +705,7 @@
 
             <!-- ==================== Start Services ==================== -->
 
-            <div class="services-mp section-padding">
+            <!-- <div class="services-mp section-padding">
               <div class="container">
                 <div class="sec-head mb-80">
                   <div class="row">
@@ -932,7 +941,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
 
             <!-- ==================== End Process ==================== -->
 
