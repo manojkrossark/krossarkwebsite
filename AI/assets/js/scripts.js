@@ -71,3 +71,33 @@ $(window).on("load", function () {
 
 });
 
+
+
+
+  const video = document.getElementById('bgVideo');
+  const text1 = document.getElementById('text1');
+  const text2 = document.getElementById('text2');
+  const text3 = document.getElementById('text3');
+
+  video.addEventListener('timeupdate', () => {
+    const time = video.currentTime;
+
+    if (time >= 0 && time < 16) {
+      text1.style.opacity = 1;
+    } else {
+      text1.style.opacity = 0;
+    }
+
+    if (time >= 16 && time < 20) {
+      text2.style.opacity = 1;
+    } else {
+      text2.style.opacity = 0;
+    }
+
+    if (time >= 20) {
+      text3.style.opacity = 1;
+    } else {
+      text3.style.opacity = 0;
+    }
+  });
+

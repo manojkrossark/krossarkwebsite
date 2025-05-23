@@ -88,23 +88,7 @@
   <body>
     <!-- ==================== Start Loading ==================== -->
 
-    <div class="loader-wrap">
-      <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
-        <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
-      </svg>
 
-      <div class="loader-wrap-heading">
-        <div class="load-text">
-          <span>L</span>
-          <span>o</span>
-          <span>a</span>
-          <span>d</span>
-          <span>i</span>
-          <span>n</span>
-          <span>g</span>
-        </div>
-      </div>
-    </div>
 
     <!-- ==================== End Loading ==================== -->
 
@@ -374,24 +358,28 @@
             <div class="layers"></div>
 
             <!-- ==================== Start Header ==================== -->
-
-            <header class="header-mp video-header">
-  <!-- Background Video -->
-  <video autoplay muted loop playsinline class="bg-video">
-    <source src="/AI/assets/video/ai_intro_video.mp4" type="video/mp4" />
+<header class="header-mp video-header">
+  <!-- Video -->
+  <video id="bgVideo" autoplay muted loop playsinline class="bg-video">
+    <source src="/AI/assets/video/demo.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
 
-  <!-- Dark overlay for contrast -->
+  <!-- Overlay for contrast -->
   <div class="overlay"></div>
 
-  <!-- Content overlay -->
-  <div class="video-content">
-    <h1>Welcome to Alto</h1>
-    <p>Experience the future with Krossark’s AI Lens Framework</p>
-    <a href="#explore" class="cta-button">Explore Now</a>
+  <!-- Timed Text Blocks -->
+  <div class="video-text timed-text white" id="text1">
+    At Krossark, we’re not just using AI — we’re reimagining how the world interacts with it.
+  </div>
+  <div class="video-text timed-text white" id="text2">
+    Our innovation engine, Alto, powers this transformation through the AI Lens Framework — a bold new way to see, solve, and scale with AI.
+  </div>
+  <div class="video-text timed-text white" id="text3">
+    Alto's AI Lens Framework
   </div>
 </header>
+
 
             <!-- ==================== End Header ==================== -->
 

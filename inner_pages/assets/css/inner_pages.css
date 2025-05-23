@@ -1406,7 +1406,9 @@ p {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 3rem 2rem;
+  padding: 6rem 2rem;
+  font-size: 50px!important;
+ font-weight:200!important;
 }
 
 .video-play {
