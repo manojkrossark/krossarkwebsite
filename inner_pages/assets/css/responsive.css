@@ -18,6 +18,38 @@
     --font-family-playfair: "Playfair Display", serif;
 }
 
+@media screen and (min-width: 992px) {
+
+    .searchOffCanvas_searchWrapper__apdY5 {
+        max-width: calc(100% - 7.5rem);
+        padding-left: 2rem;
+        padding-right: 4.4444444444rem;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    .searchOffCanvas_close__bWTeZ:after {
+        background-color: rgba(0, 0, 0, .06);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(.8);
+        opacity: 0;
+        transition: all .12s ease-in;
+        will-change: transform;
+    }
+
+    .searchOffCanvas_close__bWTeZ:hover:after {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
 @media screen and (max-width: 992px) {
 
     .header-image-banner h4,
@@ -115,6 +147,12 @@
     .container-cardface {
         display: none;
     }
+
+    .d-lg-block {
+        display: block !important;
+    }
+
+
 }
 
 @media screen and (max-width: 768px) {
