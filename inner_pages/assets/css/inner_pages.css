@@ -1406,14 +1406,20 @@ p {
 }
 
 .video-text {
-  z-index: 1;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
   position: absolute;
+  z-index: 10;
   bottom: 0;
   left: 0;
   right: 0;
   padding: 6rem 2rem;
   font-size: 50px !important;
   font-weight: 200 !important;
+  text-align: center;
+  color: white;
+  word-break: break-word;
 }
 
 .video-play {
@@ -2348,6 +2354,22 @@ p {
   background: rgba(0, 0, 0, 0.4);
   /* Optional dark overlay */
   z-index: 2;
+}
+
+@media screen and (max-width: 768px) {
+  .video-text {
+    font-size: 22px !important;
+    padding: 2rem 1rem;
+    bottom: 10%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .video-text {
+    font-size: 18px !important;
+    padding: 1.5rem 1rem;
+    bottom: 12%;
+  }
 }
 
 /* Search Canvas */
