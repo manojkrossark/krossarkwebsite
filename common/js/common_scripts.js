@@ -82,7 +82,7 @@ $(function () {
     window.scrollTo(0, 0);
   }
 
-  $(".navbar .menu-icon").on("click", function () {
+  $(".navbar .header_menu_icon__q1NWM").on("click", function () {
     $(".hamenu").addClass("open");
 
     $(".hamenu").animate({ left: 0 });

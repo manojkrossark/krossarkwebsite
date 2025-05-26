@@ -1450,6 +1450,7 @@ p {
   background-size: cover;
   padding: 120px 0;
   position: relative;
+  height: 100vh;
 }
 
 .header-mp .overlay {
@@ -2351,7 +2352,7 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.17);
   /* Optional dark overlay */
   z-index: 2;
 }
@@ -2372,108 +2373,69 @@ p {
   }
 }
 
-/* Search Canvas */
 
-.offcanvas-body {
-  padding: 0;
-}
 
-.searchOffCanvas_search_wrap__LoM_B {
-  background-color: #fff;
-  padding: 10px 0;
-  margin-top: 8px;
-}
+/* Industry */
 
-.searchOffCanvas_body__4yNuj {
+.heroBanner_inner_banner__13x5V {
+  --padding-top: 10rem;
+  --padding-bottom: 2.7777777778rem;
   width: 100%;
-  display: flex;
   position: relative;
+  overflow: hidden;
+  padding: 245px 0 106px;
+  margin-bottom: var(--margin-bottom);
+  color: var(--primary-color);
+  background-color: #000;
+}
+
+.heroBanner_media_wrapper__t0olY {
+  position: absolute;
+  width: 100%;
   height: 100%;
+  left: 0;
+  top: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 
-.searchOffCanvas_logoWrapper__T3i_x {
-  width: 100%;
-  max-width: 170px;
-  display: flex;
-  align-items: center;
-  position: relative;
-  border: none;
-  background-color: transparent;
-  padding: 0 2rem 0 0;
+.heroBanner_inner_banner__13x5V img {
+  transform: scaleY(1.6) translateY(0);
+  transform-origin: top;
+  opacity: 0;
+  transition: all .8s ease;
 }
 
-
-
-.searchOffCanvas_logoWrapper__T3i_x img {
-  width: 100%;
-  height: auto;
-}
-
-.searchOffCanvas_logoWrapper__T3i_x:after {
-  content: "";
+.heroBanner_media_wrapper__t0olY img {
   position: absolute;
   right: 0;
   top: 0;
-  width: 1px;
-  height: 100%;
-  background-color: #c3c3c3;
-  opacity: .5;
-  z-index: 1;
-}
-
-.searchOffCanvas_searchWrapper__apdY5 {
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.searchField_searchField__sUoDR {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  height: 100%;
-}
-
-form {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
-.searchField_searchInput____GNk {
-  width: 100%;
-  display: flex;
+.heroBanner_inner_banner__13x5V.heroBanner_inview__cs0Wq img {
+  transform: none;
+  opacity: 1;
+}
+
+
+.heroBanner_content_wrapper__Wyn_r {
   position: relative;
-  height: 100%;
+  z-index: 9;
 }
 
-.searchField_SearchIcon__7S_wO {
-  background-color: transparent;
-  border: none;
-  display: flex;
-  align-items: center;
-  height: 100%;
-  padding-right: .6666666667rem;
+.aerospace-tech h4 {
+  line-height: 1.35;
+  font-weight: 300;
+  font-size: 1.5555555556rem;
 }
 
-.searchField_SearchInput__HxLyg {
-  background-color: transparent;
-  border: 0;
-  color: var(--bg-color);
+.aerospace-tech p {
   font-size: 1rem;
-  flex: 1 1;
-  outline: none;
-  outline-offset: 0;
-}
-
-.searchOffCanvas_close__bWTeZ {
-  width: 2.2222222222rem;
-  height: 2.2222222222rem;
-  position: relative;
-  background-color: transparent;
-  border: none;
-  border-radius: 50%;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: black;
+  font-weight: 300;
+  line-height: 1.5rem;
 }

@@ -18,6 +18,42 @@
     --font-family-playfair: "Playfair Display", serif;
 }
 
+@media screen and (min-width: 576px) {
+
+    .container,
+    .container-sm {
+        max-width: 540px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    .search_searchBtn__pveTB:after {
+        width: 50px;
+        height: 50px;
+    }
+
+    .krossarkFolder_linkWrapper__CTQYZ .krossarkFolder_btn__hQzAQ:after {
+        width: 50px;
+        height: 50px;
+    }
+
+    .header_menu_icon__q1NWM .header_icon__SiAfw>button>span {
+        width: 2.1111111111rem;
+        margin: .2777777778rem 0;
+    }
+
+    .container {
+        --gutter-x: 1.5rem;
+    }
+
+    .heroBanner_inner_banner__13x5V {
+        --padding-top: 9rem;
+        --padding-bottom: 3rem;
+    }
+
+}
+
 @media screen and (min-width: 992px) {
 
     .searchOffCanvas_searchWrapper__apdY5 {
@@ -26,7 +62,22 @@
         padding-right: 4.4444444444rem;
     }
 
+    .header_menu_wrapper__vqfVN {
+        padding-right: 25px;
+    }
+
+    .container {
+        max-width: 80%;
+    }
+
+    .heroBanner_inner_banner__13x5V {
+        --padding-top: 6.4444444444rem;
+        --padding-bottom: 1.8333333333rem;
+    }
+
 }
+
+
 
 @media (min-width: 1200px) {
     .searchOffCanvas_close__bWTeZ:after {
@@ -48,6 +99,17 @@
         transform: translate(-50%, -50%) scale(1);
         opacity: 1;
     }
+
+    .container {
+        max-width: 90%;
+    }
+
+    .heroBanner_inner_banner__13x5V {
+        --padding-top: 245px;
+        --padding-bottom: 106px;
+    }
+
+
 }
 
 @media screen and (max-width: 992px) {
@@ -325,9 +387,7 @@
         font-size: 45px;
     }
 
-    /* .work-card .card-item .img {
-        height: 500px;
-    } */
+
 
     .work-card .card-item h5 {
         font-size: 35px;
@@ -366,6 +426,26 @@
     .footer-sa .call-action h2 .buton img {
         width: 18px;
     }
+
+    .offcanvas-top {
+        height: 8.2vh;
+    }
+
+    .navbar .container {
+        --gutter-x: 2.7rem;
+        --gutter-y: 0;
+        width: 100%;
+        padding-right: calc(var(--gutter-x) * .5);
+        padding-left: calc(var(--gutter-x) * .5);
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .contactButton_btn__rRKCw,
+    .searchOffCanvas_logoWrapper__T3i_x {
+        display: none;
+    }
+
 
 
 }
