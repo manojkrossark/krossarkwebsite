@@ -284,3 +284,65 @@ $(function () {
     });
   }
 });
+
+
+
+
+const video = document.getElementById("bgVideohomepage");
+const homepage1 = document.getElementById("homepage1");
+const homepage2 = document.getElementById("homepage2");
+const homepage3 = document.getElementById("homepage3");
+const homepage4 = document.getElementById("homepage4");
+const homepage5 = document.getElementById("homepage5");
+
+// Initially hide all text
+[homepage1, homepage2, homepage3, homepage4, homepage5].forEach((text) => {
+  text.style.display = "block";
+  text.style.opacity = 0;
+});
+
+// Set video attributes
+video.muted = true;
+video.setAttribute("playsinline", "true");
+
+// Try to play the video
+function tryPlayHomePageVideo() {
+
+  video
+    .play()
+    .then(() => {
+      startTextHomePageSync();
+    })
+    .catch((err) => {
+      console.warn("Autoplay failed. Waiting for user interaction.", err);
+      document.addEventListener(
+        "click",
+        () => {
+          video.play().then(startTextHomePageSync);
+        },
+        { once: true }
+      );
+    });
+}
+
+// Sync function using requestAnimationFrame
+function startTextHomePageSync(){
+
+  function syncText() {
+    const time = video.currentTime;
+
+    // Updated timing logic
+    homepage1.style.opacity = (time >= 0 && time < 5) ? 1 : 0;
+    homepage2.style.opacity = (time >= 5 && time < 12) ? 1 : 0;
+    homepage3.style.opacity = (time >= 12 && time < 17) ? 1 : 0;
+    homepage4.style.opacity = (time >= 17 && time < 21) ? 1 : 0;
+    homepage5.style.opacity = (time >= 21) ? 1 : 0;
+
+    requestAnimationFrame(syncText);
+  }
+
+  requestAnimationFrame(syncText);
+}
+
+// Wait for enough data to play smoothly
+video.addEventListener("canplaythrough", tryPlayHomePageVideo);
