@@ -459,6 +459,38 @@ $(document).ready(function () {
   });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const button = document.getElementById("loadOffcanvasBtn");
+
+  if (button) {
+    button.addEventListener("click", function () {
+      // Only load if not already loaded
+      if (!document.getElementById("offcanvasRight")) {
+        fetch('/common/common-offcanvas.html')
+          .then(response => response.text())
+          .then(html => {
+            document.getElementById("offcanvasContainer").innerHTML = html;
+
+            // Show offcanvas using Bootstrap API
+            const offcanvasEl = document.getElementById('offcanvasRight');
+            const bsOffcanvas = new bootstrap.Offcanvas(offcanvasEl);
+            bsOffcanvas.show();
+          })
+          .catch(error => {
+            console.error("Failed to load offcanvas:", error);
+          });
+      } else {
+        // Already loaded, just show
+        const offcanvasEl = document.getElementById('offcanvasRight');
+        const bsOffcanvas = new bootstrap.Offcanvas(offcanvasEl);
+        bsOffcanvas.show();
+      }
+    });
+  } else {
+    console.error("Button with ID 'loadOffcanvasBtn' not found in DOM.");
+  }
+});
+
 
 /* =============================================================================
 -----------------------------  Modal Open   ------------------------------
@@ -612,4 +644,6 @@ var testim = new Swiper(".case-studies .testim-swiper", {
     prevEl: ".case-studies .swiper-button-prev",
   },
 });
+
+
 
