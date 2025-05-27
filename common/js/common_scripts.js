@@ -514,6 +514,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Optional: Listen to hidden event to ensure scroll is re-enabled
         offcanvasEl.addEventListener("hidden.bs.offcanvas", () => {
+          document.getElementById("whitepaper").style.display = "block";
+          document.getElementById("successMessage").style.display = "none";
+          clearErrorMessages();
           document.body.classList.remove(
             "offcanvas-backdrop",
             "modal-open",
@@ -661,12 +664,13 @@ function handleSubmit(event) {
     .then((response) => response.json())
     .then((data) => {
       if (data.status === "success") {
-        document.getElementById("formContainer").style.display = "none";
+        // Hide form, show success
+        document.getElementById("whitepaper").style.display = "none";
         document.getElementById("successMessage").style.display = "block";
-        event.target.reset(); // Reset the form
+        event.target.reset(); // reset the form
       } else {
         console.error(data.message);
-        // Optionally show form-level error message
+        // Optionally show a general error message
       }
     })
     .catch((error) => {
