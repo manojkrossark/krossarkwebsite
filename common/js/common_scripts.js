@@ -459,46 +459,6 @@ $(document).ready(function () {
   });
 });
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   // Step 1: Load offcanvas HTML once
-//   fetch("/common/common-offcanvas.html")
-//     .then((response) => response.text())
-//     .then((html) => {
-//       document.getElementById("offcanvasContainer").innerHTML = html;
-
-//       // After HTML is added, bind events
-//       bindOffcanvasEvents();
-//     })
-//     .catch((error) => {
-//       console.error("Failed to load offcanvas:", error);
-//     });
-
-//   function bindOffcanvasEvents() {
-//     const buttons = document.querySelectorAll(".loadOffcanvasBtn");
-
-//     buttons.forEach((button) => {
-//       button.addEventListener("click", () => {
-//         const title = button.getAttribute("data-title") || "";
-//         const description = button.getAttribute("data-description") || "";
-
-//         const titleElement = document.getElementById("offcanvas-title");
-//         const descriptionElement = document.getElementById(
-//           "offcanvas-description"
-//         );
-
-//         if (titleElement) titleElement.textContent = title;
-//         if (descriptionElement) descriptionElement.textContent = description;
-
-//         const offcanvasEl = document.getElementById("offcanvasRight");
-//         if (offcanvasEl) {
-//           const bsOffcanvas = new bootstrap.Offcanvas(offcanvasEl);
-//           bsOffcanvas.show();
-//         }
-//       });
-//     });
-//   }
-// });
-
 document.addEventListener("DOMContentLoaded", function () {
   let bsOffcanvas = null;
 
@@ -574,20 +534,20 @@ fetch("/common/common-modal.html")
 // Function to open the modal
 function openModal() {
   resetModal();
-  const modal = new bootstrap.Modal(document.getElementById("exampleModal"));
+  const modal = new bootstrap.Modal(document.getElementById("offcanvasRight"));
   modal.show();
 }
 
 function closeModal() {
   resetModal();
   const modal = bootstrap.Modal.getInstance(
-    document.getElementById("exampleModal")
+    document.getElementById("offcanvasRight")
   );
   modal.hide();
 }
 
 function resetModal() {
-  document.getElementById("formContainer").style.display = "block";
+  document.getElementById("whitepaper").style.display = "block";
   document.getElementById("successMessage").style.display = "none";
   var form = document.getElementById("whitepaperForm");
   form.reset();
