@@ -225,7 +225,7 @@ $(function () {
       if (response.length === 0) {
         if (captchaError)
           captchaError.textContent = "Please complete the reCAPTCHA.";
-          return;
+        return;
       } else {
         if (captchaError) captchaError.textContent = "";
       }
@@ -286,8 +286,6 @@ $(function () {
 });
 
 
-
-
 const video = document.getElementById("bgVideohomepage");
 const homepage1 = document.getElementById("homepage1");
 const homepage2 = document.getElementById("homepage2");
@@ -326,7 +324,7 @@ function tryPlayHomePageVideo() {
 }
 
 // Sync function using requestAnimationFrame
-function startTextHomePageSync(){
+function startTextHomePageSync() {
 
   function syncText() {
     const time = video.currentTime;

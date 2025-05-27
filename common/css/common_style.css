@@ -38,11 +38,6 @@ main {
   z-index: 5;
 }
 
-.row > * {
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-top: 0;
-}
 
 .row.sm-marg {
   margin-left: -5px;
