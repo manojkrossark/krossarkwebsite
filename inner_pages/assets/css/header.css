@@ -117,7 +117,17 @@ li.nav-item {
   text-transform: capitalize;
 }
 
-.navbar .navbar-nav .nav-link::after {
+.navbar.header_navbar .navbar-nav .nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width 0.3s;
+}
+
+.navbar.nav-scroll .navbar-nav .nav-link::after,
+.navbar.header-other .navbar-nav .nav-link::after {
   content: "";
   display: block;
   width: 0;
@@ -131,7 +141,12 @@ li.nav-item {
   color: var(--main-color);
 }
 
-.navbar .navbar-nav .nav-link.active {
+.navbar.header_navbar .navbar-nav .nav-link.active {
+  color: var(--primary-color);
+}
+
+.navbar.nav-scroll .navbar-nav .nav-link.active,
+.navbar.header-other .navbar-nav .nav-link.active {
   color: var(--main-color);
 }
 
