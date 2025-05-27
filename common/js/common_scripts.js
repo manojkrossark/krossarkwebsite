@@ -500,20 +500,30 @@ document.addEventListener("DOMContentLoaded", function () {
       button.addEventListener("click", () => {
         const title = button.getAttribute("data-title") || "";
         const description = button.getAttribute("data-description") || "";
+<<<<<<< Updated upstream
         const image =
           button.getAttribute("data-image") ||
           "/inner_pages/assets/imgs/kross-book.png";
+=======
+>>>>>>> Stashed changes
 
         const titleElement = document.getElementById("offcanvas-title");
         const descriptionElement = document.getElementById(
           "offcanvas-description"
         );
+<<<<<<< Updated upstream
         const imageElement = document.getElementById("offcanvas-image");
 
         if (titleElement) titleElement.textContent = title;
         if (descriptionElement) descriptionElement.textContent = description;
         if (imageElement) imageElement.src = image;
         if (imageElement) imageElement.srcset = image;
+=======
+
+        if (titleElement) titleElement.textContent = title;
+        if (descriptionElement) descriptionElement.textContent = description;
+
+>>>>>>> Stashed changes
         if (bsOffcanvas) {
           bsOffcanvas.show();
         }
@@ -546,12 +556,20 @@ function openModal() {
 }
 
 function closeModal() {
+<<<<<<< Updated upstream
   const offcanvas = bootstrap.Offcanvas.getInstance(
     document.getElementById("offcanvasRight")
   );
   if (offcanvas) {
     offcanvas.hide();
   }
+=======
+  resetModal();
+  const modal = bootstrap.Modal.getInstance(
+    document.getElementById("offcanvasRight")
+  );
+  modal.hide();
+>>>>>>> Stashed changes
 }
 
 function resetModal() {

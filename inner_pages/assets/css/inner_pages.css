@@ -3153,7 +3153,7 @@ p {
 
 .dynamicOffCanvas_content_wrapper__XdCMS .dynamicOffCanvas_intro_description__MuQR7 h2 {
   letter-spacing: 0px;
-  font-size: 3.3333333333rem;
+  font-size: 2.3333333333rem;
 }
 
 .dynamicOffCanvas_data__CV_65 {
@@ -3809,11 +3809,11 @@ p {
 }
 
 
-.workCard_context_wrapper__okUyc .saveOptions_btn_box__bn_1H+ul li {
+.workCard_context_wrapper__okUyc .saveOptions_btn+ul li {
   transition: all .3s ease;
 }
 
-.workCard_context_wrapper__okUyc .saveOptions_btn_box__bn_1H+ul li:hover {
+.workCard_context_wrapper__okUyc .saveOptions_btn+ul li:hover {
   background-color: #ededed;
 }
 
