@@ -3738,28 +3738,27 @@ p {
   right: 0;
 }
 
-.linking-btn {
+.saveOptions_optionswraper {
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 0.75rem;
-  margin-top: 30px;
-  position: relative;
+  flex-direction: row;
+  padding: 0;
+  gap: 1rem;
+  margin-top: 20px;
 }
 
-.linking-btn button {
+.saveOptions_optionswraper button {
   background: transparent;
-  border-radius: 100px;
-  color: #9E9E9E;
-  border: 1px solid #9e9e9e;
   width: 35px;
   height: 35px;
+  border-radius: 50%;
+  color: #9E9E9E;
+  border: 1px solid #9E9E9E;
   font-size: 1rem;
 }
 
-.linking-btn ul {
+.saveOptions_dropdown__doVU_ ul {
   position: absolute;
-  top: 50px;
+  top: 20px;
   left: 0;
   background-color: #fff;
   z-index: 11;
@@ -3771,14 +3770,52 @@ p {
   transition: all .3s ease;
 }
 
-.linking-btn:hover ul {
+.saveOptions_dropdown__doVU_:hover ul {
   visibility: visible;
   opacity: 1;
   transform: none;
 }
 
-.linking-btn ul li {
+.saveOptions_dropdown__doVU_ ul li {
   position: relative;
+}
+
+.saveOptions_btn+ul li {
+  transition: all .3s ease;
+}
+
+.saveOptions_btn+ul li:hover {
+  background-color: #ededed;
+}
+
+.saveOptions_dropdown__doVU_ ul li button {
+  background-color: transparent !important;
+  border: none !important;
+  font-size: 12px !important;
+  text-align: left !important;
+  white-space: nowrap !important;
+  width: 100% !important;
+  padding: 8px 17px !important;
+  display: flex !important;
+  align-items: center !important;
+  color: #000;
+}
+
+.saveOptions_dropdown__doVU_ ul li button span {
+  display: block;
+}
+
+.saveOptions_dropdown__doVU_ ul li button span:first-of-type {
+  display: flex;
+  width: 30px;
+}
+
+.saveOptions_dropdown__doVU_ ul li button svg {
+  margin-right: 12px;
+}
+
+.saveOptions_dropdown__doVU_ ul li button span:last-of-type {
+  margin-bottom: -2px;
 }
 
 .copytoast {
@@ -3806,47 +3843,4 @@ p {
   height: 25px;
   background: #47c847;
   padding: 5px;
-}
-
-
-.workCard_context_wrapper__okUyc .saveOptions_btn+ul li {
-  transition: all .3s ease;
-}
-
-.workCard_context_wrapper__okUyc .saveOptions_btn+ul li:hover {
-  background-color: #ededed;
-}
-
-.linking-btn ul li button {
-  background-color: transparent !important;
-  border: none !important;
-  font-size: 12px !important;
-  text-align: left !important;
-  white-space: nowrap !important;
-  width: 100% !important;
-  padding: 8px 17px !important;
-  display: flex !important;
-  align-items: center !important;
-  color: #000;
-}
-
-.linking-btn ul li button span {
-  display: block;
-}
-
-.linking-btn ul li button span:first-of-type {
-  display: flex;
-  width: 30px;
-}
-
-.linking-btn ul li button svg {
-  margin-right: 12px;
-}
-
-.linking-btn ul li button span {
-  display: block;
-}
-
-.linking-btn ul li button span:last-of-type {
-  margin-bottom: -2px;
 }

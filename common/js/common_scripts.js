@@ -459,7 +459,11 @@ $(document).ready(function () {
   });
 });
 
-// Right Sidebar Canvas
+
+
+/* =============================================================================
+-----------------------------  Rigth Side Bar   ------------------------------
+============================================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
   let bsOffcanvas = null;
@@ -500,15 +504,21 @@ document.addEventListener("DOMContentLoaded", function () {
       button.addEventListener("click", () => {
         const title = button.getAttribute("data-title") || "";
         const description = button.getAttribute("data-description") || "";
+        const image =
+          button.getAttribute("data-image") ||
+          "/inner_pages/assets/imgs/kross-book.png";
 
         const titleElement = document.getElementById("offcanvas-title");
         const descriptionElement = document.getElementById(
           "offcanvas-description"
         );
+        const imageElement = document.getElementById("offcanvas-image");
 
         if (titleElement) titleElement.textContent = title;
         if (descriptionElement) descriptionElement.textContent = description;
 
+        if (imageElement) imageElement.src = image;
+        if (imageElement) imageElement.srcset = image;
         if (bsOffcanvas) {
           bsOffcanvas.show();
         }
@@ -517,41 +527,41 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+
+
 /* =============================================================================
 -----------------------------  Modal Open   ------------------------------
 ============================================================================= */
 
 // Load modal HTML dynamically
-fetch("/common/common-modal.html")
-  .then((res) => res.text())
-  .then((html) => {
-    const container = document.getElementById("modal-container");
+fetch('/common/common-modal.html')
+  .then(res => res.text())
+  .then(html => {
+    const container = document.getElementById('modal-container');
     if (container) {
       container.innerHTML = html;
     } else {
-      console.error("modal-container not found in the DOM");
+      console.error('modal-container not found in the DOM');
     }
   });
 
 // Function to open the modal
 function openModal() {
   resetModal();
-  const modal = new bootstrap.Modal(document.getElementById("offcanvasRight"));
+  const modal = new bootstrap.Modal(document.getElementById('exampleModal'));
   modal.show();
 }
 
 function closeModal() {
   resetModal();
-  const modal = bootstrap.Modal.getInstance(
-    document.getElementById("offcanvasRight")
-  );
+  const modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
   modal.hide();
 }
 
 function resetModal() {
-  document.getElementById("whitepaper").style.display = "block";
-  document.getElementById("successMessage").style.display = "none";
-  var form = document.getElementById("whitepaperForm");
+  document.getElementById('formContainer').style.display = 'block';
+  document.getElementById('successMessage').style.display = 'none';
+  var form = document.getElementById('whitepaperForm');
   form.reset();
 }
 
@@ -560,7 +570,7 @@ function copyLinkToClipboard() {
   const url = window.location.href;
   navigator.clipboard.writeText(url).then(() => {
     const toast = document.getElementById("copyToast");
-    toast.style.bottom = "0px";
+    toast.style.bottom = "50px";
     toast.style.position = "relative";
     setTimeout(() => {
       toast.style.bottom = "-60px";
@@ -568,6 +578,7 @@ function copyLinkToClipboard() {
     }, 2000);
   });
 }
+
 /* =============================================================================
 -------------------------------  Wow Animation   -------------------------------
 ============================================================================= */
@@ -577,6 +588,7 @@ wow = new WOW({
   offset: 100,
 });
 wow.init();
+
 
 $(function () {
   // Animate header container without preloader
@@ -588,41 +600,34 @@ $(function () {
   });
 });
 
+
 /* =============================================================================
 -----------------------------  Common Modal      ------------------------------
 ============================================================================= */
 
+
 function handleSubmit(event) {
   event.preventDefault();
 
-  const name = document.getElementById("fullName").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const company = document.getElementById("company").value.trim();
-  const jobTitle = document.getElementById("jobTitle").value.trim();
-  const consent = document.getElementById("gridCheck").checked;
+  const name = document.getElementById('fullName').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const company = document.getElementById('company').value.trim();
+  const jobTitle = document.getElementById('jobTitle').value.trim();
+  const consent = document.getElementById('gridCheck').checked;
 
   clearErrorMessages();
 
   const validationRules = [
-    { field: "fullName", value: name, message: "Full Name is required." },
-    {
-      field: "email",
-      value: email,
-      message: "Please enter a valid email address.",
-      pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/,
-    },
-    { field: "company", value: company, message: "Company is required." },
-    { field: "jobTitle", value: jobTitle, message: "Job Title is required." },
-    {
-      field: "gridCheck",
-      value: consent,
-      message: "You must agree to the Privacy Policy.",
-    },
+    { field: 'fullName', value: name, message: 'Full Name is required.' },
+    { field: 'email', value: email, message: 'Please enter a valid email address.', pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/ },
+    { field: 'company', value: company, message: 'Company is required.' },
+    { field: 'jobTitle', value: jobTitle, message: 'Job Title is required.' },
+    { field: 'gridCheck', value: consent, message: 'You must agree to the Privacy Policy.' },
   ];
 
   let hasError = false;
 
-  validationRules.forEach((rule) => {
+  validationRules.forEach(rule => {
     if (!rule.value || (rule.pattern && !rule.pattern.test(rule.value))) {
       showError(rule.field, rule.message);
       hasError = true;
@@ -631,33 +636,33 @@ function handleSubmit(event) {
 
   if (hasError) return;
 
-  fetch("/api/sendWhitePaper", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
+  fetch('/api/sendWhitePaper', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ name, email, company, jobTitle }),
   })
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.status === "success") {
-        // Hide form, show success
-        document.getElementById("whitepaper").style.display = "none";
-        document.getElementById("successMessage").style.display = "block";
-        event.target.reset(); // reset the form
+    .then(response => response.json())
+    .then(data => {
+      if (data.status === 'success') {
+        document.getElementById('formContainer').style.display = 'none';
+        document.getElementById('successMessage').style.display = 'block';
+        event.target.reset(); // Reset the form
       } else {
         console.error(data.message);
-        // Optionally show a general error message
+        // Optionally show form-level error message
       }
     })
-    .catch((error) => {
-      console.error("Error sending form:", error);
+    .catch(error => {
+      console.error('Error sending form:', error);
     });
 }
 
+
 function showError(inputId, message) {
   const inputElement = document.getElementById(inputId);
-  const errorMessage = document.createElement("div");
-  errorMessage.className = "error-message";
-  errorMessage.style.color = "red";
+  const errorMessage = document.createElement('div');
+  errorMessage.className = 'error-message';
+  errorMessage.style.color = 'red';
   errorMessage.textContent = message;
 
   // Append the error message below the input field
@@ -666,9 +671,10 @@ function showError(inputId, message) {
 
 // Function to clear previous error messages
 function clearErrorMessages() {
-  const errorMessages = document.querySelectorAll(".error-message");
-  errorMessages.forEach((message) => message.remove());
+  const errorMessages = document.querySelectorAll('.error-message');
+  errorMessages.forEach(message => message.remove());
 }
+
 
 var testim = new Swiper(".case-studies .testim-swiper", {
   slidesPerView: 3,
@@ -688,3 +694,6 @@ var testim = new Swiper(".case-studies .testim-swiper", {
     prevEl: ".case-studies .swiper-button-prev",
   },
 });
+
+
+
