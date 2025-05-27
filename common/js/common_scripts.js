@@ -498,15 +498,20 @@ document.addEventListener("DOMContentLoaded", function () {
       button.addEventListener("click", () => {
         const title = button.getAttribute("data-title") || "";
         const description = button.getAttribute("data-description") || "";
+        const image =
+          button.getAttribute("data-image") ||
+          "/inner_pages/assets/imgs/kross-book.png";
 
         const titleElement = document.getElementById("offcanvas-title");
         const descriptionElement = document.getElementById(
           "offcanvas-description"
         );
+        const imageElement = document.getElementById("offcanvas-image");
 
         if (titleElement) titleElement.textContent = title;
         if (descriptionElement) descriptionElement.textContent = description;
-
+        if (imageElement) imageElement.src = image;
+        if (imageElement) imageElement.srcset = image;
         if (bsOffcanvas) {
           bsOffcanvas.show();
         }
