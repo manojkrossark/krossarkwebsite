@@ -1,6 +1,8 @@
 $(function () {
   "use strict";
 
+  
+
   $(function () {
     $(".view-more-btn").on("click", function () {
       const $btn = $(this);

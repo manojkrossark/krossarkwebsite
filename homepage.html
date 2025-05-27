@@ -421,15 +421,16 @@
               </div>
             </div>
 
-            <div class="row">
+            <div class="row" style="position: relative;">
               <div class="col-12">
                 <div
-                  class="swiper testim-swiper swiper-container swiper-container-initialized swiper-container-horizontal">
+                  class="swiper testim-swiper swiper-container swiper-container-initialized swiper-container-horizontal"
+                  style="overflow: visible;">
                   <div class="swiper-wrapper"
                     style="transition-duration: 0ms; transform: translate3d(-1540px, 0px, 0px);">
                     <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next"
                       data-swiper-slide-index="2" style="width: 740px; margin-right: 30px;">
-                      <div class="workCard_listing_card__t_T6i  false   ">
+                      <div class="workCard_listing_card__t_T6i  false " style="overflow: visible;">
                         <span style="opacity: 1;">
                           <a class="workCard_image__OUzWj ratio ratio-1 clip-inset trigger" aria-label="Turtlewax"
                             href="#" style="--aspect-ratio: 100%;">
@@ -452,9 +453,56 @@
                                 digital transformation.</a>
                             </h4>
                             <div class="linking-btn">
-                              <button>
+                              <button class="saveOptions_btn_box__bn_1H">
                                 <i class="fas fa-share-alt"></i>
                               </button>
+                              <ul>
+                                <li>
+                                  <button
+                                    onclick="window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank')"
+                                    aria-label="facebook" class="react-share__ShareButton"
+                                    style="background-color: transparent; border: none; padding: 0px; font: inherit; color: inherit; cursor: pointer;">
+                                    <span>
+                                      <svg class="" width="15" height="15" viewBox="0 0 1024 1024"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        style="display: inline-block; vertical-align: middle;">
+                                        <path
+                                          d="M674.656 260.96c-19.569-6.021-42.097-9.646-65.42-9.982l-0.18-0.002c-26.656 0-84.064 16.96-84.064 49.888v78.848h136.32v132.544h-136.32v366.336h-137.344v-366.336h-67.648v-132.544h67.648v-66.848c0-100.8 47.168-184.608 160.928-184.608 5.067-0.165 11.025-0.259 17.005-0.259 45.981 0 90.665 5.554 133.417 16.028l-3.83-0.793z"
+                                          style="fill: rgb(0, 0, 0);"></path>
+                                      </svg>
+                                    </span><span>facebook</span>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button
+                                    onclick="window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`, '_blank')"
+                                    aria-label="linkedin" class="react-share__ShareButton"
+                                    style="background-color: transparent; border: none; padding: 0px; font: inherit; color: inherit; cursor: pointer;">
+                                    <span><svg class="" width="15" height="15" viewBox="0 0 1024 1024"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        style="display: inline-block; vertical-align: middle;">
+                                        <path
+                                          d="M311.808 236.224c-0.344 41.499-34.066 75.008-75.614 75.008-41.762 0-75.616-33.854-75.616-75.616s33.854-75.616 75.616-75.616c0.010 0 0.021 0 0.031 0l-0.002-0c41.749 0.017 75.586 33.865 75.586 75.616 0 0.214-0.001 0.427-0.003 0.641l0-0.033zM312.416 373.408h-152.416v487.808h152.448zM555.616 373.408h-151.296v487.808h151.488v-256c0-142.368 183.808-154.016 183.808 0v256h152.064v-308.864c0-240.256-272-231.488-336-113.216z"
+                                          style="fill: rgb(0, 0, 0);"></path>
+                                      </svg>
+                                    </span>
+                                    <span>LinkedIn</span>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button onclick="copyLinkToClipboard()">
+                                    <span>
+                                      <svg class="" width="12" height="12" viewBox="0 0 884 1024"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        style="display: inline-block; vertical-align: middle;">
+                                        <path
+                                          d="M651.62 0h-558.525c-51.352 0.157-92.938 41.743-93.095 93.080l-0 0.015v651.62h93.095v-651.62h558.525zM791.239 186.19h-511.954c-51.352 0.157-92.938 41.743-93.095 93.080l-0 0.015v651.62c0.157 51.352 41.743 92.938 93.080 93.095l0.015 0h511.954c51.391-0.104 93.030-41.711 93.187-93.080l0-0.015v-651.62c-0.157-51.384-41.796-92.991-93.177-93.095l-0.010-0zM791.239 930.905h-511.954v-651.62h511.954z"
+                                          style="fill: rgb(0, 0, 0);"></path>
+                                      </svg></span>
+                                    <span>Copy Link</span>
+                                  </button>
+                                </li>
+                              </ul>
                               <button id="loadOffcanvasBtn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
                                 <i class="fas fa-download"></i>
                               </button>
@@ -465,7 +513,7 @@
                     </div>
                     <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="0"
                       style="width: 740px; margin-right: 30px;">
-                      <div class="workCard_listing_card__t_T6i  false   ">
+                      <div class="workCard_listing_card__t_T6i  false" style="overflow: visible;">
                         <span style="opacity: 1;">
                           <a class="workCard_image__OUzWj ratio ratio-1 clip-inset trigger" aria-label="Turtlewax"
                             href="#" style="--aspect-ratio: 100%;">
@@ -481,15 +529,62 @@
                                 <button class="workCard_work_link__wSWzh">Redefining Innovation in Technology</button>
                               </div>
                             </h3>
-                            <h4 class="workCard_title__CmBr9 mb-0 "><a aria-label="Turtlewax" 
+                            <h4 class="workCard_title__CmBr9 mb-0 "><a aria-label="Turtlewax"
                                 class="lh-title-sub fw-light" href="/works/turtlewax">Sony is a global leader in
                                 electronics, gaming, offering innovative products across audio, visual & interactive
                                 entertainment.</a>
                             </h4>
                             <div class="linking-btn">
-                              <button>
+                              <button class="saveOptions_btn_box__bn_1H">
                                 <i class="fas fa-share-alt"></i>
                               </button>
+                              <ul>
+                                <li>
+                                  <button
+                                    onclick="window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank')"
+                                    aria-label="facebook" class="react-share__ShareButton"
+                                    style="background-color: transparent; border: none; padding: 0px; font: inherit; color: inherit; cursor: pointer;">
+                                    <span>
+                                      <svg class="" width="15" height="15" viewBox="0 0 1024 1024"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        style="display: inline-block; vertical-align: middle;">
+                                        <path
+                                          d="M674.656 260.96c-19.569-6.021-42.097-9.646-65.42-9.982l-0.18-0.002c-26.656 0-84.064 16.96-84.064 49.888v78.848h136.32v132.544h-136.32v366.336h-137.344v-366.336h-67.648v-132.544h67.648v-66.848c0-100.8 47.168-184.608 160.928-184.608 5.067-0.165 11.025-0.259 17.005-0.259 45.981 0 90.665 5.554 133.417 16.028l-3.83-0.793z"
+                                          style="fill: rgb(0, 0, 0);"></path>
+                                      </svg>
+                                    </span><span>facebook</span>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button
+                                    onclick="window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`, '_blank')"
+                                    aria-label="linkedin" class="react-share__ShareButton"
+                                    style="background-color: transparent; border: none; padding: 0px; font: inherit; color: inherit; cursor: pointer;">
+                                    <span><svg class="" width="15" height="15" viewBox="0 0 1024 1024"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        style="display: inline-block; vertical-align: middle;">
+                                        <path
+                                          d="M311.808 236.224c-0.344 41.499-34.066 75.008-75.614 75.008-41.762 0-75.616-33.854-75.616-75.616s33.854-75.616 75.616-75.616c0.010 0 0.021 0 0.031 0l-0.002-0c41.749 0.017 75.586 33.865 75.586 75.616 0 0.214-0.001 0.427-0.003 0.641l0-0.033zM312.416 373.408h-152.416v487.808h152.448zM555.616 373.408h-151.296v487.808h151.488v-256c0-142.368 183.808-154.016 183.808 0v256h152.064v-308.864c0-240.256-272-231.488-336-113.216z"
+                                          style="fill: rgb(0, 0, 0);"></path>
+                                      </svg>
+                                    </span>
+                                    <span>LinkedIn</span>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button onclick="copyLinkToClipboard()">
+                                    <span>
+                                      <svg class="" width="12" height="12" viewBox="0 0 884 1024"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        style="display: inline-block; vertical-align: middle;">
+                                        <path
+                                          d="M651.62 0h-558.525c-51.352 0.157-92.938 41.743-93.095 93.080l-0 0.015v651.62h93.095v-651.62h558.525zM791.239 186.19h-511.954c-51.352 0.157-92.938 41.743-93.095 93.080l-0 0.015v651.62c0.157 51.352 41.743 92.938 93.080 93.095l0.015 0h511.954c51.391-0.104 93.030-41.711 93.187-93.080l0-0.015v-651.62c-0.157-51.384-41.796-92.991-93.177-93.095l-0.010-0zM791.239 930.905h-511.954v-651.62h511.954z"
+                                          style="fill: rgb(0, 0, 0);"></path>
+                                      </svg></span>
+                                    <span>Copy Link</span>
+                                  </button>
+                                </li>
+                              </ul>
                               <button id="loadOffcanvasBtn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
                                 <i class="fas fa-download"></i>
                               </button>
@@ -500,7 +595,7 @@
                     </div>
                     <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="1"
                       style="width: 740px; margin-right: 30px;">
-                      <div class="workCard_listing_card__t_T6i  false   ">
+                      <div class="workCard_listing_card__t_T6i  false" style="overflow: visible;">
                         <span style="opacity: 1;">
                           <a class="workCard_image__OUzWj ratio ratio-1 clip-inset trigger" aria-label="Turtlewax"
                             href="#" style="--aspect-ratio: 100%;">
@@ -517,14 +612,61 @@
                                   Experiences</button>
                               </div>
                             </h3>
-                            <h4 class="workCard_title__CmBr9 mb-0 "><a aria-label="Turtlewax" 
+                            <h4 class="workCard_title__CmBr9 mb-0 "><a aria-label="Turtlewax"
                                 class="lh-title-sub fw-light" href="#">Global hospitality company known for its
                                 premium hotels, resorts and personalized guest experiences.</a>
                             </h4>
                             <div class="linking-btn">
-                              <button>
+                              <button class="saveOptions_btn_box__bn_1H">
                                 <i class="fas fa-share-alt"></i>
                               </button>
+                              <ul>
+                                <li>
+                                  <button
+                                    onclick="window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank')"
+                                    aria-label="facebook" class="react-share__ShareButton"
+                                    style="background-color: transparent; border: none; padding: 0px; font: inherit; color: inherit; cursor: pointer;">
+                                    <span>
+                                      <svg class="" width="15" height="15" viewBox="0 0 1024 1024"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        style="display: inline-block; vertical-align: middle;">
+                                        <path
+                                          d="M674.656 260.96c-19.569-6.021-42.097-9.646-65.42-9.982l-0.18-0.002c-26.656 0-84.064 16.96-84.064 49.888v78.848h136.32v132.544h-136.32v366.336h-137.344v-366.336h-67.648v-132.544h67.648v-66.848c0-100.8 47.168-184.608 160.928-184.608 5.067-0.165 11.025-0.259 17.005-0.259 45.981 0 90.665 5.554 133.417 16.028l-3.83-0.793z"
+                                          style="fill: rgb(0, 0, 0);"></path>
+                                      </svg>
+                                    </span><span>facebook</span>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button
+                                    onclick="window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`, '_blank')"
+                                    aria-label="linkedin" class="react-share__ShareButton"
+                                    style="background-color: transparent; border: none; padding: 0px; font: inherit; color: inherit; cursor: pointer;">
+                                    <span><svg class="" width="15" height="15" viewBox="0 0 1024 1024"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        style="display: inline-block; vertical-align: middle;">
+                                        <path
+                                          d="M311.808 236.224c-0.344 41.499-34.066 75.008-75.614 75.008-41.762 0-75.616-33.854-75.616-75.616s33.854-75.616 75.616-75.616c0.010 0 0.021 0 0.031 0l-0.002-0c41.749 0.017 75.586 33.865 75.586 75.616 0 0.214-0.001 0.427-0.003 0.641l0-0.033zM312.416 373.408h-152.416v487.808h152.448zM555.616 373.408h-151.296v487.808h151.488v-256c0-142.368 183.808-154.016 183.808 0v256h152.064v-308.864c0-240.256-272-231.488-336-113.216z"
+                                          style="fill: rgb(0, 0, 0);"></path>
+                                      </svg>
+                                    </span>
+                                    <span>LinkedIn</span>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button onclick="copyLinkToClipboard()">
+                                    <span>
+                                      <svg class="" width="12" height="12" viewBox="0 0 884 1024"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        style="display: inline-block; vertical-align: middle;">
+                                        <path
+                                          d="M651.62 0h-558.525c-51.352 0.157-92.938 41.743-93.095 93.080l-0 0.015v651.62h93.095v-651.62h558.525zM791.239 186.19h-511.954c-51.352 0.157-92.938 41.743-93.095 93.080l-0 0.015v651.62c0.157 51.352 41.743 92.938 93.080 93.095l0.015 0h511.954c51.391-0.104 93.030-41.711 93.187-93.080l0-0.015v-651.62c-0.157-51.384-41.796-92.991-93.177-93.095l-0.010-0zM791.239 930.905h-511.954v-651.62h511.954z"
+                                          style="fill: rgb(0, 0, 0);"></path>
+                                      </svg></span>
+                                    <span>Copy Link</span>
+                                  </button>
+                                </li>
+                              </ul>
                               <button id="loadOffcanvasBtn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
                                 <i class="fas fa-download"></i>
                               </button>
@@ -535,7 +677,7 @@
                     </div>
                     <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="2"
                       style="width: 740px; margin-right: 30px;">
-                      <div class="workCard_listing_card__t_T6i  false   ">
+                      <div class="workCard_listing_card__t_T6i  false" style="overflow: visible;">
                         <span style="opacity: 1;">
                           <a class="workCard_image__OUzWj ratio ratio-1 clip-inset trigger" aria-label="Turtlewax"
                             href="#" style="--aspect-ratio: 100%;">
@@ -552,14 +694,61 @@
                                   Energy</button>
                               </div>
                             </h3>
-                            <h4 class="workCard_title__CmBr9 mb-0 "><a aria-label="Turtlewax" 
+                            <h4 class="workCard_title__CmBr9 mb-0 "><a aria-label="Turtlewax"
                                 class="lh-title-sub fw-light" href="#">Delivering cutting-edge solutions for
                                 highly complex construction, electrical and engineering projects.</a>
                             </h4>
                             <div class="linking-btn">
-                              <button>
+                              <button class="saveOptions_btn_box__bn_1H">
                                 <i class="fas fa-share-alt"></i>
                               </button>
+                              <ul>
+                                <li>
+                                  <button
+                                    onclick="window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank')"
+                                    aria-label="facebook" class="react-share__ShareButton"
+                                    style="background-color: transparent; border: none; padding: 0px; font: inherit; color: inherit; cursor: pointer;">
+                                    <span>
+                                      <svg class="" width="15" height="15" viewBox="0 0 1024 1024"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        style="display: inline-block; vertical-align: middle;">
+                                        <path
+                                          d="M674.656 260.96c-19.569-6.021-42.097-9.646-65.42-9.982l-0.18-0.002c-26.656 0-84.064 16.96-84.064 49.888v78.848h136.32v132.544h-136.32v366.336h-137.344v-366.336h-67.648v-132.544h67.648v-66.848c0-100.8 47.168-184.608 160.928-184.608 5.067-0.165 11.025-0.259 17.005-0.259 45.981 0 90.665 5.554 133.417 16.028l-3.83-0.793z"
+                                          style="fill: rgb(0, 0, 0);"></path>
+                                      </svg>
+                                    </span><span>facebook</span>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button
+                                    onclick="window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`, '_blank')"
+                                    aria-label="linkedin" class="react-share__ShareButton"
+                                    style="background-color: transparent; border: none; padding: 0px; font: inherit; color: inherit; cursor: pointer;">
+                                    <span><svg class="" width="15" height="15" viewBox="0 0 1024 1024"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        style="display: inline-block; vertical-align: middle;">
+                                        <path
+                                          d="M311.808 236.224c-0.344 41.499-34.066 75.008-75.614 75.008-41.762 0-75.616-33.854-75.616-75.616s33.854-75.616 75.616-75.616c0.010 0 0.021 0 0.031 0l-0.002-0c41.749 0.017 75.586 33.865 75.586 75.616 0 0.214-0.001 0.427-0.003 0.641l0-0.033zM312.416 373.408h-152.416v487.808h152.448zM555.616 373.408h-151.296v487.808h151.488v-256c0-142.368 183.808-154.016 183.808 0v256h152.064v-308.864c0-240.256-272-231.488-336-113.216z"
+                                          style="fill: rgb(0, 0, 0);"></path>
+                                      </svg>
+                                    </span>
+                                    <span>LinkedIn</span>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button onclick="copyLinkToClipboard()">
+                                    <span>
+                                      <svg class="" width="12" height="12" viewBox="0 0 884 1024"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        style="display: inline-block; vertical-align: middle;">
+                                        <path
+                                          d="M651.62 0h-558.525c-51.352 0.157-92.938 41.743-93.095 93.080l-0 0.015v651.62h93.095v-651.62h558.525zM791.239 186.19h-511.954c-51.352 0.157-92.938 41.743-93.095 93.080l-0 0.015v651.62c0.157 51.352 41.743 92.938 93.080 93.095l0.015 0h511.954c51.391-0.104 93.030-41.711 93.187-93.080l0-0.015v-651.62c-0.157-51.384-41.796-92.991-93.177-93.095l-0.010-0zM791.239 930.905h-511.954v-651.62h511.954z"
+                                          style="fill: rgb(0, 0, 0);"></path>
+                                      </svg></span>
+                                    <span>Copy Link</span>
+                                  </button>
+                                </li>
+                              </ul>
                               <button id="loadOffcanvasBtn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
                                 <i class="fas fa-download"></i>
                               </button>
@@ -570,7 +759,7 @@
                     </div>
                     <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="3"
                       style="width: 740px; margin-right: 30px;">
-                      <div class="workCard_listing_card__t_T6i  false   ">
+                      <div class="workCard_listing_card__t_T6i  false" style="overflow: visible;">
                         <span style="opacity: 1;">
                           <a class="workCard_image__OUzWj ratio ratio-1 clip-inset trigger" aria-label="Turtlewax"
                             href="#" style="--aspect-ratio: 100%;">
@@ -593,9 +782,56 @@
                                 requirements.</a>
                             </h4>
                             <div class="linking-btn">
-                              <button>
+                              <button class="saveOptions_btn_box__bn_1H">
                                 <i class="fas fa-share-alt"></i>
                               </button>
+                              <ul>
+                                <li>
+                                  <button
+                                    onclick="window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank')"
+                                    aria-label="facebook" class="react-share__ShareButton"
+                                    style="background-color: transparent; border: none; padding: 0px; font: inherit; color: inherit; cursor: pointer;">
+                                    <span>
+                                      <svg class="" width="15" height="15" viewBox="0 0 1024 1024"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        style="display: inline-block; vertical-align: middle;">
+                                        <path
+                                          d="M674.656 260.96c-19.569-6.021-42.097-9.646-65.42-9.982l-0.18-0.002c-26.656 0-84.064 16.96-84.064 49.888v78.848h136.32v132.544h-136.32v366.336h-137.344v-366.336h-67.648v-132.544h67.648v-66.848c0-100.8 47.168-184.608 160.928-184.608 5.067-0.165 11.025-0.259 17.005-0.259 45.981 0 90.665 5.554 133.417 16.028l-3.83-0.793z"
+                                          style="fill: rgb(0, 0, 0);"></path>
+                                      </svg>
+                                    </span><span>facebook</span>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button
+                                    onclick="window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`, '_blank')"
+                                    aria-label="linkedin" class="react-share__ShareButton"
+                                    style="background-color: transparent; border: none; padding: 0px; font: inherit; color: inherit; cursor: pointer;">
+                                    <span><svg class="" width="15" height="15" viewBox="0 0 1024 1024"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        style="display: inline-block; vertical-align: middle;">
+                                        <path
+                                          d="M311.808 236.224c-0.344 41.499-34.066 75.008-75.614 75.008-41.762 0-75.616-33.854-75.616-75.616s33.854-75.616 75.616-75.616c0.010 0 0.021 0 0.031 0l-0.002-0c41.749 0.017 75.586 33.865 75.586 75.616 0 0.214-0.001 0.427-0.003 0.641l0-0.033zM312.416 373.408h-152.416v487.808h152.448zM555.616 373.408h-151.296v487.808h151.488v-256c0-142.368 183.808-154.016 183.808 0v256h152.064v-308.864c0-240.256-272-231.488-336-113.216z"
+                                          style="fill: rgb(0, 0, 0);"></path>
+                                      </svg>
+                                    </span>
+                                    <span>LinkedIn</span>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button onclick="copyLinkToClipboard()">
+                                    <span>
+                                      <svg class="" width="12" height="12" viewBox="0 0 884 1024"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        style="display: inline-block; vertical-align: middle;">
+                                        <path
+                                          d="M651.62 0h-558.525c-51.352 0.157-92.938 41.743-93.095 93.080l-0 0.015v651.62h93.095v-651.62h558.525zM791.239 186.19h-511.954c-51.352 0.157-92.938 41.743-93.095 93.080l-0 0.015v651.62c0.157 51.352 41.743 92.938 93.080 93.095l0.015 0h511.954c51.391-0.104 93.030-41.711 93.187-93.080l0-0.015v-651.62c-0.157-51.384-41.796-92.991-93.177-93.095l-0.010-0zM791.239 930.905h-511.954v-651.62h511.954z"
+                                          style="fill: rgb(0, 0, 0);"></path>
+                                      </svg></span>
+                                    <span>Copy Link</span>
+                                  </button>
+                                </li>
+                              </ul>
                               <button id="loadOffcanvasBtn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
                                 <i class="fas fa-download"></i>
                               </button>
@@ -606,7 +842,7 @@
                     </div>
                     <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev"
                       data-swiper-slide-index="0" style="width: 740px; margin-right: 30px;">
-                      <div class="workCard_listing_card__t_T6i  false   ">
+                      <div class="workCard_listing_card__t_T6i  false" style="overflow: visible;">
                         <span style="opacity: 1;">
                           <a class="workCard_image__OUzWj ratio ratio-1 clip-inset trigger" aria-label="Turtlewax"
                             href="#" style="--aspect-ratio: 100%;">
@@ -623,15 +859,62 @@
                                   Credentialing</button>
                               </div>
                             </h3>
-                            <h4 class="workCard_title__CmBr9 mb-0 "><a aria-label="Turtlewax" 
+                            <h4 class="workCard_title__CmBr9 mb-0 "><a aria-label="Turtlewax"
                                 class="lh-title-sub fw-light" href="#">Building optimal provider networks to
                                 streamline credentialing, enhance compliance, reduce costs and boost efficiency in
                                 healthcare.</a>
                             </h4>
                             <div class="linking-btn">
-                              <button>
+                              <button class="saveOptions_btn_box__bn_1H">
                                 <i class="fas fa-share-alt"></i>
                               </button>
+                              <ul>
+                                <li>
+                                  <button
+                                    onclick="window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank')"
+                                    aria-label="facebook" class="react-share__ShareButton"
+                                    style="background-color: transparent; border: none; padding: 0px; font: inherit; color: inherit; cursor: pointer;">
+                                    <span>
+                                      <svg class="" width="15" height="15" viewBox="0 0 1024 1024"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        style="display: inline-block; vertical-align: middle;">
+                                        <path
+                                          d="M674.656 260.96c-19.569-6.021-42.097-9.646-65.42-9.982l-0.18-0.002c-26.656 0-84.064 16.96-84.064 49.888v78.848h136.32v132.544h-136.32v366.336h-137.344v-366.336h-67.648v-132.544h67.648v-66.848c0-100.8 47.168-184.608 160.928-184.608 5.067-0.165 11.025-0.259 17.005-0.259 45.981 0 90.665 5.554 133.417 16.028l-3.83-0.793z"
+                                          style="fill: rgb(0, 0, 0);"></path>
+                                      </svg>
+                                    </span><span>facebook</span>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button
+                                    onclick="window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`, '_blank')"
+                                    aria-label="linkedin" class="react-share__ShareButton"
+                                    style="background-color: transparent; border: none; padding: 0px; font: inherit; color: inherit; cursor: pointer;">
+                                    <span><svg class="" width="15" height="15" viewBox="0 0 1024 1024"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        style="display: inline-block; vertical-align: middle;">
+                                        <path
+                                          d="M311.808 236.224c-0.344 41.499-34.066 75.008-75.614 75.008-41.762 0-75.616-33.854-75.616-75.616s33.854-75.616 75.616-75.616c0.010 0 0.021 0 0.031 0l-0.002-0c41.749 0.017 75.586 33.865 75.586 75.616 0 0.214-0.001 0.427-0.003 0.641l0-0.033zM312.416 373.408h-152.416v487.808h152.448zM555.616 373.408h-151.296v487.808h151.488v-256c0-142.368 183.808-154.016 183.808 0v256h152.064v-308.864c0-240.256-272-231.488-336-113.216z"
+                                          style="fill: rgb(0, 0, 0);"></path>
+                                      </svg>
+                                    </span>
+                                    <span>LinkedIn</span>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button onclick="copyLinkToClipboard()">
+                                    <span>
+                                      <svg class="" width="12" height="12" viewBox="0 0 884 1024"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        style="display: inline-block; vertical-align: middle;">
+                                        <path
+                                          d="M651.62 0h-558.525c-51.352 0.157-92.938 41.743-93.095 93.080l-0 0.015v651.62h93.095v-651.62h558.525zM791.239 186.19h-511.954c-51.352 0.157-92.938 41.743-93.095 93.080l-0 0.015v651.62c0.157 51.352 41.743 92.938 93.080 93.095l0.015 0h511.954c51.391-0.104 93.030-41.711 93.187-93.080l0-0.015v-651.62c-0.157-51.384-41.796-92.991-93.177-93.095l-0.010-0zM791.239 930.905h-511.954v-651.62h511.954z"
+                                          style="fill: rgb(0, 0, 0);"></path>
+                                      </svg></span>
+                                    <span>Copy Link</span>
+                                  </button>
+                                </li>
+                              </ul>
                               <button id="loadOffcanvasBtn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
                                 <i class="fas fa-download"></i>
                               </button>
@@ -648,110 +931,15 @@
                 </div>
               </div>
 
-              <!-- <div class="col-lg-4 col-sm-6">
-                  <div class="case-studies-group">
-                    <div class="image-zoom-container">
-                      <img src="/inner_pages/assets/imgs/homepage/digital-transformation.webp"
-                        alt="digital-transformation" />
-                    </div>
-                    <h6>Powering the Future of Connectivity</h6>
-                    <p class="toggle-paragraph">
-                      Global leader in networking and IT, providing solutions
-                      for connectivity, cybersecurity and digital
-                      transformation.
-                    </p>
-                    <button type="button" class="btn btn-primary" onclick="openModal()">
-                      Know More <i class="fa fa-arrow-right"></i>
-                    </button>
-                  </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-6">
-                  <div class="case-studies-group">
-                    <div class="image-zoom-container">
-                      <img src="/inner_pages/assets/imgs/homepage/innovation.webp" alt="innovation" />
-                    </div>
-                    <h6>
-                      Redefining Innovation in Entertainment & Technology
-                    </h6>
-                    <p class="toggle-paragraph">
-                      Sony is a global leader in electronics, entertainment
-                      and gaming, offering innovative products across audio,
-                      visual and interactive entertainment.
-                    </p>
-                    <button type="button" class="btn btn-primary" onclick="openModal()">
-                      Know More <i class="fa fa-arrow-right"></i>
-                    </button>
-                  </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                  <div class="case-studies-group">
-                    <div class="image-zoom-container">
-                      <img src="/inner_pages/assets/imgs/homepage/hospitality.webp" alt="hospitality" />
-                    </div>
-                    <h6>Crafting Exceptional Hospitality Experiences</h6>
-                    <p class="toggle-paragraph">
-                      Global hospitality company known for its premium hotels,
-                      resorts and personalized guest experiences.
-                    </p>
-                    <button type="button" class="btn btn-primary" onclick="openModal()">
-                      Know More <i class="fa fa-arrow-right"></i>
-                    </button>
-                  </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                  <div class="case-studies-group">
-                    <div class="image-zoom-container">
-                      <img src="/inner_pages/assets/imgs/homepage/sustainable.webp" alt="sustainable" />
-                    </div>
-                    <h6>Leading the Charge in Sustainable Energy</h6>
-                    <p class="toggle-paragraph">
-                      Delivering cutting-edge solutions for highly complex
-                      construction, electrical and engineering projects.
-                    </p>
-                    <button type="button" class="btn btn-primary" onclick="openModal()">
-                      Know More <i class="fa fa-arrow-right"></i>
-                    </button>
-                  </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                  <div class="case-studies-group">
-                    <div class="image-zoom-container">
-                      <img src="/inner_pages/assets/imgs/homepage/petcare.webp" alt="petcare" />
-                    </div>
-                    <h6>Revolutionizing Pet Care for Modern Owners</h6>
-                    <p class="toggle-paragraph">
-                      Delivers customized, high-quality solutions to the
-                      e-commerce industry to streamline business needs /
-                      requirements.
-                    </p>
-                    <button type="button" class="btn btn-primary" onclick="openModal()">
-                      Know More <i class="fa fa-arrow-right"></i>
-                    </button>
-                  </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                  <div class="case-studies-group">
-                    <div class="image-zoom-container">
-                      <img src="/inner_pages/assets/imgs/homepage/credentialing.webp" alt="credentialing" />
-                    </div>
-                    <h6>Building Trust Through Seamless Credentialing</h6>
-                    <p class="toggle-paragraph">
-                      Building optimal provider networks to streamline
-                      credentialing, enhance compliance, reduce costs and
-                      boost efficiency in healthcare.
-                    </p>
-                    <button type="button" class="btn btn-primary" onclick="openModal()">
-                      Know More <i class="fa fa-arrow-right"></i>
-                    </button>
-                  </div>
-                </div> -->
-
             </div>
           </div>
         </section>
 
-
+        <div id="copyToast" class="copytoast">
+          <svg width="18" height="18" viewBox="0 0 16 16">
+            <path d="M16 2L6 14 0 8l2-2 4 4L14 0z" fill="white" />
+          </svg> Copied to clipboard!
+        </div>
         <!-- ==================== Our Services ==================== -->
 
         <section class="work-card">

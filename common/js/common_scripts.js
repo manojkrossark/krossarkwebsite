@@ -459,6 +459,8 @@ $(document).ready(function () {
   });
 });
 
+// Right Sidebar Canvas
+
 document.addEventListener("DOMContentLoaded", function () {
   const button = document.getElementById("loadOffcanvasBtn");
 
@@ -490,6 +492,8 @@ document.addEventListener("DOMContentLoaded", function () {
     console.error("Button with ID 'loadOffcanvasBtn' not found in DOM.");
   }
 });
+
+
 
 
 /* =============================================================================
@@ -529,6 +533,18 @@ function resetModal() {
 }
 
 
+function copyLinkToClipboard() {
+  const url = window.location.href;
+  navigator.clipboard.writeText(url).then(() => {
+    const toast = document.getElementById("copyToast");
+    toast.style.bottom = "0px";
+    toast.style.position = "relative";
+    setTimeout(() => {
+      toast.style.bottom = "-60px";
+      toast.style.position = "fixed";
+    }, 2000);
+  });
+}
 /* =============================================================================
 -------------------------------  Wow Animation   -------------------------------
 ============================================================================= */
