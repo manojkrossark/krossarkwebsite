@@ -68,9 +68,11 @@ const video = document.getElementById("bgVideo");
 const text1 = document.getElementById("text1");
 const text2 = document.getElementById("text2");
 const text3 = document.getElementById("text3");
+const text4 = document.getElementById("text4");
+const text5 = document.getElementById("text5");
 
 // Initially hide all text
-[text1, text2, text3].forEach((text) => {
+[text1, text2, text3, text4, text5].forEach((text) => {
   text.style.display = "block";
   text.style.opacity = 0;
 });
@@ -103,9 +105,12 @@ function startTextSync() {
   function syncText() {
     const time = video.currentTime;
 
-    text1.style.opacity = time >= 0 && time < 16 ? 1 : 0;
-    text2.style.opacity = time >= 16 && time < 20 ? 1 : 0;
-    text3.style.opacity = time >= 20 ? 1 : 0;
+    // Updated timing logic
+    text1.style.opacity = (time >= 0 && time < 5) ? 1 : 0;
+    text2.style.opacity = (time >= 5 && time < 12) ? 1 : 0;
+    text3.style.opacity = (time >= 12 && time < 17) ? 1 : 0;
+    text4.style.opacity = (time >= 17 && time < 21) ? 1 : 0;
+    text5.style.opacity = (time >= 21) ? 1 : 0;
 
     requestAnimationFrame(syncText);
   }
