@@ -55,6 +55,11 @@
         margin: .2777777778rem 0;
     }
 
+    .callBackCta_cta__norp0:after {
+        width: 50px;
+        height: 50px;
+    }
+
     .container {
         --gutter-x: 1.5rem;
     }
@@ -158,6 +163,11 @@
         opacity: 0;
         transition: all .12s ease-in;
         will-change: transform;
+    }
+
+    .callBackCta_cta__norp0:hover:after {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
     }
 
     .searchOffCanvas_close__bWTeZ:hover:after {
