@@ -24,6 +24,18 @@
     .container-sm {
         max-width: 540px;
     }
+
+    .dynamicOffCanvas_image_wrapper__L9t4Q {
+        margin-bottom: 2.2222222222rem;
+    }
+
+    .workWithUs__work_with_us_wrapper__3OYTR {
+        --padding-bottom: 2.2222222222rem;
+    }
+
+    .workWithUs__action__ZTthi a {
+        width: auto;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -52,6 +64,15 @@
         --padding-bottom: 3rem;
     }
 
+    .dynamicOffCanvas_offcanvas__7RwZB,
+    .dynamicOffCanvas_offcanvas__7RwZB.offcanvas {
+        --offcanvas-width: 90vw;
+    }
+
+    .dynamicOffCanvas_content_wrapper__XdCMS {
+        --padding-y: 2.8rem;
+    }
+
 }
 
 @media screen and (min-width: 992px) {
@@ -73,6 +94,50 @@
     .heroBanner_inner_banner__13x5V {
         --padding-top: 6.4444444444rem;
         --padding-bottom: 1.8333333333rem;
+    }
+
+    .dynamicOffCanvas_offcanvas__7RwZB,
+    .dynamicOffCanvas_offcanvas__7RwZB.offcanvas {
+        --offcanvas-width: 43rem;
+        --image-ratio: 47.157622739%;
+    }
+
+    .dynamicOffCanvas_image_wrapper__L9t4Q {
+        margin-bottom: 2.7777777778rem;
+    }
+
+    .dynamicOffCanvas_offcanvas__7RwZB .offcanvas-header button,
+    .dynamicOffCanvas_offcanvas__7RwZB.offcanvas .offcanvas-header button {
+        right: .8333333333rem;
+    }
+
+    .workWithUs__work_with_us_wrapper__3OYTR {
+        --padding-top: 2.1111111111rem;
+        --padding-bottom: 2.7777777778rem;
+    }
+
+    .workWithUs__title__Y4Xby {
+        font-size: 2.7777777778rem;
+    }
+
+    .mailandContactBox_content__OENNL {
+        margin-bottom: 2.5rem;
+    }
+
+    .mailandContactBox_content__OENNL p {
+        line-height: 1.67;
+    }
+
+    .workWithUs__action__ZTthi {
+        margin-top: 1.3888888889rem;
+    }
+
+    .dynamicOffCanvas_content_wrapper__XdCMS {
+        --padding-y: 3.2222222222rem;
+    }
+
+    .dynamicOffCanvas_content_wrapper__XdCMS .dynamicOffCanvas_intro_description__MuQR7 {
+        margin-bottom: 2.7777777778rem;
     }
 
 }

@@ -2535,3 +2535,193 @@ p {
 .offcanvasCard_card_content__Sm7pY .offcanvasCard_card_more__HBLoh svg {
   fill: #003bff;
 }
+
+
+.offcanvas-end {
+  width: var(--offcanvas-width);
+}
+
+.dynamicOffCanvas_offcanvas__7RwZB,
+.dynamicOffCanvas_offcanvas__7RwZB.offcanvas {
+  --offcanvas-width: 43rem;
+  --image-ratio: 47.157622739%;
+  --offcanvas-padding-x: 0;
+  --offcanvas-padding-y: 0;
+  transition: all .48s ease-in-out;
+  border-left: none !important;
+}
+
+.dynamicOffCanvas_into_wrapper__mGt16 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.dynamicOffCanvas_image_wrapper__L9t4Q {
+  width: 100%;
+  position: relative;
+  margin-bottom: 1.6666666667rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.dynamicOffCanvas_image_wrapper__L9t4Q .dynamicOffCanvas_image_container__SBs38 {
+  width: 100%;
+  position: relative;
+}
+
+
+.dynamicOffCanvas_offcanvas__7RwZB .offcanvas-header,
+.dynamicOffCanvas_offcanvas__7RwZB.offcanvas .offcanvas-header {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 99;
+}
+
+
+
+.dynamicOffCanvas_offcanvas__7RwZB .offcanvas-header button,
+.dynamicOffCanvas_offcanvas__7RwZB.offcanvas .offcanvas-header button {
+  width: 2.2222222222rem;
+  height: 2.2222222222rem;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  right: .3888888889rem;
+  top: 0;
+  opacity: 1;
+  background-size: .8333333333rem;
+  background-color: hsla(0, 0%, 100%, .6);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  border: 1px solid hsla(0, 0%, 93%, .77);
+  transition: filter .3s ease-in-out;
+}
+
+.dynamicOffCanvas_offcanvas__7RwZB .offcanvas-header button:hover,
+.dynamicOffCanvas_offcanvas__7RwZB.offcanvas .offcanvas-header button:hover {
+  filter: invert(1);
+}
+
+.dynamicOffCanvas_image_wrapper__L9t4Q .dynamicOffCanvas_image_container__SBs38 img {
+  object-fit: cover;
+}
+
+.dynamicOffCanvas_image_bg__k3Gkh {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  background-color: #eee;
+  z-index: 1;
+  transition: all .15s ease;
+  opacity: 1;
+}
+
+.dynamicOffCanvas_image_bg__k3Gkh.dynamicOffCanvas_loadded__2gqI2 {
+  opacity: 0;
+}
+
+.dynamicOffCanvas_image_wrapper__L9t4Q .dynamicOffCanvas_image_container__SBs38:after {
+  content: "";
+  width: 100%;
+  position: relative;
+  padding-bottom: var(--image-ratio);
+  display: flex;
+}
+
+.workWithUs__work_with_us_wrapper__3OYTR {
+  --border-color: #ccc;
+  border-top: 1px solid var(--border-color);
+  --padding-top: 2.2222222222rem;
+  --padding-bottom: 5.5555555556rem;
+  --margin-bottom: 0rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: var(--padding-top) 0 var(--padding-bottom);
+  margin-bottom: var(--margin-bottom);
+}
+
+.workWithUs__title__Y4Xby {
+  font-size: 30px;
+}
+
+.fw-regular {
+  font-weight: 400 !important;
+}
+
+.mailandContactBox_content__OENNL {
+  width: 100%;
+}
+
+.mailandContactBox_content__OENNL p {
+  line-height: 1.5;
+}
+
+.dynamicOffCanvas_content_wrapper__XdCMS {
+  --padding-y: 1.1111111111rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 0 var(--padding-y);
+}
+
+.dynamicOffCanvas_content_wrapper__XdCMS .dynamicOffCanvas_intro_description__MuQR7 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 1.6666666667rem;
+}
+
+.dynamicOffCanvas_content_wrapper__XdCMS .dynamicOffCanvas_intro_description__MuQR7 h2 {
+  letter-spacing: 0px;
+  font-size: 3.3333333333rem;
+}
+
+.dynamicOffCanvas_data__CV_65 {
+  width: 100%;
+  position: relative;
+  /* display: flex; */
+  font-weight: 300;
+  font-size: 18px;
+  letter-spacing: .02em;
+  line-height: 1.45;
+}
+
+.dynamicOffCanvas_data__CV_65 p {
+  margin-bottom: 1rem !important;
+}
+
+.dynamicOffCanvas_data__CV_65 ul li {
+  list-style: disc;
+  font-size: 16px;
+}
+
+.dynamicOffCanvas_content_wrapper__XdCMS p {
+  margin-bottom: 0;
+}
+
+.mailandContactBox_content__OENNL p a {
+  -webkit-text-decoration: underline 1px transparent;
+  text-decoration: underline 1px transparent;
+  font-weight: 500;
+  transition: all .3s ease-in-out;
+  white-space: nowrap;
+}
+
+.workWithUs__action__ZTthi {
+  width: 100%;
+  position: relative;
+  margin-top: 2.2222222222rem;
+}
+
+.workWithUs__action__ZTthi a {
+  width: 100%;
+}
