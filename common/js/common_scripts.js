@@ -462,73 +462,102 @@ $(document).ready(function () {
 // Right Sidebar Canvas
 
 document.addEventListener("DOMContentLoaded", function () {
-  const button = document.getElementById("loadOffcanvasBtn");
+  let bsOffcanvas = null;
 
-  if (button) {
-    button.addEventListener("click", function () {
-      // Only load if not already loaded
-      if (!document.getElementById("offcanvasRight")) {
-        fetch('/common/common-offcanvas.html')
-          .then(response => response.text())
-          .then(html => {
-            document.getElementById("offcanvasContainer").innerHTML = html;
+  fetch("/common/common-offcanvas.html")
+    .then((response) => response.text())
+    .then((html) => {
+      document.getElementById("offcanvasContainer").innerHTML = html;
 
-            // Show offcanvas using Bootstrap API
-            const offcanvasEl = document.getElementById('offcanvasRight');
-            const bsOffcanvas = new bootstrap.Offcanvas(offcanvasEl);
-            bsOffcanvas.show();
-          })
-          .catch(error => {
-            console.error("Failed to load offcanvas:", error);
-          });
-      } else {
-        // Already loaded, just show
-        const offcanvasEl = document.getElementById('offcanvasRight');
-        const bsOffcanvas = new bootstrap.Offcanvas(offcanvasEl);
-        bsOffcanvas.show();
+      // Initialize a single instance
+      const offcanvasEl = document.getElementById("offcanvasRight");
+      if (offcanvasEl) {
+        bsOffcanvas = new bootstrap.Offcanvas(offcanvasEl);
+
+        // Optional: Listen to hidden event to ensure scroll is re-enabled
+        offcanvasEl.addEventListener("hidden.bs.offcanvas", () => {
+          document.getElementById("whitepaper").style.display = "block";
+          document.getElementById("successMessage").style.display = "none";
+          clearErrorMessages();
+          document.body.classList.remove(
+            "offcanvas-backdrop",
+            "modal-open",
+            "overflow-hidden"
+          );
+        });
       }
+
+      bindOffcanvasEvents();
+    })
+    .catch((error) => {
+      console.error("Failed to load offcanvas:", error);
     });
-  } else {
-    console.error("Button with ID 'loadOffcanvasBtn' not found in DOM.");
+
+  function bindOffcanvasEvents() {
+    const buttons = document.querySelectorAll(".loadOffcanvasBtn");
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const title = button.getAttribute("data-title") || "";
+        const description = button.getAttribute("data-description") || "";
+        const image =
+          button.getAttribute("data-image") ||
+          "/inner_pages/assets/imgs/kross-book.png";
+
+        const titleElement = document.getElementById("offcanvas-title");
+        const descriptionElement = document.getElementById(
+          "offcanvas-description"
+        );
+        const imageElement = document.getElementById("offcanvas-image");
+
+        if (titleElement) titleElement.textContent = title;
+        if (descriptionElement) descriptionElement.textContent = description;
+        if (imageElement) imageElement.src = image;
+        if (imageElement) imageElement.srcset = image;
+        if (bsOffcanvas) {
+          bsOffcanvas.show();
+        }
+      });
+    });
   }
 });
-
-
-
 
 /* =============================================================================
 -----------------------------  Modal Open   ------------------------------
 ============================================================================= */
 
 // Load modal HTML dynamically
-fetch('/common/common-modal.html')
-  .then(res => res.text())
-  .then(html => {
-    const container = document.getElementById('modal-container');
+fetch("/common/common-modal.html")
+  .then((res) => res.text())
+  .then((html) => {
+    const container = document.getElementById("modal-container");
     if (container) {
       container.innerHTML = html;
     } else {
-      console.error('modal-container not found in the DOM');
+      console.error("modal-container not found in the DOM");
     }
   });
 
 // Function to open the modal
 function openModal() {
   resetModal();
-  const modal = new bootstrap.Modal(document.getElementById('exampleModal'));
+  const modal = new bootstrap.Modal(document.getElementById("offcanvasRight"));
   modal.show();
 }
 
 function closeModal() {
-  resetModal();
-  const modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
-  modal.hide();
+  const offcanvas = bootstrap.Offcanvas.getInstance(
+    document.getElementById("offcanvasRight")
+  );
+  if (offcanvas) {
+    offcanvas.hide();
+  }
 }
 
 function resetModal() {
-  document.getElementById('formContainer').style.display = 'block';
-  document.getElementById('successMessage').style.display = 'none';
-  var form = document.getElementById('whitepaperForm');
+  document.getElementById("whitepaper").style.display = "block";
+  document.getElementById("successMessage").style.display = "none";
+  var form = document.getElementById("whitepaperForm");
   form.reset();
 }
 
@@ -555,7 +584,6 @@ wow = new WOW({
 });
 wow.init();
 
-
 $(function () {
   // Animate header container without preloader
   gsap.from("main", {
@@ -566,34 +594,41 @@ $(function () {
   });
 });
 
-
 /* =============================================================================
 -----------------------------  Common Modal      ------------------------------
 ============================================================================= */
 
-
 function handleSubmit(event) {
   event.preventDefault();
 
-  const name = document.getElementById('fullName').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const company = document.getElementById('company').value.trim();
-  const jobTitle = document.getElementById('jobTitle').value.trim();
-  const consent = document.getElementById('gridCheck').checked;
+  const name = document.getElementById("fullName").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const company = document.getElementById("company").value.trim();
+  const jobTitle = document.getElementById("jobTitle").value.trim();
+  const consent = document.getElementById("gridCheck").checked;
 
   clearErrorMessages();
 
   const validationRules = [
-    { field: 'fullName', value: name, message: 'Full Name is required.' },
-    { field: 'email', value: email, message: 'Please enter a valid email address.', pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/ },
-    { field: 'company', value: company, message: 'Company is required.' },
-    { field: 'jobTitle', value: jobTitle, message: 'Job Title is required.' },
-    { field: 'gridCheck', value: consent, message: 'You must agree to the Privacy Policy.' },
+    { field: "fullName", value: name, message: "Full Name is required." },
+    {
+      field: "email",
+      value: email,
+      message: "Please enter a valid email address.",
+      pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/,
+    },
+    { field: "company", value: company, message: "Company is required." },
+    { field: "jobTitle", value: jobTitle, message: "Job Title is required." },
+    {
+      field: "gridCheck",
+      value: consent,
+      message: "You must agree to the Privacy Policy.",
+    },
   ];
 
   let hasError = false;
 
-  validationRules.forEach(rule => {
+  validationRules.forEach((rule) => {
     if (!rule.value || (rule.pattern && !rule.pattern.test(rule.value))) {
       showError(rule.field, rule.message);
       hasError = true;
@@ -602,33 +637,33 @@ function handleSubmit(event) {
 
   if (hasError) return;
 
-  fetch('/api/sendWhitePaper', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+  fetch("/api/sendWhitePaper", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ name, email, company, jobTitle }),
   })
-    .then(response => response.json())
-    .then(data => {
-      if (data.status === 'success') {
-        document.getElementById('formContainer').style.display = 'none';
-        document.getElementById('successMessage').style.display = 'block';
-        event.target.reset(); // Reset the form
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.status === "success") {
+        // Hide form, show success
+        document.getElementById("whitepaper").style.display = "none";
+        document.getElementById("successMessage").style.display = "block";
+        event.target.reset(); // reset the form
       } else {
         console.error(data.message);
-        // Optionally show form-level error message
+        // Optionally show a general error message
       }
     })
-    .catch(error => {
-      console.error('Error sending form:', error);
+    .catch((error) => {
+      console.error("Error sending form:", error);
     });
 }
 
-
 function showError(inputId, message) {
   const inputElement = document.getElementById(inputId);
-  const errorMessage = document.createElement('div');
-  errorMessage.className = 'error-message';
-  errorMessage.style.color = 'red';
+  const errorMessage = document.createElement("div");
+  errorMessage.className = "error-message";
+  errorMessage.style.color = "red";
   errorMessage.textContent = message;
 
   // Append the error message below the input field
@@ -637,10 +672,9 @@ function showError(inputId, message) {
 
 // Function to clear previous error messages
 function clearErrorMessages() {
-  const errorMessages = document.querySelectorAll('.error-message');
-  errorMessages.forEach(message => message.remove());
+  const errorMessages = document.querySelectorAll(".error-message");
+  errorMessages.forEach((message) => message.remove());
 }
-
 
 var testim = new Swiper(".case-studies .testim-swiper", {
   slidesPerView: 3,
@@ -660,6 +694,3 @@ var testim = new Swiper(".case-studies .testim-swiper", {
     prevEl: ".case-studies .swiper-button-prev",
   },
 });
-
-
-
