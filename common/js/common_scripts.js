@@ -539,11 +539,12 @@ function openModal() {
 }
 
 function closeModal() {
-  resetModal();
-  const modal = bootstrap.Modal.getInstance(
+  const offcanvas = bootstrap.Offcanvas.getInstance(
     document.getElementById("offcanvasRight")
   );
-  modal.hide();
+  if (offcanvas) {
+    offcanvas.hide();
+  }
 }
 
 function resetModal() {
