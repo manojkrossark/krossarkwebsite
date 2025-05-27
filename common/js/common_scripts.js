@@ -469,11 +469,11 @@ fetch('/common/common-modal.html')
   .then(res => res.text())
   .then(html => {
     const container = document.getElementById('modal-container');
-      if (container) {
-        container.innerHTML = html;
-      } else {
-        console.error('modal-container not found in the DOM');
-      }
+    if (container) {
+      container.innerHTML = html;
+    } else {
+      console.error('modal-container not found in the DOM');
+    }
   });
 
 // Function to open the modal
@@ -507,51 +507,6 @@ wow = new WOW({
 });
 wow.init();
 
-/* =============================================================================
-////////////////////////////////////////////////////////////////////////////////
-============================================================================= */
-
-// $(function () {
-//   /* =============================================================================
-//     -------------------------------  Preloader svg   -------------------------------
-//     ============================================================================= */
-
-//   const svg = document.getElementById("svg");
-//   const tl = gsap.timeline();
-//   const curve = "M0 502S175 272 500 272s500 230 500 230V0H0Z";
-//   const flat = "M0 2S175 1 500 1s500 1 500 1V0H0Z";
-
-//   tl.to(".loader-wrap-heading .load-text , .loader-wrap-heading .cont", {
-//     delay: 1.5,
-//     y: -100,
-//     opacity: 0,
-//   });
-//   tl.to(svg, {
-//     duration: 0.5,
-//     attr: { d: curve },
-//     ease: "power2.easeIn",
-//   }).to(svg, {
-//     duration: 0.5,
-//     attr: { d: flat },
-//     ease: "power2.easeOut",
-//   });
-//   tl.to(".loader-wrap", {
-//     y: -1500,
-//   });
-//   tl.to(".loader-wrap", {
-//     zIndex: -1,
-//     display: "none",
-//   });
-//   tl.from(
-//     "header .container",
-//     {
-//       y: 100,
-//       opacity: 0,
-//       delay: 0.3,
-//     },
-//     "-=1.5"
-//   );
-// });
 
 $(function () {
   // Animate header container without preloader
@@ -625,9 +580,9 @@ function showError(inputId, message) {
   const inputElement = document.getElementById(inputId);
   const errorMessage = document.createElement('div');
   errorMessage.className = 'error-message';
-  errorMessage.style.color = 'red';  
+  errorMessage.style.color = 'red';
   errorMessage.textContent = message;
-  
+
   // Append the error message below the input field
   inputElement.parentNode.appendChild(errorMessage);
 }
@@ -637,4 +592,24 @@ function clearErrorMessages() {
   const errorMessages = document.querySelectorAll('.error-message');
   errorMessages.forEach(message => message.remove());
 }
+
+
+var testim = new Swiper(".case-studies .testim-swiper", {
+  slidesPerView: 3,
+  spaceBetween: 30, // Optional spacing between slides
+  speed: 600,
+  loop: false,
+
+  // Disable autoplay
+  autoplay: false,
+
+  // Remove pagination
+  pagination: false,
+
+  // Add navigation arrows
+  navigation: {
+    nextEl: ".case-studies .swiper-button-next",
+    prevEl: ".case-studies .swiper-button-prev",
+  },
+});
 

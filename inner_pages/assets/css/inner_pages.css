@@ -2937,7 +2937,10 @@ p {
 }
 
 .workCard_listing_card__t_T6i .workCard_context_wrapper__okUyc a {
-  text-decoration: none
+  text-decoration: none;
+  font-family: emoji;
+  letter-spacing: 0;
+  font-weight: 300 !important;
 }
 
 .workCard_listing_card__t_T6i .workCard_context_wrapper__okUyc .workCard_image__OUzWj {
@@ -3047,7 +3050,10 @@ p {
 .workCard_listing_card__t_T6i .workCard_context_wrapper__okUyc .workCard_description__NawYq button {
   text-decoration: none;
   font-size: inherit;
-  color: #000
+  color: #000;
+  text-align: left;
+  font-weight: 600;
+  line-height: 1.49;
 }
 
 @media(min-width: 1200px) {
@@ -3703,4 +3709,37 @@ p {
   color: #fff;
   border-color: var(--main-color);
   background: var(--main-color);
+}
+
+.prev-next-btn {
+  gap: 2rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.prev-next-btn .swiper-button-next::after,
+.prev-next-btn .swiper-button-prev::after {
+  display: none;
+}
+
+.prev-next-btn .swiper-button-next,
+.prev-next-btn .swiper-button-prev {
+  position: relative;
+  top: 0;
+  height: auto;
+  margin-top: 0;
+  color: #000;
+  font-size: 1.5rem;
+}
+
+.prev-next-btn .swiper-button-prev {
+  left: 0;
+  right: auto;
+}
+
+.prev-next-btn .swiper-button-next {
+  left: auto;
+  right: 0;
 }
