@@ -512,8 +512,8 @@ p {
 }
 
 .work-card .card-item .cont p {
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 16px;
+  line-height: 1.49;
 }
 
 .work-card .card-item .cont ul {
@@ -1493,8 +1493,8 @@ p {
 }
 
 .projcet-quality .item1 {
-  padding-bottom: 50px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  /* padding-bottom: 50px; */
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
 }
 
 .projcet-quality .item1 span {
@@ -4011,7 +4011,7 @@ p {
 
 .simpleCard_simpleCard__ONTyZ .simpleCard_description__2CkQ_ {
   margin-top: 15px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.7;
   font-size: 16px;
 }
