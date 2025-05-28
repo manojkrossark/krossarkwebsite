@@ -101,9 +101,7 @@ h5 {
   letter-spacing: -1px;
 }
 
-h6 {
-  font-size: 22px;
-}
+
 
 p {
   font-size: var(--font-paragraph-16);
@@ -1652,7 +1650,6 @@ p {
 .blog-mp .item .info .author-info,
 .blog-mp .item .info .date {
   font-size: 13px;
-  text-transform: uppercase;
 }
 
 .blog-mp .item .info .author-info span:first-child {
@@ -3050,21 +3047,21 @@ p {
 .workCard_listing_card__t_T6i .workCard_context_wrapper__okUyc .workCard_description__NawYq a,
 .workCard_listing_card__t_T6i .workCard_context_wrapper__okUyc .workCard_description__NawYq button {
   text-decoration: none;
-  font-size: inherit;
+  font-size: 1.3rem;
   color: #000;
   text-align: left;
   font-weight: 600;
-  line-height: 1.49;
+  line-height: 1.3;
 }
 
-@media(min-width: 1200px) {
+/* @media(min-width: 1200px) {
 
   .workCard_listing_card__t_T6i .workCard_context_wrapper__okUyc .workCard_description__NawYq a.workCard_work_link__wSWzh:hover,
   .workCard_listing_card__t_T6i .workCard_context_wrapper__okUyc .workCard_description__NawYq button.workCard_work_link__wSWzh:hover {
     color: blue;
     transition: color .2s ease-in-out
   }
-}
+} */
 
 .workCard_listing_card__t_T6i .workCard_context_wrapper__okUyc .workCard_description__NawYq a:after,
 .workCard_listing_card__t_T6i .workCard_context_wrapper__okUyc .workCard_description__NawYq button:after {
@@ -3764,7 +3761,7 @@ p {
 
 .saveOptions_dropdown__doVU_ ul {
   position: absolute;
-  top: 20px;
+  top: 60px;
   left: 0;
   background-color: #fff;
   z-index: 11;
