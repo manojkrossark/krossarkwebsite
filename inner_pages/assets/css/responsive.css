@@ -23,7 +23,6 @@
   --font-paragraph-14: 14px;
   --font-paragraph-16: 16px;
   --font-paragraph-18: 18px;
-  --font-family-playfair: "Playfair Display", serif;
 }
 
 @media screen and (min-width: 576px) {
@@ -558,6 +557,7 @@
 
     .sec-head h2 {
         font-size: 30px;
+        line-height: 1.2;
     }
 
     .faqs-pg .accordion-item .accordion-header button {

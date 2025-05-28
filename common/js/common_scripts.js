@@ -572,9 +572,11 @@ function copyLinkToClipboard() {
     const toast = document.getElementById("copyToast");
     toast.style.bottom = "50px";
     toast.style.position = "relative";
+    toast.style.opacity = "1";
     setTimeout(() => {
       toast.style.bottom = "-60px";
       toast.style.position = "fixed";
+      toast.style.opacity = "0";
     }, 2000);
   });
 }
@@ -678,22 +680,27 @@ function clearErrorMessages() {
 
 var testim = new Swiper(".case-studies .testim-swiper", {
   slidesPerView: 3,
-  spaceBetween: 30, // Optional spacing between slides
+  spaceBetween: 30,
   speed: 600,
   loop: false,
-
-  // Disable autoplay
   autoplay: false,
-
-  // Remove pagination
   pagination: false,
 
-  // Add navigation arrows
   navigation: {
     nextEl: ".case-studies .swiper-button-next",
     prevEl: ".case-studies .swiper-button-prev",
   },
+
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 3,
+    }
+  }
 });
+
 
 
 

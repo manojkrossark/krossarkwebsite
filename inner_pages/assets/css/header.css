@@ -110,11 +110,11 @@ li.nav-item {
 .navbar .navbar-nav .nav-link {
   padding: 0px 15px;
   border-radius: 30px;
-  font-size: 16px;
-  /* color: black; */
-  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-family: var(--font-family-taviraj);
   letter-spacing: .0333333333rem;
   text-transform: capitalize;
+  font-weight: 400;
 }
 
 .navbar.header_navbar .navbar-nav .nav-link::after {

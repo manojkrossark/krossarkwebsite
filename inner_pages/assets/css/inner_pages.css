@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+
+@import url('https://fonts.googleapis.com/css2?family=Taviraj:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 /* ========= [ * inner pages ]  =========*/
 :root {
   --bg-color: #18191b;
@@ -23,7 +26,8 @@
   --font-paragraph-14: 14px;
   --font-paragraph-16: 16px;
   --font-paragraph-18: 18px;
-  --font-family-playfair: "Playfair Display", serif;
+  --font-family-taviraj: "Taviraj", serif;
+  --title-font-size: 18px;
 }
 
 *,
@@ -49,13 +53,17 @@ html ::-webkit-scrollbar {
 
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-family-taviraj), sans-serif;
   font-size: var(--font-paragraph-18);
   line-height: 28px;
   font-weight: 400;
   line-height: 1.4;
   color: var(--bg-color);
   background-color: var(--primary-color);
+}
+
+.ls-0{
+  letter-spacing: 0;
 }
 
 h1,
@@ -296,7 +304,6 @@ p {
   font-size: 140px;
   font-weight: 600;
   text-transform: uppercase;
-  font-family: "Playfair Display", serif;
   background-clip: text;
   background-size: contain;
 }
@@ -1000,7 +1007,6 @@ p {
 }
 
 .sec-head h2 span {
-  font-family: var(--font-family-playfair);
   font-style: italic;
   font-weight: 400;
 }
@@ -2387,7 +2393,7 @@ p {
 
 @media screen and (max-width: 480px) {
   .video-text {
-    font-size: 18px !important;
+    font-size: 33px !important;
     padding: 1.5rem 1rem;
     bottom: 12%;
   }
@@ -2749,7 +2755,7 @@ p {
   display: flex;
   flex-direction: column;
   height: 100%;
-  overflow: hidden
+  overflow: hidden;
 }
 
 .workCard_listing_card__t_T6i.workCard_disabled__JsyEi {
@@ -2932,9 +2938,8 @@ p {
 
 .workCard_listing_card__t_T6i .workCard_context_wrapper__okUyc a {
   text-decoration: none;
-  font-family: emoji;
   letter-spacing: 0;
-  font-weight: 300 !important;
+  line-height: 1.5;
 }
 
 .workCard_listing_card__t_T6i .workCard_context_wrapper__okUyc .workCard_image__OUzWj {
@@ -2977,6 +2982,8 @@ p {
 .workCard_listing_card__t_T6i .workCard_context_wrapper__okUyc.active video {
   opacity: 1
 }
+
+
 
 .workCard_listing_card__t_T6i .workCard_context_wrapper__okUyc .workCard_title__CmBr9 {
   cursor: pointer;
@@ -3159,7 +3166,6 @@ p {
 .dynamicOffCanvas_data__CV_65 {
   width: 100%;
   position: relative;
-  /* display: flex; */
   font-weight: 300;
   font-size: 18px;
   letter-spacing: .02em;
@@ -3819,8 +3825,6 @@ p {
 }
 
 .copytoast {
-  position: fixed;
-  bottom: -60px;
   left: 50%;
   transform: translateX(-50%);
   background-color: #fff;
@@ -3836,6 +3840,7 @@ p {
   display: flex;
   align-items: center;
   gap: 1rem;
+  opacity: 0;
 }
 
 .copytoast svg {
@@ -3845,10 +3850,12 @@ p {
   padding: 5px;
 }
 
+
 .workBenifits_section__iMpDf {
   --padding-top: 45px;
   --padding-bottom: 50px;
-  padding: var(--padding-top) 0 var(--padding-bottom)
+  padding: var(--padding-top) 0 var(--padding-bottom);
+  letter-spacing: 0;
 }
 
 @media(min-width: 992px) {
@@ -3896,32 +3903,32 @@ p {
 
 @media(min-width: 992px) {
   .workBenifits_section_head__bSlre p {
-    font-size: 1rem
+    font-size: 1.1rem
   }
 }
 
 .workBenifits_section__iMpDf .workBenifits_row__OF5OG {
-  --gutter-y: 45px
+  --bs-gutter-y: 45px
 }
 
 @media(min-width: 768px) {
   .workBenifits_section__iMpDf .workBenifits_row__OF5OG {
-    --gutter-x: 30px;
-    --gutter-y: 30px
+    --bs-gutter-x: 30px;
+    --bs-gutter-y: 30px
   }
 }
 
 @media(min-width: 1200px) {
   .workBenifits_section__iMpDf .workBenifits_row__OF5OG {
-    --gutter-x: 60px;
-    --gutter-y: 30px
+    --bs-gutter-x: 60px;
+    --bs-gutter-y: 30px
   }
 }
 
 @media(min-width: 1600px) {
   .workBenifits_section__iMpDf .workBenifits_row__OF5OG {
-    --gutter-y: 70px;
-    --gutter-x: 123px
+    --bs-gutter-y: 70px;
+    --bs-gutter-x: 123px
   }
 }
 
@@ -3950,6 +3957,7 @@ p {
   font-size: 1.2777777778rem;
   letter-spacing: 0;
 }
+
 .simpleCard_simpleCard__ONTyZ:hover h3 {
   color: var(--main-color);
   cursor: pointer;
