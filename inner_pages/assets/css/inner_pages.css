@@ -62,7 +62,7 @@ body {
   background-color: var(--primary-color);
 }
 
-.ls-0{
+.ls-0 {
   letter-spacing: 0;
 }
 
@@ -1448,7 +1448,7 @@ p {
   right: 0;
   padding: 6rem 2rem;
   font-size: 50px !important;
-  font-weight: 200 !important;
+  font-weight: 400 !important;
   text-align: center;
   color: white;
   word-break: break-word;
@@ -2378,7 +2378,7 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.17);
+  background: rgba(0, 0, 0, 0.44);
   /* Optional dark overlay */
   z-index: 2;
 }
@@ -4028,62 +4028,62 @@ p {
 
 
 .designPresentationBlockTwo_section__GjosO {
-    overflow: hidden;
-    position: relative;
-    background-color: var(--background-color,#000)
+  overflow: hidden;
+  position: relative;
+  background-color: var(--background-color, #000)
 }
 
 @media(min-width: 1200px) {
-    .designPresentationBlockTwo_section__GjosO {
-        padding:60px 0;
-        height: 100vh
-    }
+  .designPresentationBlockTwo_section__GjosO {
+    padding: 60px 0;
+    height: 100vh
+  }
 }
 
 .designPresentationBlockTwo_img__uYowA {
-    --aspect-ratio: calc((9 / 16) * 100%);
-    flex: 0 0 auto;
-    width: 50%;
-    margin-bottom: 10px
+  --aspect-ratio: calc((9 / 16) * 100%);
+  flex: 0 0 auto;
+  width: 50%;
+  margin-bottom: 10px
 }
 
 @media(min-width: 992px) {
-    .designPresentationBlockTwo_img__uYowA {
-        width:33.33%;
-        margin-bottom: 20px;
-        margin-bottom: 40px
-    }
+  .designPresentationBlockTwo_img__uYowA {
+    width: 33.33%;
+    margin-bottom: 20px;
+    margin-bottom: 40px
+  }
 }
 
 .designPresentationBlockTwo_img__uYowA img {
-    object-fit: cover
+  object-fit: cover
 }
 
 .designPresentationBlockTwo_img_wrap__6vxFl {
-    display: flex;
-    gap: 10px;
-    will-change: transform
+  display: flex;
+  gap: 10px;
+  will-change: transform
 }
 
 @media(min-width: 992px) {
-    .designPresentationBlockTwo_img_wrap__6vxFl {
-        gap:30px
-    }
+  .designPresentationBlockTwo_img_wrap__6vxFl {
+    gap: 30px
+  }
 }
 
 @media(min-width: 1200px) {
-    .designPresentationBlockTwo_img_wrap__6vxFl {
-        gap:40px
-    }
+  .designPresentationBlockTwo_img_wrap__6vxFl {
+    gap: 40px
+  }
 }
 
 .designPresentationBlockTwo_gallery__Tp6eC {
-    background-color: var(--background-color,#000);
-    will-change: transform
+  background-color: var(--background-color, #000);
+  will-change: transform
 }
 
 @media screen and (min-width: 992px)and (max-width:1199.98px) {
-    .designPresentationBlockTwo_gallery__Tp6eC {
-        width:140%
-    }
+  .designPresentationBlockTwo_gallery__Tp6eC {
+    width: 140%
+  }
 }
