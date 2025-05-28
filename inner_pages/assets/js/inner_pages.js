@@ -1,7 +1,6 @@
 $(function () {
   "use strict";
 
-  
 
   $(function () {
     $(".view-more-btn").on("click", function () {
@@ -331,3 +330,4 @@ function startTextHomePageSync() {
 
 // Wait for enough data to play smoothly
 video.addEventListener("canplaythrough", tryPlayHomePageVideo);
+
