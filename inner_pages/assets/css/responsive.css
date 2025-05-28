@@ -626,7 +626,7 @@
     }
 
     .navbar .container {
-        --gutter-x: 2.7rem;
+        --gutter-x: 0.5rem;
         --gutter-y: 0;
         width: 100%;
         padding-right: calc(var(--gutter-x) * .5);
