@@ -702,5 +702,29 @@ var testim = new Swiper(".case-studies .testim-swiper", {
 });
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const gallery = document.querySelector(
+    ".designPresentationBlockTwo_gallery__Tp6eC"
+  );
+
+  gsap.to(gallery, {
+    xPercent: -30, // moves left
+    yPercent: 30, // moves down
+    scale: 2, // optional: if you want scaling as in original style
+    ease: "none",
+    rotate: 10,
+    scrollTrigger: {
+      trigger: "#diagonal_image_slider",
+      start: "top top",
+      end: "+=1000", // adjust based on desired scroll length
+      scrub: true,
+      pin: true,
+      pinSpacing: true,
+      markers: false,
+    },
+  });
+});
 
 
