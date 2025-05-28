@@ -524,8 +524,8 @@
     }
 
     .section-even-padding {
-        padding-top: 40px;
-        padding-bottom: 40px;
+        /* padding-top: 40px;
+        padding-bottom: 40px; */
     }
 
     .works-mp.project .item1 {
@@ -583,9 +583,9 @@
 
 
 
-    .work-card .card-item h5 {
+    /* .work-card .card-item h5 {
         font-size: 35px;
-    }
+    } */
 
     .waro-serve {
         padding-inline: 20px;
