@@ -331,3 +331,4 @@ function startTextHomePageSync() {
 // Wait for enough data to play smoothly
 video.addEventListener("canplaythrough", tryPlayHomePageVideo);
 
+
