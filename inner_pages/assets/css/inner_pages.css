@@ -4909,6 +4909,52 @@ p {
   padding: 0 0 15px 90px;
 }
 
+.woo .imgs {
+  position: relative;
+}
+
+.woo .imgs .img2 {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  width: 100px;
+}
+
+.uniq-portfolio .imgs {
+  position: relative;
+}
+
+.uniq-portfolio .img-abslout {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: calc(100% + 100px);
+}
+
+.uniq-portfolio .thum-work {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.uniq-portfolio .thum-work .item {
+  -webkit-margin-end: 30px;
+  margin-inline-end: 30px;
+  margin-top: 30px;
+  text-align: center;
+  width: 130px;
+}
+
+.uniq-portfolio .thum-work .item span {
+  margin-top: 15px;
+}
+
+.uniq-portfolio .line-overlay {
+  top: 200px;
+}
+
 .process-ca .accordion-item .accordion-body p {
   font-size: 14px;
 }
