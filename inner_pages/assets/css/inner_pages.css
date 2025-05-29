@@ -68,9 +68,7 @@ body {
   letter-spacing: 0;
 }
 
-p {
-  
-}
+p {}
 
 .ls-0 {
   letter-spacing: 0;
@@ -92,12 +90,12 @@ h6 {
 
 h1 {
   font-size: 64px;
-  
+
 }
 
 h2 {
   font-size: 48px;
-  
+
 }
 
 h3 {
@@ -1062,9 +1060,9 @@ p {
   font-size: 40px;
   word-spacing: 0.5rem;
   line-height: 1.2;
-  font-weight: 600;  
+  font-weight: 600;
   letter-spacing: 0px;
-  
+
 }
 
 .sec-head h2 span {
@@ -3049,7 +3047,7 @@ p {
 .workCard_listing_card__t_T6i .workCard_context_wrapper__okUyc .workCard_title__CmBr9 {
   cursor: pointer;
   font-size: var(--title-font-size, 1.3333333333rem);
-  
+
   font-weight: 300;
 }
 
@@ -3108,7 +3106,7 @@ p {
   background-color: transparent;
   border: none;
   padding: 0;
-  
+
 }
 
 .workCard_listing_card__t_T6i .workCard_context_wrapper__okUyc .workCard_description__NawYq a,
@@ -4855,4 +4853,62 @@ p {
     --btn-transform: translate(2px);
     --btn-color: #013ad6
   }
+}
+
+.process-ca .img {
+  max-width: 350px;
+  margin: auto;
+}
+
+.process-ca .accordion-item {
+  background: transparent;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+}
+
+.process-ca .accordion-item.active {
+  border-color: var(--main-color);
+}
+
+.process-ca .accordion-item.active button {
+  color: var(--main-color) !important;
+}
+
+.process-ca .accordion-item .accordion-header {
+  background: transparent;
+}
+
+.process-ca .accordion-item .accordion-header button {
+  background: transparent;
+  color: inherit;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  padding: 15px 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.process-ca .accordion-item .accordion-header button span {
+  font-size: 14px;
+  margin-right: 80px;
+}
+
+.process-ca .accordion-item .accordion-header button:after {
+  background-image: url(../imgs/plus-solid.svg);
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+
+.process-ca .accordion-item .accordion-header button:not(.collapsed):after {
+  background-image: url(../imgs/minus-solid.svg);
+}
+
+.process-ca .accordion-item .accordion-body {
+  padding: 0 0 15px 90px;
+}
+
+.process-ca .accordion-item .accordion-body p {
+  font-size: 14px;
 }
