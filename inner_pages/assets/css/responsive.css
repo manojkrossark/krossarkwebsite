@@ -556,7 +556,9 @@
         font-size: 45px;
     }
 
-
+    .work-card .card-item {
+        transform: none !important;
+    }
 
     /* .work-card .card-item h5 {
         font-size: 35px;
