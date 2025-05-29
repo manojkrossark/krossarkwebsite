@@ -65,6 +65,7 @@ body {
   font-weight: 400;
   color: var(--bg-color);
   background-color: var(--primary-color);
+  letter-spacing: 0;
 }
 
 p {
@@ -74,6 +75,7 @@ p {
 .ls-0 {
   letter-spacing: 0;
 }
+
 .lh-15 {
   line-height: 1.5;
 }
@@ -90,27 +92,24 @@ h6 {
 
 h1 {
   font-size: 64px;
-  letter-spacing: -3px;
+  
 }
 
 h2 {
   font-size: 48px;
-  letter-spacing: -3px;
+  
 }
 
 h3 {
   font-size: 40px;
-  letter-spacing: -2px;
 }
 
 h4 {
   font-size: 36px;
-  letter-spacing: -2px;
 }
 
 h5 {
   font-size: 28px;
-  letter-spacing: -1px;
 }
 
 
@@ -118,7 +117,7 @@ h5 {
 p {
   font-size: var(--font-paragraph-18);
   margin: 0;
-  color: #141414;
+  /* color: #141414; */
   line-height: 1.49;
   font-weight: 300;
 }
@@ -1066,8 +1065,7 @@ p {
   font-size: 40px;
   word-spacing: 0.5rem;
   line-height: normal;
-  font-weight: 600;
-  
+  font-weight: 600;  
   letter-spacing: 0px;
   
 }
@@ -2868,7 +2866,7 @@ p {
 }
 
 .workCard_listing_card__t_T6i .workCard_image__OUzWj+.workCard_description__NawYq {
-  margin-top: -.8888888889rem
+  margin-top: -18px
 }
 
 .workCard_listing_card__t_T6i .workCard_image__OUzWj+.workCard_title__CmBr9 {
@@ -2927,7 +2925,7 @@ p {
 @media(min-width: 992px) {
   .workCard_listing_card__t_T6i .workCard_description__NawYq {
     margin-bottom: 10px;
-    margin-top: .8888888889rem
+    margin-top: 18px
   }
 }
 
@@ -3030,7 +3028,7 @@ p {
 }
 
 .workCard_listing_card__t_T6i .workCard_context_wrapper__okUyc .workCard_image__OUzWj+.workCard_description__NawYq {
-  margin-top: -.8888888889rem
+  margin-top: -18px
 }
 
 .workCard_listing_card__t_T6i .workCard_context_wrapper__okUyc .workCard_image__OUzWj+.workCard_title__CmBr9 {
@@ -3091,7 +3089,7 @@ p {
   .workCard_listing_card__t_T6i .workCard_context_wrapper__okUyc .workCard_description__NawYq {
     margin-top: 12px;
     margin-bottom: 10px;
-    margin-top: .8888888889rem
+    margin-top: 18px
   }
 }
 
@@ -3598,7 +3596,7 @@ p {
 }
 
 .listingCard_listing_card__vSgnM .listingCard_image__ix2C0+.listingCard_description__Q5VTW {
-  margin-top: -.8888888889rem
+  margin-top: -18px
 }
 
 .listingCard_listing_card__vSgnM .listingCard_image__ix2C0+.listingCard_title__ufYqF {
@@ -4822,7 +4820,7 @@ p {
 
 @media(min-width: 992px) {
   .techCard_card_body__BZQSP p {
-    font-size: .8888888889rem
+    font-size: 18px
   }
 }
 
@@ -4831,7 +4829,7 @@ p {
 }
 
 .techCard_card_footer__0x6FR .techCard_btn__HGu4M {
-  font-size: .8888888889rem;
+  font-size: 18px;
   --btn-gutter: 10px;
   --btn-color: #141414
 }
