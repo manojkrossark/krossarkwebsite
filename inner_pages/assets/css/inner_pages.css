@@ -4732,3 +4732,110 @@ p {
 .serv-details .accordion-item .accordion-body p {
   font-size: 14px;
 }
+
+.techCard_card__fB8D8 {
+    background-color: #fff;
+    height: 100%;
+    padding: 1.1111111111rem 1.1111111111rem .5555555556rem;
+    border: 1px solid #e3e3e3;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all .5s ease;
+    transform: translateY(0)
+}
+
+@media(min-width: 992px) {
+    .techCard_card__fB8D8 {
+        padding:1.6666666667rem 1.6666666667rem .5555555556rem;
+        padding: 26px 20px
+    }
+}
+
+@media(min-width: 1200px) {
+    .techCard_card__fB8D8 {
+        padding:2.2222222222rem 2rem 1.1111111111rem
+    }
+
+    .techCard_card__fB8D8:hover {
+        transform: translateY(-5px)
+    }
+}
+
+.techCard_card_head__TDSr6 {
+    padding-bottom: 15px
+}
+
+.techCard_card_head__TDSr6 .techCard_icon__DoFEz {
+    width: calc(var(--logo-width)*1px);
+    max-height: var(--size,50px);
+    height: var(--size,50px);
+    position: relative;
+    aspect-ratio: var(--logo-width)/var(--logo-height);
+    max-width: 90px
+}
+
+.techCard_card_head__TDSr6 .techCard_icon__DoFEz img {
+    object-fit: contain;
+    object-position: left
+}
+
+.techCard_card_body__BZQSP {
+    flex: 1 0;
+    padding-top: 15px;
+    padding-bottom: 20px
+}
+
+.techCard_card_body__BZQSP h3 {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+
+.techCard_card_body__BZQSP p {
+    margin-bottom: 0;
+    font-size: 15px;
+    line-height: 1.65
+}
+
+@media(min-width: 992px) {
+    .techCard_card_body__BZQSP p {
+        font-size:.8888888889rem
+    }
+}
+
+.techCard_card_footer__0x6FR {
+    padding-top: 20px
+}
+
+.techCard_card_footer__0x6FR .techCard_btn__HGu4M {
+    font-size: .8888888889rem;
+    --btn-gutter: 10px;
+    --btn-color: #141414
+}
+
+@media(min-width: 1200px) {
+    .techCard_card_footer__0x6FR .techCard_btn__HGu4M {
+        --btn-gutter:15px
+    }
+}
+
+.techCard_card__fB8D8.techCard_card_min__pyh7c .techCard_card_head__TDSr6 .techCard_icon__DoFEz {
+    margin-left: auto;
+    margin-right: auto
+}
+
+.techCard_card__fB8D8.techCard_card_min__pyh7c .techCard_card_head__TDSr6 .techCard_icon__DoFEz img {
+    object-position: center
+}
+
+.techCard_fill_link__aEjL7 {
+    text-decoration: none
+}
+
+@media(hover: hover) {
+    .techCard_card__fB8D8:hover .techCard_card_footer__0x6FR .techCard_btn__HGu4M {
+        --btn-transform:translate(2px);
+        --btn-color: #013ad6
+    }
+}
