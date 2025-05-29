@@ -4005,10 +4005,10 @@ p {
   letter-spacing: 0;
 }
 
-.simpleCard_simpleCard__ONTyZ:hover h3 {
+/* .simpleCard_simpleCard__ONTyZ:hover h3 {
   color: var(--main-color);
   cursor: pointer;
-}
+} */
 
 
 @media(min-width: 992px) {
@@ -4025,6 +4025,10 @@ p {
 .simpleCard_simpleCard__ONTyZ.simpleCard_bordered__3onBg {
   padding: 0 0 1.6666666667rem;
   border-bottom: 1px solid #636363
+}
+
+.simpleCard_simpleCard__ONTyZ.simpleCard_bordered__3onBg:hover {
+  background: #efefef2b;
 }
 
 @media(min-width: 768px) {
@@ -4048,7 +4052,7 @@ p {
 }
 
 .simpleCard_simpleCard__ONTyZ a {
-  color: #013ad6;
+  color: var(--main-color);
   font-weight: 500;
   text-underline-position: under
 }
