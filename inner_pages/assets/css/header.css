@@ -1,31 +1,5 @@
 @charset "UTF-8";
 
-/* ========= [ * inner pages ]  =========*/
-:root {
-  --bg-color: #18191b;
-  --theme-color: #0e0f11;
-  --main-color: rgb(10 101 192);
-  --primary-color: #ffffff;
-  --text-color: #7f7f7f;
-  --text-main-color: #505050;
-  --bg-gray-color: #f5f5f5;
-  --light: #fff;
-  --dark: #000;
-  --primary-hover: #434343;
-  --primary-active: #5b5b5b;
-  --secondary-hover: #f0f1f3;
-  --secondary-active: #ebecf0;
-  --tertiary: #f5f5f5;
-  --tertiary-hover: #f8f9fb;
-  --tertiary-active: #f4f5f7;
-  --tertiary-border: #dfe3eb;
-  /* Font Size */
-  --font-paragraph-14: 14px;
-  --font-paragraph-16: 16px;
-  --font-paragraph-18: 18px;
-  --font-family-playfair: "Playfair Display", serif;
-}
-
 /* --------------- Menu --------------- */
 .navbar {
   position: absolute;
@@ -111,7 +85,7 @@ li.nav-item {
   padding: 0px 15px;
   border-radius: 30px;
   font-size: 18px;
-  font-family: var(--font-family-taviraj);
+  
   letter-spacing: .0333333333rem;
   text-transform: capitalize;
   font-weight: 400;
@@ -247,7 +221,7 @@ li.nav-item {
   padding: 0.3rem 1rem;
   font-size: 16px;
   font-weight: 500;
-  font-family: var(--font-family-taviraj);
+  
   letter-spacing: 0;
   text-transform: capitalize;
 }
