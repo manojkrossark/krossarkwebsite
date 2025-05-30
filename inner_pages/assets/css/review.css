@@ -26,7 +26,7 @@
 
 .section-title h2,
 .section-title .h2 {
-    font-size: 40px;
+    font-size: 36px;
 }
 
 .section-title h6,
@@ -61,6 +61,7 @@
 .qoute-icon {
     top: 20px;
     right: 30px;
+    padding: 1rem 1.3rem !important;
 }
 
 @media (max-width: 1200px) {
@@ -69,20 +70,7 @@
     }
 }
 
-.btn2 {
-    background-color: var(--main-color);
-    color: var(--primary-color);
-    text-transform: uppercase;
-    padding: 10px 30px;
-    font-weight: 500;
-    transition: all .3s ease-in-out;
-    line-height: 1.5;
-}
 
-.btn2:hover {
-    background-color: var(--bg-color);
-    color: var(--primary-color);
-}
 
 @media ((max-width: 1200px)) {
     .section-title h2 {

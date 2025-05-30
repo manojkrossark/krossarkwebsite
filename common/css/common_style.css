@@ -33,6 +33,116 @@
   --font-family-playfair: "Playfair Display", serif;
 }
 
+
+h1,
+.h1 {
+  font-size: 48px;
+}
+
+h2,
+.h2 {
+  font-size: 36px;
+}
+
+h3,
+.h3 {
+  font-size: 24px;
+}
+
+h4,
+.h4 {
+  font-size: 21px;
+}
+
+h5,
+.h5 {
+  font-size: 18px;
+}
+
+h6,
+.h6 {
+  font-size: 16px;
+}
+
+@media (max-width: 1100px) {
+
+  h1,
+  .h1 {
+    font-size: 42px;
+  }
+
+  h2,
+  .h2 {
+    font-size: 36px;
+  }
+
+  h3,
+  .h3 {
+    font-size: 24px;
+  }
+
+  h4,
+  .h4 {
+    font-size: 21px;
+  }
+
+  h5,
+  .h5 {
+    font-size: 18px;
+  }
+
+  h6,
+  .h6 {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+
+  h1,
+  .h1 {
+    font-size: 32px;
+  }
+
+  h2,
+  .h2 {
+    font-size: 28px;
+  }
+
+  h3,
+  .h3 {
+    font-size: 24px;
+  }
+
+  h4,
+  .h4 {
+    font-size: 21px;
+  }
+
+  h5,
+  .h5 {
+    font-size: 18px;
+  }
+
+  h6,
+  .h6 {
+    font-size: 15px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  text-transform: capitalize;
+  margin: 0;
+  line-height: 1.22em;
+}
+
 main {
   position: relative;
   z-index: 5;
@@ -44,7 +154,7 @@ main {
   margin-right: -5px;
 }
 
-.row.sm-marg > * {
+.row.sm-marg>* {
   padding-left: 5px;
   padding-right: 5px;
 }
@@ -54,7 +164,7 @@ main {
   margin-right: -20px;
 }
 
-.row.stand-marg > * {
+.row.stand-marg>* {
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -64,7 +174,7 @@ main {
   margin-right: -25px;
 }
 
-.row.md-marg > * {
+.row.md-marg>* {
   padding-left: 25px;
   padding-right: 25px;
 }
@@ -74,7 +184,7 @@ main {
   margin-right: -40px;
 }
 
-.row.lg-marg > * {
+.row.lg-marg>* {
   padding-left: 40px;
   padding-right: 40px;
 }
@@ -84,7 +194,7 @@ main {
   margin-right: -50px;
 }
 
-.row.xlg-marg > * {
+.row.xlg-marg>* {
   padding-left: 50px;
   padding-right: 50px;
 }
@@ -94,7 +204,7 @@ main {
   margin-right: -80px;
 }
 
-.row.xxlg-marg > * {
+.row.xxlg-marg>* {
   padding-left: 80px;
   padding-right: 80px;
 }
@@ -211,7 +321,7 @@ figure {
   transition-delay: 1s;
 }
 
-.hamenu.open .menu-links .main-menu > li .link {
+.hamenu.open .menu-links .main-menu>li .link {
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
@@ -271,13 +381,13 @@ figure {
   padding: 0;
 }
 
-.hamenu .menu-links .main-menu > li {
+.hamenu .menu-links .main-menu>li {
   -webkit-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
 
-.hamenu .menu-links .main-menu > li .link {
+.hamenu .menu-links .main-menu>li .link {
   font-size: 3vh;
   text-transform: uppercase;
   font-weight: 600;
@@ -295,7 +405,7 @@ figure {
   transition: all 0.7s;
 }
 
-.hamenu .menu-links .main-menu > li .link i {
+.hamenu .menu-links .main-menu>li .link i {
   position: absolute;
   width: 90px;
   top: 0;
@@ -303,7 +413,7 @@ figure {
   bottom: 0;
 }
 
-.hamenu .menu-links .main-menu > li .link i:before {
+.hamenu .menu-links .main-menu>li .link i:before {
   content: "";
   width: 1px;
   height: 16px;
@@ -313,7 +423,7 @@ figure {
   background: #fff;
 }
 
-.hamenu .menu-links .main-menu > li .link i:after {
+.hamenu .menu-links .main-menu>li .link i:after {
   content: "";
   width: 16px;
   height: 1px;
@@ -323,17 +433,17 @@ figure {
   background: #fff;
 }
 
-.hamenu .menu-links .main-menu > li .link.dopen i:before {
+.hamenu .menu-links .main-menu>li .link.dopen i:before {
   opacity: 0;
 }
 
-.hamenu .menu-links .main-menu > li .link .fill-text {
+.hamenu .menu-links .main-menu>li .link .fill-text {
   position: relative;
   color: rgba(255, 255, 255, 0.4);
   letter-spacing: 2px;
 }
 
-.hamenu .menu-links .main-menu > li .link .fill-text:after {
+.hamenu .menu-links .main-menu>li .link .fill-text:after {
   content: attr(data-text);
   position: absolute;
   top: 0;
@@ -347,11 +457,11 @@ figure {
   transition: width 0.75s cubic-bezier(0.63, 0.03, 0.21, 1);
 }
 
-.hamenu .menu-links .main-menu > li.hoverd .link .fill-text:after {
+.hamenu .menu-links .main-menu>li.hoverd .link .fill-text:after {
   width: 0;
 }
 
-.hamenu .menu-links .main-menu > li .sub-dmenu {
+.hamenu .menu-links .main-menu>li .sub-dmenu {
   font-size: 30px;
   font-weight: 500;
   padding-left: 50px;
@@ -719,27 +829,21 @@ a:hover {
   left: -30px;
   right: -30px;
   pointer-events: none;
-  background: -webkit-linear-gradient(
-    right,
-    #fff,
-    transparent 280px,
-    transparent calc(100% - 280px),
-    #fff
-  );
-  background: -o-linear-gradient(
-    right,
-    #fff,
-    transparent 280px,
-    transparent calc(100% - 280px),
-    #fff
-  );
-  background: linear-gradient(
-    to left,
-    #fff,
-    transparent 280px,
-    transparent calc(100% - 280px),
-    #fff
-  );
+  background: -webkit-linear-gradient(right,
+      #fff,
+      transparent 280px,
+      transparent calc(100% - 280px),
+      #fff);
+  background: -o-linear-gradient(right,
+      #fff,
+      transparent 280px,
+      transparent calc(100% - 280px),
+      #fff);
+  background: linear-gradient(to left,
+      #fff,
+      transparent 280px,
+      transparent calc(100% - 280px),
+      #fff);
 }
 
 .main-marq.shadow-off:after {
@@ -925,27 +1029,21 @@ a:hover {
   height: 100%;
   left: 0;
   top: 0;
-  background: -webkit-linear-gradient(
-    bottom,
-    #fff,
-    transparent 80px,
-    transparent calc(100% - 80px),
-    #fff
-  );
-  background: -o-linear-gradient(
-    bottom,
-    #fff,
-    transparent 80px,
-    transparent calc(100% - 80px),
-    #fff
-  );
-  background: linear-gradient(
-    to top,
-    #fff,
-    transparent 80px,
-    transparent calc(100% - 80px),
-    #fff
-  );
+  background: -webkit-linear-gradient(bottom,
+      #fff,
+      transparent 80px,
+      transparent calc(100% - 80px),
+      #fff);
+  background: -o-linear-gradient(bottom,
+      #fff,
+      transparent 80px,
+      transparent calc(100% - 80px),
+      #fff);
+  background: linear-gradient(to top,
+      #fff,
+      transparent 80px,
+      transparent calc(100% - 80px),
+      #fff);
   pointer-events: none;
 }
 
@@ -2888,7 +2986,7 @@ img.left {
     margin-right: -15px;
   }
 
-  .row.sm-marg > * {
+  .row.sm-marg>* {
     padding-left: 15px;
     padding-right: 15px;
   }
@@ -2898,7 +2996,7 @@ img.left {
     margin-right: -15px;
   }
 
-  .row.stand-marg > * {
+  .row.stand-marg>* {
     padding-left: 15px;
     padding-right: 15px;
   }
@@ -2908,7 +3006,7 @@ img.left {
     margin-right: -15px;
   }
 
-  .row.md-marg > * {
+  .row.md-marg>* {
     padding-left: 15px;
     padding-right: 15px;
   }
@@ -2918,7 +3016,7 @@ img.left {
     margin-right: -15px;
   }
 
-  .row.lg-marg > * {
+  .row.lg-marg>* {
     padding-left: 15px;
     padding-right: 15px;
   }
@@ -2928,7 +3026,7 @@ img.left {
     margin-right: -15px;
   }
 
-  .row.xlg-marg > * {
+  .row.xlg-marg>* {
     padding-left: 15px;
     padding-right: 15px;
   }
@@ -2938,7 +3036,7 @@ img.left {
     margin-right: -15px;
   }
 
-  .row.xxlg-marg > * {
+  .row.xxlg-marg>* {
     padding-left: 15px;
     padding-right: 15px;
   }
