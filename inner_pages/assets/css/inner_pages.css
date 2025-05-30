@@ -68,7 +68,183 @@ body {
   letter-spacing: 0;
 }
 
-p {}
+
+.pe-6,
+.px-6 {
+  padding-right: 30px !important;
+}
+
+.ps-6,
+.px-6 {
+  padding-left: 30px !important;
+}
+
+.p-7 {
+  padding: 40px !important;
+}
+
+
+.pb-7,
+.py-7 {
+  padding-bottom: 40px !important;
+}
+
+
+.ps-7,
+.px-7 {
+  padding-left: 40px !important;
+}
+
+.pe-7,
+.px-7 {
+  padding-right: 40px !important;
+}
+
+
+.pt-8,
+.py-8 {
+  padding-top: 50px !important;
+}
+
+
+.pb-8,
+.py-8 {
+  padding-bottom: 50px !important;
+}
+
+.pt-10,
+.py-10 {
+  padding-top: 100px !important;
+}
+
+
+.pb-10,
+.py-10 {
+  padding-bottom: 100px !important;
+}
+
+
+.mb-6,
+.my-6 {
+  margin-bottom: 30px !important;
+}
+
+.mt-6,
+.my-6 {
+  margin-top: 30px !important;
+}
+
+.mb-7,
+.my-7 {
+  margin-bottom: 40px !important;
+}
+
+.me-2,
+.mx-2 {
+  margin-right: 10px !important;
+}
+
+.ms-2,
+.mx-2 {
+  margin-left: 10px !important;
+}
+
+.mt-8,
+.my-8 {
+  margin-top: 50px !important;
+}
+
+.mt-8,
+.my-8 {
+  margin-top: 50px !important;
+}
+
+
+.pt-11,
+.py-11 {
+  padding-top: 245px !important;
+}
+
+.p-6 {
+  padding: 30px !important;
+}
+
+.pt-9,
+.py-9 {
+  padding-top: 75px !important;
+}
+
+.mb-9,
+.my-9 {
+  margin-bottom: 75px !important;
+}
+
+.mb-6,
+.my-6 {
+  margin-bottom: 30px !important;
+}
+
+.me-9,
+.mx-9 {
+  margin-right: 75px !important;
+}
+
+.ms-9,
+.mx-9 {
+  margin-left: 75px !important;
+}
+
+
+.rounded1 {
+  border-radius: 10px;
+}
+
+.rounded2 {
+  border-radius: 20px;
+}
+
+.rounded3 {
+  border-radius: 50px;
+}
+
+.rounded-bottom-0 {
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+.rounded-start-0 {
+  border-bottom-left-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+}
+
+.rounded-top-0 {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+.fw-medium {
+    font-weight: 500 !important;
+}
+
+.shadow {
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05) !important;
+}
+
+.border-dashed {
+  border: 1px dashed #5F5F5F29;
+}
+
+.blue1 {
+  color: var(--main-color);
+}
+
+.bg-lightgreen1 {
+  background-color: #F5FAEE;
+}
+
+.position-relative {
+  position: relative !important;
+}
 
 .ls-0 {
   letter-spacing: 0;

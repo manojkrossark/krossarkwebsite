@@ -1,0 +1,101 @@
+/* Review CSS */
+
+.review {
+    font-family: 'Poppins';
+    font-size: 16px;
+}
+
+.review p {
+    font-size: 16px;
+    color: var(--bs-gray-600);
+    font-family: 'Poppins';
+}
+
+.border-blue {
+    border-color: var(--main-color) !important;
+}
+
+.bg-lightgreen {
+    background-color: #F5FAEE;
+}
+
+.section-title h6,
+.section-title .h6 {
+    font-size: 16px;
+}
+
+.section-title h2,
+.section-title .h2 {
+    font-size: 40px;
+}
+
+.section-title h6,
+.section-title h2 {
+    font-weight: 700;
+}
+
+
+
+.reviewer-bio img {
+    height: 70px;
+    width: 70px;
+}
+
+.review .overlays {
+    background-image: url('../imgs/alto/shape-ev.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.8;
+}
+
+.overlays {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: repeat;
+    content: "";
+}
+
+.qoute-icon {
+    top: 20px;
+    right: 30px;
+}
+
+@media (max-width: 1200px) {
+    .review-inner {
+        padding: 0px !important;
+    }
+}
+
+.btn2 {
+    background-color: var(--main-color);
+    color: var(--primary-color);
+    text-transform: uppercase;
+    padding: 10px 30px;
+    font-weight: 500;
+    transition: all .3s ease-in-out;
+    line-height: 1.5;
+}
+
+.btn2:hover {
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+}
+
+@media ((max-width: 1200px)) {
+    .section-title h2 {
+        border: none !important;
+        padding: 0 !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-title h2 {
+        font-size: 28px;
+    }
+    .review-bottom {
+       flex-direction: column;
+    }
+}

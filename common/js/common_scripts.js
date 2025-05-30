@@ -701,6 +701,15 @@ var testim = new Swiper(".case-studies .testim-swiper", {
   }
 });
 
+$('.review-slider').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2500,
+  arrows: false,
+  dots: false,
+}); 
+
 
 document.addEventListener("DOMContentLoaded", function () {
   gsap.registerPlugin(ScrollTrigger);

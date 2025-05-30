@@ -52,32 +52,10 @@
   <link rel="stylesheet" href="/inner_pages/assets/css/header.css" />
   <link rel="stylesheet" href="/inner_pages/assets/css/inner_pages.css" />
   <link rel="stylesheet" href="/inner_pages/assets/css/responsive.css" />
-  <link rel="preload" as="image" href="inner_pages/assets/imgs/homepage/Banner.webp" />
+  <link rel="stylesheet" href="assets/css/altoev.css" />
 </head>
 
 <body>
-  <!-- ==================== Start Loading ==================== -->
-
-  <!-- <div class="loader-wrap">
-    <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
-      <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
-    </svg>
-
-    <div class="loader-wrap-heading">
-      <div class="load-text">
-        <span>K</span>
-        <span>R</span>
-        <span>O</span>
-        <span>S</span>
-        <span>S</span>
-        <span>A</span>
-        <span>R</span>
-        <span>K</span>
-      </div>
-    </div>
-  </div> -->
-
-  <!-- ==================== End Loading ==================== -->
 
   <div class="cursor"></div>
 
@@ -93,7 +71,6 @@
 
   <!-- ==================== Start Navbar ==================== -->
 
-  <!-- nav.html -->
   <nav class="navbar navbar-expand-lg header_navbar">
     <div class="container">
       <div class="header_header_inner__U8bJp">
@@ -186,48 +163,6 @@
       </div>
     </div>
   </nav>
-
-  <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
-    <div class="offcanvas-body">
-      <div class="searchOffCanvas_search_wrap__LoM_B">
-        <div class="container">
-          <div class="searchOffCanvas_body__4yNuj">
-            <button class="searchOffCanvas_logoWrapper__T3i_x">
-              <a class="logo_brand_logo__pKuee" href="/"><img alt="Krossark" fetchpriority="high" width="96.93"
-                  height="28.01" decoding="async" data-nimg="1" src="/common/imgs/Krossark_logo.svg"
-                  style="color: transparent" /></a>
-            </button>
-            <div class="searchOffCanvas_searchWrapper__apdY5">
-              <div class="searchField_searchField__sUoDR">
-                <form novalidate="">
-                  <div class="searchField_searchInput____GNk">
-                    <button aria-label="search" type="submit" class="searchField_SearchIcon__7S_wO">
-                      <svg class="" width="20" height="20" viewBox="0 0 1017 1024" xmlns="http://www.w3.org/2000/svg"
-                        style="display: inline-block; vertical-align: middle">
-                        <path
-                          d="M436.447 95.576c-188.232 0-340.824 152.592-340.824 340.824s152.592 340.824 340.824 340.824c188.232 0 340.824-152.592 340.824-340.824v0c-0.218-188.144-152.68-340.606-340.803-340.824l-0.020-0zM436.447 0c241.017 0 436.399 195.383 436.399 436.399s-195.383 436.399-436.399 436.399c-241.017 0-436.399-195.383-436.399-436.399v0c0-241.017 195.383-436.399 436.399-436.399v0z"
-                          style="fill: rgb(0, 0, 0)"></path>
-                        <path d="M951.697 1023.952l-259.727-243.049 65.278-69.77 259.727 243.049z"
-                          style="fill: rgb(0, 0, 0)"></path>
-                      </svg></button><input placeholder="Type to search.." class="searchField_SearchInput__HxLyg"
-                      autocomplete="off" type="search" value="" name="search" />
-                  </div>
-                </form>
-              </div>
-              <button class="searchOffCanvas_close__bWTeZ" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop"
-                aria-controls="offcanvasTop">
-                <svg class="" width="100%" height="100%" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"
-                  style="display: inline-block; vertical-align: middle">
-                  <path d="M953.363 1023.933l-953.363-953.363 70.57-70.57 953.363 953.363z"></path>
-                  <path d="M70.57 1023.933l-70.57-70.57 953.363-953.363 70.57 70.57z"></path>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <div class="hamenu">
     <div class="close-menu cursor-pointer ti-close"></div>
@@ -325,235 +260,312 @@
       </div>
     </div>
   </div>
-
-  <!-- This will hold the dynamically loaded offcanvas -->
-  <div id="offcanvasContainer"></div>
   <!-- ==================== End Navbar ==================== -->
+
+  <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+    <div class="offcanvas-body">
+      <div class="searchOffCanvas_search_wrap__LoM_B">
+        <div class="container">
+          <div class="searchOffCanvas_body__4yNuj">
+            <button class="searchOffCanvas_logoWrapper__T3i_x">
+              <a class="logo_brand_logo__pKuee" href="/"><img alt="Krossark" fetchpriority="high" width="96.93"
+                  height="28.01" decoding="async" data-nimg="1" src="/common/imgs/Krossark_logo.svg"
+                  style="color: transparent" /></a>
+            </button>
+            <div class="searchOffCanvas_searchWrapper__apdY5">
+              <div class="searchField_searchField__sUoDR">
+                <form novalidate="">
+                  <div class="searchField_searchInput____GNk">
+                    <button aria-label="search" type="submit" class="searchField_SearchIcon__7S_wO">
+                      <svg class="" width="20" height="20" viewBox="0 0 1017 1024" xmlns="http://www.w3.org/2000/svg"
+                        style="display: inline-block; vertical-align: middle">
+                        <path
+                          d="M436.447 95.576c-188.232 0-340.824 152.592-340.824 340.824s152.592 340.824 340.824 340.824c188.232 0 340.824-152.592 340.824-340.824v0c-0.218-188.144-152.68-340.606-340.803-340.824l-0.020-0zM436.447 0c241.017 0 436.399 195.383 436.399 436.399s-195.383 436.399-436.399 436.399c-241.017 0-436.399-195.383-436.399-436.399v0c0-241.017 195.383-436.399 436.399-436.399v0z"
+                          style="fill: rgb(0, 0, 0)"></path>
+                        <path d="M951.697 1023.952l-259.727-243.049 65.278-69.77 259.727 243.049z"
+                          style="fill: rgb(0, 0, 0)"></path>
+                      </svg></button><input placeholder="Type to search.." class="searchField_SearchInput__HxLyg"
+                      autocomplete="off" type="search" value="" name="search" />
+                  </div>
+                </form>
+              </div>
+              <button class="searchOffCanvas_close__bWTeZ" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop"
+                aria-controls="offcanvasTop">
+                <svg class="" width="100%" height="100%" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"
+                  style="display: inline-block; vertical-align: middle">
+                  <path d="M953.363 1023.933l-953.363-953.363 70.57-70.57 953.363 953.363z"></path>
+                  <path d="M70.57 1023.933l-70.57-70.57 953.363-953.363 70.57 70.57z"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <div id="smooth-wrapper">
     <div id="smooth-content">
-      <main>
+      <main class="index-2">
+       
         <!-- ==================== Banner Intro Started ==================== -->
-        <header class="work-hed bg-dark">
-          <div class="container section-padding bord-thin-bottom-light"
-            style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
-            <div class="caption text-center">
-              <h1 class="ls-0">Alto AI Lens</h1>
-              <div class="path mt-15">
-                <span>
-                  <a href="../homepage.html">Home</a>
-                </span>
-                <span><i class="fa-solid fa-arrow-right-long"></i></span>
-                <span class="main-color">Alto AI Lens Framework</span>
+        <section class="banner breadcrumb mb-0 pt-11 pb-100 position-relative rounded3 rounded-top-0">
+          <div class="overlays rounded3 rounded-top-0"></div>
+          <div class="container position-relative">
+            <div class="banner-inner pt-10 w-lg-75 m-auto text-center text-white ">
+              <div class="section-title mb-20">
+                <h1 class="text-white mb-20">Parking Challenge</h1>
+                <ul class="list-unstyled d-flex justify-content-center">
+                  <li><a href="../homepage.html">Home</a></li>
+                  <li class="mx-4"><i class="fa fa-star green" aria-hidden="true"></i></li>
+                  <li><a href="">Alto Nutri</a></li>
+                </ul>
               </div>
             </div>
           </div>
-        </header>
-        <section class="DynamicContent_section__exJeu null DynamicContent_inner_page__k_hXw"
-          id="serviceTitleDescriptionWidget3">
-          <div class="container ">
-            <div class="DynamicContent_wrapper__xHzQY">
-              <h2 class="ttl-32 lh-title-sub DynamicContent_title__o2lOx">AI Lens Framework: A New innovation hub to
-                See, Solve & Scale</h2>
-              <div class="DynamicContent_description__6SdNo mb-lg-4">
-                <p>The AI Lens Framework is Krossark’s innovation hub designed to help businesses see, solve, and scale
-                  with artificial intelligence. Positioned as an Innovation-as-a-Service (IaaS) platform, it answers the
-                  critical question many organizations face today: “How do I use AI in my business?” From uncovering
-                  hidden opportunities through data and insights, to rapidly solving complex challenges with tailored AI
-                  solutions, and ultimately scaling successful models across the enterprise, the AI Lens Framework
-                  empowers organizations to drive real impact. It blends strategic thinking, cutting-edge technology,
-                  and practical implementation to accelerate AI adoption with measurable business value.&nbsp;</p>
-              </div>
-              <div class="DynamicContent_btn_wrap__lzeQ_ mt-40"><a
-                  class="arw-btn btn btn-outline-primaryly    undefined" href="contact.html"><span>Let's
-                    talk</span><span class="arrow-two fas fa-headset"></span></a>
-              </div>
-            </div>
-          </div>
-          <div class="DynamicContent_video_sec__mLNsI">
-            <div class="container  px-md-1">
-              <div
-                class="commonVideoPlayer_section__7JdzH undefined commonVideoPlayer_inner_page__KGBg3 no-bg undefined"
-                id="undefinedundefined">
-                <div class="commonVideoPlayer_figure__4sHez ratio "
-                  style="--figure-width: 3840; --figure-height: 2160;">
-                  <img alt="Video Thumbnail.png" fetchpriority="high" decoding="async" data-nimg="fill"
-                    class="object-fit-cover" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 80vw"
-                    srcset="/inner_pages/assets/imgs/alto/Video_Thumbnail.webp"
-                    src="/inner_pages/assets/imgs/alto/Video_Thumbnail.webp"
-                    style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+        </section>
+
+        <section class="about1 pb-120 pt-100">
+          <div class="container">
+            <div class="about-inner pb-120">
+              <div class="row align-items-center gy-5 gx-xl-5">
+                <div class="col-xl-2 col-md-6 order-3 order-xl-1">
+                  <div class="about-counter text-center">
+                    <div class="counter-box mb-30 pb-30 border-bottom border-1 border-grey1">
+                      <h2 class="green"><span class="num" data-val="20">20</span>+</h2>
+                      <span class="text-uppercase black fw-medium">Years Experience</span>
+                    </div>
+                    <div class="counter-box mb-30 pb-30 border-bottom border-1 border-grey1">
+                      <h2 class="green"><span class="num" data-val="80">80</span>+</h2>
+                      <span class="text-uppercase black fw-medium">Service Stations</span>
+                    </div>
+                    <div class="counter-box mb-30 pb-30 border-bottom border-1 border-grey1">
+                      <h2 class="green"><span class="num" data-val="15">15</span>K+</h2>
+                      <span class="text-uppercase black fw-medium">Positive Reviews</span>
+                    </div>
+                    <div class="counter-box">
+                      <h2 class="green"><span class="num" data-val="20">20</span>K+</h2>
+                      <span class="text-uppercase black fw-medium">Happy Customers</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-md-6 order-2">
+                  <div class="about-image">
+                    <img src="assets/imgs/alto/parking.webp" alt="about image" class="w-100 rounded2">
+                  </div>
+                </div>
+                <div class="col-xl-6 order-1 order-xl-3">
+                  <div class="about-info text-center text-xl-start">
+                    <div class="section-title mb-30">
+                      <h6 class="text-uppercase fw-medium green1 mb-1">About Park</h6>
+                      <h2 class="ps-4 border-start border-3 border-green">Reliable solutions for all <span
+                          class="green">Alto Parking</span> programs!</h2>
+                    </div>
+                    <div class="section-body">
+                      <p class="mb-4 pb-4 border-dashed border-top-0 border-2 border-start-0 border-end-0">AI is the next-generation, AI-driven parking platform purpose-built for Southeast Asia’s fast-evolving urban ecosystems. alto.park empowers smarter, safer, and greener parking.</p>
+                      <div class="about-services mb-30">
+                        <div class="row g-0">
+                          <div class="col-md-6">
+                            <div
+                              class="about-service-box p-4 d-flex align-items-center bg-grey rounded2 rounded-bottom-0">
+                              <img src="assets/imgs/alto/car_eco.png" alt="service image" class="me-3">
+                              <a class="black text-capitalize fw-bold" href="">Flexible Time Management</a>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="about-service-box p-4 d-flex align-items-center bg-white">
+                              <img src="assets/imgs/alto/car_with_flash.png" alt="service image" class="me-3">
+                              <a class="black text-capitalize fw-bold" href="">Multiple Payment Options</a>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="about-service-box p-4 d-flex align-items-center bg-white">
+                              <img src="assets/imgs/alto/ecology.png" alt="service image" class="me-3">
+                              <a class="black text-capitalize fw-bold" href="">AI-Powered Predictive Parking</a>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="about-service-box p-4 d-flex align-items-center bg-grey rounded2 rounded-top-0">
+                              <img src="assets/imgs/alto/battery_plug.png" alt="service image" class="me-3">
+                              <a class="black text-capitalize fw-bold" href="">Visual Parking AI (ParkCam)</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section class="serv-hed2 section-even-padding ">
-          <div class="container"
-            style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
-            <div class="sec-head caption mb-80">
-              <h2 class="fw-600">The AI Lens <br> Answer</h2>
-              <div class="row justify-content-end">
-                <div class="col-lg-5">
-                  <div class="text mt-30">
-                    <p>AI Lens is not just a framework — it's a philosophy and service model to help you:</p>
+        <section class="feature position-relative pb-100">
+          <div class="container">
+            <div class="feature-inner p-7 rounded2 bg-white border border-2 border-lightgreen">
+              <div class="row gx-md-0 gy-5">
+                <div class="col-lg-4 col-md-6">
+                  <div class="feature-box1 pe-7">
+                    <div class="feature-icon mb-20">
+                      <img src="assets/imgs/alto/car_with_plug.png" alt="feature-image">
+                    </div>
+                    <div class="feature-info">
+                      <h5 class="mb-20"><a href="" class="black">EV Charging Integration</a></h5>
+                      <p>Manage EV charging with real-time kWh tracking and cost updates.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="feature-box2 px-7 border-start border-end border-1 border-grey1">
+                    <div class="feature-icon mb-20">
+                      <img src="assets/imgs/alto/flash.png" alt="feature-image">
+                    </div>
+                    <div class="feature-info">
+                      <h5 class="mb-20"><a href="" class="black">AI-Powered Predictive Parking</a></h5>
+                      <p>Uses traffic, weather, and events to suggest ideal parking.</p>
+                    </div>
                   </div>
                 </div>
                 <div class="col-lg-4">
-                  <div class="list mt-30">
-                    <ul>
-                      <li>Identify the right AI Lens to view your problem
-                      </li>
-                      <li>Prioritize high-impact use cases
-                      </li>
-                      <li>Rapidly build and deploy AI prototypes</li>
-                      <li>Scale AI adoption ethically and effectively</li>
-                    </ul>
+                  <div class="feature-box3 ps-7">
+                    <div class="feature-icon mb-20">
+                      <img src="assets/imgs/alto/car_with_battery.png" alt="feature-image">
+                    </div>
+                    <div class="feature-info">
+                      <h5 class="mb-20"><a href="" class="black">In-Car System Integration</a></h5>
+                      <p>Apple CarPlay/Android Auto access to parking functions from vehicle dashboards.</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="container-fluid">
-            <div class="fit-img radius-15">
-              <img src="assets/imgs/alto/lens.jpg" alt="">
+        </section>
+
+        <section class="work pt-100 pb-50 bg-dark text-center text-white rounded3 rounded-start-0 position-relative">
+          <div class="overlays rounded3 rounded-start-0"></div>
+          <div class="container position-relative">
+            <div class="work-inner">
+              <div class="section-title mb-50">
+                <h6 class="text-uppercase fw-medium text-white mb-1">Why choose us</h6>
+                <h2 class="text-white">Professional <span style="color: #69A316;">Alto Park</span> solution for you</h2>
+              </div>
+              <div class="section-body">
+                <div class="row gy-5 gx-md-5">
+                  <div class="col-xl-3 col-md-6">
+                    <div class="work-box position-relative">
+                      <div class="work-image mb-20">
+                        <img
+                          src="assets/imgs/alto/modern-electric-car-charging-at-outdoors-ev-statio-2023-03-17-23-18-45-utc.jpg"
+                          alt="work image" class="rounded-circle object-fit-cover">
+                      </div>
+                      <div class="work-info">
+                        <h4 class="mb-3 text-white">Vehicle Addition</h4>
+                        <p> Add rentals or short-term vehicles without re-registration.</p>
+                      </div>
+                      <div
+                        class="work-box-number p-2 rounded-circle border border-3 border-lightgreen bg-green position-absolute">
+                        <h4 class="text-white">01.</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-md-6">
+                    <div class="work-box position-relative my-8">
+                      <div class="work-image mb-20">
+                        <img
+                          src="assets/imgs/alto/hand-holding-electric-car-charger-electric-vehicl-2022-11-16-14-02-45-utc.jpg"
+                          alt="work image" class="rounded-circle object-fit-cover">
+                      </div>
+                      <div class="work-info">
+                        <h4 class="mb-3 text-white">Session Notifications</h4>
+                        <p>Alerts for expiring sessions and remote extension options.</p>
+                      </div>
+                      <div
+                        class="work-box-number p-2 rounded-circle border border-3 border-lightgreen bg-green position-absolute">
+                        <h4 class="text-white">02.</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-md-6">
+                    <div class="work-box position-relative">
+                      <div class="work-image mb-20">
+                        <img
+                          src="assets/imgs/alto/indian-businessman-charging-car-at-outdoor-ev-stat-2023-03-17-23-18-50-utc.jpg"
+                          alt="work image" class="rounded-circle object-fit-cover">
+                      </div>
+                      <div class="work-info">
+                        <h4 class="mb-3 text-white">Parking Management</h4>
+                        <p>Manage employee parking, view usage and cost reports.</p>
+                      </div>
+                      <div
+                        class="work-box-number p-2 rounded-circle border border-3 border-lightgreen bg-green position-absolute">
+                        <h4 class="text-white">03.</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-md-6">
+                    <div class="work-box position-relative my-8">
+                      <div class="work-image mb-20">
+                        <img
+                          src="assets/imgs/alto/electric-car-charging-connected-to-the-grid-2023-02-07-21-01-15-utc.jpg"
+                          alt="work image" class="rounded-circle object-fit-cover">
+                      </div>
+                      <div class="work-info">
+                        <h4 class="mb-3 text-white">AutoZone Pricing</h4>
+                        <p>Real-time pricing based on demand, loyalty, and time.</p>
+                      </div>
+                      <div
+                        class="work-box-number p-2 rounded-circle border border-3 border-lightgreen bg-green position-absolute">
+                        <h4 class="text-white">04.</h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        <section class="serv-details section-even-padding bord-thin-bottom-light">
+        <section class="mission pt-10">
           <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-7">
-                <div class="content">
-                  <h3>The AI Lens Framework – Core Lenses</h3>
-                  <div class="text mt-30 mb-50">
-                    <p>The foundational capabilities that guide how businesses engage with and apply artificial
-                      intelligence for real-world impact. Each lens focuses on a distinct domain—Perception, Reasoning,
-                      Automation, and Interaction—enabling a structured approach to innovation. The Perception Lens
-                      powers
-                      computer vision and language understanding to help systems see and interpret the world.</p>
+            <div
+              class="mission-inner text-center text-lg-start border-dashed border-2 mb-7 pb-7 border-top-0 border-start-0 border-end-0">
+              <div class="row align-items-center gy-5 gx-lg-5">
+                <div class="col-lg-6">
+                  <div class="section-left">
+                    <img src="assets/imgs/alto/map-evcharge.png" alt="mission image" class="w-100">
                   </div>
-                  <div class="accordion" id="accordionExample">
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="heading1">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                          data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
-                          <span>1.</span>Predictive
-                        </button>
-                      </h2>
-                      <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                          <p><span class="fw-600">What It Helps You Do :</span> Forecast future events, trends, or
-                            behaviors</p>
-                          <p class="mt-10"><span class="fw-600">Real-World Use Case :</span> Predict next month’s demand
-                            for air conditioners in Kochi based on weather and buying patterns</p>
-                        </div>
-                      </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="section-right">
+                    <div class="section-title mb-6">
+                      <h6 class="text-uppercase fw-medium green1 mb-1">Convenient &amp; fast</h6>
+                      <h2 class="ps-4 border-start border-3 border-green"><span class="green">our mission</span> is to
+                        charge your electric vehicle properly</h2>
                     </div>
-                    <div class="accordion-item active">
-                      <h2 class="accordion-header" id="heading2">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                          data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                          <span>2.</span>Generative
-                        </button>
-                      </h2>
-                      <div id="collapse2" class="accordion-collapse collapse show" aria-labelledby="heading2"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                          <p><span class="fw-600">What It Helps You Do :</span> Create content, product designs, or
-                            strategies</p>
-                          <p class="mt-10"><span class="fw-600">Real-World Use Case :</span> Auto-generate regional
-                            product bundles & discounts in e-commerce</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="heading3">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                          data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                          <span>3.</span>Behavioral
-                        </button>
-                      </h2>
-                      <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                          <p><span class="fw-600">What It Helps You Do :</span> Understand and respond to user actions
-                          </p>
-                          <p class="mt-10"><span class="fw-600">Real-World Use Case :</span> Adjust in-store digital
-                            signage based on shopper movement patterns</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="heading4">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                          data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                          <span>4.</span>Cognitive
-                        </button>
-                      </h2>
-                      <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                          <p><span class="fw-600">What It Helps You Do :</span> Interpret human sentiment, intent, or
-                            emotion</p>
-                          <p class="mt-10"><span class="fw-600">Real-World Use Case :</span> Prioritize customer support
-                            tickets based on tone and urgency
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="heading5">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                          data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-                          <span>5.</span>Geospatial
-                        </button>
-                      </h2>
-                      <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                          <p><span class="fw-600">What It Helps You Do :</span> Optimize location-based decisions</p>
-                          <p class="mt-10"><span class="fw-600">Real-World Use Case :</span> Optimize hyperlocal
-                            delivery routes using live traffic and weather
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="heading6">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                          data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
-                          <span>6.</span>Ethical
-                        </button>
-                      </h2>
-                      <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                          <p><span class="fw-600">What It Helps You Do :</span> Ensure fairness, transparency, and trust
-                          </p>
-                          <p class="mt-10"><span class="fw-600">Real-World Use Case :</span> Audit and improve loan
-                            eligibility AI to remove gender bias
-
-
-                          </p>
-                        </div>
-                      </div>
+                    <div class="section-body">
+                      <p>Gain actionable parking insights through real-time heatmaps, usage trends, idle slot detection, and sensor health analytics. Improve space utilization, reduce congestion, and ensure optimal performance of smart parking infrastructure.</p>
+                      <ul
+                        class="list-unstyled mission-list fw-bold mt-4 pt-4 border-dashed border-2 border-bottom-0 border-start-0 border-end-0">
+                        <li class="mb-3"><i class="fa fa-leaf green me-1" aria-hidden="true"></i> Uses traffic, weather, and events to suggest ideal parking.</li>
+                        <li class="mb-3"><i class="fa fa-leaf green me-1" aria-hidden="true"></i> Turns traditional meters smart via QR/NFC; no hardware upgrades.</li>
+                        <li><i class="fa fa-leaf green me-1" aria-hidden="true"></i> Track past parking, download receipts, and generate reports.</li>
+                      </ul>
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
           </div>
         </section>
+
       </main>
 
       <!-- ==================== Start Footer ==================== -->
 
-      <!-- footer.html -->
-      <footer class="footer-sa pb-80 mt-80">
+     <!-- footer.html -->
+      <footer class="footer-sa pb-80">
         <div class="container section-even-padding">
           <div class="call-action text-center mb-100">
             <h2 class="">
@@ -643,9 +655,6 @@
     </div>
   </div>
 
-  <!-- Placeholder where modal will be loaded -->
-  <div id="modal-container"></div>
-
   <!-- jQuery -->
   <script src="/common/js/lib/jquery-3.6.0.min.js"></script>
   <script src="/common/js/lib/jquery-migrate-3.4.0.min.js"></script>
@@ -666,6 +675,7 @@
 
   <!-- custom scripts -->
   <script src="/inner_pages/assets/js/inner_pages.js"></script>
+
 </body>
 
 </html>

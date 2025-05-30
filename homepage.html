@@ -47,11 +47,19 @@
   <!-- Plugins -->
   <link rel="stylesheet" href="/common/css/plugins.css" />
 
+  <!-- Slick CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+
+
   <!-- Core Style Css -->
   <link rel="stylesheet" href="/common/css/common_style.css" />
   <link rel="stylesheet" href="/inner_pages/assets/css/header.css" />
   <link rel="stylesheet" href="/inner_pages/assets/css/inner_pages.css" />
   <link rel="stylesheet" href="/inner_pages/assets/css/responsive.css" />
+  <link rel="stylesheet" href="/inner_pages/assets/css/review.css" />
   <link rel="preload" as="image" href="inner_pages/assets/imgs/homepage/Banner.webp" />
 </head>
 
@@ -1416,7 +1424,7 @@
 
         <!-- ==================== Client Reviews ==================== -->
 
-        <section class="review-serve section-even-padding sub-bg">
+        <!-- <section class="review-serve section-even-padding sub-bg">
           <div class="container">
             <div class="sec-head wow fadeInUp slow" data-wow-delay="0.2s" style="visibility: visible;">
               <div class="row mb-40 align-items-center">
@@ -1572,7 +1580,199 @@
               </div>
             </div>
           </div>
+        </section> -->
+
+
+
+        <!-- Client reviews -->
+
+        <section class="review py-10 bg-lightgreen position-relative rounded-bottom-0 rounded3">
+          <div class="overlays"></div>
+          <div class="container position-relative">
+            <div class="review-inner text-center text-lg-start">
+              <div class="row align-items-center gy-5 gx-lg-5">
+                <div class="col-lg-5 wow fadeInUp slow" data-wow-delay="0.2s" style="visibility: visible;">
+                  <div class="section-left">
+                    <div class="section-title mb-6">
+                      <h6 class="text-uppercase fw-medium blue1 mb-1">Client Reviews</h6>
+                      <h2 class="ps-4 border-start border-3 border-blue mb-4">Read Clients Story of <span
+                          class="blue1">Trusting Krossark</span></h2>
+                    </div>
+                    <div class="section-body">
+                      <p>Authentic experiences. Trusted feedback. Hear directly from our clients as they share how our solutions helped drive innovation, streamline operations, and deliver measurable impact.</p>
+                      <p class="my-4">From strategy to execution, their stories reflect the value and trust we build every step of the way.</p>
+                      <a href="#" class="btn btn2">View all reviews</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 offset-lg-1 wow fadeInUp slow" data-wow-delay="0.2s" style="visibility: visible;">
+                  <div class="section-right">
+                    <div class="review-slider mb-4">
+                      <div class="review-box mx-2 position-relative px-6 py-8 bg-white border-dashed border-2 rounded2">
+                        <div class="qoute-icon p-4 h2 bg-lightgreen1 position-absolute rounded2">
+                          <i class="fa fa-quote-right blue1" aria-hidden="true"></i>
+                        </div>
+                        <div class="review-info position-relative">
+                          <ul class="list-unstyled d-flex">
+                            <li class="me-1"><i class="fa fa-star black" aria-hidden="true"></i></li>
+                            <li class="me-1"><i class="fa fa-star black" aria-hidden="true"></i></li>
+                            <li class="me-1"><i class="fa fa-star black" aria-hidden="true"></i></li>
+                            <li class="me-1"><i class="fa fa-star black" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-star black" aria-hidden="true"></i></li>
+                          </ul>
+                          <p class="h5 fw-normal fst-italic lh-base my-6">The Krossark team truly amplified our
+                            messaging through their expert use of visuals.</p>
+                        </div>
+                        <div class="reviewer-bio d-flex align-items-center justify-content-center">
+                          <div class="bio-image me-3">
+                            <img src="/inner_pages/assets/imgs/testim/avatar5.png" alt="review-image"
+                              class="rounded-circle object-fit-cover">
+                          </div>
+                          <div class="bio-detail">
+                            <span class="black text-uppercase fw-medium">Anita Mehra</span> <br>
+                            <span class="blue1">Founder, Luxe Decor Studios</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="review-box mx-2 position-relative px-6 py-8 bg-white border-dashed border-2 rounded2">
+                        <div class="qoute-icon p-4 h2 bg-lightgreen1 position-absolute rounded2">
+                          <i class="fa fa-quote-right blue1" aria-hidden="true"></i>
+                        </div>
+                        <div class="review-info position-relative">
+                          <ul class="list-unstyled d-flex">
+                            <li class="me-1"><i class="fa fa-star black" aria-hidden="true"></i></li>
+                            <li class="me-1"><i class="fa fa-star black" aria-hidden="true"></i></li>
+                            <li class="me-1"><i class="fa fa-star black" aria-hidden="true"></i></li>
+                            <li class="me-1"><i class="fa fa-star black" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-star black" aria-hidden="true"></i></li>
+                          </ul>
+                          <p class="h5 fw-normal fst-italic lh-base my-6">The Krossark team transformed our vision into stunning visuals that speak volumes.</p>
+                        </div>
+                        <div class="reviewer-bio d-flex align-items-center justify-content-center">
+                          <div class="bio-image me-3">
+                            <img src="/inner_pages/assets/imgs/testim/avatar2.webp" alt="review-image" class="rounded-circle object-fit-cover">
+                          </div>
+                          <div class="bio-detail">
+                            <span class="black text-uppercase fw-medium">Rahul Verma</span> <br>
+                            <span class="blue1">CEO, NexGen Tech Solutions</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="review-box mx-2 position-relative px-6 py-8 bg-white border-dashed border-2 rounded2">
+                        <div class="qoute-icon p-4 h2 bg-lightgreen1 position-absolute rounded2">
+                          <i class="fa fa-quote-right blue1" aria-hidden="true"></i>
+                        </div>
+                        <div class="review-info position-relative">
+                          <ul class="list-unstyled d-flex">
+                            <li class="me-1"><i class="fa fa-star black" aria-hidden="true"></i></li>
+                            <li class="me-1"><i class="fa fa-star black" aria-hidden="true"></i></li>
+                            <li class="me-1"><i class="fa fa-star black" aria-hidden="true"></i></li>
+                            <li class="me-1"><i class="fa fa-star black" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-star black" aria-hidden="true"></i></li>
+                          </ul>
+                          <p class="h5 fw-normal fst-italic lh-base my-6">Seamless collaboration and exceptional design-Krossark brought our message to life.</p>
+                        </div>
+                        <div class="reviewer-bio d-flex align-items-center justify-content-center">
+                          <div class="bio-image me-3">
+                            <img src="/inner_pages/assets/imgs/testim/avatar6.png" alt="review-image" class="rounded-circle object-fit-cover">
+                          </div>
+                          <div class="bio-detail">
+                            <span class="black text-uppercase fw-medium">Samantha Lee</span> <br>
+                            <span class="blue1">Marketing Head, Urban Eats</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="review-box mx-2 position-relative px-6 py-8 bg-white border-dashed border-2 rounded2">
+                        <div class="qoute-icon p-4 h2 bg-lightgreen1 position-absolute rounded2">
+                          <i class="fa fa-quote-right blue1" aria-hidden="true"></i>
+                        </div>
+                        <div class="review-info position-relative">
+                          <ul class="list-unstyled d-flex">
+                            <li class="me-1"><i class="fa fa-star black" aria-hidden="true"></i></li>
+                            <li class="me-1"><i class="fa fa-star black" aria-hidden="true"></i></li>
+                            <li class="me-1"><i class="fa fa-star black" aria-hidden="true"></i></li>
+                            <li class="me-1"><i class="fa fa-star black" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-star black" aria-hidden="true"></i></li>
+                          </ul>
+                          <p class="h5 fw-normal fst-italic lh-base my-6">Their expertise in visuals made our messaging more impactful and engaging.</p>
+                        </div>
+                        <div class="reviewer-bio d-flex align-items-center justify-content-center">
+                          <div class="bio-image me-3">
+                            <img src="/inner_pages/assets/imgs/testim/avatar4.webp" alt="review-image" class="rounded-circle object-fit-cover">
+                          </div>
+                          <div class="bio-detail">
+                            <span class="black text-uppercase fw-medium">Vikram Sood</span> <br>
+                            <span class="blue1">Director, Zenith Constructions</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="review-box mx-2 position-relative px-6 py-8 bg-white border-dashed border-2 rounded2">
+                        <div class="qoute-icon p-4 h2 bg-lightgreen1 position-absolute rounded2">
+                          <i class="fa fa-quote-right blue1" aria-hidden="true"></i>
+                        </div>
+                        <div class="review-info position-relative">
+                          <ul class="list-unstyled d-flex">
+                            <li class="me-1"><i class="fa fa-star black" aria-hidden="true"></i></li>
+                            <li class="me-1"><i class="fa fa-star black" aria-hidden="true"></i></li>
+                            <li class="me-1"><i class="fa fa-star black" aria-hidden="true"></i></li>
+                            <li class="me-1"><i class="fa fa-star black" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-star black" aria-hidden="true"></i></li>
+                          </ul>
+                          <p class="h5 fw-normal fst-italic lh-base my-6">Brilliant execution! Krossark turned our ideas into visually compelling narratives.</p>
+                        </div>
+                        <div class="reviewer-bio d-flex align-items-center justify-content-center">
+                          <div class="bio-image me-3">
+                            <img src="/inner_pages/assets/imgs/testim/avatar3.webp" alt="review-image" class="rounded-circle object-fit-cover">
+                          </div>
+                          <div class="bio-detail">
+                            <span class="black text-uppercase fw-medium">Arjun Malhotra</span> <br>
+                            <span class="blue1">COO, Stellar Logistic</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="review-box mx-2 position-relative px-6 py-8 bg-white border-dashed border-2 rounded2">
+                        <div class="qoute-icon p-4 h2 bg-lightgreen1 position-absolute rounded2">
+                          <i class="fa fa-quote-right blue1" aria-hidden="true"></i>
+                        </div>
+                        <div class="review-info position-relative">
+                          <ul class="list-unstyled d-flex">
+                            <li class="me-1"><i class="fa fa-star black" aria-hidden="true"></i></li>
+                            <li class="me-1"><i class="fa fa-star black" aria-hidden="true"></i></li>
+                            <li class="me-1"><i class="fa fa-star black" aria-hidden="true"></i></li>
+                            <li class="me-1"><i class="fa fa-star black" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-star black" aria-hidden="true"></i></li>
+                          </ul>
+                          <p class="h5 fw-normal fst-italic lh-base my-6">Krossark didn't just design-they amplified our brand's voice with precision.</p>
+                        </div>
+                        <div class="reviewer-bio d-flex align-items-center justify-content-center">
+                          <div class="bio-image me-3">
+                            <img src="/inner_pages/assets/imgs/testim/avatar1.webp" alt="review-image" class="rounded-circle object-fit-cover">
+                          </div>
+                          <div class="bio-detail">
+                            <span class="black text-uppercase fw-medium">Rohit Khanna</span> <br>
+                            <span class="blue1">Founder, Elevate Fitness Studios</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="review-bottom d-flex align-items-center">
+                      <ul class="list-unstyled d-flex me-3">
+                        <li><i class="fa fa-star blue1" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star blue1" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star blue1" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star blue1" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star blue1" aria-hidden="true"></i></li>
+                      </ul>
+                      <p><span class="fw-bold">99.9% Customer Satisfaction</span> based on 550+ reviews of 2,250
+                        Completed Projects, and 2,820 Happy Customers trust us.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
+
 
         <!-- ==================== Partner Client ==================== -->
 
@@ -1958,6 +2158,9 @@
   <script src="/common/js/gsap_lib/SplitText.min.js"></script>
   <script src="/common/js/gsap_lib/matter.js"></script>
   <script src="/common/js/gsap_lib/throwable.js"></script>
+
+  <!-- Slick JS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
   <!-- common scripts -->
   <script src="/common/js/common_scripts.js"></script>

@@ -6,7 +6,8 @@
 
 
 
-body, p {
+body,
+ p {
   font-size: 16px;
   font-family: 'Poppins';
   font-weight: 300;
@@ -123,19 +124,22 @@ h6 {
 }
 
 
+
+
+.green {
+  color: #69A316;
+}
+
+.green1 {
+  color: #69A316;
+}
+
 .bg-green {
   background-color: #87C332;
 }
 
 .border-green {
   border-color: #69A316 !important;
-}
-
-.green {
-  color: #69A316;
-}
-.green1 {
-    color: #69A316;
 }
 
 .bg-grey {
@@ -146,71 +150,12 @@ h6 {
   background-color: #F7F7F721;
 }
 
-.border-dashed {
-  border: 1px dashed #5F5F5F29;
+.bg-lightgreen1 {
+  background-color: #F5FAEE;
 }
 
-.rounded1 {
-  border-radius: 10px;
-}
-
-.rounded3 {
-  border-radius: 50px;
-}
-
-.rounded-bottom-0 {
-  border-bottom-right-radius: 0 !important;
-  border-bottom-left-radius: 0 !important;
-}
-.rounded-start-0 {
-    border-bottom-left-radius: 0 !important;
-    border-top-left-radius: 0 !important;
-}
-
-.rounded-top-0 {
-  border-top-left-radius: 0 !important;
-  border-top-right-radius: 0 !important;
-}
-
-.p-7 {
-  padding: 40px !important;
-}
-
-.pt-10, .py-10 {
-    padding-top: 100px !important;
-}
-.pb-7, .py-7 {
-    padding-bottom: 40px !important;
-}
-
-.mb-7, .my-7 {
-    margin-bottom: 40px !important;
-}
-
-.pb-10, .py-10 {
-    padding-bottom: 100px !important;
-}
-
-.ps-7,
-.px-7 {
-  padding-left: 40px !important;
-}
-
-.pe-7, .px-7 {
-    padding-right: 40px !important;
-}
-
-
-.mt-8, .my-8 {
-    margin-top: 50px !important;
-}
-
-.mt-8, .my-8 {
-    margin-top: 50px !important;
-}
-
-.shadow {
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05) !important;
+.bg-lightgreen {
+  background-color: #F5FAEE;
 }
 
 .border-lightgreen {
@@ -325,43 +270,8 @@ h6 {
   }
 }
 
-.pt-11,
-.py-11 {
-  padding-top: 245px !important;
-}
 
-.p-6 {
-  padding: 30px !important;
-}
 
-.pt-9,
-.py-9 {
-  padding-top: 75px !important;
-}
-
-.mb-9,
-.my-9 {
-  margin-bottom: 75px !important;
-}
-
-.mb-6,
-.my-6 {
-  margin-bottom: 30px !important;
-}
-
-.me-9,
-.mx-9 {
-  margin-right: 75px !important;
-}
-
-.ms-9,
-.mx-9 {
-  margin-left: 75px !important;
-}
-
-.rounded2 {
-  border-radius: 20px;
-}
 
 .fs-18 {
   font-size: 18px;
@@ -369,10 +279,6 @@ h6 {
 
 .fs-50 {
   font-size: 50px;
-}
-
-.position-relative {
-  position: relative !important;
 }
 
 /* Banner Section */
@@ -1010,23 +916,23 @@ h6 {
 }
 
 /* Work CSS */
-.work-image img{
+.work-image img {
   width: 150px;
   height: 150px;
 }
 
-.work-box-number{
+.work-box-number {
   top: -20px;
   left: 40%;
 }
 
-.work-box-number h4{
+.work-box-number h4 {
   height: 50px;
   width: 50px;
   line-height: 50px;
 }
 
-.work{
+.work {
   margin-right: 5%;
   background-image: url('../imgs/alto/electric-car-charging-connected-to-the-grid-2023-02-07-21-01-15-utc.jpg');
   background-repeat: no-repeat;
@@ -1034,30 +940,34 @@ h6 {
   background-attachment: fixed;
 }
 
-.work .overlays{
+.work .overlays {
   background-image: linear-gradient(90deg, #052730 0%, #69A316 100%);
   opacity: 0.9;
 }
 
 
-.work .work-box .work-info{
+.work .work-box .work-info {
   background-color: transparent;
 }
 
-@media (min-width: 768px ) and (max-width:1200px){
-  .work-box{
+@media (min-width: 768px) and (max-width:1200px) {
+  .work-box {
     margin: 0 !important;
     margin-top: 20px !important;
   }
 
-  .work{
+  .work {
     padding-bottom: 100px !important;
   }
 }
 
-@media (max-width:768px){
-  .work, .work .overlays{
+@media (max-width:768px) {
+
+  .work,
+  .work .overlays {
     margin: 0;
     border-radius: 0;
   }
 }
+
+
