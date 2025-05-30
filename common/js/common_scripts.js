@@ -714,7 +714,7 @@ $('.partner-slider').slick({
   slidesToShow: 4,
   slidesToScroll: 1,
   autoplay: true,
-  autoplaySpeed: 2500,
+  autoplaySpeed: 2000,
   arrows: false,
   dots: false,
   responsive: [
