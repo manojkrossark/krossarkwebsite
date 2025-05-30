@@ -708,7 +708,20 @@ $('.review-slider').slick({
   autoplaySpeed: 2500,
   arrows: false,
   dots: false,
-}); 
+});
+
+$('.partner-slider').slick({
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2500,
+  arrows: false,
+  dots: false,
+  responsive: [
+    { breakpoint: 1100, settings: { slidesToShow: 3, slidesToScroll: 1 } },
+    { breakpoint: 600, settings: { slidesToShow: 2, slidesToScroll: 1 } },
+    { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1 } }]
+});
 
 
 document.addEventListener("DOMContentLoaded", function () {
