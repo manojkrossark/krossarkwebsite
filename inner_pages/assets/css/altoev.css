@@ -230,7 +230,7 @@ h4 {
 
 .banner-1 .spin-demo-main img {
   position: absolute;
-  left: 25%
+  /* left: 25% */
 }
 
 .banner-1 .section-title-right img {
@@ -321,7 +321,7 @@ h4 {
 
 
   .banner-1 {
-    padding: 75px 0 0 0 !important;
+    padding: 235px 0 0 0 !important;
   }
 
   .banner-1-image img {
@@ -334,7 +334,7 @@ h4 {
   }
 
   .banner-1 .spin-demo-main img {
-    left: 45%;
+    left: 26%;
   }
 }
 
@@ -531,7 +531,7 @@ h4 {
 .percentage-wrapper::after {
   position: absolute;
   content: "";
-  bottom: -7px;
+  bottom:-16px;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
@@ -547,6 +547,7 @@ h4 {
   transform: translateX(-50%);
   font-size: 13px;
   transition: left 3s ease-in-out;
+  padding-top: 0.8rem !important;
 }
 
 .percentage-wrapper::after {
