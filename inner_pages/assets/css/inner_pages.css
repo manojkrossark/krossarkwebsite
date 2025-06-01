@@ -3324,7 +3324,6 @@
   .listingCard_listing_card__vSgnM .listingCard_title__ufYqF {
     letter-spacing: -.0533333333rem;
     line-height: 1.18;
-    margin-bottom: 1rem
   }
 }
 
@@ -3345,7 +3344,7 @@
 
 .listingCard_listing_card__vSgnM .listingCard_description__Q5VTW {
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  /* -webkit-line-clamp: 3; */
   -webkit-box-orient: vertical;
   overflow: hidden
 }
