@@ -1,21 +1,17 @@
 /*-----------------------------------------------------------------------------------
 
-    Theme Name: Hubfolio
+    Theme Name: Krossark
     Theme URI: http://
-    Description: Creative Digital Agency & Portfolio
-    Author: UI-ThemeZ
-    Author URI: http://.net/user/UI-ThemeZ
     Version: 1.0
 
 -----------------------------------------------------------------------------------*/
-/* ========= [ variables ]  =========*/
-/* ========= [ global ]  =========*/
-/* Global
------------------------------------------------------------------*/
 
 @charset "UTF-8";
 
-/* ========= [ * inner pages ]  =========*/
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* ========= [ variables ]  =========*/
 :root {
   --bg-color: #18191b;
   --theme-color: #0e0f11;
@@ -23,15 +19,91 @@
   --primary-color: #ffffff;
   --text-color: #7f7f7f;
   --text-main-color: #505050;
-  --bg-gray-color: #f5f5f5;
-
+  --bg-gray-color: #fcfafa;
+  --light: #fff;
+  --dark: #000;
+  --tertiary: #fcfafa;
+  --tertiary-border: #dfe3eb;
   /* Font Size */
-
+  --font-paragraph-12: 12px;
   --font-paragraph-14: 14px;
   --font-paragraph-16: 16px;
   --font-paragraph-18: 18px;
-  --font-family-playfair: "Playfair Display", serif;
+  --font-family-Urbanist: "Urbanist", sans-serif;
 }
+
+/* Initial Loading
+-----------------------------------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+  list-style: none;
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+html{
+  font-size: var(--font-paragraph-18);
+}
+
+html ::-webkit-scrollbar-track {
+  background: #fcfafa;
+  border-radius: 20px;
+}
+
+html ::-webkit-scrollbar-thumb {
+  background-color: #9b9b9b;
+  border-radius: 20px;
+  border: 3px solid #fcfafa;
+}
+
+html ::-webkit-scrollbar {
+  width: 12px;
+}
+
+body {
+  overflow-x: hidden !important;  
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--dark);
+  background-color: var(--primary-color);
+  letter-spacing: 1px;
+  font-family: var(--font-family-Urbanist);
+}
+
+p {
+  margin: 0;
+}
+
+a,
+a:hover {
+  color: inherit;
+}
+
+span {
+  display: inline-block;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+
+/* ========= [ global ]  =========*/
+/* Global
+-----------------------------------------------------------------*/
 
 
 h1,
@@ -41,27 +113,27 @@ h1,
 
 h2,
 .h2 {
-  font-size: 36px;
+  font-size: 38px;
 }
 
 h3,
 .h3 {
-  font-size: 24px;
+  font-size: 32px;
 }
 
 h4,
 .h4 {
-  font-size: 21px;
+  font-size: 28px;
 }
 
 h5,
 .h5 {
-  font-size: 18px;
+  font-size: 24px;
 }
 
 h6,
 .h6 {
-  font-size: 16px;
+  font-size: 22px;
 }
 
 @media (max-width: 1100px) {
@@ -136,12 +208,254 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 700;
-  font-family: "Poppins", sans-serif;
-  text-transform: capitalize;
+  font-weight: 600;
   margin: 0;
   line-height: 1.22em;
 }
+
+
+.pe-6,
+.px-6 {
+  padding-right: 30px !important;
+}
+
+.ps-6,
+.px-6 {
+  padding-left: 30px !important;
+}
+
+.p-7 {
+  padding: 40px !important;
+}
+
+
+.pb-7,
+.py-7 {
+  padding-bottom: 40px !important;
+}
+
+
+.ps-7,
+.px-7 {
+  padding-left: 40px !important;
+}
+
+.pe-7,
+.px-7 {
+  padding-right: 40px !important;
+}
+
+
+.pt-8,
+.py-8 {
+  padding-top: 50px !important;
+}
+
+
+.pb-8,
+.py-8 {
+  padding-bottom: 50px !important;
+}
+
+.pt-10,
+.py-10 {
+  padding-top: 100px !important;
+}
+
+
+.pb-10,
+.py-10 {
+  padding-bottom: 100px !important;
+}
+
+
+.mb-6,
+.my-6 {
+  margin-bottom: 30px !important;
+}
+
+.mt-6,
+.my-6 {
+  margin-top: 30px !important;
+}
+
+.mb-7,
+.my-7 {
+  margin-bottom: 40px !important;
+}
+
+.me-2,
+.mx-2 {
+  margin-right: 10px !important;
+}
+
+.ms-2,
+.mx-2 {
+  margin-left: 10px !important;
+}
+
+.mt-8,
+.my-8 {
+  margin-top: 50px !important;
+}
+
+.mt-8,
+.my-8 {
+  margin-top: 50px !important;
+}
+
+
+.pt-11,
+.py-11 {
+  padding-top: 245px !important;
+}
+
+.p-6 {
+  padding: 30px !important;
+}
+
+.pt-9,
+.py-9 {
+  padding-top: 75px !important;
+}
+
+.mb-9,
+.my-9 {
+  margin-bottom: 75px !important;
+}
+
+.mb-6,
+.my-6 {
+  margin-bottom: 30px !important;
+}
+
+.me-9,
+.mx-9 {
+  margin-right: 75px !important;
+}
+
+.ms-9,
+.mx-9 {
+  margin-left: 75px !important;
+}
+
+.w-100 {
+  width: 100px;
+}
+
+.w-120 {
+  width: 120px;
+}
+
+.w-130 {
+  width: 130px;
+}
+
+.w-140 {
+  width: 140px;
+}
+
+.w-150 {
+  width: 150px;
+}
+
+.height-100 {
+  height: 100px;
+}
+
+.relative {
+  position: relative;
+}
+
+.padd-inline {
+  padding-inline: 40px;
+}
+
+.marg-inline {
+  margin-inline: 20px;
+}
+
+.rounded1 {
+  border-radius: 10px;
+}
+
+.rounded2 {
+  border-radius: 20px;
+}
+
+.rounded3 {
+  border-radius: 50px;
+}
+
+.rounded-4 {
+  border-radius: 1rem;
+}
+
+.rounded-5 {
+  border-radius: 1.5rem;
+}
+
+.rounded-6 {
+  border-radius: 2rem;
+}
+
+.rounded-7 {
+  border-radius: 2.5rem;
+}
+
+.rounded-6 {
+  border-radius: 3rem;
+}
+
+.rounded-15 {
+  border-radius: 15px;
+}
+
+.rounded-bottom-0 {
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+.rounded-start-0 {
+  border-bottom-left-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+}
+
+.rounded-top-0 {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+.fw-medium {
+  font-weight: 500 !important;
+}
+
+.shadow {
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05) !important;
+}
+
+.border-dashed {
+  border: 1px dashed #5F5F5F29;
+}
+
+.blue1 {
+  color: var(--main-color);
+}
+
+.bg-lightgreen1 {
+  background-color: #F5FAEE;
+}
+
+
+.ls-0 {
+  letter-spacing: 0;
+}
+
+.lh-15 {
+  line-height: 1.5;
+}
+
+
 
 main {
   position: relative;
@@ -568,40 +882,6 @@ figure {
   header {
     padding-top: 70px !important;
   }
-}
-
-/* ========= [ typography ]  =========*/
-/* Typography
------------------------------------------------------------------*/
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  outline: none;
-  list-style: none;
-}
-
-body {
-  overflow-x: hidden !important;
-}
-
-a,
-a:hover {
-  color: inherit;
-}
-
-span {
-  display: inline-block;
-}
-
-a {
-  display: inline-block;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
 }
 
 /* ========= [ buttons ]  =========*/

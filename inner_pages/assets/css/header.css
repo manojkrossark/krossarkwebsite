@@ -11,7 +11,6 @@
   width: 100%;
   background: var(--primary-color);
   z-index: 999;
-  text-transform: uppercase;
   box-shadow: 1px 1px 8px transparent;
 }
 
@@ -75,7 +74,6 @@
 li.nav-item {
   line-height: 35px;
   text-align: center;
-  font-size: 14px;
   text-transform: uppercase;
   padding: 0px 0px;
   color: var(--text-color);
@@ -84,11 +82,8 @@ li.nav-item {
 .navbar .navbar-nav .nav-link {
   padding: 0px 15px;
   border-radius: 30px;
-  font-size: 18px;
-  
-  letter-spacing: .0333333333rem;
   text-transform: capitalize;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .navbar.header_navbar .navbar-nav .nav-link::after {
@@ -188,14 +183,18 @@ li.nav-item {
 
 
 .dropdown-menu.show {
-  backdrop-filter: blur(10px);
-  background: var(--primary-color);
   margin-top: 0px;
-  padding: 0;
-  left: 15px;
-  box-shadow: 0 0px 9px rgba(10, 101, 192, 0.1);
+  padding: 19px 0 0;
   border-radius: 0;
   top: 37px;
+  border: none;
+  background-color: transparent;
+}
+
+.dropdown-menu.show .dropdown-container {
+  backdrop-filter: blur(10px);
+  background: var(--primary-color);
+  box-shadow: 0 0px 9px rgba(10, 101, 192, 0.1);
 }
 
 .dropdown-menu {
@@ -212,18 +211,9 @@ li.nav-item {
 }
 
 
-/* .dropdown-container {
-  background: var(--primary-color);
-  border-radius: 5px;
-} */
-
 .dropdown-item {
-  padding: 0.3rem 1rem;
-  font-size: 16px;
   font-weight: 500;
-  
-  letter-spacing: 0;
-  text-transform: capitalize;
+  text-transform: initial;
 }
 
 .dropdown-item.active,
@@ -232,12 +222,9 @@ li.nav-item {
   background-color: var(--main-color);
 }
 
-
-
 .navbar .topnav .butn .icon {
   width: auto;
 }
-
 
 .callBackCta_cta__norp0 {
   border: none;
@@ -283,29 +270,35 @@ li.nav-item {
 
 
 .contactButton_btn__rRKCw {
-  margin-top: -.1666666667rem;
   display: flex;
-  color: #fff;
-  background-color: transparent;
+  background-color: #fff;
   text-decoration: none;
   padding: .5555555556rem 1.3333333333rem;
-  letter-spacing: .3px;
-  transition: color .18s ease-in-out, background-color .18s ease-in-out;
-  border: 1px solid #fff;
+  transition: color .18s ease-in-out, background-color .18s ease-in-out;  
   margin-right: 1.6666666667rem;
-  font-size: .9444444444rem;
+  font-weight: 500;
+  border: 1px solid #fff;
+  color: var(--dark);
 }
 
 .nav-scroll .contactButton_btn__rRKCw,
 .header-other .contactButton_btn__rRKCw {
   background-color: var(--main-color);
   border: 1px solid var(--main-color);
+  color: var(--primary-color);
 }
 
 .contactButton_btn__rRKCw:hover {
-  background-color: #fff;
-  color: #000;
+  color: var(--primary-color);
+  background-color: transparent;
 }
+
+.nav-scroll .contactButton_btn__rRKCw:hover,
+.header-other .contactButton_btn__rRKCw:hover {
+  color: var(--main-color);
+  background-color: transparent;
+}
+
 
 .header_icon_wrap__VSWn1 {
   display: flex;
@@ -357,8 +350,6 @@ li.nav-item {
   background-color: transparent;
   padding: 0 2rem 0 0;
 }
-
-
 
 .searchOffCanvas_logoWrapper__T3i_x img {
   width: 100%;
