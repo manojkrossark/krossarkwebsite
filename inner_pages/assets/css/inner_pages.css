@@ -3322,7 +3322,6 @@
 
 @media(min-width: 768px) {
   .listingCard_listing_card__vSgnM .listingCard_title__ufYqF {
-    letter-spacing: -.0533333333rem;
     line-height: 1.18;
   }
 }
@@ -3346,7 +3345,8 @@
   display: -webkit-box;
   /* -webkit-line-clamp: 3; */
   -webkit-box-orient: vertical;
-  overflow: hidden
+  overflow: hidden;
+  font-size: var(--font-paragraph-16);
 }
 
 @media screen and (max-width: 576px) {
@@ -4452,7 +4452,7 @@
 }
 
 .serv-details .accordion-item .accordion-body {
-  padding: 0 0 15px 90px;
+  padding: 0 0 15px 30px;
 }
 
 .serv-details .accordion-item .accordion-body p {
