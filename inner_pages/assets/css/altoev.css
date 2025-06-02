@@ -879,6 +879,10 @@ p {
 .gallery-item {
   overflow: hidden;
   transition: transform 0.3s ease;
+  filter: grayscale(1);
+}
+.gallery-item:hover {
+  filter: grayscale(0);
 }
 
 .gallery-item img {
@@ -901,16 +905,18 @@ p {
 }
 
 .gallery-item .overlay{
-  background-color: #87C332;
+  /* background-color: #87C332; */
   background-blend-mode: hue;
   mix-blend-mode: hue;
   opacity: 0;
   transition: all ease-in-out .3s;
+  
 }
 
 .gallery-item:hover .overlay {
   opacity: .7;
   transition: all ease-in-out .3s;
+  filter: grayscale(0);
 }
 
 @media (max-width: 768px) {
