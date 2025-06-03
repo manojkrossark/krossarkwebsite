@@ -226,49 +226,6 @@ li.nav-item {
   width: auto;
 }
 
-.callBackCta_cta__norp0 {
-  border: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-color: transparent;
-  filter: invert(0);
-  transition: filter .3s ease-in-out;
-  position: relative;
-}
-
-.nav-scroll .callBackCta_cta__norp0 {
-  filter: invert(1);
-}
-
-
-.callBackCta_cta__norp0:after {
-  background-color: rgba(0, 0, 0, .06);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) scale(.8);
-  opacity: 0;
-  filter: invert(1);
-  transition: all .12s ease-in;
-  will-change: transform;
-}
-
-.callBackCta_cta__norp0 svg {
-  display: block;
-}
-
-.header_icon_wrap__VSWn1 li svg {
-  max-width: 20px;
-  max-height: 20px;
-  display: flex !important;
-}
-
-
 .contactButton_btn__rRKCw {
   display: flex;
   background-color: #fff;
