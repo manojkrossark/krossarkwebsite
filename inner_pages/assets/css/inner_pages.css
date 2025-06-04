@@ -1578,7 +1578,7 @@
 }
 
 .footer-sa .sub-footer .links a:hover {
-  color: var(--theme-color);
+  color: var(--bs-gray-600);
 }
 
 .footer-sa .sub-footer .links .active {
@@ -3243,6 +3243,16 @@
 .ServiceListing_services_item__xuHEW {
   position: relative;
   height: 100%
+}
+
+.workListFilterBlock_section__rp6T0 .workListFilterBlock_row__QutC4>:not(.workListFilterBlock_ball__XXse6) {
+    padding-top: 2.7777777778rem;
+}
+
+@media (min-width: 992px) {
+    .workListFilterBlock_section__rp6T0 .workListFilterBlock_row__QutC4>:not(.workListFilterBlock_ball__XXse6) {
+        padding-top: 2.7777777778rem;
+    }
 }
 
 .listingCard_listing_card__vSgnM {
