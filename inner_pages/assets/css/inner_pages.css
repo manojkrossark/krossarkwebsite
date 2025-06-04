@@ -2,13 +2,11 @@
 
 .ai-suggestions {
   list-style: none;
-  padding: 0;
-  margin: 10px 0 0 0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  padding: 0 10%;
   max-height: 200px;
   overflow-y: auto;
   background: #fff;
+  border-top: 1px solid #eee;
   position: absolute;
   z-index: 9999;
   width: 100%;
