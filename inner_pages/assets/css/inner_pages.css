@@ -1,5 +1,30 @@
 @charset "UTF-8";
 
+.ai-suggestions {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  max-height: 200px;
+  overflow-y: auto;
+  background: #fff;
+  position: absolute;
+  z-index: 9999;
+  width: 100%;
+}
+
+.ai-suggestions li {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.ai-suggestions li:hover {
+  background: #f0f0f0;
+}
+
+
 /* --------------- about pg --------------- */
 
 .services-dm {
@@ -1447,6 +1472,7 @@
 .footer-sa {
   background-image: linear-gradient(181deg, #ffffff 27%, #0a65c00a 100%);
 }
+
 .footer-sa .call-action h2 {
   font-size: 100px;
   font-weight: 600;

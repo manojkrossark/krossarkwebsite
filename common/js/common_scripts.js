@@ -9,8 +9,37 @@
 
 -----------------------------------------------------------------------------------*/
 
+
 $(function () {
   "use strict";
+
+  const input = document.querySelector('.searchField_SearchInput__HxLyg');
+  const suggestionBox = document.getElementById('aiSuggestions');
+
+  input.addEventListener('input', async () => {
+    const query = input.value.trim();
+    if (!query) {
+      suggestionBox.innerHTML = '';
+      return;
+    }
+
+    const suggestions = await getAISuggestions(query);
+
+    suggestionBox.innerHTML = suggestions
+      .map(
+        (s) => `<li onclick="window.location.href='${s.link}'">${s.text}</li>`
+      )
+      .join('');
+  });
+
+  // Dummy AI suggestion function (replace with real API call)
+  async function getAISuggestions(query) {
+    return [
+      { text: `AI insights for "${query}"`, link: `/search?q=${query}&ref=ai1` },
+      { text: `Explore solutions related to "${query}"`, link: `/search?q=${query}&ref=ai2` },
+      { text: `Related innovations on "${query}"`, link: `/search?q=${query}&ref=ai3` }
+    ];
+  }
 
   var wind = $(window);
 
