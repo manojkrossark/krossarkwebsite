@@ -459,8 +459,6 @@ $(document).ready(function () {
   });
 });
 
-
-
 /* =============================================================================
 -----------------------------  Rigth Side Bar   ------------------------------
 ============================================================================= */
@@ -527,44 +525,43 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-
-
 /* =============================================================================
 -----------------------------  Modal Open   ------------------------------
 ============================================================================= */
 
 // Load modal HTML dynamically
-fetch('/common/common-modal.html')
-  .then(res => res.text())
-  .then(html => {
-    const container = document.getElementById('modal-container');
+fetch("/common/common-modal.html")
+  .then((res) => res.text())
+  .then((html) => {
+    const container = document.getElementById("modal-container");
     if (container) {
       container.innerHTML = html;
     } else {
-      console.error('modal-container not found in the DOM');
+      console.error("modal-container not found in the DOM");
     }
   });
 
 // Function to open the modal
 function openModal() {
   resetModal();
-  const modal = new bootstrap.Modal(document.getElementById('exampleModal'));
+  const modal = new bootstrap.Modal(document.getElementById("exampleModal"));
   modal.show();
 }
 
 function closeModal() {
   resetModal();
-  const modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
+  const modal = bootstrap.Modal.getInstance(
+    document.getElementById("exampleModal")
+  );
   modal.hide();
 }
 
 function resetModal() {
-  document.getElementById('formContainer').style.display = 'block';
-  document.getElementById('successMessage').style.display = 'none';
-  var form = document.getElementById('whitepaperForm');
+  document.getElementById("whitepaper").style.display = "block";
+  document.getElementById("successMessage").style.display = "none";
+  var form = document.getElementById("whitepaperForm");
   form.reset();
 }
-
 
 function copyLinkToClipboard() {
   const url = window.location.href;
@@ -591,7 +588,6 @@ wow = new WOW({
 });
 wow.init();
 
-
 $(function () {
   // Animate header container without preloader
   gsap.from("main", {
@@ -602,34 +598,41 @@ $(function () {
   });
 });
 
-
 /* =============================================================================
 -----------------------------  Common Modal      ------------------------------
 ============================================================================= */
 
-
 function handleSubmit(event) {
   event.preventDefault();
 
-  const name = document.getElementById('fullName').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const company = document.getElementById('company').value.trim();
-  const jobTitle = document.getElementById('jobTitle').value.trim();
-  const consent = document.getElementById('gridCheck').checked;
+  const name = document.getElementById("fullName").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const company = document.getElementById("company").value.trim();
+  const jobTitle = document.getElementById("jobTitle").value.trim();
+  const consent = document.getElementById("gridCheck").checked;
 
   clearErrorMessages();
 
   const validationRules = [
-    { field: 'fullName', value: name, message: 'Full Name is required.' },
-    { field: 'email', value: email, message: 'Please enter a valid email address.', pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/ },
-    { field: 'company', value: company, message: 'Company is required.' },
-    { field: 'jobTitle', value: jobTitle, message: 'Job Title is required.' },
-    { field: 'gridCheck', value: consent, message: 'You must agree to the Privacy Policy.' },
+    { field: "fullName", value: name, message: "Full Name is required." },
+    {
+      field: "email",
+      value: email,
+      message: "Please enter a valid email address.",
+      pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/,
+    },
+    { field: "company", value: company, message: "Company is required." },
+    { field: "jobTitle", value: jobTitle, message: "Job Title is required." },
+    {
+      field: "gridCheck",
+      value: consent,
+      message: "You must agree to the Privacy Policy.",
+    },
   ];
 
   let hasError = false;
 
-  validationRules.forEach(rule => {
+  validationRules.forEach((rule) => {
     if (!rule.value || (rule.pattern && !rule.pattern.test(rule.value))) {
       showError(rule.field, rule.message);
       hasError = true;
@@ -638,33 +641,32 @@ function handleSubmit(event) {
 
   if (hasError) return;
 
-  fetch('/api/sendWhitePaper', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+  fetch("/api/sendWhitePaper", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ name, email, company, jobTitle }),
   })
-    .then(response => response.json())
-    .then(data => {
-      if (data.status === 'success') {
-        document.getElementById('formContainer').style.display = 'none';
-        document.getElementById('successMessage').style.display = 'block';
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.status === "success") {
+        document.getElementById("whitepaper").style.display = "none";
+        document.getElementById("successMessage").style.display = "block";
         event.target.reset(); // Reset the form
       } else {
         console.error(data.message);
         // Optionally show form-level error message
       }
     })
-    .catch(error => {
-      console.error('Error sending form:', error);
+    .catch((error) => {
+      console.error("Error sending form:", error);
     });
 }
 
-
 function showError(inputId, message) {
   const inputElement = document.getElementById(inputId);
-  const errorMessage = document.createElement('div');
-  errorMessage.className = 'error-message';
-  errorMessage.style.color = 'red';
+  const errorMessage = document.createElement("div");
+  errorMessage.className = "error-message";
+  errorMessage.style.color = "red";
   errorMessage.textContent = message;
 
   // Append the error message below the input field
@@ -673,10 +675,9 @@ function showError(inputId, message) {
 
 // Function to clear previous error messages
 function clearErrorMessages() {
-  const errorMessages = document.querySelectorAll('.error-message');
-  errorMessages.forEach(message => message.remove());
+  const errorMessages = document.querySelectorAll(".error-message");
+  errorMessages.forEach((message) => message.remove());
 }
-
 
 var testim = new Swiper(".case-studies .testim-swiper", {
   slidesPerView: 3,
@@ -697,11 +698,11 @@ var testim = new Swiper(".case-studies .testim-swiper", {
     },
     768: {
       slidesPerView: 3,
-    }
-  }
+    },
+  },
 });
 
-$('.review-slider').slick({
+$(".review-slider").slick({
   slidesToShow: 1,
   slidesToScroll: 1,
   autoplay: true,
@@ -710,7 +711,7 @@ $('.review-slider').slick({
   dots: false,
 });
 
-$('.partner-slider').slick({
+$(".partner-slider").slick({
   slidesToShow: 4,
   slidesToScroll: 1,
   autoplay: true,
@@ -720,9 +721,9 @@ $('.partner-slider').slick({
   responsive: [
     { breakpoint: 1100, settings: { slidesToShow: 3, slidesToScroll: 1 } },
     { breakpoint: 600, settings: { slidesToShow: 2, slidesToScroll: 1 } },
-    { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1 } }]
+    { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1 } },
+  ],
 });
-
 
 document.addEventListener("DOMContentLoaded", function () {
   gsap.registerPlugin(ScrollTrigger);
@@ -749,17 +750,16 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
-
-
 var controller = new ScrollMagic.Controller();
 
-$(function () { // wait for document ready
+$(function () {
+  // wait for document ready
   // build scene
-  var scene = new ScrollMagic.Scene({ triggerElement: "#trigger1", duration: 300 })
+  var scene = new ScrollMagic.Scene({
+    triggerElement: "#trigger1",
+    duration: 300,
+  })
     .setPin("#pin1")
     .addIndicators({ name: "1 (duration: 300)" }) // add indicators (requires plugin)
     .addTo(controller);
 });
-
-
