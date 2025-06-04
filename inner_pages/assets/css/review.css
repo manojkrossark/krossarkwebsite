@@ -14,9 +14,7 @@
     font-weight: 700;
 }
 
-.border-blue {
-    border-color: var(--main-color) !important;
-}
+
 
 .bg-lightgreen {
     background-color: #fafdff;
